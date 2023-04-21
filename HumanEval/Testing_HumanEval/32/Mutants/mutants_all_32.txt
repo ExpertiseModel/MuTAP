@@ -1,0 +1,432 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/32/script_NDS_32.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/32/Copilot/test_32_cp_few_shot.py
+[*] 0 tests passed:
+   - test_32_cp_few_shot [0.00008 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_32: 
+--------------------------------------------------------------------------------
+   7: 
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+- 11:     (begin, end) = (-1.0, 1.0)
++ 11:     (begin, end) = (1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+--------------------------------------------------------------------------------
+[0.00528 s] survived
+   - [#   2] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+   2: 
+   3: 
+   4: def poly(xs: list, x: float):
+   5:     
+-  6:     return sum([coeff * math.pow(x, i) for (i, coeff) in enumerate(xs)])
++  6:     return sum([coeff / math.pow(x, i) for (i, coeff) in enumerate(xs)])
+   7: 
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+--------------------------------------------------------------------------------
+[0.00610 s] survived
+   - [#   3] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+   2: 
+   3: 
+   4: def poly(xs: list, x: float):
+   5:     
+-  6:     return sum([coeff * math.pow(x, i) for (i, coeff) in enumerate(xs)])
++  6:     return sum([coeff // math.pow(x, i) for (i, coeff) in enumerate(xs)])
+   7: 
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+--------------------------------------------------------------------------------
+[0.00535 s] survived
+   - [#   4] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+   2: 
+   3: 
+   4: def poly(xs: list, x: float):
+   5:     
+-  6:     return sum([coeff * math.pow(x, i) for (i, coeff) in enumerate(xs)])
++  6:     return sum([coeff ** math.pow(x, i) for (i, coeff) in enumerate(xs)])
+   7: 
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+--------------------------------------------------------------------------------
+[0.00587 s] survived
+   - [#   5] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+   7: 
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+- 11:     (begin, end) = (-1.0, 1.0)
++ 11:     (begin, end) = (+1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+--------------------------------------------------------------------------------
+[0.00519 s] survived
+   - [#   6] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+- 12:     while poly(xs, begin) * poly(xs, end) > 0:
++ 12:     while poly(xs, begin) / poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+--------------------------------------------------------------------------------
+[0.00629 s] survived
+   - [#   7] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+- 12:     while poly(xs, begin) * poly(xs, end) > 0:
++ 12:     while poly(xs, begin) // poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+--------------------------------------------------------------------------------
+[0.00744 s] survived
+   - [#   8] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+- 12:     while poly(xs, begin) * poly(xs, end) > 0:
++ 12:     while poly(xs, begin) ** poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+--------------------------------------------------------------------------------
+[0.00646 s] survived
+   - [#   9] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+- 15:     while end - begin > 1e-10:
++ 15:     while end + begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+--------------------------------------------------------------------------------
+[0.00723 s] survived
+   - [#  10] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+- 16:         center = (begin + end) / 2.0
++ 16:         center = (begin - end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+  20:             end = center
+--------------------------------------------------------------------------------
+[0.00780 s] survived
+   - [#  11] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+- 16:         center = (begin + end) / 2.0
++ 16:         center = (begin + end) // 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+  20:             end = center
+--------------------------------------------------------------------------------
+[0.00700 s] survived
+   - [#  12] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+- 16:         center = (begin + end) / 2.0
++ 16:         center = (begin + end) * 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+  20:             end = center
+--------------------------------------------------------------------------------
+[0.00595 s] survived
+   - [#  13] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+- 17:         if poly(xs, center) * poly(xs, begin) > 0:
++ 17:         if poly(xs, center) / poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+  20:             end = center
+  21:     return begin
+--------------------------------------------------------------------------------
+[0.00757 s] survived
+   - [#  14] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+- 17:         if poly(xs, center) * poly(xs, begin) > 0:
++ 17:         if poly(xs, center) // poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+  20:             end = center
+  21:     return begin
+--------------------------------------------------------------------------------
+[0.00640 s] survived
+   - [#  15] AOR script_NDS_32: 
+--------------------------------------------------------------------------------
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+- 17:         if poly(xs, center) * poly(xs, begin) > 0:
++ 17:         if poly(xs, center) ** poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+  20:             end = center
+  21:     return begin
+--------------------------------------------------------------------------------
+[0.00565 s] survived
+   - [#  16] ASR script_NDS_32: 
+--------------------------------------------------------------------------------
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+- 13:         begin *= 2.0
++ 13:         begin /= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+--------------------------------------------------------------------------------
+[0.00976 s] survived
+   - [#  17] ASR script_NDS_32: 
+--------------------------------------------------------------------------------
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+- 13:         begin *= 2.0
++ 13:         begin //= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+--------------------------------------------------------------------------------
+[0.00597 s] survived
+   - [#  18] ASR script_NDS_32: 
+--------------------------------------------------------------------------------
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+- 13:         begin *= 2.0
++ 13:         begin **= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+--------------------------------------------------------------------------------
+[0.00780 s] survived
+   - [#  19] ASR script_NDS_32: 
+--------------------------------------------------------------------------------
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+- 14:         end *= 2.0
++ 14:         end /= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+--------------------------------------------------------------------------------
+[0.00710 s] survived
+   - [#  20] ASR script_NDS_32: 
+--------------------------------------------------------------------------------
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+- 14:         end *= 2.0
++ 14:         end //= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+--------------------------------------------------------------------------------
+[0.00603 s] survived
+   - [#  21] ASR script_NDS_32: 
+--------------------------------------------------------------------------------
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+- 14:         end *= 2.0
++ 14:         end **= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+--------------------------------------------------------------------------------
+[0.00680 s] survived
+   - [#  22] COI script_NDS_32: 
+--------------------------------------------------------------------------------
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+- 12:     while poly(xs, begin) * poly(xs, end) > 0:
++ 12:     while not (poly(xs, begin) * poly(xs, end) > 0):
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+--------------------------------------------------------------------------------
+[0.00803 s] survived
+   - [#  23] COI script_NDS_32: 
+--------------------------------------------------------------------------------
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+- 15:     while end - begin > 1e-10:
++ 15:     while not (end - begin > 1e-10):
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+--------------------------------------------------------------------------------
+[0.00605 s] survived
+   - [#  24] COI script_NDS_32: 
+--------------------------------------------------------------------------------
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+- 17:         if poly(xs, center) * poly(xs, begin) > 0:
++ 17:         if not (poly(xs, center) * poly(xs, begin) > 0):
+  18:             begin = center
+  19:         else:
+  20:             end = center
+  21:     return begin
+--------------------------------------------------------------------------------
+[0.00818 s] survived
+   - [#  25] ROR script_NDS_32: 
+--------------------------------------------------------------------------------
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+- 12:     while poly(xs, begin) * poly(xs, end) > 0:
++ 12:     while poly(xs, begin) * poly(xs, end) < 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+--------------------------------------------------------------------------------
+[0.00613 s] survived
+   - [#  26] ROR script_NDS_32: 
+--------------------------------------------------------------------------------
+   8: 
+   9: def find_zero(xs: list):
+  10:     
+  11:     (begin, end) = (-1.0, 1.0)
+- 12:     while poly(xs, begin) * poly(xs, end) > 0:
++ 12:     while poly(xs, begin) * poly(xs, end) >= 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+--------------------------------------------------------------------------------
+[0.00647 s] survived
+   - [#  27] ROR script_NDS_32: 
+--------------------------------------------------------------------------------
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+- 15:     while end - begin > 1e-10:
++ 15:     while end - begin < 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+--------------------------------------------------------------------------------
+[0.00608 s] survived
+   - [#  28] ROR script_NDS_32: 
+--------------------------------------------------------------------------------
+  11:     (begin, end) = (-1.0, 1.0)
+  12:     while poly(xs, begin) * poly(xs, end) > 0:
+  13:         begin *= 2.0
+  14:         end *= 2.0
+- 15:     while end - begin > 1e-10:
++ 15:     while end - begin >= 1e-10:
+  16:         center = (begin + end) / 2.0
+  17:         if poly(xs, center) * poly(xs, begin) > 0:
+  18:             begin = center
+  19:         else:
+--------------------------------------------------------------------------------
+[0.00872 s] survived
+   - [#  29] ROR script_NDS_32: 
+--------------------------------------------------------------------------------
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+- 17:         if poly(xs, center) * poly(xs, begin) > 0:
++ 17:         if poly(xs, center) * poly(xs, begin) < 0:
+  18:             begin = center
+  19:         else:
+  20:             end = center
+  21:     return begin
+--------------------------------------------------------------------------------
+[0.00665 s] survived
+   - [#  30] ROR script_NDS_32: 
+--------------------------------------------------------------------------------
+  13:         begin *= 2.0
+  14:         end *= 2.0
+  15:     while end - begin > 1e-10:
+  16:         center = (begin + end) / 2.0
+- 17:         if poly(xs, center) * poly(xs, begin) > 0:
++ 17:         if poly(xs, center) * poly(xs, begin) >= 0:
+  18:             begin = center
+  19:         else:
+  20:             end = center
+  21:     return begin
+--------------------------------------------------------------------------------
+[0.00786 s] survived
+[*] Mutation score [0.93331 s]: 0.0%
+   - all: 30
+   - killed: 0 (0.0%)
+   - survived: 30 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

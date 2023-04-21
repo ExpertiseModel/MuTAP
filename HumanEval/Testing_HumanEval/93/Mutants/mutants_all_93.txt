@@ -1,0 +1,33 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/93/script_NDS_93.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/93/Copilot/test_93_cp_few_shot.py
+[*] 0 tests passed:
+   - test_93_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_93: 
+--------------------------------------------------------------------------------
+  1: def encode(message):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+- 4:     vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])
++ 4:     vowels_replace = dict([(i, chr(ord(i) - 2)) for i in vowels])
+  5:     message = message.swapcase()
+  6:     return ''.join([vowels_replace[i] if i in vowels else i for i in message])
+--------------------------------------------------------------------------------
+[0.00513 s] survived
+   - [#   2] COI script_NDS_93: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])
+  5:     message = message.swapcase()
+- 6:     return ''.join([vowels_replace[i] if i in vowels else i for i in message])
++ 6:     return ''.join([vowels_replace[i] if i not in vowels else i for i in message])
+--------------------------------------------------------------------------------
+[0.00576 s] survived
+[*] Mutation score [0.09458 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,130 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/143/script_NDS_143.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/143/Copilot/test_143_cp_few_shot.py
+[*] 0 tests passed:
+   - test_143_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_143: 
+--------------------------------------------------------------------------------
+   5:         flg = 0
+   6:         if len(word) == 1:
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+-  9:             if len(word) % i == 0:
++  9:             if len(word) * i == 0:
+  10:                 flg = 1
+  11:         if (flg == 0 or len(word) == 2):
+  12:             new_lst.append(word)
+  13:     return ' '.join(new_lst)
+--------------------------------------------------------------------------------
+[0.00724 s] survived
+   - [#   2] COI script_NDS_143: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     new_lst = []
+   4:     for word in sentence.split():
+   5:         flg = 0
+-  6:         if len(word) == 1:
++  6:         if not (len(word) == 1):
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+   9:             if len(word) % i == 0:
+  10:                 flg = 1
+--------------------------------------------------------------------------------
+[0.00714 s] survived
+   - [#   3] COI script_NDS_143: 
+--------------------------------------------------------------------------------
+   5:         flg = 0
+   6:         if len(word) == 1:
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+-  9:             if len(word) % i == 0:
++  9:             if not (len(word) % i == 0):
+  10:                 flg = 1
+  11:         if (flg == 0 or len(word) == 2):
+  12:             new_lst.append(word)
+  13:     return ' '.join(new_lst)
+--------------------------------------------------------------------------------
+[0.00604 s] survived
+   - [#   4] COI script_NDS_143: 
+--------------------------------------------------------------------------------
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+   9:             if len(word) % i == 0:
+  10:                 flg = 1
+- 11:         if (flg == 0 or len(word) == 2):
++ 11:         if not ((flg == 0 or len(word) == 2)):
+  12:             new_lst.append(word)
+  13:     return ' '.join(new_lst)
+--------------------------------------------------------------------------------
+[0.00602 s] survived
+   - [#   5] LCR script_NDS_143: 
+--------------------------------------------------------------------------------
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+   9:             if len(word) % i == 0:
+  10:                 flg = 1
+- 11:         if (flg == 0 or len(word) == 2):
++ 11:         if (flg == 0 and len(word) == 2):
+  12:             new_lst.append(word)
+  13:     return ' '.join(new_lst)
+--------------------------------------------------------------------------------
+[0.00546 s] survived
+   - [#   6] ROR script_NDS_143: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     new_lst = []
+   4:     for word in sentence.split():
+   5:         flg = 0
+-  6:         if len(word) == 1:
++  6:         if len(word) != 1:
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+   9:             if len(word) % i == 0:
+  10:                 flg = 1
+--------------------------------------------------------------------------------
+[0.00611 s] survived
+   - [#   7] ROR script_NDS_143: 
+--------------------------------------------------------------------------------
+   5:         flg = 0
+   6:         if len(word) == 1:
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+-  9:             if len(word) % i == 0:
++  9:             if len(word) % i != 0:
+  10:                 flg = 1
+  11:         if (flg == 0 or len(word) == 2):
+  12:             new_lst.append(word)
+  13:     return ' '.join(new_lst)
+--------------------------------------------------------------------------------
+[0.00570 s] survived
+   - [#   8] ROR script_NDS_143: 
+--------------------------------------------------------------------------------
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+   9:             if len(word) % i == 0:
+  10:                 flg = 1
+- 11:         if (flg == 0 or len(word) == 2):
++ 11:         if (flg != 0 or len(word) == 2):
+  12:             new_lst.append(word)
+  13:     return ' '.join(new_lst)
+--------------------------------------------------------------------------------
+[0.00673 s] survived
+   - [#   9] ROR script_NDS_143: 
+--------------------------------------------------------------------------------
+   7:             flg = 1
+   8:         for i in range(2, len(word)):
+   9:             if len(word) % i == 0:
+  10:                 flg = 1
+- 11:         if (flg == 0 or len(word) == 2):
++ 11:         if (flg == 0 or len(word) != 2):
+  12:             new_lst.append(word)
+  13:     return ' '.join(new_lst)
+--------------------------------------------------------------------------------
+[0.00758 s] survived
+[*] Mutation score [0.27373 s]: 0.0%
+   - all: 9
+   - killed: 0 (0.0%)
+   - survived: 9 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

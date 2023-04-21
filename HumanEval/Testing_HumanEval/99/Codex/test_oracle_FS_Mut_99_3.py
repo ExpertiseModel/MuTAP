@@ -1,0 +1,33 @@
+def closest_integer(value):
+    
+    from math import floor, ceil
+
+    if value.count('.') == 1:
+        # remove trailing zeros
+        while (value[-1] == '0'):
+            value = value[:-1]
+
+    num = float(value)
+    if value[-2:] == '.5':
+        if num > 0:
+            res = ceil(num)
+        else:
+            res = floor(num)
+    elif len(value) > 0:
+        res = int(round(num))
+    else:
+        res = 0
+
+    return res
+
+
+
+
+def test():
+    assert closest_integer('0.0') == 0
+    assert closest_integer('4.4') == 4
+    assert closest_integer("0.0095") == 0
+    assert closest_integer("13.58") == 13
+    assert closest_integer("100.2") == 100
+    assert closest_integer("0.9") == 1
+   

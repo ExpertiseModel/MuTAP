@@ -1,0 +1,1 @@
+greatest_common_divisor(7, 6) 

@@ -1,0 +1,60 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/88/script_NDS_88.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/88/Copilot/test_88_cp_few_shot.py
+[*] 0 tests passed:
+   - test_88_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_88: 
+--------------------------------------------------------------------------------
+  1: def sort_array(array):
+  2:     
+- 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
++ 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[1]) % 2 == 0)
+--------------------------------------------------------------------------------
+[0.00736 s] survived
+   - [#   2] AOR script_NDS_88: 
+--------------------------------------------------------------------------------
+  1: def sort_array(array):
+  2:     
+- 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
++ 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] - array[-1]) % 2 == 0)
+--------------------------------------------------------------------------------
+[0.00720 s] survived
+   - [#   3] AOR script_NDS_88: 
+--------------------------------------------------------------------------------
+  1: def sort_array(array):
+  2:     
+- 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
++ 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[+1]) % 2 == 0)
+--------------------------------------------------------------------------------
+[0.00772 s] survived
+   - [#   4] AOR script_NDS_88: 
+--------------------------------------------------------------------------------
+  1: def sort_array(array):
+  2:     
+- 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
++ 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[-1]) * 2 == 0)
+--------------------------------------------------------------------------------
+[0.00783 s] survived
+   - [#   5] ROR script_NDS_88: 
+--------------------------------------------------------------------------------
+  1: def sort_array(array):
+  2:     
+- 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
++ 3:     return [] if len(array) != 0 else sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
+--------------------------------------------------------------------------------
+[0.00641 s] survived
+   - [#   6] ROR script_NDS_88: 
+--------------------------------------------------------------------------------
+  1: def sort_array(array):
+  2:     
+- 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
++ 3:     return [] if len(array) == 0 else sorted(array, reverse=(array[0] + array[-1]) % 2 != 0)
+--------------------------------------------------------------------------------
+[0.00692 s] survived
+[*] Mutation score [0.14241 s]: 0.0%
+   - all: 6
+   - killed: 0 (0.0%)
+   - survived: 6 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

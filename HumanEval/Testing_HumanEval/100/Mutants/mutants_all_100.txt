@@ -1,0 +1,44 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/100/script_NDS_100.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/100/Copilot/test_100_cp_few_shot.py
+[*] 0 tests passed:
+   - test_100_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_100: 
+--------------------------------------------------------------------------------
+  1: def make_a_pile(n):
+  2:     
+- 3:     return [n + (2 * i) for i in range(n)]
++ 3:     return [n - (2 * i) for i in range(n)]
+--------------------------------------------------------------------------------
+[0.00624 s] survived
+   - [#   2] AOR script_NDS_100: 
+--------------------------------------------------------------------------------
+  1: def make_a_pile(n):
+  2:     
+- 3:     return [n + (2 * i) for i in range(n)]
++ 3:     return [n + (2 / i) for i in range(n)]
+--------------------------------------------------------------------------------
+[0.00495 s] survived
+   - [#   3] AOR script_NDS_100: 
+--------------------------------------------------------------------------------
+  1: def make_a_pile(n):
+  2:     
+- 3:     return [n + (2 * i) for i in range(n)]
++ 3:     return [n + (2 // i) for i in range(n)]
+--------------------------------------------------------------------------------
+[0.00549 s] survived
+   - [#   4] AOR script_NDS_100: 
+--------------------------------------------------------------------------------
+  1: def make_a_pile(n):
+  2:     
+- 3:     return [n + (2 * i) for i in range(n)]
++ 3:     return [n + (2 ** i) for i in range(n)]
+--------------------------------------------------------------------------------
+[0.00464 s] survived
+[*] Mutation score [0.07011 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

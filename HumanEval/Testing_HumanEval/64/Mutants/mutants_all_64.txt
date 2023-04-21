@@ -1,0 +1,131 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/64/script_NDS_64.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/64/Copilot/test_64_cp_few_shot.py
+[*] 0 tests passed:
+   - test_64_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+- 5:     if (s[-1] == 'y' or s[-1] == 'Y'):
++ 5:     if (s[1] == 'y' or s[-1] == 'Y'):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00630 s] survived
+   - [#   2] AOD script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+- 5:     if (s[-1] == 'y' or s[-1] == 'Y'):
++ 5:     if (s[-1] == 'y' or s[1] == 'Y'):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00697 s] survived
+   - [#   3] AOR script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+- 5:     if (s[-1] == 'y' or s[-1] == 'Y'):
++ 5:     if (s[+1] == 'y' or s[-1] == 'Y'):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00771 s] survived
+   - [#   4] AOR script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+- 5:     if (s[-1] == 'y' or s[-1] == 'Y'):
++ 5:     if (s[-1] == 'y' or s[+1] == 'Y'):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00616 s] survived
+   - [#   5] ASR script_NDS_64: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+  5:     if (s[-1] == 'y' or s[-1] == 'Y'):
+- 6:         n_vowels += 1
++ 6:         n_vowels -= 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00556 s] survived
+   - [#   6] COI script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+- 4:     n_vowels = sum((c in vowels for c in s))
++ 4:     n_vowels = sum((c not in vowels for c in s))
+  5:     if (s[-1] == 'y' or s[-1] == 'Y'):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00726 s] survived
+   - [#   7] COI script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+- 5:     if (s[-1] == 'y' or s[-1] == 'Y'):
++ 5:     if not ((s[-1] == 'y' or s[-1] == 'Y')):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00588 s] survived
+   - [#   8] LCR script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+- 5:     if (s[-1] == 'y' or s[-1] == 'Y'):
++ 5:     if (s[-1] == 'y' and s[-1] == 'Y'):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00641 s] survived
+   - [#   9] ROR script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+- 5:     if (s[-1] == 'y' or s[-1] == 'Y'):
++ 5:     if (s[-1] != 'y' or s[-1] == 'Y'):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00740 s] survived
+   - [#  10] ROR script_NDS_64: 
+--------------------------------------------------------------------------------
+  1: def vowels_count(s):
+  2:     
+  3:     vowels = 'aeiouAEIOU'
+  4:     n_vowels = sum((c in vowels for c in s))
+- 5:     if (s[-1] == 'y' or s[-1] == 'Y'):
++ 5:     if (s[-1] == 'y' or s[-1] != 'Y'):
+  6:         n_vowels += 1
+  7:     return n_vowels
+--------------------------------------------------------------------------------
+[0.00596 s] survived
+[*] Mutation score [0.22802 s]: 0.0%
+   - all: 10
+   - killed: 0 (0.0%)
+   - survived: 10 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,69 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/120/script_NDS_120.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/120/Copilot/test_120_cp_few_shot.py
+[*] 0 tests passed:
+   - test_120_cp_few_shot [0.00014 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_120: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if k == 0:
+  4:         return []
+  5:     arr.sort()
+- 6:     ans = arr[-k:]
++ 6:     ans = arr[k:]
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00792 s] survived
+   - [#   2] AOR script_NDS_120: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if k == 0:
+  4:         return []
+  5:     arr.sort()
+- 6:     ans = arr[-k:]
++ 6:     ans = arr[+k:]
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00614 s] survived
+   - [#   3] COI script_NDS_120: 
+--------------------------------------------------------------------------------
+  1: def maximum(arr, k):
+  2:     
+- 3:     if k == 0:
++ 3:     if not (k == 0):
+  4:         return []
+  5:     arr.sort()
+  6:     ans = arr[-k:]
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00561 s] survived
+   - [#   4] ROR script_NDS_120: 
+--------------------------------------------------------------------------------
+  1: def maximum(arr, k):
+  2:     
+- 3:     if k == 0:
++ 3:     if k != 0:
+  4:         return []
+  5:     arr.sort()
+  6:     ans = arr[-k:]
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00480 s] survived
+   - [#   5] SIR script_NDS_120: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if k == 0:
+  4:         return []
+  5:     arr.sort()
+- 6:     ans = arr[-k:]
++ 6:     ans = arr[:]
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00473 s] survived
+[*] Mutation score [0.11076 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,81 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/StudentEval/Reference_Scripts/Tests/q4/script_q4.py
+   - tests: /home/arghavan/Git_Code/codex_test/StudentEval/Reference_Scripts/Tests/q4/script_q4_cp_few_shot.py
+[*] 0 tests passed:
+   - script_q4_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_q4: 
+--------------------------------------------------------------------------------
+   1: 
+   2: 
+   3: def sort_age(lst):
+-  4:     for i in range(0, len(lst) - 1):
++  4:     for i in range(0, len(lst) + 1):
+   5:         for j in range(i + 1, len(lst)):
+   6:             if lst[i][1] < lst[j][1]:
+   7:                 tmp = lst[i]
+   8:                 lst[i] = lst[j]
+--------------------------------------------------------------------------------
+[0.00618 s] survived
+   - [#   2] AOR script_q4: 
+--------------------------------------------------------------------------------
+   1: 
+   2: 
+   3: def sort_age(lst):
+   4:     for i in range(0, len(lst) - 1):
+-  5:         for j in range(i + 1, len(lst)):
++  5:         for j in range(i - 1, len(lst)):
+   6:             if lst[i][1] < lst[j][1]:
+   7:                 tmp = lst[i]
+   8:                 lst[i] = lst[j]
+   9:                 lst[j] = tmp
+--------------------------------------------------------------------------------
+[0.00621 s] survived
+   - [#   3] COI script_q4: 
+--------------------------------------------------------------------------------
+   2: 
+   3: def sort_age(lst):
+   4:     for i in range(0, len(lst) - 1):
+   5:         for j in range(i + 1, len(lst)):
+-  6:             if lst[i][1] < lst[j][1]:
++  6:             if not (lst[i][1] < lst[j][1]):
+   7:                 tmp = lst[i]
+   8:                 lst[i] = lst[j]
+   9:                 lst[j] = tmp
+  10:     return lst
+--------------------------------------------------------------------------------
+[0.00758 s] survived
+   - [#   4] ROR script_q4: 
+--------------------------------------------------------------------------------
+   2: 
+   3: def sort_age(lst):
+   4:     for i in range(0, len(lst) - 1):
+   5:         for j in range(i + 1, len(lst)):
+-  6:             if lst[i][1] < lst[j][1]:
++  6:             if lst[i][1] > lst[j][1]:
+   7:                 tmp = lst[i]
+   8:                 lst[i] = lst[j]
+   9:                 lst[j] = tmp
+  10:     return lst
+--------------------------------------------------------------------------------
+[0.00729 s] survived
+   - [#   5] ROR script_q4: 
+--------------------------------------------------------------------------------
+   2: 
+   3: def sort_age(lst):
+   4:     for i in range(0, len(lst) - 1):
+   5:         for j in range(i + 1, len(lst)):
+-  6:             if lst[i][1] < lst[j][1]:
++  6:             if lst[i][1] <= lst[j][1]:
+   7:                 tmp = lst[i]
+   8:                 lst[i] = lst[j]
+   9:                 lst[j] = tmp
+  10:     return lst
+--------------------------------------------------------------------------------
+[0.00775 s] survived
+[*] Mutation score [0.19385 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

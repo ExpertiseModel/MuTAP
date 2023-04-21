@@ -1,0 +1,92 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/125/script_NDS_125.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/125/Copilot/test_125_cp_few_shot.py
+[*] 0 tests passed:
+   - test_125_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_125: 
+--------------------------------------------------------------------------------
+  4:         return txt.split()
+  5:     elif ',' in txt:
+  6:         return txt.replace(',', ' ').split()
+  7:     else:
+- 8:         return len([i for i in txt if (i.islower() and ord(i) % 2 == 0)])
++ 8:         return len([i for i in txt if (i.islower() and ord(i) * 2 == 0)])
+--------------------------------------------------------------------------------
+[0.00578 s] survived
+   - [#   2] COI script_NDS_125: 
+--------------------------------------------------------------------------------
+  1: def split_words(txt):
+  2:     
+- 3:     if ' ' in txt:
++ 3:     if not (' ' in txt):
+  4:         return txt.split()
+  5:     elif ',' in txt:
+  6:         return txt.replace(',', ' ').split()
+  7:     else:
+--------------------------------------------------------------------------------
+[0.00561 s] survived
+   - [#   3] COI script_NDS_125: 
+--------------------------------------------------------------------------------
+  1: def split_words(txt):
+  2:     
+- 3:     if ' ' in txt:
++ 3:     if ' ' not in txt:
+  4:         return txt.split()
+  5:     elif ',' in txt:
+  6:         return txt.replace(',', ' ').split()
+  7:     else:
+--------------------------------------------------------------------------------
+[0.00519 s] survived
+   - [#   4] COI script_NDS_125: 
+--------------------------------------------------------------------------------
+  1: def split_words(txt):
+  2:     
+  3:     if ' ' in txt:
+  4:         return txt.split()
+- 5:     elif ',' in txt:
++ 5:     elif not (',' in txt):
+  6:         return txt.replace(',', ' ').split()
+  7:     else:
+  8:         return len([i for i in txt if (i.islower() and ord(i) % 2 == 0)])
+--------------------------------------------------------------------------------
+[0.00613 s] survived
+   - [#   5] COI script_NDS_125: 
+--------------------------------------------------------------------------------
+  1: def split_words(txt):
+  2:     
+  3:     if ' ' in txt:
+  4:         return txt.split()
+- 5:     elif ',' in txt:
++ 5:     elif ',' not in txt:
+  6:         return txt.replace(',', ' ').split()
+  7:     else:
+  8:         return len([i for i in txt if (i.islower() and ord(i) % 2 == 0)])
+--------------------------------------------------------------------------------
+[0.00583 s] survived
+   - [#   6] LCR script_NDS_125: 
+--------------------------------------------------------------------------------
+  4:         return txt.split()
+  5:     elif ',' in txt:
+  6:         return txt.replace(',', ' ').split()
+  7:     else:
+- 8:         return len([i for i in txt if (i.islower() and ord(i) % 2 == 0)])
++ 8:         return len([i for i in txt if (i.islower() or ord(i) % 2 == 0)])
+--------------------------------------------------------------------------------
+[0.00528 s] survived
+   - [#   7] ROR script_NDS_125: 
+--------------------------------------------------------------------------------
+  4:         return txt.split()
+  5:     elif ',' in txt:
+  6:         return txt.replace(',', ' ').split()
+  7:     else:
+- 8:         return len([i for i in txt if (i.islower() and ord(i) % 2 == 0)])
++ 8:         return len([i for i in txt if (i.islower() and ord(i) % 2 != 0)])
+--------------------------------------------------------------------------------
+[0.00542 s] survived
+[*] Mutation score [0.18895 s]: 0.0%
+   - all: 7
+   - killed: 0 (0.0%)
+   - survived: 7 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

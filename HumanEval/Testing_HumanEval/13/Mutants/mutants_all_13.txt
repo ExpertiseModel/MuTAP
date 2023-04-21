@@ -1,0 +1,32 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/13/script_NDS_13.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/13/Copilot/test_13_cp_few_shot.py
+[*] 0 tests passed:
+   - test_13_cp_few_shot [0.00005 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_13: 
+--------------------------------------------------------------------------------
+  1: def greatest_common_divisor(a: int, b: int) -> int:
+  2:     
+  3:     while b:
+- 4:         (a, b) = (b, a % b)
++ 4:         (a, b) = (b, a * b)
+  5:     return a
+--------------------------------------------------------------------------------
+[0.00733 s] survived
+   - [#   2] COI script_NDS_13: 
+--------------------------------------------------------------------------------
+  1: def greatest_common_divisor(a: int, b: int) -> int:
+  2:     
+- 3:     while b:
++ 3:     while not b:
+  4:         (a, b) = (b, a % b)
+  5:     return a
+--------------------------------------------------------------------------------
+[0.00751 s] survived
+[*] Mutation score [0.06639 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

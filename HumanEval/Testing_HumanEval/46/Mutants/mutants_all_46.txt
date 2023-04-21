@@ -1,0 +1,228 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/46/script_NDS_46.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/46/Copilot/test_46_cp_few_shot.py
+[*] 0 tests passed:
+   - test_46_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[1] + results[-2]) + results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00648 s] survived
+   - [#   2] AOD script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] + results[2]) + results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00565 s] survived
+   - [#   3] AOD script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] + results[-2]) + results[3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00527 s] survived
+   - [#   4] AOD script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00742 s] survived
+   - [#   5] AOD script_NDS_46: 
+--------------------------------------------------------------------------------
+   7:     for _ in range(4, n + 1):
+   8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+- 11:     return results[-1]
++ 11:     return results[1]
+--------------------------------------------------------------------------------
+[0.00849 s] survived
+   - [#   6] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   3:     results = [0, 0, 2, 0]
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+-  7:     for _ in range(4, n + 1):
++  7:     for _ in range(4, n - 1):
+   8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00592 s] survived
+   - [#   7] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[+1] + results[-2]) + results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00812 s] survived
+   - [#   8] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] - results[-2]) + results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00542 s] survived
+   - [#   9] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] + results[+2]) + results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00639 s] survived
+   - [#  10] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] + results[-2]) - results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00661 s] survived
+   - [#  11] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] + results[-2]) + results[+3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00656 s] survived
+   - [#  12] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] + results[-2]) + results[-3]) - results[-4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00499 s] survived
+   - [#  13] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   4:     if n < 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+-  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
++  8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[+4])
+   9:         results.pop(0)
+  10:     
+  11:     return results[-1]
+--------------------------------------------------------------------------------
+[0.00578 s] survived
+   - [#  14] AOR script_NDS_46: 
+--------------------------------------------------------------------------------
+   7:     for _ in range(4, n + 1):
+   8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
+   9:         results.pop(0)
+  10:     
+- 11:     return results[-1]
++ 11:     return results[+1]
+--------------------------------------------------------------------------------
+[0.00863 s] survived
+   - [#  15] COI script_NDS_46: 
+--------------------------------------------------------------------------------
+   1: def fib4(n: int):
+   2:     
+   3:     results = [0, 0, 2, 0]
+-  4:     if n < 4:
++  4:     if not (n < 4):
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+   8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
+--------------------------------------------------------------------------------
+[0.00734 s] survived
+   - [#  16] ROR script_NDS_46: 
+--------------------------------------------------------------------------------
+   1: def fib4(n: int):
+   2:     
+   3:     results = [0, 0, 2, 0]
+-  4:     if n < 4:
++  4:     if n > 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+   8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
+--------------------------------------------------------------------------------
+[0.00608 s] survived
+   - [#  17] ROR script_NDS_46: 
+--------------------------------------------------------------------------------
+   1: def fib4(n: int):
+   2:     
+   3:     results = [0, 0, 2, 0]
+-  4:     if n < 4:
++  4:     if n <= 4:
+   5:         return results[n]
+   6:     
+   7:     for _ in range(4, n + 1):
+   8:         results.append(((results[-1] + results[-2]) + results[-3]) + results[-4])
+--------------------------------------------------------------------------------
+[0.00532 s] survived
+[*] Mutation score [0.44819 s]: 0.0%
+   - all: 17
+   - killed: 0 (0.0%)
+   - survived: 17 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,83 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/137/script_NDS_137.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/137/Copilot/test_137_cp_few_shot.py
+[*] 0 tests passed:
+   - test_137_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_137: 
+--------------------------------------------------------------------------------
+   1: def compare_one(a, b):
+   2:     
+   3:     (temp_a, temp_b) = (a, b)
+-  4:     if isinstance(temp_a, str):
++  4:     if not (isinstance(temp_a, str)):
+   5:         temp_a = temp_a.replace(',', '.')
+   6:     if isinstance(temp_b, str):
+   7:         temp_b = temp_b.replace(',', '.')
+   8:     if float(temp_a) == float(temp_b):
+--------------------------------------------------------------------------------
+[0.00579 s] survived
+   - [#   2] COI script_NDS_137: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     (temp_a, temp_b) = (a, b)
+   4:     if isinstance(temp_a, str):
+   5:         temp_a = temp_a.replace(',', '.')
+-  6:     if isinstance(temp_b, str):
++  6:     if not (isinstance(temp_b, str)):
+   7:         temp_b = temp_b.replace(',', '.')
+   8:     if float(temp_a) == float(temp_b):
+   9:         return None
+  10:     return a if float(temp_a) > float(temp_b) else b
+--------------------------------------------------------------------------------
+[0.00736 s] survived
+   - [#   3] COI script_NDS_137: 
+--------------------------------------------------------------------------------
+   4:     if isinstance(temp_a, str):
+   5:         temp_a = temp_a.replace(',', '.')
+   6:     if isinstance(temp_b, str):
+   7:         temp_b = temp_b.replace(',', '.')
+-  8:     if float(temp_a) == float(temp_b):
++  8:     if not (float(temp_a) == float(temp_b)):
+   9:         return None
+  10:     return a if float(temp_a) > float(temp_b) else b
+--------------------------------------------------------------------------------
+[0.00602 s] survived
+   - [#   4] ROR script_NDS_137: 
+--------------------------------------------------------------------------------
+   4:     if isinstance(temp_a, str):
+   5:         temp_a = temp_a.replace(',', '.')
+   6:     if isinstance(temp_b, str):
+   7:         temp_b = temp_b.replace(',', '.')
+-  8:     if float(temp_a) == float(temp_b):
++  8:     if float(temp_a) != float(temp_b):
+   9:         return None
+  10:     return a if float(temp_a) > float(temp_b) else b
+--------------------------------------------------------------------------------
+[0.00887 s] survived
+   - [#   5] ROR script_NDS_137: 
+--------------------------------------------------------------------------------
+   6:     if isinstance(temp_b, str):
+   7:         temp_b = temp_b.replace(',', '.')
+   8:     if float(temp_a) == float(temp_b):
+   9:         return None
+- 10:     return a if float(temp_a) > float(temp_b) else b
++ 10:     return a if float(temp_a) < float(temp_b) else b
+--------------------------------------------------------------------------------
+[0.00476 s] survived
+   - [#   6] ROR script_NDS_137: 
+--------------------------------------------------------------------------------
+   6:     if isinstance(temp_b, str):
+   7:         temp_b = temp_b.replace(',', '.')
+   8:     if float(temp_a) == float(temp_b):
+   9:         return None
+- 10:     return a if float(temp_a) > float(temp_b) else b
++ 10:     return a if float(temp_a) >= float(temp_b) else b
+--------------------------------------------------------------------------------
+[0.00869 s] survived
+[*] Mutation score [0.22116 s]: 0.0%
+   - all: 6
+   - killed: 0 (0.0%)
+   - survived: 6 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

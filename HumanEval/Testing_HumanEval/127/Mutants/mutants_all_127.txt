@@ -1,0 +1,195 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/127/script_NDS_127.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/127/Copilot/test_127_cp_few_shot.py
+[*] 0 tests passed:
+   - test_127_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_127: 
+--------------------------------------------------------------------------------
+   5:             return False
+   6:         if num == 2:
+   7:             return True
+   8:         for i in range(2, num):
+-  9:             if num % i == 0:
++  9:             if num * i == 0:
+  10:                 return False
+  11:         return True
+  12:     
+  13:     l = max(interval1[0], interval2[0])
+--------------------------------------------------------------------------------
+[0.00517 s] survived
+   - [#   2] AOR script_NDS_127: 
+--------------------------------------------------------------------------------
+  11:         return True
+  12:     
+  13:     l = max(interval1[0], interval2[0])
+  14:     r = min(interval1[1], interval2[1])
+- 15:     length = r - l
++ 15:     length = r + l
+  16:     if (length > 0 and is_prime(length)):
+  17:         return 'YES'
+  18:     return 'NO'
+--------------------------------------------------------------------------------
+[0.00562 s] survived
+   - [#   3] COI script_NDS_127: 
+--------------------------------------------------------------------------------
+   1: def intersection(interval1, interval2):
+   2:     
+   3:     def is_prime(num):
+-  4:         if (num == 1 or num == 0):
++  4:         if not ((num == 1 or num == 0)):
+   5:             return False
+   6:         if num == 2:
+   7:             return True
+   8:         for i in range(2, num):
+--------------------------------------------------------------------------------
+[0.00729 s] survived
+   - [#   4] COI script_NDS_127: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def is_prime(num):
+   4:         if (num == 1 or num == 0):
+   5:             return False
+-  6:         if num == 2:
++  6:         if not (num == 2):
+   7:             return True
+   8:         for i in range(2, num):
+   9:             if num % i == 0:
+  10:                 return False
+--------------------------------------------------------------------------------
+[0.00503 s] survived
+   - [#   5] COI script_NDS_127: 
+--------------------------------------------------------------------------------
+   5:             return False
+   6:         if num == 2:
+   7:             return True
+   8:         for i in range(2, num):
+-  9:             if num % i == 0:
++  9:             if not (num % i == 0):
+  10:                 return False
+  11:         return True
+  12:     
+  13:     l = max(interval1[0], interval2[0])
+--------------------------------------------------------------------------------
+[0.00538 s] survived
+   - [#   6] COI script_NDS_127: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     l = max(interval1[0], interval2[0])
+  14:     r = min(interval1[1], interval2[1])
+  15:     length = r - l
+- 16:     if (length > 0 and is_prime(length)):
++ 16:     if not ((length > 0 and is_prime(length))):
+  17:         return 'YES'
+  18:     return 'NO'
+--------------------------------------------------------------------------------
+[0.00681 s] survived
+   - [#   7] LCR script_NDS_127: 
+--------------------------------------------------------------------------------
+   1: def intersection(interval1, interval2):
+   2:     
+   3:     def is_prime(num):
+-  4:         if (num == 1 or num == 0):
++  4:         if (num == 1 and num == 0):
+   5:             return False
+   6:         if num == 2:
+   7:             return True
+   8:         for i in range(2, num):
+--------------------------------------------------------------------------------
+[0.00727 s] survived
+   - [#   8] LCR script_NDS_127: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     l = max(interval1[0], interval2[0])
+  14:     r = min(interval1[1], interval2[1])
+  15:     length = r - l
+- 16:     if (length > 0 and is_prime(length)):
++ 16:     if (length > 0 or is_prime(length)):
+  17:         return 'YES'
+  18:     return 'NO'
+--------------------------------------------------------------------------------
+[0.00811 s] survived
+   - [#   9] ROR script_NDS_127: 
+--------------------------------------------------------------------------------
+   1: def intersection(interval1, interval2):
+   2:     
+   3:     def is_prime(num):
+-  4:         if (num == 1 or num == 0):
++  4:         if (num != 1 or num == 0):
+   5:             return False
+   6:         if num == 2:
+   7:             return True
+   8:         for i in range(2, num):
+--------------------------------------------------------------------------------
+[0.00668 s] survived
+   - [#  10] ROR script_NDS_127: 
+--------------------------------------------------------------------------------
+   1: def intersection(interval1, interval2):
+   2:     
+   3:     def is_prime(num):
+-  4:         if (num == 1 or num == 0):
++  4:         if (num == 1 or num != 0):
+   5:             return False
+   6:         if num == 2:
+   7:             return True
+   8:         for i in range(2, num):
+--------------------------------------------------------------------------------
+[0.00755 s] survived
+   - [#  11] ROR script_NDS_127: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def is_prime(num):
+   4:         if (num == 1 or num == 0):
+   5:             return False
+-  6:         if num == 2:
++  6:         if num != 2:
+   7:             return True
+   8:         for i in range(2, num):
+   9:             if num % i == 0:
+  10:                 return False
+--------------------------------------------------------------------------------
+[0.00621 s] survived
+   - [#  12] ROR script_NDS_127: 
+--------------------------------------------------------------------------------
+   5:             return False
+   6:         if num == 2:
+   7:             return True
+   8:         for i in range(2, num):
+-  9:             if num % i == 0:
++  9:             if num % i != 0:
+  10:                 return False
+  11:         return True
+  12:     
+  13:     l = max(interval1[0], interval2[0])
+--------------------------------------------------------------------------------
+[0.00740 s] survived
+   - [#  13] ROR script_NDS_127: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     l = max(interval1[0], interval2[0])
+  14:     r = min(interval1[1], interval2[1])
+  15:     length = r - l
+- 16:     if (length > 0 and is_prime(length)):
++ 16:     if (length < 0 and is_prime(length)):
+  17:         return 'YES'
+  18:     return 'NO'
+--------------------------------------------------------------------------------
+[0.00615 s] survived
+   - [#  14] ROR script_NDS_127: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     l = max(interval1[0], interval2[0])
+  14:     r = min(interval1[1], interval2[1])
+  15:     length = r - l
+- 16:     if (length > 0 and is_prime(length)):
++ 16:     if (length >= 0 and is_prime(length)):
+  17:         return 'YES'
+  18:     return 'NO'
+--------------------------------------------------------------------------------
+[0.00690 s] survived
+[*] Mutation score [0.42985 s]: 0.0%
+   - all: 14
+   - killed: 0 (0.0%)
+   - survived: 14 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

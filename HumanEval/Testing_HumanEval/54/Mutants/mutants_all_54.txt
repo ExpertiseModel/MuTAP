@@ -1,0 +1,20 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/54/script_NDS_54.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/54/Copilot/test_54_cp_few_shot.py
+[*] 0 tests passed:
+   - test_54_cp_few_shot [0.00013 s]
+[*] Start mutants generation and execution:
+   - [#   1] ROR script_NDS_54: 
+--------------------------------------------------------------------------------
+  1: def same_chars(s0: str, s1: str):
+  2:     
+- 3:     return set(s0) == set(s1)
++ 3:     return set(s0) != set(s1)
+--------------------------------------------------------------------------------
+[0.00662 s] survived
+[*] Mutation score [0.04370 s]: 0.0%
+   - all: 1
+   - killed: 0 (0.0%)
+   - survived: 1 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

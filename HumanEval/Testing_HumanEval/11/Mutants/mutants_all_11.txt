@@ -1,0 +1,40 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/11/script_NDS_11.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/11/Copilot/test_11_cp_few_shot.py
+[*] 0 tests passed:
+   - test_11_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_11: 
+--------------------------------------------------------------------------------
+   3: 
+   4: def string_xor(a: str, b: str) -> str:
+   5:     
+   6:     def xor(i, j):
+-  7:         if i == j:
++  7:         if not (i == j):
+   8:             return '0'
+   9:         else:
+  10:             return '1'
+  11:     
+--------------------------------------------------------------------------------
+[0.00564 s] survived
+   - [#   2] ROR script_NDS_11: 
+--------------------------------------------------------------------------------
+   3: 
+   4: def string_xor(a: str, b: str) -> str:
+   5:     
+   6:     def xor(i, j):
+-  7:         if i == j:
++  7:         if i != j:
+   8:             return '0'
+   9:         else:
+  10:             return '1'
+  11:     
+--------------------------------------------------------------------------------
+[0.00791 s] survived
+[*] Mutation score [0.09155 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

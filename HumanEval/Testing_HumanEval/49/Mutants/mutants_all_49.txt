@@ -1,0 +1,56 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/49/script_NDS_49.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/49/Copilot/test_49_cp_few_shot.py
+[*] 0 tests passed:
+   - test_49_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_49: 
+--------------------------------------------------------------------------------
+  1: def modp(n: int, p: int):
+  2:     
+  3:     ret = 1
+  4:     for i in range(n):
+- 5:         ret = (2 * ret) % p
++ 5:         ret = (2 / ret) % p
+  6:     return ret
+--------------------------------------------------------------------------------
+[0.00581 s] survived
+   - [#   2] AOR script_NDS_49: 
+--------------------------------------------------------------------------------
+  1: def modp(n: int, p: int):
+  2:     
+  3:     ret = 1
+  4:     for i in range(n):
+- 5:         ret = (2 * ret) % p
++ 5:         ret = (2 // ret) % p
+  6:     return ret
+--------------------------------------------------------------------------------
+[0.00553 s] survived
+   - [#   3] AOR script_NDS_49: 
+--------------------------------------------------------------------------------
+  1: def modp(n: int, p: int):
+  2:     
+  3:     ret = 1
+  4:     for i in range(n):
+- 5:         ret = (2 * ret) % p
++ 5:         ret = (2 ** ret) % p
+  6:     return ret
+--------------------------------------------------------------------------------
+[0.00891 s] survived
+   - [#   4] AOR script_NDS_49: 
+--------------------------------------------------------------------------------
+  1: def modp(n: int, p: int):
+  2:     
+  3:     ret = 1
+  4:     for i in range(n):
+- 5:         ret = (2 * ret) % p
++ 5:         ret = (2 * ret) * p
+  6:     return ret
+--------------------------------------------------------------------------------
+[0.00653 s] survived
+[*] Mutation score [0.09128 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

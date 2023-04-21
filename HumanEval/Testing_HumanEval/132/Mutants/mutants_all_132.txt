@@ -1,0 +1,161 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/132/script_NDS_132.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/132/Copilot/test_132_cp_few_shot.py
+[*] 0 tests passed:
+   - test_132_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR script_NDS_132: 
+--------------------------------------------------------------------------------
+  12:     i = 0
+  13:     l = len(closing_bracket_index)
+  14:     for idx in opening_bracket_index:
+  15:         if (i < l and idx < closing_bracket_index[i]):
+- 16:             cnt += 1
++ 16:             cnt -= 1
+  17:             i += 1
+  18:     return cnt >= 2
+--------------------------------------------------------------------------------
+[0.00783 s] survived
+   - [#   2] ASR script_NDS_132: 
+--------------------------------------------------------------------------------
+  13:     l = len(closing_bracket_index)
+  14:     for idx in opening_bracket_index:
+  15:         if (i < l and idx < closing_bracket_index[i]):
+  16:             cnt += 1
+- 17:             i += 1
++ 17:             i -= 1
+  18:     return cnt >= 2
+--------------------------------------------------------------------------------
+[0.00833 s] survived
+   - [#   3] COI script_NDS_132: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     opening_bracket_index = []
+   4:     closing_bracket_index = []
+   5:     for i in range(len(string)):
+-  6:         if string[i] == '[':
++  6:         if not (string[i] == '['):
+   7:             opening_bracket_index.append(i)
+   8:         else:
+   9:             closing_bracket_index.append(i)
+  10:     closing_bracket_index.reverse()
+--------------------------------------------------------------------------------
+[0.00588 s] survived
+   - [#   4] COI script_NDS_132: 
+--------------------------------------------------------------------------------
+  11:     cnt = 0
+  12:     i = 0
+  13:     l = len(closing_bracket_index)
+  14:     for idx in opening_bracket_index:
+- 15:         if (i < l and idx < closing_bracket_index[i]):
++ 15:         if not ((i < l and idx < closing_bracket_index[i])):
+  16:             cnt += 1
+  17:             i += 1
+  18:     return cnt >= 2
+--------------------------------------------------------------------------------
+[0.00757 s] survived
+   - [#   5] LCR script_NDS_132: 
+--------------------------------------------------------------------------------
+  11:     cnt = 0
+  12:     i = 0
+  13:     l = len(closing_bracket_index)
+  14:     for idx in opening_bracket_index:
+- 15:         if (i < l and idx < closing_bracket_index[i]):
++ 15:         if (i < l or idx < closing_bracket_index[i]):
+  16:             cnt += 1
+  17:             i += 1
+  18:     return cnt >= 2
+--------------------------------------------------------------------------------
+[0.00677 s] survived
+   - [#   6] ROR script_NDS_132: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     opening_bracket_index = []
+   4:     closing_bracket_index = []
+   5:     for i in range(len(string)):
+-  6:         if string[i] == '[':
++  6:         if string[i] != '[':
+   7:             opening_bracket_index.append(i)
+   8:         else:
+   9:             closing_bracket_index.append(i)
+  10:     closing_bracket_index.reverse()
+--------------------------------------------------------------------------------
+[0.00650 s] survived
+   - [#   7] ROR script_NDS_132: 
+--------------------------------------------------------------------------------
+  11:     cnt = 0
+  12:     i = 0
+  13:     l = len(closing_bracket_index)
+  14:     for idx in opening_bracket_index:
+- 15:         if (i < l and idx < closing_bracket_index[i]):
++ 15:         if (i > l and idx < closing_bracket_index[i]):
+  16:             cnt += 1
+  17:             i += 1
+  18:     return cnt >= 2
+--------------------------------------------------------------------------------
+[0.00664 s] survived
+   - [#   8] ROR script_NDS_132: 
+--------------------------------------------------------------------------------
+  11:     cnt = 0
+  12:     i = 0
+  13:     l = len(closing_bracket_index)
+  14:     for idx in opening_bracket_index:
+- 15:         if (i < l and idx < closing_bracket_index[i]):
++ 15:         if (i <= l and idx < closing_bracket_index[i]):
+  16:             cnt += 1
+  17:             i += 1
+  18:     return cnt >= 2
+--------------------------------------------------------------------------------
+[0.00745 s] survived
+   - [#   9] ROR script_NDS_132: 
+--------------------------------------------------------------------------------
+  11:     cnt = 0
+  12:     i = 0
+  13:     l = len(closing_bracket_index)
+  14:     for idx in opening_bracket_index:
+- 15:         if (i < l and idx < closing_bracket_index[i]):
++ 15:         if (i < l and idx > closing_bracket_index[i]):
+  16:             cnt += 1
+  17:             i += 1
+  18:     return cnt >= 2
+--------------------------------------------------------------------------------
+[0.00761 s] survived
+   - [#  10] ROR script_NDS_132: 
+--------------------------------------------------------------------------------
+  11:     cnt = 0
+  12:     i = 0
+  13:     l = len(closing_bracket_index)
+  14:     for idx in opening_bracket_index:
+- 15:         if (i < l and idx < closing_bracket_index[i]):
++ 15:         if (i < l and idx <= closing_bracket_index[i]):
+  16:             cnt += 1
+  17:             i += 1
+  18:     return cnt >= 2
+--------------------------------------------------------------------------------
+[0.00498 s] survived
+   - [#  11] ROR script_NDS_132: 
+--------------------------------------------------------------------------------
+  14:     for idx in opening_bracket_index:
+  15:         if (i < l and idx < closing_bracket_index[i]):
+  16:             cnt += 1
+  17:             i += 1
+- 18:     return cnt >= 2
++ 18:     return cnt <= 2
+--------------------------------------------------------------------------------
+[0.00812 s] survived
+   - [#  12] ROR script_NDS_132: 
+--------------------------------------------------------------------------------
+  14:     for idx in opening_bracket_index:
+  15:         if (i < l and idx < closing_bracket_index[i]):
+  16:             cnt += 1
+  17:             i += 1
+- 18:     return cnt >= 2
++ 18:     return cnt > 2
+--------------------------------------------------------------------------------
+[0.00499 s] survived
+[*] Mutation score [0.37869 s]: 0.0%
+   - all: 12
+   - killed: 0 (0.0%)
+   - survived: 12 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

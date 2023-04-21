@@ -1,0 +1,136 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/131/script_NDS_131.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/131/Copilot/test_131_cp_few_shot.py
+[*] 0 tests passed:
+   - test_131_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_131: 
+--------------------------------------------------------------------------------
+   3:     product = 1
+   4:     odd_count = 0
+   5:     for digit in str(n):
+   6:         int_digit = int(digit)
+-  7:         if int_digit % 2 == 1:
++  7:         if int_digit * 2 == 1:
+   8:             product = product * int_digit
+   9:             odd_count += 1
+  10:     if odd_count == 0:
+  11:         return 0
+--------------------------------------------------------------------------------
+[0.00637 s] survived
+   - [#   2] AOR script_NDS_131: 
+--------------------------------------------------------------------------------
+   4:     odd_count = 0
+   5:     for digit in str(n):
+   6:         int_digit = int(digit)
+   7:         if int_digit % 2 == 1:
+-  8:             product = product * int_digit
++  8:             product = product / int_digit
+   9:             odd_count += 1
+  10:     if odd_count == 0:
+  11:         return 0
+  12:     else:
+--------------------------------------------------------------------------------
+[0.00534 s] survived
+   - [#   3] AOR script_NDS_131: 
+--------------------------------------------------------------------------------
+   4:     odd_count = 0
+   5:     for digit in str(n):
+   6:         int_digit = int(digit)
+   7:         if int_digit % 2 == 1:
+-  8:             product = product * int_digit
++  8:             product = product // int_digit
+   9:             odd_count += 1
+  10:     if odd_count == 0:
+  11:         return 0
+  12:     else:
+--------------------------------------------------------------------------------
+[0.00600 s] survived
+   - [#   4] AOR script_NDS_131: 
+--------------------------------------------------------------------------------
+   4:     odd_count = 0
+   5:     for digit in str(n):
+   6:         int_digit = int(digit)
+   7:         if int_digit % 2 == 1:
+-  8:             product = product * int_digit
++  8:             product = product ** int_digit
+   9:             odd_count += 1
+  10:     if odd_count == 0:
+  11:         return 0
+  12:     else:
+--------------------------------------------------------------------------------
+[0.00554 s] survived
+   - [#   5] ASR script_NDS_131: 
+--------------------------------------------------------------------------------
+   5:     for digit in str(n):
+   6:         int_digit = int(digit)
+   7:         if int_digit % 2 == 1:
+   8:             product = product * int_digit
+-  9:             odd_count += 1
++  9:             odd_count -= 1
+  10:     if odd_count == 0:
+  11:         return 0
+  12:     else:
+  13:         return product
+--------------------------------------------------------------------------------
+[0.00839 s] survived
+   - [#   6] COI script_NDS_131: 
+--------------------------------------------------------------------------------
+   3:     product = 1
+   4:     odd_count = 0
+   5:     for digit in str(n):
+   6:         int_digit = int(digit)
+-  7:         if int_digit % 2 == 1:
++  7:         if not (int_digit % 2 == 1):
+   8:             product = product * int_digit
+   9:             odd_count += 1
+  10:     if odd_count == 0:
+  11:         return 0
+--------------------------------------------------------------------------------
+[0.00482 s] survived
+   - [#   7] COI script_NDS_131: 
+--------------------------------------------------------------------------------
+   6:         int_digit = int(digit)
+   7:         if int_digit % 2 == 1:
+   8:             product = product * int_digit
+   9:             odd_count += 1
+- 10:     if odd_count == 0:
++ 10:     if not (odd_count == 0):
+  11:         return 0
+  12:     else:
+  13:         return product
+--------------------------------------------------------------------------------
+[0.00654 s] survived
+   - [#   8] ROR script_NDS_131: 
+--------------------------------------------------------------------------------
+   3:     product = 1
+   4:     odd_count = 0
+   5:     for digit in str(n):
+   6:         int_digit = int(digit)
+-  7:         if int_digit % 2 == 1:
++  7:         if int_digit % 2 != 1:
+   8:             product = product * int_digit
+   9:             odd_count += 1
+  10:     if odd_count == 0:
+  11:         return 0
+--------------------------------------------------------------------------------
+[0.00695 s] survived
+   - [#   9] ROR script_NDS_131: 
+--------------------------------------------------------------------------------
+   6:         int_digit = int(digit)
+   7:         if int_digit % 2 == 1:
+   8:             product = product * int_digit
+   9:             odd_count += 1
+- 10:     if odd_count == 0:
++ 10:     if odd_count != 0:
+  11:         return 0
+  12:     else:
+  13:         return product
+--------------------------------------------------------------------------------
+[0.00798 s] survived
+[*] Mutation score [0.23423 s]: 0.0%
+   - all: 9
+   - killed: 0 (0.0%)
+   - survived: 9 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

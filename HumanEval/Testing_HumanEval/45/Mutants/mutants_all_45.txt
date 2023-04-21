@@ -1,0 +1,52 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/45/script_NDS_45.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/45/Copilot/test_45_cp_few_shot.py
+[*] 0 tests passed:
+   - test_45_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_45: 
+--------------------------------------------------------------------------------
+  1: def triangle_area(a, h):
+  2:     
+- 3:     return (a * h) / 2.0
++ 3:     return (a / h) / 2.0
+--------------------------------------------------------------------------------
+[0.00459 s] survived
+   - [#   2] AOR script_NDS_45: 
+--------------------------------------------------------------------------------
+  1: def triangle_area(a, h):
+  2:     
+- 3:     return (a * h) / 2.0
++ 3:     return (a // h) / 2.0
+--------------------------------------------------------------------------------
+[0.00728 s] survived
+   - [#   3] AOR script_NDS_45: 
+--------------------------------------------------------------------------------
+  1: def triangle_area(a, h):
+  2:     
+- 3:     return (a * h) / 2.0
++ 3:     return (a ** h) / 2.0
+--------------------------------------------------------------------------------
+[0.00496 s] survived
+   - [#   4] AOR script_NDS_45: 
+--------------------------------------------------------------------------------
+  1: def triangle_area(a, h):
+  2:     
+- 3:     return (a * h) / 2.0
++ 3:     return (a * h) // 2.0
+--------------------------------------------------------------------------------
+[0.00584 s] survived
+   - [#   5] AOR script_NDS_45: 
+--------------------------------------------------------------------------------
+  1: def triangle_area(a, h):
+  2:     
+- 3:     return (a * h) / 2.0
++ 3:     return (a * h) * 2.0
+--------------------------------------------------------------------------------
+[0.00681 s] survived
+[*] Mutation score [0.06740 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

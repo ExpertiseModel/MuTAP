@@ -1,0 +1,57 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/77/script_NDS_77.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/77/Copilot/test_77_cp_few_shot.py
+[*] 0 tests passed:
+   - test_77_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_77: 
+--------------------------------------------------------------------------------
+  1: def iscube(a):
+  2:     
+  3:     a = abs(a)
+- 4:     return int(round(a ** (1.0 / 3))) ** 3 == a
++ 4:     return int(round(a * (1.0 / 3))) ** 3 == a
+--------------------------------------------------------------------------------
+[0.00595 s] survived
+   - [#   2] AOR script_NDS_77: 
+--------------------------------------------------------------------------------
+  1: def iscube(a):
+  2:     
+  3:     a = abs(a)
+- 4:     return int(round(a ** (1.0 / 3))) ** 3 == a
++ 4:     return int(round(a ** (1.0 // 3))) ** 3 == a
+--------------------------------------------------------------------------------
+[0.00560 s] survived
+   - [#   3] AOR script_NDS_77: 
+--------------------------------------------------------------------------------
+  1: def iscube(a):
+  2:     
+  3:     a = abs(a)
+- 4:     return int(round(a ** (1.0 / 3))) ** 3 == a
++ 4:     return int(round(a ** (1.0 * 3))) ** 3 == a
+--------------------------------------------------------------------------------
+[0.00570 s] survived
+   - [#   4] AOR script_NDS_77: 
+--------------------------------------------------------------------------------
+  1: def iscube(a):
+  2:     
+  3:     a = abs(a)
+- 4:     return int(round(a ** (1.0 / 3))) ** 3 == a
++ 4:     return int(round(a ** (1.0 / 3))) * 3 == a
+--------------------------------------------------------------------------------
+[0.00582 s] survived
+   - [#   5] ROR script_NDS_77: 
+--------------------------------------------------------------------------------
+  1: def iscube(a):
+  2:     
+  3:     a = abs(a)
+- 4:     return int(round(a ** (1.0 / 3))) ** 3 == a
++ 4:     return int(round(a ** (1.0 / 3))) ** 3 != a
+--------------------------------------------------------------------------------
+[0.00570 s] survived
+[*] Mutation score [0.10209 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

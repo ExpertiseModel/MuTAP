@@ -1,0 +1,4 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Reference_Secripts/Tests/2/script_2.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Reference_Secripts/Tests/2/Copilot/test_2_cp_few_shot.py
+[*] Can't load module: /home/arghavan/Git_Code/codex_test/HumanEval/Reference_Secripts/Tests/2/Copilot/test_2_cp_few_shot.py (ModuleNotFoundError: No module named '/home/arghavan/Git_Code/codex_test/HumanEval/Reference_Secripts/Tests/2/Copilot/test_2_cp_few_shot')

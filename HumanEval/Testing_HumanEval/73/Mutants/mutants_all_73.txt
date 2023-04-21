@@ -1,0 +1,95 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/73/script_NDS_73.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/73/Copilot/test_73_cp_few_shot.py
+[*] 0 tests passed:
+   - test_73_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_73: 
+--------------------------------------------------------------------------------
+  1: def smallest_change(arr):
+  2:     
+  3:     ans = 0
+- 4:     for i in range(len(arr) // 2):
++ 4:     for i in range(len(arr) / 2):
+  5:         if arr[i] != arr[(len(arr) - i) - 1]:
+  6:             ans += 1
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00717 s] survived
+   - [#   2] AOR script_NDS_73: 
+--------------------------------------------------------------------------------
+  1: def smallest_change(arr):
+  2:     
+  3:     ans = 0
+- 4:     for i in range(len(arr) // 2):
++ 4:     for i in range(len(arr) * 2):
+  5:         if arr[i] != arr[(len(arr) - i) - 1]:
+  6:             ans += 1
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00589 s] survived
+   - [#   3] AOR script_NDS_73: 
+--------------------------------------------------------------------------------
+  1: def smallest_change(arr):
+  2:     
+  3:     ans = 0
+  4:     for i in range(len(arr) // 2):
+- 5:         if arr[i] != arr[(len(arr) - i) - 1]:
++ 5:         if arr[i] != arr[(len(arr) + i) - 1]:
+  6:             ans += 1
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00778 s] survived
+   - [#   4] AOR script_NDS_73: 
+--------------------------------------------------------------------------------
+  1: def smallest_change(arr):
+  2:     
+  3:     ans = 0
+  4:     for i in range(len(arr) // 2):
+- 5:         if arr[i] != arr[(len(arr) - i) - 1]:
++ 5:         if arr[i] != arr[(len(arr) - i) + 1]:
+  6:             ans += 1
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00699 s] survived
+   - [#   5] ASR script_NDS_73: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     ans = 0
+  4:     for i in range(len(arr) // 2):
+  5:         if arr[i] != arr[(len(arr) - i) - 1]:
+- 6:             ans += 1
++ 6:             ans -= 1
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00612 s] survived
+   - [#   6] COI script_NDS_73: 
+--------------------------------------------------------------------------------
+  1: def smallest_change(arr):
+  2:     
+  3:     ans = 0
+  4:     for i in range(len(arr) // 2):
+- 5:         if arr[i] != arr[(len(arr) - i) - 1]:
++ 5:         if not (arr[i] != arr[(len(arr) - i) - 1]):
+  6:             ans += 1
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00638 s] survived
+   - [#   7] ROR script_NDS_73: 
+--------------------------------------------------------------------------------
+  1: def smallest_change(arr):
+  2:     
+  3:     ans = 0
+  4:     for i in range(len(arr) // 2):
+- 5:         if arr[i] != arr[(len(arr) - i) - 1]:
++ 5:         if arr[i] == arr[(len(arr) - i) - 1]:
+  6:             ans += 1
+  7:     return ans
+--------------------------------------------------------------------------------
+[0.00563 s] survived
+[*] Mutation score [0.16684 s]: 0.0%
+   - all: 7
+   - killed: 0 (0.0%)
+   - survived: 7 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

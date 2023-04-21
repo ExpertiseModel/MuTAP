@@ -1,0 +1,129 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/89/script_NDS_89.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/89/Copilot/test_89_cp_few_shot.py
+[*] 0 tests passed:
+   - test_89_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_89: 
+--------------------------------------------------------------------------------
+   3:     d = 'abcdefghijklmnopqrstuvwxyz'
+   4:     out = ''
+   5:     for c in s:
+   6:         if c in d:
+-  7:             out += d[(d.index(c) + (2 * 2)) % 26]
++  7:             out += d[(d.index(c) - (2 * 2)) % 26]
+   8:         else:
+   9:             out += c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00606 s] survived
+   - [#   2] AOR script_NDS_89: 
+--------------------------------------------------------------------------------
+   3:     d = 'abcdefghijklmnopqrstuvwxyz'
+   4:     out = ''
+   5:     for c in s:
+   6:         if c in d:
+-  7:             out += d[(d.index(c) + (2 * 2)) % 26]
++  7:             out += d[(d.index(c) + (2 / 2)) % 26]
+   8:         else:
+   9:             out += c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00566 s] survived
+   - [#   3] AOR script_NDS_89: 
+--------------------------------------------------------------------------------
+   3:     d = 'abcdefghijklmnopqrstuvwxyz'
+   4:     out = ''
+   5:     for c in s:
+   6:         if c in d:
+-  7:             out += d[(d.index(c) + (2 * 2)) % 26]
++  7:             out += d[(d.index(c) + (2 // 2)) % 26]
+   8:         else:
+   9:             out += c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00789 s] survived
+   - [#   4] AOR script_NDS_89: 
+--------------------------------------------------------------------------------
+   3:     d = 'abcdefghijklmnopqrstuvwxyz'
+   4:     out = ''
+   5:     for c in s:
+   6:         if c in d:
+-  7:             out += d[(d.index(c) + (2 * 2)) % 26]
++  7:             out += d[(d.index(c) + (2 ** 2)) % 26]
+   8:         else:
+   9:             out += c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00578 s] survived
+   - [#   5] AOR script_NDS_89: 
+--------------------------------------------------------------------------------
+   3:     d = 'abcdefghijklmnopqrstuvwxyz'
+   4:     out = ''
+   5:     for c in s:
+   6:         if c in d:
+-  7:             out += d[(d.index(c) + (2 * 2)) % 26]
++  7:             out += d[(d.index(c) + (2 * 2)) * 26]
+   8:         else:
+   9:             out += c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00511 s] survived
+   - [#   6] ASR script_NDS_89: 
+--------------------------------------------------------------------------------
+   3:     d = 'abcdefghijklmnopqrstuvwxyz'
+   4:     out = ''
+   5:     for c in s:
+   6:         if c in d:
+-  7:             out += d[(d.index(c) + (2 * 2)) % 26]
++  7:             out -= d[(d.index(c) + (2 * 2)) % 26]
+   8:         else:
+   9:             out += c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00810 s] survived
+   - [#   7] ASR script_NDS_89: 
+--------------------------------------------------------------------------------
+   5:     for c in s:
+   6:         if c in d:
+   7:             out += d[(d.index(c) + (2 * 2)) % 26]
+   8:         else:
+-  9:             out += c
++  9:             out -= c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00559 s] survived
+   - [#   8] COI script_NDS_89: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     d = 'abcdefghijklmnopqrstuvwxyz'
+   4:     out = ''
+   5:     for c in s:
+-  6:         if c in d:
++  6:         if not (c in d):
+   7:             out += d[(d.index(c) + (2 * 2)) % 26]
+   8:         else:
+   9:             out += c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00704 s] survived
+   - [#   9] COI script_NDS_89: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     d = 'abcdefghijklmnopqrstuvwxyz'
+   4:     out = ''
+   5:     for c in s:
+-  6:         if c in d:
++  6:         if c not in d:
+   7:             out += d[(d.index(c) + (2 * 2)) % 26]
+   8:         else:
+   9:             out += c
+  10:     return out
+--------------------------------------------------------------------------------
+[0.00582 s] survived
+[*] Mutation score [0.21242 s]: 0.0%
+   - all: 9
+   - killed: 0 (0.0%)
+   - survived: 9 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

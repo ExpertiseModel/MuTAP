@@ -1,0 +1,19 @@
+def search ( x , seq ) :
+    ' Takes in a value x and a sorted sequence seq, and returns the\n    position that x should go to such that the sequence remains sorted '
+    seq = tuple ( seq )
+    if ( seq == ( ) ) :
+        return len ( seq )
+    pass
+    if ( x > seq [ ( len ( seq ) - 1 ) ] ) :
+        return len ( seq )
+    else :
+        i = 0
+        while ( i <= ( len ( seq ) - 1 ) ) :
+            pass
+            if ( x <= seq [ i ] ) :
+                return i
+            elif ( x > seq [ i ] ) :
+                i += 1
+            pass
+        pass
+    pass

@@ -1,0 +1,32 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/33/script_NDS_33.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/33/Copilot/test_33_cp_few_shot.py
+[*] 0 tests passed:
+   - test_33_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] SIR script_NDS_33: 
+--------------------------------------------------------------------------------
+  1: def sort_third(l: list):
+  2:     
+  3:     l = list(l)
+- 4:     l[::3] = sorted(l[::3])
++ 4:     l[:] = sorted(l[::3])
+  5:     return l
+--------------------------------------------------------------------------------
+[0.00667 s] survived
+   - [#   2] SIR script_NDS_33: 
+--------------------------------------------------------------------------------
+  1: def sort_third(l: list):
+  2:     
+  3:     l = list(l)
+- 4:     l[::3] = sorted(l[::3])
++ 4:     l[::3] = sorted(l[:])
+  5:     return l
+--------------------------------------------------------------------------------
+[0.00687 s] survived
+[*] Mutation score [0.06510 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

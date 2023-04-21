@@ -1,0 +1,68 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/6/script_NDS_6.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/6/Copilot/test_6_cp_few_shot.py
+[*] 0 tests passed:
+   - test_6_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR script_NDS_6: 
+--------------------------------------------------------------------------------
+   7:         depth = 0
+   8:         max_depth = 0
+   9:         for c in s:
+  10:             if c == '(':
+- 11:                 depth += 1
++ 11:                 depth -= 1
+  12:                 max_depth = max(depth, max_depth)
+  13:             else:
+  14:                 depth -= 1
+  15:         
+--------------------------------------------------------------------------------
+[0.00652 s] survived
+   - [#   2] ASR script_NDS_6: 
+--------------------------------------------------------------------------------
+  10:             if c == '(':
+  11:                 depth += 1
+  12:                 max_depth = max(depth, max_depth)
+  13:             else:
+- 14:                 depth -= 1
++ 14:                 depth += 1
+  15:         
+  16:         return max_depth
+  17:     
+  18:     return [parse_paren_group(x) for x in paren_string.split(' ') if x]
+--------------------------------------------------------------------------------
+[0.00840 s] survived
+   - [#   3] COI script_NDS_6: 
+--------------------------------------------------------------------------------
+   6:     def parse_paren_group(s):
+   7:         depth = 0
+   8:         max_depth = 0
+   9:         for c in s:
+- 10:             if c == '(':
++ 10:             if not (c == '('):
+  11:                 depth += 1
+  12:                 max_depth = max(depth, max_depth)
+  13:             else:
+  14:                 depth -= 1
+--------------------------------------------------------------------------------
+[0.00635 s] survived
+   - [#   4] ROR script_NDS_6: 
+--------------------------------------------------------------------------------
+   6:     def parse_paren_group(s):
+   7:         depth = 0
+   8:         max_depth = 0
+   9:         for c in s:
+- 10:             if c == '(':
++ 10:             if c != '(':
+  11:                 depth += 1
+  12:                 max_depth = max(depth, max_depth)
+  13:             else:
+  14:                 depth -= 1
+--------------------------------------------------------------------------------
+[0.00608 s] survived
+[*] Mutation score [0.15069 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

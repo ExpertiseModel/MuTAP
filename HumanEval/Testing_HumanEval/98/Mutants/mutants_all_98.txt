@@ -1,0 +1,47 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/98/script_NDS_98.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/98/Copilot/test_98_cp_few_shot.py
+[*] 0 tests passed:
+   - test_98_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR script_NDS_98: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     count = 0
+  4:     for i in range(0, len(s), 2):
+  5:         if s[i] in 'AEIOU':
+- 6:             count += 1
++ 6:             count -= 1
+  7:     return count
+--------------------------------------------------------------------------------
+[0.00637 s] survived
+   - [#   2] COI script_NDS_98: 
+--------------------------------------------------------------------------------
+  1: def count_upper(s):
+  2:     
+  3:     count = 0
+  4:     for i in range(0, len(s), 2):
+- 5:         if s[i] in 'AEIOU':
++ 5:         if not (s[i] in 'AEIOU'):
+  6:             count += 1
+  7:     return count
+--------------------------------------------------------------------------------
+[0.00492 s] survived
+   - [#   3] COI script_NDS_98: 
+--------------------------------------------------------------------------------
+  1: def count_upper(s):
+  2:     
+  3:     count = 0
+  4:     for i in range(0, len(s), 2):
+- 5:         if s[i] in 'AEIOU':
++ 5:         if s[i] not in 'AEIOU':
+  6:             count += 1
+  7:     return count
+--------------------------------------------------------------------------------
+[0.00472 s] survived
+[*] Mutation score [0.07919 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

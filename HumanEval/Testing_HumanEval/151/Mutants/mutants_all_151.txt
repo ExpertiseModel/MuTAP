@@ -1,0 +1,68 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/151/script_NDS_151.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/151/Copilot/test_151_cp_few_shot.py
+[*] 0 tests passed:
+   - test_151_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_151: 
+--------------------------------------------------------------------------------
+  1: def double_the_difference(lst):
+  2:     
+- 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 != 0 and '.' not in str(i))])
++ 3:     return sum([i * 2 for i in lst if (i > 0 and i % 2 != 0 and '.' not in str(i))])
+--------------------------------------------------------------------------------
+[0.00660 s] survived
+   - [#   2] AOR script_NDS_151: 
+--------------------------------------------------------------------------------
+  1: def double_the_difference(lst):
+  2:     
+- 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 != 0 and '.' not in str(i))])
++ 3:     return sum([i ** 2 for i in lst if (i > 0 and i * 2 != 0 and '.' not in str(i))])
+--------------------------------------------------------------------------------
+[0.00563 s] survived
+   - [#   3] COD script_NDS_151: 
+--------------------------------------------------------------------------------
+  1: def double_the_difference(lst):
+  2:     
+- 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 != 0 and '.' not in str(i))])
++ 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 != 0 and '.' in str(i))])
+--------------------------------------------------------------------------------
+[0.00542 s] survived
+   - [#   4] LCR script_NDS_151: 
+--------------------------------------------------------------------------------
+  1: def double_the_difference(lst):
+  2:     
+- 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 != 0 and '.' not in str(i))])
++ 3:     return sum([i ** 2 for i in lst if (i > 0 or i % 2 != 0 or '.' not in str(i))])
+--------------------------------------------------------------------------------
+[0.00579 s] survived
+   - [#   5] ROR script_NDS_151: 
+--------------------------------------------------------------------------------
+  1: def double_the_difference(lst):
+  2:     
+- 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 != 0 and '.' not in str(i))])
++ 3:     return sum([i ** 2 for i in lst if (i < 0 and i % 2 != 0 and '.' not in str(i))])
+--------------------------------------------------------------------------------
+[0.00768 s] survived
+   - [#   6] ROR script_NDS_151: 
+--------------------------------------------------------------------------------
+  1: def double_the_difference(lst):
+  2:     
+- 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 != 0 and '.' not in str(i))])
++ 3:     return sum([i ** 2 for i in lst if (i >= 0 and i % 2 != 0 and '.' not in str(i))])
+--------------------------------------------------------------------------------
+[0.00684 s] survived
+   - [#   7] ROR script_NDS_151: 
+--------------------------------------------------------------------------------
+  1: def double_the_difference(lst):
+  2:     
+- 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 != 0 and '.' not in str(i))])
++ 3:     return sum([i ** 2 for i in lst if (i > 0 and i % 2 == 0 and '.' not in str(i))])
+--------------------------------------------------------------------------------
+[0.00668 s] survived
+[*] Mutation score [0.15045 s]: 0.0%
+   - all: 7
+   - killed: 0 (0.0%)
+   - survived: 7 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

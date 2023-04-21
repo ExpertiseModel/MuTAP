@@ -1,0 +1,30 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/115/script_NDS_115.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/115/Copilot/test_115_cp_few_shot.py
+[*] 0 tests passed:
+   - test_115_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_115: 
+--------------------------------------------------------------------------------
+  1: def max_fill(grid, capacity):
+  2:     import math
+  3:     
+- 4:     return sum([math.ceil(sum(arr) / capacity) for arr in grid])
++ 4:     return sum([math.ceil(sum(arr) // capacity) for arr in grid])
+--------------------------------------------------------------------------------
+[0.00624 s] survived
+   - [#   2] AOR script_NDS_115: 
+--------------------------------------------------------------------------------
+  1: def max_fill(grid, capacity):
+  2:     import math
+  3:     
+- 4:     return sum([math.ceil(sum(arr) / capacity) for arr in grid])
++ 4:     return sum([math.ceil(sum(arr) * capacity) for arr in grid])
+--------------------------------------------------------------------------------
+[0.00640 s] survived
+[*] Mutation score [0.05868 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

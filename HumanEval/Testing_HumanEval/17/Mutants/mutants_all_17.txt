@@ -1,0 +1,8 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/17/script_NDS_17.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/17/Copilot/test_17_cp_few_shot.py
+[*] 0 tests passed:
+   - test_17_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+[*] Mutation score [0.04391 s]: 0.0%
+   - all: 0

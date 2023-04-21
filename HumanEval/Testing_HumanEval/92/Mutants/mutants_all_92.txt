@@ -1,0 +1,142 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/92/script_NDS_92.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/92/Copilot/test_92_cp_few_shot.py
+[*] 0 tests passed:
+   - test_92_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+  4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
+- 5:         if (x + y == z or x + z == y or y + z == x):
++ 5:         if (x - y == z or x + z == y or y + z == x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00584 s] survived
+   - [#   2] AOR script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+  4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
+- 5:         if (x + y == z or x + z == y or y + z == x):
++ 5:         if (x + y == z or x - z == y or y + z == x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00590 s] survived
+   - [#   3] AOR script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+  4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
+- 5:         if (x + y == z or x + z == y or y + z == x):
++ 5:         if (x + y == z or x + z == y or y - z == x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00636 s] survived
+   - [#   4] COI script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+- 4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
++ 4:     if not ((isinstance(x, int) and isinstance(y, int) and isinstance(z, int))):
+  5:         if (x + y == z or x + z == y or y + z == x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00589 s] survived
+   - [#   5] COI script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+  4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
+- 5:         if (x + y == z or x + z == y or y + z == x):
++ 5:         if not ((x + y == z or x + z == y or y + z == x)):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00531 s] survived
+   - [#   6] LCR script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+- 4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
++ 4:     if (isinstance(x, int) or isinstance(y, int) or isinstance(z, int)):
+  5:         if (x + y == z or x + z == y or y + z == x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00611 s] survived
+   - [#   7] LCR script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+  4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
+- 5:         if (x + y == z or x + z == y or y + z == x):
++ 5:         if (x + y == z and x + z == y and y + z == x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00646 s] survived
+   - [#   8] ROR script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+  4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
+- 5:         if (x + y == z or x + z == y or y + z == x):
++ 5:         if (x + y != z or x + z == y or y + z == x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00604 s] survived
+   - [#   9] ROR script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+  4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
+- 5:         if (x + y == z or x + z == y or y + z == x):
++ 5:         if (x + y == z or x + z != y or y + z == x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00746 s] survived
+   - [#  10] ROR script_NDS_92: 
+--------------------------------------------------------------------------------
+  1: def any_int(x, y, z):
+  2:     
+  3:     
+  4:     if (isinstance(x, int) and isinstance(y, int) and isinstance(z, int)):
+- 5:         if (x + y == z or x + z == y or y + z == x):
++ 5:         if (x + y == z or x + z == y or y + z != x):
+  6:             return True
+  7:         return False
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00647 s] survived
+[*] Mutation score [0.23563 s]: 0.0%
+   - all: 10
+   - killed: 0 (0.0%)
+   - survived: 10 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

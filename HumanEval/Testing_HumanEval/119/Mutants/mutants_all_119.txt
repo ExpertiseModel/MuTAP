@@ -1,0 +1,157 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/119/script_NDS_119.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/119/Copilot/test_119_cp_few_shot.py
+[*] 0 tests passed:
+   - test_119_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_119: 
+--------------------------------------------------------------------------------
+  16:     def check(s):
+  17:         val = 0
+  18:         for i in s:
+  19:             if i == '(':
+- 20:                 val = val + 1
++ 20:                 val = val - 1
+  21:             else:
+  22:                 val = val - 1
+  23:             if val < 0:
+  24:                 return False
+--------------------------------------------------------------------------------
+[0.00622 s] survived
+   - [#   2] AOR script_NDS_119: 
+--------------------------------------------------------------------------------
+  18:         for i in s:
+  19:             if i == '(':
+  20:                 val = val + 1
+  21:             else:
+- 22:                 val = val - 1
++ 22:                 val = val + 1
+  23:             if val < 0:
+  24:                 return False
+  25:         return True if val == 0 else False
+  26:     
+--------------------------------------------------------------------------------
+[0.00569 s] survived
+   - [#   3] AOR script_NDS_119: 
+--------------------------------------------------------------------------------
+  23:             if val < 0:
+  24:                 return False
+  25:         return True if val == 0 else False
+  26:     
+- 27:     S1 = lst[0] + lst[1]
++ 27:     S1 = lst[0] - lst[1]
+  28:     S2 = lst[1] + lst[0]
+  29:     return 'Yes' if (check(S1) or check(S2)) else 'No'
+--------------------------------------------------------------------------------
+[0.00626 s] survived
+   - [#   4] AOR script_NDS_119: 
+--------------------------------------------------------------------------------
+  24:                 return False
+  25:         return True if val == 0 else False
+  26:     
+  27:     S1 = lst[0] + lst[1]
+- 28:     S2 = lst[1] + lst[0]
++ 28:     S2 = lst[1] - lst[0]
+  29:     return 'Yes' if (check(S1) or check(S2)) else 'No'
+--------------------------------------------------------------------------------
+[0.00754 s] survived
+   - [#   5] COI script_NDS_119: 
+--------------------------------------------------------------------------------
+  15:     """
+  16:     def check(s):
+  17:         val = 0
+  18:         for i in s:
+- 19:             if i == '(':
++ 19:             if not (i == '('):
+  20:                 val = val + 1
+  21:             else:
+  22:                 val = val - 1
+  23:             if val < 0:
+--------------------------------------------------------------------------------
+[0.00663 s] survived
+   - [#   6] COI script_NDS_119: 
+--------------------------------------------------------------------------------
+  19:             if i == '(':
+  20:                 val = val + 1
+  21:             else:
+  22:                 val = val - 1
+- 23:             if val < 0:
++ 23:             if not (val < 0):
+  24:                 return False
+  25:         return True if val == 0 else False
+  26:     
+  27:     S1 = lst[0] + lst[1]
+--------------------------------------------------------------------------------
+[0.00597 s] survived
+   - [#   7] LCR script_NDS_119: 
+--------------------------------------------------------------------------------
+  25:         return True if val == 0 else False
+  26:     
+  27:     S1 = lst[0] + lst[1]
+  28:     S2 = lst[1] + lst[0]
+- 29:     return 'Yes' if (check(S1) or check(S2)) else 'No'
++ 29:     return 'Yes' if (check(S1) and check(S2)) else 'No'
+--------------------------------------------------------------------------------
+[0.00639 s] survived
+   - [#   8] ROR script_NDS_119: 
+--------------------------------------------------------------------------------
+  15:     """
+  16:     def check(s):
+  17:         val = 0
+  18:         for i in s:
+- 19:             if i == '(':
++ 19:             if i != '(':
+  20:                 val = val + 1
+  21:             else:
+  22:                 val = val - 1
+  23:             if val < 0:
+--------------------------------------------------------------------------------
+[0.00469 s] survived
+   - [#   9] ROR script_NDS_119: 
+--------------------------------------------------------------------------------
+  19:             if i == '(':
+  20:                 val = val + 1
+  21:             else:
+  22:                 val = val - 1
+- 23:             if val < 0:
++ 23:             if val > 0:
+  24:                 return False
+  25:         return True if val == 0 else False
+  26:     
+  27:     S1 = lst[0] + lst[1]
+--------------------------------------------------------------------------------
+[0.00750 s] survived
+   - [#  10] ROR script_NDS_119: 
+--------------------------------------------------------------------------------
+  19:             if i == '(':
+  20:                 val = val + 1
+  21:             else:
+  22:                 val = val - 1
+- 23:             if val < 0:
++ 23:             if val <= 0:
+  24:                 return False
+  25:         return True if val == 0 else False
+  26:     
+  27:     S1 = lst[0] + lst[1]
+--------------------------------------------------------------------------------
+[0.00543 s] survived
+   - [#  11] ROR script_NDS_119: 
+--------------------------------------------------------------------------------
+  21:             else:
+  22:                 val = val - 1
+  23:             if val < 0:
+  24:                 return False
+- 25:         return True if val == 0 else False
++ 25:         return True if val != 0 else False
+  26:     
+  27:     S1 = lst[0] + lst[1]
+  28:     S2 = lst[1] + lst[0]
+  29:     return 'Yes' if (check(S1) or check(S2)) else 'No'
+--------------------------------------------------------------------------------
+[0.00619 s] survived
+[*] Mutation score [0.35365 s]: 0.0%
+   - all: 11
+   - killed: 0 (0.0%)
+   - survived: 11 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

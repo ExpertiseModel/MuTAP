@@ -1,0 +1,21 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/87/script_NDS_87.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/87/Copilot/test_87_cp_few_shot.py
+[*] 0 tests passed:
+   - test_87_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] ROR script_NDS_87: 
+--------------------------------------------------------------------------------
+  1: def get_row(lst, x):
+  2:     
+- 3:     coords = [(i, j) for i in range(len(lst)) for j in range(len(lst[i])) if lst[i][j] == x]
++ 3:     coords = [(i, j) for i in range(len(lst)) for j in range(len(lst[i])) if lst[i][j] != x]
+  4:     return sorted(sorted(coords, key=lambda x: (x[1]), reverse=True), key=lambda x: (x[0]))
+--------------------------------------------------------------------------------
+[0.00562 s] survived
+[*] Mutation score [0.11851 s]: 0.0%
+   - all: 1
+   - killed: 0 (0.0%)
+   - survived: 1 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

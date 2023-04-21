@@ -1,0 +1,352 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/157/script_NDS_157.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/157/Copilot/test_157_cp_few_shot.py
+[*] 0 tests passed:
+   - test_157_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a / a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00582 s] survived
+   - [#   2] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a // a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00549 s] survived
+   - [#   3] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a ** a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00654 s] survived
+   - [#   4] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b / b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00591 s] survived
+   - [#   5] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b // b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00639 s] survived
+   - [#   6] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b ** b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00644 s] survived
+   - [#   7] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) - (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00512 s] survived
+   - [#   8] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c / c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00825 s] survived
+   - [#   9] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c // c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00729 s] survived
+   - [#  10] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c ** c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00573 s] survived
+   - [#  11] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b / b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00644 s] survived
+   - [#  12] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b // b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00675 s] survived
+   - [#  13] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b ** b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00649 s] survived
+   - [#  14] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a / a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00730 s] survived
+   - [#  15] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a // a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00533 s] survived
+   - [#  16] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a ** a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00810 s] survived
+   - [#  17] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) - (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00705 s] survived
+   - [#  18] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c / c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00808 s] survived
+   - [#  19] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c // c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00537 s] survived
+   - [#  20] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c ** c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00610 s] survived
+   - [#  21] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c / c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00600 s] survived
+   - [#  22] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c // c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00545 s] survived
+   - [#  23] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c ** c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00636 s] survived
+   - [#  24] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a / a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00926 s] survived
+   - [#  25] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a // a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00597 s] survived
+   - [#  26] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a ** a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00598 s] survived
+   - [#  27] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) - (b * b))
+--------------------------------------------------------------------------------
+[0.00601 s] survived
+   - [#  28] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b / b))
+--------------------------------------------------------------------------------
+[0.00633 s] survived
+   - [#  29] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b // b))
+--------------------------------------------------------------------------------
+[0.00783 s] survived
+   - [#  30] AOR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b ** b))
+--------------------------------------------------------------------------------
+[0.00658 s] survived
+   - [#  31] LCR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) and b * b == (a * a) + (c * c) and c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00624 s] survived
+   - [#  32] ROR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a != (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00493 s] survived
+   - [#  33] ROR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b != (a * a) + (c * c) or c * c == (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00518 s] survived
+   - [#  34] ROR script_NDS_157: 
+--------------------------------------------------------------------------------
+   7:     Example:
+   8:     right_angle_triangle(3, 4, 5) == True
+   9:     right_angle_triangle(1, 2, 3) == False
+  10:     '''
+- 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c == (a * a) + (b * b))
++ 11:     return (a * a == (b * b) + (c * c) or b * b == (a * a) + (c * c) or c * c != (a * a) + (b * b))
+--------------------------------------------------------------------------------
+[0.00673 s] survived
+[*] Mutation score [0.67302 s]: 0.0%
+   - all: 34
+   - killed: 0 (0.0%)
+   - survived: 34 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

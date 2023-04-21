@@ -1,0 +1,188 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/118/script_NDS_118.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/118/Copilot/test_118_cp_few_shot.py
+[*] 0 tests passed:
+   - test_118_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_118: 
+--------------------------------------------------------------------------------
+   3:     if len(word) < 3:
+   4:         return ''
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+-  7:     for i in range(len(word) - 2, 0, -1):
++  7:     for i in range(len(word) - 2, 0, 1):
+   8:         if word[i] in vowels:
+   9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00596 s] survived
+   - [#   2] AOR script_NDS_118: 
+--------------------------------------------------------------------------------
+   3:     if len(word) < 3:
+   4:         return ''
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+-  7:     for i in range(len(word) - 2, 0, -1):
++  7:     for i in range(len(word) + 2, 0, -1):
+   8:         if word[i] in vowels:
+   9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00730 s] survived
+   - [#   3] AOR script_NDS_118: 
+--------------------------------------------------------------------------------
+   3:     if len(word) < 3:
+   4:         return ''
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+-  7:     for i in range(len(word) - 2, 0, -1):
++  7:     for i in range(len(word) - 2, 0, +1):
+   8:         if word[i] in vowels:
+   9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00824 s] survived
+   - [#   4] AOR script_NDS_118: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+   8:         if word[i] in vowels:
+-  9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
++  9:             if (word[i - 1] not in vowels and word[i - 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00598 s] survived
+   - [#   5] AOR script_NDS_118: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+   8:         if word[i] in vowels:
+-  9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
++  9:             if (word[i + 1] not in vowels and word[i + 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00576 s] survived
+   - [#   6] COD script_NDS_118: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+   8:         if word[i] in vowels:
+-  9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
++  9:             if (word[i + 1] in vowels and word[i - 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00557 s] survived
+   - [#   7] COD script_NDS_118: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+   8:         if word[i] in vowels:
+-  9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
++  9:             if (word[i + 1] not in vowels and word[i - 1] in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00644 s] survived
+   - [#   8] COI script_NDS_118: 
+--------------------------------------------------------------------------------
+   1: def get_closest_vowel(word):
+   2:     
+-  3:     if len(word) < 3:
++  3:     if not (len(word) < 3):
+   4:         return ''
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+--------------------------------------------------------------------------------
+[0.00457 s] survived
+   - [#   9] COI script_NDS_118: 
+--------------------------------------------------------------------------------
+   4:         return ''
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+-  8:         if word[i] in vowels:
++  8:         if not (word[i] in vowels):
+   9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00755 s] survived
+   - [#  10] COI script_NDS_118: 
+--------------------------------------------------------------------------------
+   4:         return ''
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+-  8:         if word[i] in vowels:
++  8:         if word[i] not in vowels:
+   9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00542 s] survived
+   - [#  11] COI script_NDS_118: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+   8:         if word[i] in vowels:
+-  9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
++  9:             if not ((word[i + 1] not in vowels and word[i - 1] not in vowels)):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00641 s] survived
+   - [#  12] LCR script_NDS_118: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+   8:         if word[i] in vowels:
+-  9:             if (word[i + 1] not in vowels and word[i - 1] not in vowels):
++  9:             if (word[i + 1] not in vowels or word[i - 1] not in vowels):
+  10:                 return word[i]
+  11:     return ''
+--------------------------------------------------------------------------------
+[0.00651 s] survived
+   - [#  13] ROR script_NDS_118: 
+--------------------------------------------------------------------------------
+   1: def get_closest_vowel(word):
+   2:     
+-  3:     if len(word) < 3:
++  3:     if len(word) > 3:
+   4:         return ''
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+--------------------------------------------------------------------------------
+[0.00658 s] survived
+   - [#  14] ROR script_NDS_118: 
+--------------------------------------------------------------------------------
+   1: def get_closest_vowel(word):
+   2:     
+-  3:     if len(word) < 3:
++  3:     if len(word) <= 3:
+   4:         return ''
+   5:     
+   6:     vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U', 'I'}
+   7:     for i in range(len(word) - 2, 0, -1):
+--------------------------------------------------------------------------------
+[0.00584 s] survived
+[*] Mutation score [0.39455 s]: 0.0%
+   - all: 14
+   - killed: 0 (0.0%)
+   - survived: 14 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

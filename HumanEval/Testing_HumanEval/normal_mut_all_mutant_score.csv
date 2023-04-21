@@ -1,0 +1,141 @@
+name,MS,lst_survived,n_killed,n_all_mut,is_problematic
+T_O_NDS_semticfixed_1.py,1.0,[],8,8,0
+T_O_NDS_semticfixed_2.py,1.0,[],1,1,0
+T_O_NDS_Mut_all_semticfixed_3.py,0.75,['mutant_3_3.py'],3,4,0
+T_O_NDS_semticfixed_4.py,1.0,[],5,5,0
+T_O_NDS_semticfixed_5.py,1.0,[],7,7,0
+T_O_NDS_semticfixed_6.py,1.0,[],4,4,0
+T_O_NDS_semticfixed_7.py,1.0,[],1,1,0
+T_O_NDS_semticfixed_8.py,1.0,[],4,4,0
+T_O_NDS_Mut_all_semticfixed_10.py,1.0,[],13,15,1
+T_O_NDS_semticfixed_11.py,1.0,[],2,2,0
+T_O_NDS_semticfixed_12.py,0.0,[],0,4,2
+T_O_NDS_semticfixed_13.py,0.0,[],0,2,2
+T_O_NDS_semticfixed_14.py,0.6666666666666666,['mutant_14_1.py'],2,3,0
+T_O_NDS_semticfixed_15.py,1.0,[],1,1,0
+T_O_NDS_Mut_all_semticfixed_16.py,0.0,['mutant_16_0.py'],0,1,0
+T_O_NDS_Mut_all_semticfixed_18.py,0.875,['mutant_18_0.py'],7,8,0
+T_O_NDS_semticfixed_20.py,1.0,[],7,8,1
+T_O_NDS_semticfixed_21.py,1.0,[],4,4,0
+T_O_NDS_semticfixed_24.py,1.0,[],3,3,0
+T_O_NDS_semticfixed_25.py,0.0,[],0,13,2
+T_O_NDS_semticfixed_30.py,0.0,[],0,2,2
+T_O_NDS_semticfixed_31.py,1.0,[],7,7,0
+T_O_NDS_semticfixed_32.py,1.0,[],3,30,1
+T_O_NDS_semticfixed_33.py,1.0,[],1,2,1
+T_O_NDS_Mut_all_semticfixed_35.py,1.0,[],2,3,1
+T_O_NDS_semticfixed_36.py,1.0,[],8,8,0
+T_O_NDS_Mut_all_semticfixed_37.py,1.0,[],8,8,0
+T_O_NDS_semticfixed_38.py,0.0,[],0,15,2
+T_O_NDS_semticfixed_39.py,0.9166666666666666,['mutant_39_5.py'],11,22,1
+T_O_NDS_semticfixed_40.py,1.0,[],6,6,0
+T_O_NDS_semticfixed_42.py,1.0,[],1,1,0
+T_O_NDS_semticfixed_43.py,1.0,[],4,4,0
+T_O_NDS_semticfixed_44.py,1.0,[],4,7,1
+T_O_NDS_semticfixed_45.py,0.0,[],0,5,2
+T_O_NDS_Mut_all_semticfixed_46.py,0.8333333333333334,"['mutant_46_1.py', 'mutant_46_8.py']",10,17,1
+T_O_NDS_semticfixed_47.py,1.0,[],7,13,1
+T_O_NDS_semticfixed_48.py,1.0,[],2,4,1
+T_O_NDS_semticfixed_49.py,1.0,[],4,4,0
+T_O_NDS_semticfixed_50.py,1.0,[],5,8,1
+T_O_NDS_Mut_all_semticfixed_52.py,1.0,[],3,3,0
+T_O_NDS_semticfixed_54.py,1.0,[],1,1,0
+T_O_NDS_Mut_all_semticfixed_55.py,1.0,[],5,7,1
+T_O_NDS_semticfixed_56.py,1.0,[],8,8,0
+T_O_NDS_semticfixed_57.py,1.0,[],4,4,0
+T_O_NDS_Mut_all_semticfixed_59.py,0.9166666666666666,['mutant_59_9.py'],11,12,0
+T_O_NDS_semticfixed_60.py,1.0,[],1,1,0
+T_O_NDS_Mut_all_semticfixed_61.py,1.0,[],8,8,0
+T_O_NDS_semticfixed_62.py,0.0,[],0,4,2
+T_O_NDS_Mut_all_semticfixed_63.py,1.0,[],8,11,1
+T_O_NDS_semticfixed_64.py,0.0,[],0,10,2
+T_O_NDS_Mut_all_semticfixed_65.py,1.0,[],10,11,1
+T_O_NDS_Mut_all_semticfixed_66.py,1.0,[],2,2,0
+T_O_NDS_semticfixed_67.py,1.0,[],1,2,1
+T_O_NDS_Mut_all_semticfixed_68.py,1.0,[],4,6,1
+T_O_NDS_semticfixed_69.py,0.0,[],0,10,2
+T_O_NDS_semticfixed_70.py,1.0,[],2,4,1
+T_O_NDS_Mut_all_semticfixed_71.py,0.9629629629629629,['mutant_71_25.py'],26,30,1
+T_O_NDS_Mut_all_semticfixed_72.py,1.0,[],9,11,1
+T_O_NDS_Mut_all_semticfixed_73.py,0.3333333333333333,"['mutant_73_6.py', 'mutant_73_5.py']",1,7,1
+T_O_NDS_Mut_all_semticfixed_74.py,0.6,"['mutant_74_4.py', 'mutant_74_0.py']",3,5,0
+T_O_NDS_Mut_all_semticfixed_76.py,1.0,[],7,10,1
+T_O_NDS_semticfixed_77.py,0.0,[],0,5,2
+T_O_NDS_semticfixed_78.py,1.0,[],3,3,0
+T_O_NDS_semticfixed_79.py,0.0,[],0,3,2
+T_O_NDS_Mut_all_semticfixed_80.py,1.0,[],12,13,1
+T_O_NDS_semticfixed_81.py,1.0,[],35,35,0
+T_O_NDS_semticfixed_82.py,1.0,[],7,7,0
+T_O_NDS_semticfixed_83.py,0.0,[],0,7,2
+T_O_NDS_semticfixed_84.py,0.0,[],0,1,2
+T_O_NDS_semticfixed_85.py,1.0,[],2,2,0
+T_O_NDS_Mut_all_semticfixed_88.py,0.75,['mutant_88_1.py'],3,6,1
+T_O_NDS_Mut_all_semticfixed_89.py,0.8,['mutant_89_3.py'],4,9,1
+T_O_NDS_semticfixed_90.py,1.0,[],2,2,0
+T_O_NDS_Mut_all_semticfixed_91.py,0.5,['mutant_91_1.py'],1,3,1
+T_O_NDS_Mut_all_semticfixed_92.py,0.9,"['mutant_92_5.py']",9,10,0
+T_O_NDS_Mut_all_semticfixed_94.py,1.0,[],11,13,1
+T_O_NDS_Mut_all_semticfixed_95.py,0.8636363636363636,"['mutant_95_12.py', 'mutant_95_0.py', 'mutant_95_1.py']",19,23,1
+T_O_NDS_Mut_all_semticfixed_96.py,0.8,['mutant_96_1.py'],4,5,0
+T_O_NDS_semticfixed_97.py,1.0,[],5,5,0
+T_O_NDS_semticfixed_98.py,1.0,[],3,3,0
+T_O_NDS_semticfixed_99.py,1.0,[],18,20,1
+T_O_NDS_semticfixed_100.py,0.0,[],0,4,2
+T_O_NDS_semticfixed_101.py,1.0,[],4,4,0
+T_O_NDS_Mut_all_semticfixed_102.py,0.6923076923076923,"['mutant_102_2.py', 'mutant_102_4.py', 'mutant_102_1.py', 'mutant_102_0.py']",9,13,0
+T_O_NDS_Mut_all_semticfixed_103.py,1.0,[],11,11,0
+T_O_NDS_semticfixed_104.py,1.0,[],3,3,0
+T_O_NDS_Mut_all_semticfixed_106.py,1.0,[],10,10,0
+T_O_NDS_semticfixed_107.py,0.0,[],0,15,2
+T_O_NDS_Mut_all_semticfixed_109.py,0.6,"['mutant_109_7.py', 'mutant_109_6.py']",3,8,1
+T_O_NDS_semticfixed_110.py,1.0,[],11,11,0
+T_O_NDS_Mut_all_semticfixed_111.py,0.8,"['mutant_111_5.py', 'mutant_111_8.py']",8,10,0
+T_O_NDS_semticfixed_112.py,1.0,[],5,5,0
+T_O_NDS_semticfixed_113.py,1.0,[],2,10,1
+T_O_NDS_Mut_all_semticfixed_114.py,1.0,[],12,12,0
+T_O_NDS_semticfixed_115.py,1.0,[],2,2,0
+T_O_NDS_Mut_all_semticfixed_116.py,0.0,['mutant_116_0.py'],0,1,0
+T_O_NDS_semticfixed_117.py,0.0,[],0,5,2
+T_O_NDS_Mut_all_semticfixed_118.py,1.0,[],13,14,1
+T_O_NDS_Mut_all_semticfixed_119.py,1.0,[],6,11,1
+T_O_NDS_semticfixed_120.py,1.0,[],5,5,0
+T_O_NDS_Mut_all_semticfixed_121.py,1.0,[],5,5,0
+T_O_NDS_Mut_all_semticfixed_122.py,0.6666666666666666,['mutant_122_1.py'],2,3,0
+T_O_NDS_Mut_all_semticfixed_123.py,0.9166666666666666,['mutant_123_2.py'],11,18,1
+T_O_NDS_Mut_all_semticfixed_124.py,1.0,[],31,32,1
+T_O_NDS_Mut_all_semticfixed_125.py,0.6666666666666666,['mutant_125_6.py'],2,7,1
+T_O_NDS_semticfixed_126.py,1.0,[],8,8,0
+T_O_NDS_semticfixed_127.py,0.0,[],0,14,2
+T_O_NDS_semticfixed_128.py,1.0,[],3,3,0
+T_O_NDS_semticfixed_129.py,0.0,[],0,23,2
+T_O_NDS_Mut_all_semticfixed_130.py,0.8571428571428571,"['mutant_130_10.py', 'mutant_130_2.py']",12,16,1
+T_O_NDS_Mut_all_semticfixed_131.py,0.8888888888888888,['mutant_131_4.py'],8,9,0
+T_O_NDS_semticfixed_132.py,0.0,[],0,12,2
+T_O_NDS_semticfixed_133.py,0.0,[],0,2,2
+T_O_NDS_Mut_all_semticfixed_134.py,0.0,"['mutant_134_4.py', 'mutant_134_7.py', 'mutant_134_6.py']",0,8,1
+T_O_NDS_semticfixed_135.py,0.0,[],0,10,2
+T_O_NDS_Mut_all_semticfixed_136.py,1.0,[],4,4,0
+T_O_NDS_Mut_all_semticfixed_137.py,0.5,"['mutant_137_0.py', 'mutant_137_1.py', 'mutant_137_5.py']",3,6,0
+T_O_NDS_Mut_all_semticfixed_138.py,0.6,"['mutant_138_0.py', 'mutant_138_4.py']",3,5,0
+T_O_NDS_semticfixed_139.py,1.0,[],7,7,0
+T_O_NDS_Mut_all_semticfixed_140.py,0.7142857142857143,"['mutant_140_1.py', 'mutant_140_2.py', 'mutant_140_31.py', 'mutant_140_33.py', 'mutant_140_18.py', 'mutant_140_13.py', 'mutant_140_17.py', 'mutant_140_34.py']",20,36,1
+T_O_NDS_Mut_all_semticfixed_141.py,1.0,[],11,12,1
+T_O_NDS_Mut_all_semticfixed_142.py,0.9090909090909091,['mutant_142_3.py'],10,11,0
+T_O_NDS_semticfixed_143.py,1.0,[],9,9,0
+T_O_NDS_Mut_all_semticfixed_144.py,0.6,"['mutant_144_7.py', 'mutant_144_9.py', 'mutant_144_8.py', 'mutant_144_0.py']",6,12,1
+T_O_NDS_Mut_all_semticfixed_146.py,1.0,[],10,10,0
+T_O_NDS_semticfixed_147.py,0.0,[],0,14,2
+T_O_NDS_semticfixed_148.py,0.0,[],0,14,2
+T_O_NDS_semticfixed_149.py,1.0,[],3,3,0
+T_O_NDS_Mut_all_semticfixed_150.py,0.8333333333333334,['mutant_150_1.py'],5,6,0
+T_O_NDS_Mut_all_semticfixed_151.py,0.8571428571428571,['mutant_151_5.py'],6,7,0
+T_O_NDS_Mut_all_semticfixed_152.py,0.0,['mutant_152_0.py'],0,1,0
+T_O_NDS_Mut_all_semticfixed_153.py,0.8888888888888888,['mutant_153_6.py'],8,11,1
+T_O_NDS_Mut_all_semticfixed_154.py,1.0,[],9,12,1
+T_O_NDS_semticfixed_155.py,1.0,[],5,5,0
+T_O_NDS_semticfixed_156.py,0.0,[],0,8,2
+T_O_NDS_Mut_all_semticfixed_157.py,1.0,[],34,34,0
+T_O_NDS_semticfixed_158.py,0.0,[],0,2,2
+T_O_NDS_semticfixed_159.py,1.0,[],3,6,1
+T_O_NDS_semticfixed_160.py,1.0,[],1,3,1
+T_O_NDS_semticfixed_163.py,1.0,[],2,3,1

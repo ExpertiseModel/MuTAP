@@ -1,0 +1,134 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/65/script_NDS_65.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/65/Copilot/test_65_cp_few_shot.py
+[*] 0 tests passed:
+   - test_65_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_65: 
+--------------------------------------------------------------------------------
+  1: def circular_shift(x, shift):
+  2:     
+  3:     s = str(x)
+  4:     if shift > len(s):
+- 5:         return s[::-1]
++ 5:         return s[::1]
+  6:     else:
+  7:         return s[len(s) - shift:] + s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00631 s] survived
+   - [#   2] AOR script_NDS_65: 
+--------------------------------------------------------------------------------
+  1: def circular_shift(x, shift):
+  2:     
+  3:     s = str(x)
+  4:     if shift > len(s):
+- 5:         return s[::-1]
++ 5:         return s[::+1]
+  6:     else:
+  7:         return s[len(s) - shift:] + s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00510 s] survived
+   - [#   3] AOR script_NDS_65: 
+--------------------------------------------------------------------------------
+  3:     s = str(x)
+  4:     if shift > len(s):
+  5:         return s[::-1]
+  6:     else:
+- 7:         return s[len(s) - shift:] + s[:len(s) - shift]
++ 7:         return s[len(s) + shift:] + s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00590 s] survived
+   - [#   4] AOR script_NDS_65: 
+--------------------------------------------------------------------------------
+  3:     s = str(x)
+  4:     if shift > len(s):
+  5:         return s[::-1]
+  6:     else:
+- 7:         return s[len(s) - shift:] + s[:len(s) - shift]
++ 7:         return s[len(s) - shift:] - s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00628 s] survived
+   - [#   5] AOR script_NDS_65: 
+--------------------------------------------------------------------------------
+  3:     s = str(x)
+  4:     if shift > len(s):
+  5:         return s[::-1]
+  6:     else:
+- 7:         return s[len(s) - shift:] + s[:len(s) - shift]
++ 7:         return s[len(s) - shift:] + s[:len(s) + shift]
+--------------------------------------------------------------------------------
+[0.00576 s] survived
+   - [#   6] COI script_NDS_65: 
+--------------------------------------------------------------------------------
+  1: def circular_shift(x, shift):
+  2:     
+  3:     s = str(x)
+- 4:     if shift > len(s):
++ 4:     if not (shift > len(s)):
+  5:         return s[::-1]
+  6:     else:
+  7:         return s[len(s) - shift:] + s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00590 s] survived
+   - [#   7] ROR script_NDS_65: 
+--------------------------------------------------------------------------------
+  1: def circular_shift(x, shift):
+  2:     
+  3:     s = str(x)
+- 4:     if shift > len(s):
++ 4:     if shift < len(s):
+  5:         return s[::-1]
+  6:     else:
+  7:         return s[len(s) - shift:] + s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00654 s] survived
+   - [#   8] ROR script_NDS_65: 
+--------------------------------------------------------------------------------
+  1: def circular_shift(x, shift):
+  2:     
+  3:     s = str(x)
+- 4:     if shift > len(s):
++ 4:     if shift >= len(s):
+  5:         return s[::-1]
+  6:     else:
+  7:         return s[len(s) - shift:] + s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00663 s] survived
+   - [#   9] SIR script_NDS_65: 
+--------------------------------------------------------------------------------
+  1: def circular_shift(x, shift):
+  2:     
+  3:     s = str(x)
+  4:     if shift > len(s):
+- 5:         return s[::-1]
++ 5:         return s[:]
+  6:     else:
+  7:         return s[len(s) - shift:] + s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00886 s] survived
+   - [#  10] SIR script_NDS_65: 
+--------------------------------------------------------------------------------
+  3:     s = str(x)
+  4:     if shift > len(s):
+  5:         return s[::-1]
+  6:     else:
+- 7:         return s[len(s) - shift:] + s[:len(s) - shift]
++ 7:         return s[:] + s[:len(s) - shift]
+--------------------------------------------------------------------------------
+[0.00625 s] survived
+   - [#  11] SIR script_NDS_65: 
+--------------------------------------------------------------------------------
+  3:     s = str(x)
+  4:     if shift > len(s):
+  5:         return s[::-1]
+  6:     else:
+- 7:         return s[len(s) - shift:] + s[:len(s) - shift]
++ 7:         return s[len(s) - shift:] + s[:]
+--------------------------------------------------------------------------------
+[0.00647 s] survived
+[*] Mutation score [0.24483 s]: 0.0%
+   - all: 11
+   - killed: 0 (0.0%)
+   - survived: 11 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

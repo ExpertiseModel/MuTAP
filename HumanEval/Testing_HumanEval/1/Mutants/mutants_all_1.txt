@@ -1,0 +1,124 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/1/script_NDS_1.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/1/Copilot/test_1_cp_few_shot.py
+[*] 0 tests passed:
+   - test_1_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR script_NDS_1: 
+--------------------------------------------------------------------------------
+   8:     current_depth = 0
+   9:     
+  10:     for c in paren_string:
+  11:         if c == '(':
+- 12:             current_depth += 1
++ 12:             current_depth -= 1
+  13:             current_string.append(c)
+  14:         elif c == ')':
+  15:             current_depth -= 1
+  16:             current_string.append(c)
+--------------------------------------------------------------------------------
+[0.00463 s] survived
+   - [#   2] ASR script_NDS_1: 
+--------------------------------------------------------------------------------
+  11:         if c == '(':
+  12:             current_depth += 1
+  13:             current_string.append(c)
+  14:         elif c == ')':
+- 15:             current_depth -= 1
++ 15:             current_depth += 1
+  16:             current_string.append(c)
+  17:             
+  18:             if current_depth == 0:
+  19:                 result.append(''.join(current_string))
+--------------------------------------------------------------------------------
+[0.00652 s] survived
+   - [#   3] COI script_NDS_1: 
+--------------------------------------------------------------------------------
+   7:     current_string = []
+   8:     current_depth = 0
+   9:     
+  10:     for c in paren_string:
+- 11:         if c == '(':
++ 11:         if not (c == '('):
+  12:             current_depth += 1
+  13:             current_string.append(c)
+  14:         elif c == ')':
+  15:             current_depth -= 1
+--------------------------------------------------------------------------------
+[0.00604 s] survived
+   - [#   4] COI script_NDS_1: 
+--------------------------------------------------------------------------------
+  10:     for c in paren_string:
+  11:         if c == '(':
+  12:             current_depth += 1
+  13:             current_string.append(c)
+- 14:         elif c == ')':
++ 14:         elif not (c == ')'):
+  15:             current_depth -= 1
+  16:             current_string.append(c)
+  17:             
+  18:             if current_depth == 0:
+--------------------------------------------------------------------------------
+[0.00537 s] survived
+   - [#   5] COI script_NDS_1: 
+--------------------------------------------------------------------------------
+  14:         elif c == ')':
+  15:             current_depth -= 1
+  16:             current_string.append(c)
+  17:             
+- 18:             if current_depth == 0:
++ 18:             if not (current_depth == 0):
+  19:                 result.append(''.join(current_string))
+  20:                 current_string.clear()
+  21:     
+  22:     return result
+--------------------------------------------------------------------------------
+[0.00624 s] survived
+   - [#   6] ROR script_NDS_1: 
+--------------------------------------------------------------------------------
+   7:     current_string = []
+   8:     current_depth = 0
+   9:     
+  10:     for c in paren_string:
+- 11:         if c == '(':
++ 11:         if c != '(':
+  12:             current_depth += 1
+  13:             current_string.append(c)
+  14:         elif c == ')':
+  15:             current_depth -= 1
+--------------------------------------------------------------------------------
+[0.00785 s] survived
+   - [#   7] ROR script_NDS_1: 
+--------------------------------------------------------------------------------
+  10:     for c in paren_string:
+  11:         if c == '(':
+  12:             current_depth += 1
+  13:             current_string.append(c)
+- 14:         elif c == ')':
++ 14:         elif c != ')':
+  15:             current_depth -= 1
+  16:             current_string.append(c)
+  17:             
+  18:             if current_depth == 0:
+--------------------------------------------------------------------------------
+[0.00492 s] survived
+   - [#   8] ROR script_NDS_1: 
+--------------------------------------------------------------------------------
+  14:         elif c == ')':
+  15:             current_depth -= 1
+  16:             current_string.append(c)
+  17:             
+- 18:             if current_depth == 0:
++ 18:             if current_depth != 0:
+  19:                 result.append(''.join(current_string))
+  20:                 current_string.clear()
+  21:     
+  22:     return result
+--------------------------------------------------------------------------------
+[0.00545 s] survived
+[*] Mutation score [0.26731 s]: 0.0%
+   - all: 8
+   - killed: 0 (0.0%)
+   - survived: 8 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

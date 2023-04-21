@@ -1,0 +1,48 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/149/script_NDS_149.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/149/Copilot/test_149_cp_few_shot.py
+[*] 0 tests passed:
+   - test_149_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_149: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     lst.sort()
+  4:     new_lst = []
+  5:     for i in lst:
+- 6:         if len(i) % 2 == 0:
++ 6:         if len(i) * 2 == 0:
+  7:             new_lst.append(i)
+  8:     return sorted(new_lst, key=len)
+--------------------------------------------------------------------------------
+[0.00646 s] survived
+   - [#   2] COI script_NDS_149: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     lst.sort()
+  4:     new_lst = []
+  5:     for i in lst:
+- 6:         if len(i) % 2 == 0:
++ 6:         if not (len(i) % 2 == 0):
+  7:             new_lst.append(i)
+  8:     return sorted(new_lst, key=len)
+--------------------------------------------------------------------------------
+[0.00622 s] survived
+   - [#   3] ROR script_NDS_149: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     lst.sort()
+  4:     new_lst = []
+  5:     for i in lst:
+- 6:         if len(i) % 2 == 0:
++ 6:         if len(i) % 2 != 0:
+  7:             new_lst.append(i)
+  8:     return sorted(new_lst, key=len)
+--------------------------------------------------------------------------------
+[0.00829 s] survived
+[*] Mutation score [0.09752 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

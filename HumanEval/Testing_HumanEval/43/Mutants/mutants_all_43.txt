@@ -1,0 +1,60 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/43/script_NDS_43.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/43/Copilot/test_43_cp_few_shot.py
+[*] 0 tests passed:
+   - test_43_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_43: 
+--------------------------------------------------------------------------------
+  1: def pairs_sum_to_zero(l):
+  2:     
+  3:     for (i, l1) in enumerate(l):
+- 4:         for j in range(i + 1, len(l)):
++ 4:         for j in range(i - 1, len(l)):
+  5:             if l1 + l[j] == 0:
+  6:                 return True
+  7:     return False
+--------------------------------------------------------------------------------
+[0.00899 s] survived
+   - [#   2] AOR script_NDS_43: 
+--------------------------------------------------------------------------------
+  1: def pairs_sum_to_zero(l):
+  2:     
+  3:     for (i, l1) in enumerate(l):
+  4:         for j in range(i + 1, len(l)):
+- 5:             if l1 + l[j] == 0:
++ 5:             if l1 - l[j] == 0:
+  6:                 return True
+  7:     return False
+--------------------------------------------------------------------------------
+[0.00528 s] survived
+   - [#   3] COI script_NDS_43: 
+--------------------------------------------------------------------------------
+  1: def pairs_sum_to_zero(l):
+  2:     
+  3:     for (i, l1) in enumerate(l):
+  4:         for j in range(i + 1, len(l)):
+- 5:             if l1 + l[j] == 0:
++ 5:             if not (l1 + l[j] == 0):
+  6:                 return True
+  7:     return False
+--------------------------------------------------------------------------------
+[0.00602 s] survived
+   - [#   4] ROR script_NDS_43: 
+--------------------------------------------------------------------------------
+  1: def pairs_sum_to_zero(l):
+  2:     
+  3:     for (i, l1) in enumerate(l):
+  4:         for j in range(i + 1, len(l)):
+- 5:             if l1 + l[j] == 0:
++ 5:             if l1 + l[j] != 0:
+  6:                 return True
+  7:     return False
+--------------------------------------------------------------------------------
+[0.00646 s] survived
+[*] Mutation score [0.11107 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

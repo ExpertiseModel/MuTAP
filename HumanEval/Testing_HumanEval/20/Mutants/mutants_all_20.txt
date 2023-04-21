@@ -1,0 +1,124 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/20/script_NDS_20.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/20/Copilot/test_20_cp_few_shot.py
+[*] 0 tests passed:
+   - test_20_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_20: 
+--------------------------------------------------------------------------------
+   9:     for (idx, elem) in enumerate(numbers):
+  10:         for (idx2, elem2) in enumerate(numbers):
+  11:             if idx != idx2:
+  12:                 if distance is None:
+- 13:                     distance = abs(elem - elem2)
++ 13:                     distance = abs(elem + elem2)
+  14:                     closest_pair = tuple(sorted([elem, elem2]))
+  15:                 else:
+  16:                     new_distance = abs(elem - elem2)
+  17:                     if new_distance < distance:
+--------------------------------------------------------------------------------
+[0.00526 s] survived
+   - [#   2] AOR script_NDS_20: 
+--------------------------------------------------------------------------------
+  12:                 if distance is None:
+  13:                     distance = abs(elem - elem2)
+  14:                     closest_pair = tuple(sorted([elem, elem2]))
+  15:                 else:
+- 16:                     new_distance = abs(elem - elem2)
++ 16:                     new_distance = abs(elem + elem2)
+  17:                     if new_distance < distance:
+  18:                         distance = new_distance
+  19:                         closest_pair = tuple(sorted([elem, elem2]))
+  20:     
+--------------------------------------------------------------------------------
+[0.00637 s] survived
+   - [#   3] COI script_NDS_20: 
+--------------------------------------------------------------------------------
+   7:     distance = None
+   8:     
+   9:     for (idx, elem) in enumerate(numbers):
+  10:         for (idx2, elem2) in enumerate(numbers):
+- 11:             if idx != idx2:
++ 11:             if not (idx != idx2):
+  12:                 if distance is None:
+  13:                     distance = abs(elem - elem2)
+  14:                     closest_pair = tuple(sorted([elem, elem2]))
+  15:                 else:
+--------------------------------------------------------------------------------
+[0.00645 s] survived
+   - [#   4] COI script_NDS_20: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     for (idx, elem) in enumerate(numbers):
+  10:         for (idx2, elem2) in enumerate(numbers):
+  11:             if idx != idx2:
+- 12:                 if distance is None:
++ 12:                 if not (distance is None):
+  13:                     distance = abs(elem - elem2)
+  14:                     closest_pair = tuple(sorted([elem, elem2]))
+  15:                 else:
+  16:                     new_distance = abs(elem - elem2)
+--------------------------------------------------------------------------------
+[0.00983 s] survived
+   - [#   5] COI script_NDS_20: 
+--------------------------------------------------------------------------------
+  13:                     distance = abs(elem - elem2)
+  14:                     closest_pair = tuple(sorted([elem, elem2]))
+  15:                 else:
+  16:                     new_distance = abs(elem - elem2)
+- 17:                     if new_distance < distance:
++ 17:                     if not (new_distance < distance):
+  18:                         distance = new_distance
+  19:                         closest_pair = tuple(sorted([elem, elem2]))
+  20:     
+  21:     return closest_pair
+--------------------------------------------------------------------------------
+[0.00772 s] survived
+   - [#   6] ROR script_NDS_20: 
+--------------------------------------------------------------------------------
+   7:     distance = None
+   8:     
+   9:     for (idx, elem) in enumerate(numbers):
+  10:         for (idx2, elem2) in enumerate(numbers):
+- 11:             if idx != idx2:
++ 11:             if idx == idx2:
+  12:                 if distance is None:
+  13:                     distance = abs(elem - elem2)
+  14:                     closest_pair = tuple(sorted([elem, elem2]))
+  15:                 else:
+--------------------------------------------------------------------------------
+[0.00748 s] survived
+   - [#   7] ROR script_NDS_20: 
+--------------------------------------------------------------------------------
+  13:                     distance = abs(elem - elem2)
+  14:                     closest_pair = tuple(sorted([elem, elem2]))
+  15:                 else:
+  16:                     new_distance = abs(elem - elem2)
+- 17:                     if new_distance < distance:
++ 17:                     if new_distance > distance:
+  18:                         distance = new_distance
+  19:                         closest_pair = tuple(sorted([elem, elem2]))
+  20:     
+  21:     return closest_pair
+--------------------------------------------------------------------------------
+[0.00534 s] survived
+   - [#   8] ROR script_NDS_20: 
+--------------------------------------------------------------------------------
+  13:                     distance = abs(elem - elem2)
+  14:                     closest_pair = tuple(sorted([elem, elem2]))
+  15:                 else:
+  16:                     new_distance = abs(elem - elem2)
+- 17:                     if new_distance < distance:
++ 17:                     if new_distance <= distance:
+  18:                         distance = new_distance
+  19:                         closest_pair = tuple(sorted([elem, elem2]))
+  20:     
+  21:     return closest_pair
+--------------------------------------------------------------------------------
+[0.00716 s] survived
+[*] Mutation score [0.33930 s]: 0.0%
+   - all: 8
+   - killed: 0 (0.0%)
+   - survived: 8 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

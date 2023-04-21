@@ -1,0 +1,106 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/5/script_NDS_5.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/5/Copilot/test_5_cp_few_shot.py
+[*] 0 tests passed:
+   - test_5_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_5: 
+--------------------------------------------------------------------------------
+   7:         return []
+   8:     
+   9:     result = []
+  10:     
+- 11:     for n in numbers[:-1]:
++ 11:     for n in numbers[:1]:
+  12:         result.append(n)
+  13:         result.append(delimeter)
+  14:     
+  15:     result.append(numbers[-1])
+--------------------------------------------------------------------------------
+[0.00674 s] survived
+   - [#   2] AOD script_NDS_5: 
+--------------------------------------------------------------------------------
+  11:     for n in numbers[:-1]:
+  12:         result.append(n)
+  13:         result.append(delimeter)
+  14:     
+- 15:     result.append(numbers[-1])
++ 15:     result.append(numbers[1])
+  16:     
+  17:     return result
+--------------------------------------------------------------------------------
+[0.00714 s] survived
+   - [#   3] AOR script_NDS_5: 
+--------------------------------------------------------------------------------
+   7:         return []
+   8:     
+   9:     result = []
+  10:     
+- 11:     for n in numbers[:-1]:
++ 11:     for n in numbers[:+1]:
+  12:         result.append(n)
+  13:         result.append(delimeter)
+  14:     
+  15:     result.append(numbers[-1])
+--------------------------------------------------------------------------------
+[0.00515 s] survived
+   - [#   4] AOR script_NDS_5: 
+--------------------------------------------------------------------------------
+  11:     for n in numbers[:-1]:
+  12:         result.append(n)
+  13:         result.append(delimeter)
+  14:     
+- 15:     result.append(numbers[-1])
++ 15:     result.append(numbers[+1])
+  16:     
+  17:     return result
+--------------------------------------------------------------------------------
+[0.00617 s] survived
+   - [#   5] COD script_NDS_5: 
+--------------------------------------------------------------------------------
+   2: 
+   3: 
+   4: def intersperse(numbers: List[int], delimeter: int) -> List[int]:
+   5:     
+-  6:     if not numbers:
++  6:     if numbers:
+   7:         return []
+   8:     
+   9:     result = []
+  10:     
+--------------------------------------------------------------------------------
+[0.00658 s] survived
+   - [#   6] COI script_NDS_5: 
+--------------------------------------------------------------------------------
+   2: 
+   3: 
+   4: def intersperse(numbers: List[int], delimeter: int) -> List[int]:
+   5:     
+-  6:     if not numbers:
++  6:     if not ((not numbers)):
+   7:         return []
+   8:     
+   9:     result = []
+  10:     
+--------------------------------------------------------------------------------
+[0.00562 s] survived
+   - [#   7] SIR script_NDS_5: 
+--------------------------------------------------------------------------------
+   7:         return []
+   8:     
+   9:     result = []
+  10:     
+- 11:     for n in numbers[:-1]:
++ 11:     for n in numbers[:]:
+  12:         result.append(n)
+  13:         result.append(delimeter)
+  14:     
+  15:     result.append(numbers[-1])
+--------------------------------------------------------------------------------
+[0.00489 s] survived
+[*] Mutation score [0.19786 s]: 0.0%
+   - all: 7
+   - killed: 0 (0.0%)
+   - survived: 7 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

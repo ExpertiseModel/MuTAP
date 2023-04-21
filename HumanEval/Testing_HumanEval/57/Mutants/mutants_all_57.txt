@@ -1,0 +1,52 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/57/script_NDS_57.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/57/Copilot/test_57_cp_few_shot.py
+[*] 0 tests passed:
+   - test_57_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_57: 
+--------------------------------------------------------------------------------
+  1: def monotonic(l: list):
+  2:     
+- 3:     if (l == sorted(l) or l == sorted(l, reverse=True)):
++ 3:     if not ((l == sorted(l) or l == sorted(l, reverse=True))):
+  4:         return True
+  5:     return False
+--------------------------------------------------------------------------------
+[0.00507 s] survived
+   - [#   2] LCR script_NDS_57: 
+--------------------------------------------------------------------------------
+  1: def monotonic(l: list):
+  2:     
+- 3:     if (l == sorted(l) or l == sorted(l, reverse=True)):
++ 3:     if (l == sorted(l) and l == sorted(l, reverse=True)):
+  4:         return True
+  5:     return False
+--------------------------------------------------------------------------------
+[0.00612 s] survived
+   - [#   3] ROR script_NDS_57: 
+--------------------------------------------------------------------------------
+  1: def monotonic(l: list):
+  2:     
+- 3:     if (l == sorted(l) or l == sorted(l, reverse=True)):
++ 3:     if (l != sorted(l) or l == sorted(l, reverse=True)):
+  4:         return True
+  5:     return False
+--------------------------------------------------------------------------------
+[0.00693 s] survived
+   - [#   4] ROR script_NDS_57: 
+--------------------------------------------------------------------------------
+  1: def monotonic(l: list):
+  2:     
+- 3:     if (l == sorted(l) or l == sorted(l, reverse=True)):
++ 3:     if (l == sorted(l) or l != sorted(l, reverse=True)):
+  4:         return True
+  5:     return False
+--------------------------------------------------------------------------------
+[0.00581 s] survived
+[*] Mutation score [0.08481 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,36 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/122/script_NDS_122.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/122/Copilot/test_122_cp_few_shot.py
+[*] 0 tests passed:
+   - test_122_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] ROR script_NDS_122: 
+--------------------------------------------------------------------------------
+  1: def add_elements(arr, k):
+  2:     
+- 3:     return sum((elem for elem in arr[:k] if len(str(elem)) <= 2))
++ 3:     return sum((elem for elem in arr[:k] if len(str(elem)) >= 2))
+--------------------------------------------------------------------------------
+[0.00507 s] survived
+   - [#   2] ROR script_NDS_122: 
+--------------------------------------------------------------------------------
+  1: def add_elements(arr, k):
+  2:     
+- 3:     return sum((elem for elem in arr[:k] if len(str(elem)) <= 2))
++ 3:     return sum((elem for elem in arr[:k] if len(str(elem)) < 2))
+--------------------------------------------------------------------------------
+[0.00854 s] survived
+   - [#   3] SIR script_NDS_122: 
+--------------------------------------------------------------------------------
+  1: def add_elements(arr, k):
+  2:     
+- 3:     return sum((elem for elem in arr[:k] if len(str(elem)) <= 2))
++ 3:     return sum((elem for elem in arr[:] if len(str(elem)) <= 2))
+--------------------------------------------------------------------------------
+[0.00778 s] survived
+[*] Mutation score [0.07807 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,97 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/31/script_NDS_31.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/31/Copilot/test_31_cp_few_shot.py
+[*] 0 tests passed:
+   - test_31_cp_few_shot [0.00008 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_31: 
+--------------------------------------------------------------------------------
+  1: def is_prime(n):
+  2:     
+  3:     if n < 2:
+  4:         return False
+- 5:     for k in range(2, n - 1):
++ 5:     for k in range(2, n + 1):
+  6:         if n % k == 0:
+  7:             return False
+  8:     return True
+--------------------------------------------------------------------------------
+[0.00604 s] survived
+   - [#   2] AOR script_NDS_31: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if n < 2:
+  4:         return False
+  5:     for k in range(2, n - 1):
+- 6:         if n % k == 0:
++ 6:         if n * k == 0:
+  7:             return False
+  8:     return True
+--------------------------------------------------------------------------------
+[0.00626 s] survived
+   - [#   3] COI script_NDS_31: 
+--------------------------------------------------------------------------------
+  1: def is_prime(n):
+  2:     
+- 3:     if n < 2:
++ 3:     if not (n < 2):
+  4:         return False
+  5:     for k in range(2, n - 1):
+  6:         if n % k == 0:
+  7:             return False
+--------------------------------------------------------------------------------
+[0.00661 s] survived
+   - [#   4] COI script_NDS_31: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if n < 2:
+  4:         return False
+  5:     for k in range(2, n - 1):
+- 6:         if n % k == 0:
++ 6:         if not (n % k == 0):
+  7:             return False
+  8:     return True
+--------------------------------------------------------------------------------
+[0.00668 s] survived
+   - [#   5] ROR script_NDS_31: 
+--------------------------------------------------------------------------------
+  1: def is_prime(n):
+  2:     
+- 3:     if n < 2:
++ 3:     if n > 2:
+  4:         return False
+  5:     for k in range(2, n - 1):
+  6:         if n % k == 0:
+  7:             return False
+--------------------------------------------------------------------------------
+[0.00663 s] survived
+   - [#   6] ROR script_NDS_31: 
+--------------------------------------------------------------------------------
+  1: def is_prime(n):
+  2:     
+- 3:     if n < 2:
++ 3:     if n <= 2:
+  4:         return False
+  5:     for k in range(2, n - 1):
+  6:         if n % k == 0:
+  7:             return False
+--------------------------------------------------------------------------------
+[0.00622 s] survived
+   - [#   7] ROR script_NDS_31: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if n < 2:
+  4:         return False
+  5:     for k in range(2, n - 1):
+- 6:         if n % k == 0:
++ 6:         if n % k != 0:
+  7:             return False
+  8:     return True
+--------------------------------------------------------------------------------
+[0.00558 s] survived
+[*] Mutation score [0.13872 s]: 0.0%
+   - all: 7
+   - killed: 0 (0.0%)
+   - survived: 7 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,130 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/128/script_NDS_128.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/128/Copilot/test_128_cp_few_shot.py
+[*] 0 tests passed:
+   - test_128_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_128: 
+--------------------------------------------------------------------------------
+  1: def prod_signs(arr):
+  2:     
+  3:     if not arr:
+  4:         return None
+- 5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
++ 5:     prod = 0 if 0 in arr else 1 ** len(list(filter((lambda x: (x < 0)), arr)))
+  6:     return prod * sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00480 s] survived
+   - [#   2] AOR script_NDS_128: 
+--------------------------------------------------------------------------------
+  1: def prod_signs(arr):
+  2:     
+  3:     if not arr:
+  4:         return None
+- 5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
++ 5:     prod = 0 if 0 in arr else (+1) ** len(list(filter((lambda x: (x < 0)), arr)))
+  6:     return prod * sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00512 s] survived
+   - [#   3] AOR script_NDS_128: 
+--------------------------------------------------------------------------------
+  1: def prod_signs(arr):
+  2:     
+  3:     if not arr:
+  4:         return None
+- 5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
++ 5:     prod = 0 if 0 in arr else (-1) * len(list(filter((lambda x: (x < 0)), arr)))
+  6:     return prod * sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00672 s] survived
+   - [#   4] AOR script_NDS_128: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if not arr:
+  4:         return None
+  5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
+- 6:     return prod * sum([abs(i) for i in arr])
++ 6:     return prod / sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00694 s] survived
+   - [#   5] AOR script_NDS_128: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if not arr:
+  4:         return None
+  5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
+- 6:     return prod * sum([abs(i) for i in arr])
++ 6:     return prod // sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00526 s] survived
+   - [#   6] AOR script_NDS_128: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if not arr:
+  4:         return None
+  5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
+- 6:     return prod * sum([abs(i) for i in arr])
++ 6:     return prod ** sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00580 s] survived
+   - [#   7] COD script_NDS_128: 
+--------------------------------------------------------------------------------
+  1: def prod_signs(arr):
+  2:     
+- 3:     if not arr:
++ 3:     if arr:
+  4:         return None
+  5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
+  6:     return prod * sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00751 s] survived
+   - [#   8] COI script_NDS_128: 
+--------------------------------------------------------------------------------
+  1: def prod_signs(arr):
+  2:     
+- 3:     if not arr:
++ 3:     if not ((not arr)):
+  4:         return None
+  5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
+  6:     return prod * sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00657 s] survived
+   - [#   9] COI script_NDS_128: 
+--------------------------------------------------------------------------------
+  1: def prod_signs(arr):
+  2:     
+  3:     if not arr:
+  4:         return None
+- 5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
++ 5:     prod = 0 if 0 not in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
+  6:     return prod * sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00608 s] survived
+   - [#  10] ROR script_NDS_128: 
+--------------------------------------------------------------------------------
+  1: def prod_signs(arr):
+  2:     
+  3:     if not arr:
+  4:         return None
+- 5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
++ 5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x > 0)), arr)))
+  6:     return prod * sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00707 s] survived
+   - [#  11] ROR script_NDS_128: 
+--------------------------------------------------------------------------------
+  1: def prod_signs(arr):
+  2:     
+  3:     if not arr:
+  4:         return None
+- 5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x < 0)), arr)))
++ 5:     prod = 0 if 0 in arr else (-1) ** len(list(filter((lambda x: (x <= 0)), arr)))
+  6:     return prod * sum([abs(i) for i in arr])
+--------------------------------------------------------------------------------
+[0.00517 s] survived
+[*] Mutation score [0.24150 s]: 0.0%
+   - all: 11
+   - killed: 0 (0.0%)
+   - survived: 11 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

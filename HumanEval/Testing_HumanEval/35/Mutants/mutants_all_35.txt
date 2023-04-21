@@ -1,0 +1,48 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/35/script_NDS_35.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/35/Copilot/test_35_cp_few_shot.py
+[*] 0 tests passed:
+   - test_35_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_35: 
+--------------------------------------------------------------------------------
+  1: def max_element(l: list):
+  2:     
+  3:     m = l[0]
+  4:     for e in l:
+- 5:         if e > m:
++ 5:         if not (e > m):
+  6:             m = e
+  7:     return m
+--------------------------------------------------------------------------------
+[0.00790 s] survived
+   - [#   2] ROR script_NDS_35: 
+--------------------------------------------------------------------------------
+  1: def max_element(l: list):
+  2:     
+  3:     m = l[0]
+  4:     for e in l:
+- 5:         if e > m:
++ 5:         if e < m:
+  6:             m = e
+  7:     return m
+--------------------------------------------------------------------------------
+[0.00546 s] survived
+   - [#   3] ROR script_NDS_35: 
+--------------------------------------------------------------------------------
+  1: def max_element(l: list):
+  2:     
+  3:     m = l[0]
+  4:     for e in l:
+- 5:         if e > m:
++ 5:         if e >= m:
+  6:             m = e
+  7:     return m
+--------------------------------------------------------------------------------
+[0.00644 s] survived
+[*] Mutation score [0.08010 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,60 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/70/script_NDS_70.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/70/Copilot/test_70_cp_few_shot.py
+[*] 0 tests passed:
+   - test_70_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_70: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     (res, switch) = ([], True)
+  4:     while lst:
+  5:         res.append(min(lst) if switch else max(lst))
+- 6:         lst.remove(res[-1])
++ 6:         lst.remove(res[1])
+  7:         switch = not switch
+  8:     return res
+--------------------------------------------------------------------------------
+[0.00496 s] survived
+   - [#   2] AOR script_NDS_70: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     (res, switch) = ([], True)
+  4:     while lst:
+  5:         res.append(min(lst) if switch else max(lst))
+- 6:         lst.remove(res[-1])
++ 6:         lst.remove(res[+1])
+  7:         switch = not switch
+  8:     return res
+--------------------------------------------------------------------------------
+[0.00597 s] survived
+   - [#   3] COD script_NDS_70: 
+--------------------------------------------------------------------------------
+  3:     (res, switch) = ([], True)
+  4:     while lst:
+  5:         res.append(min(lst) if switch else max(lst))
+  6:         lst.remove(res[-1])
+- 7:         switch = not switch
++ 7:         switch = switch
+  8:     return res
+--------------------------------------------------------------------------------
+[0.00539 s] survived
+   - [#   4] COI script_NDS_70: 
+--------------------------------------------------------------------------------
+  1: def strange_sort_list(lst):
+  2:     
+  3:     (res, switch) = ([], True)
+- 4:     while lst:
++ 4:     while not lst:
+  5:         res.append(min(lst) if switch else max(lst))
+  6:         lst.remove(res[-1])
+  7:         switch = not switch
+  8:     return res
+--------------------------------------------------------------------------------
+[0.00720 s] survived
+[*] Mutation score [0.12705 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

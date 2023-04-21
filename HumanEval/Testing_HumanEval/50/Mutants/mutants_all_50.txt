@@ -1,0 +1,100 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/50/script_NDS_50.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/50/Copilot/test_50_cp_few_shot.py
+[*] 0 tests passed:
+   - test_50_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_50: 
+--------------------------------------------------------------------------------
+  1: def encode_shift(s: str):
+  2:     
+- 3:     return ''.join([chr((((ord(ch) + 5) - ord('a')) % 26) + ord('a')) for ch in s])
++ 3:     return ''.join([chr((((ord(ch) - 5) - ord('a')) % 26) + ord('a')) for ch in s])
+  4: 
+  5: 
+  6: def decode_shift(s: str):
+  7:     
+--------------------------------------------------------------------------------
+[0.00748 s] survived
+   - [#   2] AOR script_NDS_50: 
+--------------------------------------------------------------------------------
+  1: def encode_shift(s: str):
+  2:     
+- 3:     return ''.join([chr((((ord(ch) + 5) - ord('a')) % 26) + ord('a')) for ch in s])
++ 3:     return ''.join([chr((((ord(ch) + 5) + ord('a')) % 26) + ord('a')) for ch in s])
+  4: 
+  5: 
+  6: def decode_shift(s: str):
+  7:     
+--------------------------------------------------------------------------------
+[0.00958 s] survived
+   - [#   3] AOR script_NDS_50: 
+--------------------------------------------------------------------------------
+  1: def encode_shift(s: str):
+  2:     
+- 3:     return ''.join([chr((((ord(ch) + 5) - ord('a')) % 26) + ord('a')) for ch in s])
++ 3:     return ''.join([chr((((ord(ch) + 5) - ord('a')) * 26) + ord('a')) for ch in s])
+  4: 
+  5: 
+  6: def decode_shift(s: str):
+  7:     
+--------------------------------------------------------------------------------
+[0.00601 s] survived
+   - [#   4] AOR script_NDS_50: 
+--------------------------------------------------------------------------------
+  1: def encode_shift(s: str):
+  2:     
+- 3:     return ''.join([chr((((ord(ch) + 5) - ord('a')) % 26) + ord('a')) for ch in s])
++ 3:     return ''.join([chr((((ord(ch) + 5) - ord('a')) % 26) - ord('a')) for ch in s])
+  4: 
+  5: 
+  6: def decode_shift(s: str):
+  7:     
+--------------------------------------------------------------------------------
+[0.00591 s] survived
+   - [#   5] AOR script_NDS_50: 
+--------------------------------------------------------------------------------
+  4: 
+  5: 
+  6: def decode_shift(s: str):
+  7:     
+- 8:     return ''.join([chr((((ord(ch) - 5) - ord('a')) % 26) + ord('a')) for ch in s])
++ 8:     return ''.join([chr((((ord(ch) + 5) - ord('a')) % 26) + ord('a')) for ch in s])
+--------------------------------------------------------------------------------
+[0.00648 s] survived
+   - [#   6] AOR script_NDS_50: 
+--------------------------------------------------------------------------------
+  4: 
+  5: 
+  6: def decode_shift(s: str):
+  7:     
+- 8:     return ''.join([chr((((ord(ch) - 5) - ord('a')) % 26) + ord('a')) for ch in s])
++ 8:     return ''.join([chr((((ord(ch) - 5) + ord('a')) % 26) + ord('a')) for ch in s])
+--------------------------------------------------------------------------------
+[0.00495 s] survived
+   - [#   7] AOR script_NDS_50: 
+--------------------------------------------------------------------------------
+  4: 
+  5: 
+  6: def decode_shift(s: str):
+  7:     
+- 8:     return ''.join([chr((((ord(ch) - 5) - ord('a')) % 26) + ord('a')) for ch in s])
++ 8:     return ''.join([chr((((ord(ch) - 5) - ord('a')) * 26) + ord('a')) for ch in s])
+--------------------------------------------------------------------------------
+[0.00563 s] survived
+   - [#   8] AOR script_NDS_50: 
+--------------------------------------------------------------------------------
+  4: 
+  5: 
+  6: def decode_shift(s: str):
+  7:     
+- 8:     return ''.join([chr((((ord(ch) - 5) - ord('a')) % 26) + ord('a')) for ch in s])
++ 8:     return ''.join([chr((((ord(ch) - 5) - ord('a')) % 26) - ord('a')) for ch in s])
+--------------------------------------------------------------------------------
+[0.00844 s] survived
+[*] Mutation score [0.23013 s]: 0.0%
+   - all: 8
+   - killed: 0 (0.0%)
+   - survived: 8 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

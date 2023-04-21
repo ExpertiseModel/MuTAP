@@ -1,0 +1,162 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/154/script_NDS_154.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/154/Copilot/test_154_cp_few_shot.py
+[*] 0 tests passed:
+   - test_154_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_154: 
+--------------------------------------------------------------------------------
+  1: def cycpattern_check(a, b):
+  2:     
+  3:     l = len(b)
+- 4:     pat = b + b
++ 4:     pat = b - b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+  7:             if a[i:i + l] == pat[j:j + l]:
+  8:                 return True
+--------------------------------------------------------------------------------
+[0.00530 s] survived
+   - [#   2] AOR script_NDS_154: 
+--------------------------------------------------------------------------------
+  1: def cycpattern_check(a, b):
+  2:     
+  3:     l = len(b)
+  4:     pat = b + b
+- 5:     for i in range((len(a) - l) + 1):
++ 5:     for i in range((len(a) + l) + 1):
+  6:         for j in range(l + 1):
+  7:             if a[i:i + l] == pat[j:j + l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00749 s] survived
+   - [#   3] AOR script_NDS_154: 
+--------------------------------------------------------------------------------
+  1: def cycpattern_check(a, b):
+  2:     
+  3:     l = len(b)
+  4:     pat = b + b
+- 5:     for i in range((len(a) - l) + 1):
++ 5:     for i in range((len(a) - l) - 1):
+  6:         for j in range(l + 1):
+  7:             if a[i:i + l] == pat[j:j + l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00661 s] survived
+   - [#   4] AOR script_NDS_154: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+- 6:         for j in range(l + 1):
++ 6:         for j in range(l - 1):
+  7:             if a[i:i + l] == pat[j:j + l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00601 s] survived
+   - [#   5] AOR script_NDS_154: 
+--------------------------------------------------------------------------------
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+- 7:             if a[i:i + l] == pat[j:j + l]:
++ 7:             if a[i:i - l] == pat[j:j + l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00674 s] survived
+   - [#   6] AOR script_NDS_154: 
+--------------------------------------------------------------------------------
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+- 7:             if a[i:i + l] == pat[j:j + l]:
++ 7:             if a[i:i + l] == pat[j:j - l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00598 s] survived
+   - [#   7] COI script_NDS_154: 
+--------------------------------------------------------------------------------
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+- 7:             if a[i:i + l] == pat[j:j + l]:
++ 7:             if not (a[i:i + l] == pat[j:j + l]):
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00712 s] survived
+   - [#   8] ROR script_NDS_154: 
+--------------------------------------------------------------------------------
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+- 7:             if a[i:i + l] == pat[j:j + l]:
++ 7:             if a[i:i + l] != pat[j:j + l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00618 s] survived
+   - [#   9] SIR script_NDS_154: 
+--------------------------------------------------------------------------------
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+- 7:             if a[i:i + l] == pat[j:j + l]:
++ 7:             if a[:i + l] == pat[j:j + l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00517 s] survived
+   - [#  10] SIR script_NDS_154: 
+--------------------------------------------------------------------------------
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+- 7:             if a[i:i + l] == pat[j:j + l]:
++ 7:             if a[i:] == pat[j:j + l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00507 s] survived
+   - [#  11] SIR script_NDS_154: 
+--------------------------------------------------------------------------------
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+- 7:             if a[i:i + l] == pat[j:j + l]:
++ 7:             if a[i:i + l] == pat[:j + l]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00802 s] survived
+   - [#  12] SIR script_NDS_154: 
+--------------------------------------------------------------------------------
+  3:     l = len(b)
+  4:     pat = b + b
+  5:     for i in range((len(a) - l) + 1):
+  6:         for j in range(l + 1):
+- 7:             if a[i:i + l] == pat[j:j + l]:
++ 7:             if a[i:i + l] == pat[j:]:
+  8:                 return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00613 s] survived
+[*] Mutation score [0.28788 s]: 0.0%
+   - all: 12
+   - killed: 0 (0.0%)
+   - survived: 12 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

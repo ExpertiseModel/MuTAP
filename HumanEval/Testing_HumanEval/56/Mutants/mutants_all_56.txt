@@ -1,0 +1,113 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/56/script_NDS_56.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/56/Copilot/test_56_cp_few_shot.py
+[*] 0 tests passed:
+   - test_56_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR script_NDS_56: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     depth = 0
+   4:     for b in brackets:
+   5:         if b == '<':
+-  6:             depth += 1
++  6:             depth -= 1
+   7:         else:
+   8:             depth -= 1
+   9:         if depth < 0:
+  10:             return False
+--------------------------------------------------------------------------------
+[0.00668 s] survived
+   - [#   2] ASR script_NDS_56: 
+--------------------------------------------------------------------------------
+   4:     for b in brackets:
+   5:         if b == '<':
+   6:             depth += 1
+   7:         else:
+-  8:             depth -= 1
++  8:             depth += 1
+   9:         if depth < 0:
+  10:             return False
+  11:     return depth == 0
+--------------------------------------------------------------------------------
+[0.00661 s] survived
+   - [#   3] COI script_NDS_56: 
+--------------------------------------------------------------------------------
+   1: def correct_bracketing(brackets: str):
+   2:     
+   3:     depth = 0
+   4:     for b in brackets:
+-  5:         if b == '<':
++  5:         if not (b == '<'):
+   6:             depth += 1
+   7:         else:
+   8:             depth -= 1
+   9:         if depth < 0:
+--------------------------------------------------------------------------------
+[0.00638 s] survived
+   - [#   4] COI script_NDS_56: 
+--------------------------------------------------------------------------------
+   5:         if b == '<':
+   6:             depth += 1
+   7:         else:
+   8:             depth -= 1
+-  9:         if depth < 0:
++  9:         if not (depth < 0):
+  10:             return False
+  11:     return depth == 0
+--------------------------------------------------------------------------------
+[0.00597 s] survived
+   - [#   5] ROR script_NDS_56: 
+--------------------------------------------------------------------------------
+   1: def correct_bracketing(brackets: str):
+   2:     
+   3:     depth = 0
+   4:     for b in brackets:
+-  5:         if b == '<':
++  5:         if b != '<':
+   6:             depth += 1
+   7:         else:
+   8:             depth -= 1
+   9:         if depth < 0:
+--------------------------------------------------------------------------------
+[0.00582 s] survived
+   - [#   6] ROR script_NDS_56: 
+--------------------------------------------------------------------------------
+   5:         if b == '<':
+   6:             depth += 1
+   7:         else:
+   8:             depth -= 1
+-  9:         if depth < 0:
++  9:         if depth > 0:
+  10:             return False
+  11:     return depth == 0
+--------------------------------------------------------------------------------
+[0.00674 s] survived
+   - [#   7] ROR script_NDS_56: 
+--------------------------------------------------------------------------------
+   5:         if b == '<':
+   6:             depth += 1
+   7:         else:
+   8:             depth -= 1
+-  9:         if depth < 0:
++  9:         if depth <= 0:
+  10:             return False
+  11:     return depth == 0
+--------------------------------------------------------------------------------
+[0.00571 s] survived
+   - [#   8] ROR script_NDS_56: 
+--------------------------------------------------------------------------------
+   7:         else:
+   8:             depth -= 1
+   9:         if depth < 0:
+  10:             return False
+- 11:     return depth == 0
++ 11:     return depth != 0
+--------------------------------------------------------------------------------
+[0.00883 s] survived
+[*] Mutation score [0.16455 s]: 0.0%
+   - all: 8
+   - killed: 0 (0.0%)
+   - survived: 8 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

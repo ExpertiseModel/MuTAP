@@ -1,0 +1,86 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/40/script_NDS_40.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/40/Copilot/test_40_cp_few_shot.py
+[*] 0 tests passed:
+   - test_40_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_40: 
+--------------------------------------------------------------------------------
+  1: def triples_sum_to_zero(l: list):
+  2:     
+  3:     for i in range(len(l)):
+- 4:         for j in range(i + 1, len(l)):
++ 4:         for j in range(i - 1, len(l)):
+  5:             for k in range(j + 1, len(l)):
+  6:                 if (l[i] + l[j]) + l[k] == 0:
+  7:                     return True
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00673 s] survived
+   - [#   2] AOR script_NDS_40: 
+--------------------------------------------------------------------------------
+  1: def triples_sum_to_zero(l: list):
+  2:     
+  3:     for i in range(len(l)):
+  4:         for j in range(i + 1, len(l)):
+- 5:             for k in range(j + 1, len(l)):
++ 5:             for k in range(j - 1, len(l)):
+  6:                 if (l[i] + l[j]) + l[k] == 0:
+  7:                     return True
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00646 s] survived
+   - [#   3] AOR script_NDS_40: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     for i in range(len(l)):
+  4:         for j in range(i + 1, len(l)):
+  5:             for k in range(j + 1, len(l)):
+- 6:                 if (l[i] + l[j]) + l[k] == 0:
++ 6:                 if (l[i] - l[j]) + l[k] == 0:
+  7:                     return True
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00708 s] survived
+   - [#   4] AOR script_NDS_40: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     for i in range(len(l)):
+  4:         for j in range(i + 1, len(l)):
+  5:             for k in range(j + 1, len(l)):
+- 6:                 if (l[i] + l[j]) + l[k] == 0:
++ 6:                 if (l[i] + l[j]) - l[k] == 0:
+  7:                     return True
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00558 s] survived
+   - [#   5] COI script_NDS_40: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     for i in range(len(l)):
+  4:         for j in range(i + 1, len(l)):
+  5:             for k in range(j + 1, len(l)):
+- 6:                 if (l[i] + l[j]) + l[k] == 0:
++ 6:                 if not ((l[i] + l[j]) + l[k] == 0):
+  7:                     return True
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00737 s] survived
+   - [#   6] ROR script_NDS_40: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     for i in range(len(l)):
+  4:         for j in range(i + 1, len(l)):
+  5:             for k in range(j + 1, len(l)):
+- 6:                 if (l[i] + l[j]) + l[k] == 0:
++ 6:                 if (l[i] + l[j]) + l[k] != 0:
+  7:                     return True
+  8:     return False
+--------------------------------------------------------------------------------
+[0.00625 s] survived
+[*] Mutation score [0.18869 s]: 0.0%
+   - all: 6
+   - killed: 0 (0.0%)
+   - survived: 6 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

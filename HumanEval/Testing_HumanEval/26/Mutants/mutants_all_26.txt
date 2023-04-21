@@ -1,0 +1,32 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/26/script_NDS_26.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/26/Copilot/test_26_cp_few_shot.py
+[*] 0 tests passed:
+   - test_26_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] ROR script_NDS_26: 
+--------------------------------------------------------------------------------
+  4: def remove_duplicates(numbers: List[int]) -> List[int]:
+  5:     
+  6:     import collections
+  7:     c = collections.Counter(numbers)
+- 8:     return [n for n in numbers if c[n] <= 1]
++ 8:     return [n for n in numbers if c[n] >= 1]
+--------------------------------------------------------------------------------
+[0.00553 s] survived
+   - [#   2] ROR script_NDS_26: 
+--------------------------------------------------------------------------------
+  4: def remove_duplicates(numbers: List[int]) -> List[int]:
+  5:     
+  6:     import collections
+  7:     c = collections.Counter(numbers)
+- 8:     return [n for n in numbers if c[n] <= 1]
++ 8:     return [n for n in numbers if c[n] < 1]
+--------------------------------------------------------------------------------
+[0.00648 s] survived
+[*] Mutation score [0.07269 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,1 @@
+is_multiply_prime(5) 

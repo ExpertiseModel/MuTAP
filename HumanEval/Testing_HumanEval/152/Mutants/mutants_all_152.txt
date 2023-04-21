@@ -1,0 +1,20 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/152/script_NDS_152.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/152/Copilot/test_152_cp_few_shot.py
+[*] 0 tests passed:
+   - test_152_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_152: 
+--------------------------------------------------------------------------------
+  1: def compare(game, guess):
+  2:     
+- 3:     return [abs(x - y) for (x, y) in zip(game, guess)]
++ 3:     return [abs(x + y) for (x, y) in zip(game, guess)]
+--------------------------------------------------------------------------------
+[0.00574 s] survived
+[*] Mutation score [0.04283 s]: 0.0%
+   - all: 1
+   - killed: 0 (0.0%)
+   - survived: 1 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

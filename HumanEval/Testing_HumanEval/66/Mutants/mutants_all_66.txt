@@ -1,0 +1,30 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/66/script_NDS_66.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/66/Copilot/test_66_cp_few_shot.py
+[*] 0 tests passed:
+   - test_66_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_66: 
+--------------------------------------------------------------------------------
+  1: def digitSum(s):
+- 2:     if s == '':
++ 2:     if not (s == ''):
+  3:         return 0
+  4:     return sum((ord(char) if char.isupper() else 0 for char in s))
+--------------------------------------------------------------------------------
+[0.00681 s] survived
+   - [#   2] ROR script_NDS_66: 
+--------------------------------------------------------------------------------
+  1: def digitSum(s):
+- 2:     if s == '':
++ 2:     if s != '':
+  3:         return 0
+  4:     return sum((ord(char) if char.isupper() else 0 for char in s))
+--------------------------------------------------------------------------------
+[0.00565 s] survived
+[*] Mutation score [0.06170 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

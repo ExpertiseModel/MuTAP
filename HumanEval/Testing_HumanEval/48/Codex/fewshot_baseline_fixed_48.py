@@ -1,0 +1,12 @@
+def is_palindrome(text: str):
+    
+    for i in range(len(text)):
+        if text[i] != text[len(text) - 1 - i]:
+            return False
+    return True
+
+
+
+
+def test():
+    assert is_palindrome("A car, a man, a maraca") == False

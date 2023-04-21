@@ -1,0 +1,20 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/51/script_NDS_51.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/51/Copilot/test_51_cp_few_shot.py
+[*] 0 tests passed:
+   - test_51_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COD script_NDS_51: 
+--------------------------------------------------------------------------------
+  1: def remove_vowels(text):
+  2:     
+- 3:     return ''.join([s for s in text if s.lower() not in ['a', 'e', 'i', 'o', 'u']])
++ 3:     return ''.join([s for s in text if s.lower() in ['a', 'e', 'i', 'o', 'u']])
+--------------------------------------------------------------------------------
+[0.00760 s] survived
+[*] Mutation score [0.04628 s]: 0.0%
+   - all: 1
+   - killed: 0 (0.0%)
+   - survived: 1 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,108 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/37/script_NDS_37.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/37/Copilot/test_37_cp_few_shot.py
+[*] 0 tests passed:
+   - test_37_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_37: 
+--------------------------------------------------------------------------------
+   6:     ans = []
+   7:     for (e, o) in zip(evens, odds):
+   8:         ans.extend([e, o])
+   9:     if len(evens) > len(odds):
+- 10:         ans.append(evens[-1])
++ 10:         ans.append(evens[1])
+  11:     return ans
+--------------------------------------------------------------------------------
+[0.00510 s] survived
+   - [#   2] AOR script_NDS_37: 
+--------------------------------------------------------------------------------
+   6:     ans = []
+   7:     for (e, o) in zip(evens, odds):
+   8:         ans.extend([e, o])
+   9:     if len(evens) > len(odds):
+- 10:         ans.append(evens[-1])
++ 10:         ans.append(evens[+1])
+  11:     return ans
+--------------------------------------------------------------------------------
+[0.00821 s] survived
+   - [#   3] COI script_NDS_37: 
+--------------------------------------------------------------------------------
+   5:     evens.sort()
+   6:     ans = []
+   7:     for (e, o) in zip(evens, odds):
+   8:         ans.extend([e, o])
+-  9:     if len(evens) > len(odds):
++  9:     if not (len(evens) > len(odds)):
+  10:         ans.append(evens[-1])
+  11:     return ans
+--------------------------------------------------------------------------------
+[0.00567 s] survived
+   - [#   4] ROR script_NDS_37: 
+--------------------------------------------------------------------------------
+   5:     evens.sort()
+   6:     ans = []
+   7:     for (e, o) in zip(evens, odds):
+   8:         ans.extend([e, o])
+-  9:     if len(evens) > len(odds):
++  9:     if len(evens) < len(odds):
+  10:         ans.append(evens[-1])
+  11:     return ans
+--------------------------------------------------------------------------------
+[0.00574 s] survived
+   - [#   5] ROR script_NDS_37: 
+--------------------------------------------------------------------------------
+   5:     evens.sort()
+   6:     ans = []
+   7:     for (e, o) in zip(evens, odds):
+   8:         ans.extend([e, o])
+-  9:     if len(evens) > len(odds):
++  9:     if len(evens) >= len(odds):
+  10:         ans.append(evens[-1])
+  11:     return ans
+--------------------------------------------------------------------------------
+[0.00623 s] survived
+   - [#   6] SIR script_NDS_37: 
+--------------------------------------------------------------------------------
+   1: def sort_even(l: list):
+   2:     
+-  3:     evens = l[::2]
++  3:     evens = l[:]
+   4:     odds = l[1::2]
+   5:     evens.sort()
+   6:     ans = []
+   7:     for (e, o) in zip(evens, odds):
+--------------------------------------------------------------------------------
+[0.00554 s] survived
+   - [#   7] SIR script_NDS_37: 
+--------------------------------------------------------------------------------
+   1: def sort_even(l: list):
+   2:     
+   3:     evens = l[::2]
+-  4:     odds = l[1::2]
++  4:     odds = l[::2]
+   5:     evens.sort()
+   6:     ans = []
+   7:     for (e, o) in zip(evens, odds):
+   8:         ans.extend([e, o])
+--------------------------------------------------------------------------------
+[0.00757 s] survived
+   - [#   8] SIR script_NDS_37: 
+--------------------------------------------------------------------------------
+   1: def sort_even(l: list):
+   2:     
+   3:     evens = l[::2]
+-  4:     odds = l[1::2]
++  4:     odds = l[1:]
+   5:     evens.sort()
+   6:     ans = []
+   7:     for (e, o) in zip(evens, odds):
+   8:         ans.extend([e, o])
+--------------------------------------------------------------------------------
+[0.00536 s] survived
+[*] Mutation score [0.23680 s]: 0.0%
+   - all: 8
+   - killed: 0 (0.0%)
+   - survived: 8 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

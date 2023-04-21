@@ -1,0 +1,150 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/111/script_NDS_111.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/111/Copilot/test_111_cp_few_shot.py
+[*] 0 tests passed:
+   - test_111_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_111: 
+--------------------------------------------------------------------------------
+   4:     list1 = test.split(' ')
+   5:     t = 0
+   6:     
+   7:     for i in list1:
+-  8:         if (list1.count(i) > t and i != ''):
++  8:         if not ((list1.count(i) > t and i != '')):
+   9:             t = list1.count(i)
+  10:     if t > 0:
+  11:         for i in list1:
+  12:             if list1.count(i) == t:
+--------------------------------------------------------------------------------
+[0.00528 s] survived
+   - [#   2] COI script_NDS_111: 
+--------------------------------------------------------------------------------
+   6:     
+   7:     for i in list1:
+   8:         if (list1.count(i) > t and i != ''):
+   9:             t = list1.count(i)
+- 10:     if t > 0:
++ 10:     if not (t > 0):
+  11:         for i in list1:
+  12:             if list1.count(i) == t:
+  13:                 
+  14:                 dict1[i] = t
+--------------------------------------------------------------------------------
+[0.00539 s] survived
+   - [#   3] COI script_NDS_111: 
+--------------------------------------------------------------------------------
+   8:         if (list1.count(i) > t and i != ''):
+   9:             t = list1.count(i)
+  10:     if t > 0:
+  11:         for i in list1:
+- 12:             if list1.count(i) == t:
++ 12:             if not (list1.count(i) == t):
+  13:                 
+  14:                 dict1[i] = t
+  15:     return dict1
+--------------------------------------------------------------------------------
+[0.00768 s] survived
+   - [#   4] LCR script_NDS_111: 
+--------------------------------------------------------------------------------
+   4:     list1 = test.split(' ')
+   5:     t = 0
+   6:     
+   7:     for i in list1:
+-  8:         if (list1.count(i) > t and i != ''):
++  8:         if (list1.count(i) > t or i != ''):
+   9:             t = list1.count(i)
+  10:     if t > 0:
+  11:         for i in list1:
+  12:             if list1.count(i) == t:
+--------------------------------------------------------------------------------
+[0.00560 s] survived
+   - [#   5] ROR script_NDS_111: 
+--------------------------------------------------------------------------------
+   4:     list1 = test.split(' ')
+   5:     t = 0
+   6:     
+   7:     for i in list1:
+-  8:         if (list1.count(i) > t and i != ''):
++  8:         if (list1.count(i) < t and i != ''):
+   9:             t = list1.count(i)
+  10:     if t > 0:
+  11:         for i in list1:
+  12:             if list1.count(i) == t:
+--------------------------------------------------------------------------------
+[0.00599 s] survived
+   - [#   6] ROR script_NDS_111: 
+--------------------------------------------------------------------------------
+   4:     list1 = test.split(' ')
+   5:     t = 0
+   6:     
+   7:     for i in list1:
+-  8:         if (list1.count(i) > t and i != ''):
++  8:         if (list1.count(i) >= t and i != ''):
+   9:             t = list1.count(i)
+  10:     if t > 0:
+  11:         for i in list1:
+  12:             if list1.count(i) == t:
+--------------------------------------------------------------------------------
+[0.00550 s] survived
+   - [#   7] ROR script_NDS_111: 
+--------------------------------------------------------------------------------
+   4:     list1 = test.split(' ')
+   5:     t = 0
+   6:     
+   7:     for i in list1:
+-  8:         if (list1.count(i) > t and i != ''):
++  8:         if (list1.count(i) > t and i == ''):
+   9:             t = list1.count(i)
+  10:     if t > 0:
+  11:         for i in list1:
+  12:             if list1.count(i) == t:
+--------------------------------------------------------------------------------
+[0.00671 s] survived
+   - [#   8] ROR script_NDS_111: 
+--------------------------------------------------------------------------------
+   6:     
+   7:     for i in list1:
+   8:         if (list1.count(i) > t and i != ''):
+   9:             t = list1.count(i)
+- 10:     if t > 0:
++ 10:     if t < 0:
+  11:         for i in list1:
+  12:             if list1.count(i) == t:
+  13:                 
+  14:                 dict1[i] = t
+--------------------------------------------------------------------------------
+[0.00587 s] survived
+   - [#   9] ROR script_NDS_111: 
+--------------------------------------------------------------------------------
+   6:     
+   7:     for i in list1:
+   8:         if (list1.count(i) > t and i != ''):
+   9:             t = list1.count(i)
+- 10:     if t > 0:
++ 10:     if t >= 0:
+  11:         for i in list1:
+  12:             if list1.count(i) == t:
+  13:                 
+  14:                 dict1[i] = t
+--------------------------------------------------------------------------------
+[0.00726 s] survived
+   - [#  10] ROR script_NDS_111: 
+--------------------------------------------------------------------------------
+   8:         if (list1.count(i) > t and i != ''):
+   9:             t = list1.count(i)
+  10:     if t > 0:
+  11:         for i in list1:
+- 12:             if list1.count(i) == t:
++ 12:             if list1.count(i) != t:
+  13:                 
+  14:                 dict1[i] = t
+  15:     return dict1
+--------------------------------------------------------------------------------
+[0.00777 s] survived
+[*] Mutation score [0.28712 s]: 0.0%
+   - all: 10
+   - killed: 0 (0.0%)
+   - survived: 10 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

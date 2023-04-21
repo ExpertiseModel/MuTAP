@@ -1,0 +1,157 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/153/script_NDS_153.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/153/Copilot/test_153_cp_few_shot.py
+[*] 0 tests passed:
+   - test_153_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_153: 
+--------------------------------------------------------------------------------
+   1: def Strongest_Extension(class_name, extensions):
+   2:     
+   3:     strong = extensions[0]
+-  4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
++  4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) + len([x for x in extensions[0] if (x.isalpha() and x.islower())])
+   5:     for s in extensions:
+   6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
+   7:         if val > my_val:
+   8:             strong = s
+--------------------------------------------------------------------------------
+[0.00682 s] survived
+   - [#   2] AOR script_NDS_153: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     strong = extensions[0]
+   4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
+   5:     for s in extensions:
+-  6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
++  6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) + len([x for x in s if (x.isalpha() and x.islower())])
+   7:         if val > my_val:
+   8:             strong = s
+   9:             my_val = val
+  10:     
+--------------------------------------------------------------------------------
+[0.00627 s] survived
+   - [#   3] AOR script_NDS_153: 
+--------------------------------------------------------------------------------
+   7:         if val > my_val:
+   8:             strong = s
+   9:             my_val = val
+  10:     
+- 11:     ans = (class_name + '.') + strong
++ 11:     ans = (class_name - '.') + strong
+  12:     return ans
+--------------------------------------------------------------------------------
+[0.00607 s] survived
+   - [#   4] AOR script_NDS_153: 
+--------------------------------------------------------------------------------
+   7:         if val > my_val:
+   8:             strong = s
+   9:             my_val = val
+  10:     
+- 11:     ans = (class_name + '.') + strong
++ 11:     ans = (class_name + '.') - strong
+  12:     return ans
+--------------------------------------------------------------------------------
+[0.00744 s] survived
+   - [#   5] COI script_NDS_153: 
+--------------------------------------------------------------------------------
+   3:     strong = extensions[0]
+   4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
+   5:     for s in extensions:
+   6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
+-  7:         if val > my_val:
++  7:         if not (val > my_val):
+   8:             strong = s
+   9:             my_val = val
+  10:     
+  11:     ans = (class_name + '.') + strong
+--------------------------------------------------------------------------------
+[0.00868 s] survived
+   - [#   6] LCR script_NDS_153: 
+--------------------------------------------------------------------------------
+   1: def Strongest_Extension(class_name, extensions):
+   2:     
+   3:     strong = extensions[0]
+-  4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
++  4:     my_val = len([x for x in extensions[0] if (x.isalpha() or x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
+   5:     for s in extensions:
+   6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
+   7:         if val > my_val:
+   8:             strong = s
+--------------------------------------------------------------------------------
+[0.00629 s] survived
+   - [#   7] LCR script_NDS_153: 
+--------------------------------------------------------------------------------
+   1: def Strongest_Extension(class_name, extensions):
+   2:     
+   3:     strong = extensions[0]
+-  4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
++  4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() or x.islower())])
+   5:     for s in extensions:
+   6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
+   7:         if val > my_val:
+   8:             strong = s
+--------------------------------------------------------------------------------
+[0.00695 s] survived
+   - [#   8] LCR script_NDS_153: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     strong = extensions[0]
+   4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
+   5:     for s in extensions:
+-  6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
++  6:         val = len([x for x in s if (x.isalpha() or x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
+   7:         if val > my_val:
+   8:             strong = s
+   9:             my_val = val
+  10:     
+--------------------------------------------------------------------------------
+[0.00737 s] survived
+   - [#   9] LCR script_NDS_153: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     strong = extensions[0]
+   4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
+   5:     for s in extensions:
+-  6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
++  6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() or x.islower())])
+   7:         if val > my_val:
+   8:             strong = s
+   9:             my_val = val
+  10:     
+--------------------------------------------------------------------------------
+[0.00725 s] survived
+   - [#  10] ROR script_NDS_153: 
+--------------------------------------------------------------------------------
+   3:     strong = extensions[0]
+   4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
+   5:     for s in extensions:
+   6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
+-  7:         if val > my_val:
++  7:         if val < my_val:
+   8:             strong = s
+   9:             my_val = val
+  10:     
+  11:     ans = (class_name + '.') + strong
+--------------------------------------------------------------------------------
+[0.00704 s] survived
+   - [#  11] ROR script_NDS_153: 
+--------------------------------------------------------------------------------
+   3:     strong = extensions[0]
+   4:     my_val = len([x for x in extensions[0] if (x.isalpha() and x.isupper())]) - len([x for x in extensions[0] if (x.isalpha() and x.islower())])
+   5:     for s in extensions:
+   6:         val = len([x for x in s if (x.isalpha() and x.isupper())]) - len([x for x in s if (x.isalpha() and x.islower())])
+-  7:         if val > my_val:
++  7:         if val >= my_val:
+   8:             strong = s
+   9:             my_val = val
+  10:     
+  11:     ans = (class_name + '.') + strong
+--------------------------------------------------------------------------------
+[0.00833 s] survived
+[*] Mutation score [0.43786 s]: 0.0%
+   - all: 11
+   - killed: 0 (0.0%)
+   - survived: 11 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

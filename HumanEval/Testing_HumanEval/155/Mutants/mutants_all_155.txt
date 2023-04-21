@@ -1,0 +1,78 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/155/script_NDS_155.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/155/Copilot/test_155_cp_few_shot.py
+[*] 0 tests passed:
+   - test_155_cp_few_shot [0.00008 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_155: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     even_count = 0
+   4:     odd_count = 0
+   5:     for i in str(abs(num)):
+-  6:         if int(i) % 2 == 0:
++  6:         if int(i) * 2 == 0:
+   7:             even_count += 1
+   8:         else:
+   9:             odd_count += 1
+  10:     return (even_count, odd_count)
+--------------------------------------------------------------------------------
+[0.00607 s] survived
+   - [#   2] ASR script_NDS_155: 
+--------------------------------------------------------------------------------
+   3:     even_count = 0
+   4:     odd_count = 0
+   5:     for i in str(abs(num)):
+   6:         if int(i) % 2 == 0:
+-  7:             even_count += 1
++  7:             even_count -= 1
+   8:         else:
+   9:             odd_count += 1
+  10:     return (even_count, odd_count)
+--------------------------------------------------------------------------------
+[0.00574 s] survived
+   - [#   3] ASR script_NDS_155: 
+--------------------------------------------------------------------------------
+   5:     for i in str(abs(num)):
+   6:         if int(i) % 2 == 0:
+   7:             even_count += 1
+   8:         else:
+-  9:             odd_count += 1
++  9:             odd_count -= 1
+  10:     return (even_count, odd_count)
+--------------------------------------------------------------------------------
+[0.00717 s] survived
+   - [#   4] COI script_NDS_155: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     even_count = 0
+   4:     odd_count = 0
+   5:     for i in str(abs(num)):
+-  6:         if int(i) % 2 == 0:
++  6:         if not (int(i) % 2 == 0):
+   7:             even_count += 1
+   8:         else:
+   9:             odd_count += 1
+  10:     return (even_count, odd_count)
+--------------------------------------------------------------------------------
+[0.00721 s] survived
+   - [#   5] ROR script_NDS_155: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     even_count = 0
+   4:     odd_count = 0
+   5:     for i in str(abs(num)):
+-  6:         if int(i) % 2 == 0:
++  6:         if int(i) % 2 != 0:
+   7:             even_count += 1
+   8:         else:
+   9:             odd_count += 1
+  10:     return (even_count, odd_count)
+--------------------------------------------------------------------------------
+[0.00624 s] survived
+[*] Mutation score [0.12931 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

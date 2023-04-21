@@ -1,0 +1,174 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/141/script_NDS_141.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/141/Copilot/test_141_cp_few_shot.py
+[*] 0 tests passed:
+   - test_141_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COD script_NDS_141: 
+--------------------------------------------------------------------------------
+   3:     suf = ['txt', 'exe', 'dll']
+   4:     lst = file_name.split(sep='.')
+   5:     if len(lst) != 2:
+   6:         return 'No'
+-  7:     if not (lst[1] in suf):
++  7:     if lst[1] in suf:
+   8:         return 'No'
+   9:     if len(lst[0]) == 0:
+  10:         return 'No'
+  11:     if not (lst[0][0].isalpha()):
+--------------------------------------------------------------------------------
+[0.00536 s] survived
+   - [#   2] COD script_NDS_141: 
+--------------------------------------------------------------------------------
+   7:     if not (lst[1] in suf):
+   8:         return 'No'
+   9:     if len(lst[0]) == 0:
+  10:         return 'No'
+- 11:     if not (lst[0][0].isalpha()):
++ 11:     if lst[0][0].isalpha():
+  12:         return 'No'
+  13:     t = len([x for x in lst[0] if x.isdigit()])
+  14:     if t > 3:
+  15:         return 'No'
+--------------------------------------------------------------------------------
+[0.00507 s] survived
+   - [#   3] COI script_NDS_141: 
+--------------------------------------------------------------------------------
+   1: def file_name_check(file_name):
+   2:     
+   3:     suf = ['txt', 'exe', 'dll']
+   4:     lst = file_name.split(sep='.')
+-  5:     if len(lst) != 2:
++  5:     if not (len(lst) != 2):
+   6:         return 'No'
+   7:     if not (lst[1] in suf):
+   8:         return 'No'
+   9:     if len(lst[0]) == 0:
+--------------------------------------------------------------------------------
+[0.00553 s] survived
+   - [#   4] COI script_NDS_141: 
+--------------------------------------------------------------------------------
+   3:     suf = ['txt', 'exe', 'dll']
+   4:     lst = file_name.split(sep='.')
+   5:     if len(lst) != 2:
+   6:         return 'No'
+-  7:     if not (lst[1] in suf):
++  7:     if not ((not (lst[1] in suf))):
+   8:         return 'No'
+   9:     if len(lst[0]) == 0:
+  10:         return 'No'
+  11:     if not (lst[0][0].isalpha()):
+--------------------------------------------------------------------------------
+[0.00694 s] survived
+   - [#   5] COI script_NDS_141: 
+--------------------------------------------------------------------------------
+   3:     suf = ['txt', 'exe', 'dll']
+   4:     lst = file_name.split(sep='.')
+   5:     if len(lst) != 2:
+   6:         return 'No'
+-  7:     if not (lst[1] in suf):
++  7:     if not (lst[1] not in suf):
+   8:         return 'No'
+   9:     if len(lst[0]) == 0:
+  10:         return 'No'
+  11:     if not (lst[0][0].isalpha()):
+--------------------------------------------------------------------------------
+[0.00818 s] survived
+   - [#   6] COI script_NDS_141: 
+--------------------------------------------------------------------------------
+   5:     if len(lst) != 2:
+   6:         return 'No'
+   7:     if not (lst[1] in suf):
+   8:         return 'No'
+-  9:     if len(lst[0]) == 0:
++  9:     if not (len(lst[0]) == 0):
+  10:         return 'No'
+  11:     if not (lst[0][0].isalpha()):
+  12:         return 'No'
+  13:     t = len([x for x in lst[0] if x.isdigit()])
+--------------------------------------------------------------------------------
+[0.00714 s] survived
+   - [#   7] COI script_NDS_141: 
+--------------------------------------------------------------------------------
+   7:     if not (lst[1] in suf):
+   8:         return 'No'
+   9:     if len(lst[0]) == 0:
+  10:         return 'No'
+- 11:     if not (lst[0][0].isalpha()):
++ 11:     if not ((not (lst[0][0].isalpha()))):
+  12:         return 'No'
+  13:     t = len([x for x in lst[0] if x.isdigit()])
+  14:     if t > 3:
+  15:         return 'No'
+--------------------------------------------------------------------------------
+[0.00503 s] survived
+   - [#   8] COI script_NDS_141: 
+--------------------------------------------------------------------------------
+  10:         return 'No'
+  11:     if not (lst[0][0].isalpha()):
+  12:         return 'No'
+  13:     t = len([x for x in lst[0] if x.isdigit()])
+- 14:     if t > 3:
++ 14:     if not (t > 3):
+  15:         return 'No'
+  16:     return 'Yes'
+--------------------------------------------------------------------------------
+[0.00611 s] survived
+   - [#   9] ROR script_NDS_141: 
+--------------------------------------------------------------------------------
+   1: def file_name_check(file_name):
+   2:     
+   3:     suf = ['txt', 'exe', 'dll']
+   4:     lst = file_name.split(sep='.')
+-  5:     if len(lst) != 2:
++  5:     if len(lst) == 2:
+   6:         return 'No'
+   7:     if not (lst[1] in suf):
+   8:         return 'No'
+   9:     if len(lst[0]) == 0:
+--------------------------------------------------------------------------------
+[0.00758 s] survived
+   - [#  10] ROR script_NDS_141: 
+--------------------------------------------------------------------------------
+   5:     if len(lst) != 2:
+   6:         return 'No'
+   7:     if not (lst[1] in suf):
+   8:         return 'No'
+-  9:     if len(lst[0]) == 0:
++  9:     if len(lst[0]) != 0:
+  10:         return 'No'
+  11:     if not (lst[0][0].isalpha()):
+  12:         return 'No'
+  13:     t = len([x for x in lst[0] if x.isdigit()])
+--------------------------------------------------------------------------------
+[0.00685 s] survived
+   - [#  11] ROR script_NDS_141: 
+--------------------------------------------------------------------------------
+  10:         return 'No'
+  11:     if not (lst[0][0].isalpha()):
+  12:         return 'No'
+  13:     t = len([x for x in lst[0] if x.isdigit()])
+- 14:     if t > 3:
++ 14:     if t < 3:
+  15:         return 'No'
+  16:     return 'Yes'
+--------------------------------------------------------------------------------
+[0.00647 s] survived
+   - [#  12] ROR script_NDS_141: 
+--------------------------------------------------------------------------------
+  10:         return 'No'
+  11:     if not (lst[0][0].isalpha()):
+  12:         return 'No'
+  13:     t = len([x for x in lst[0] if x.isdigit()])
+- 14:     if t > 3:
++ 14:     if t >= 3:
+  15:         return 'No'
+  16:     return 'Yes'
+--------------------------------------------------------------------------------
+[0.00662 s] survived
+[*] Mutation score [0.40133 s]: 0.0%
+   - all: 12
+   - killed: 0 (0.0%)
+   - survived: 12 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

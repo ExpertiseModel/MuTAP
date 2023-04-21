@@ -1,0 +1,124 @@
+normal_baseline_fixed_1.py,0.0,[],0,8,2
+normal_baseline_fixed_2.py,0.0,['mutant_2_0.py'],0,1,0
+normal_baseline_fixed_3.py,0.75,['mutant_3_3.py'],3,4,0
+normal_baseline_fixed_4.py,0.0,[],0,5,2
+normal_baseline_fixed_5.py,0.0,[],0,7,2
+normal_baseline_fixed_6.py,0.0,[],0,4,2
+normal_baseline_fixed_7.py,0.0,[],0,1,2
+normal_baseline_fixed_8.py,0.0,[],0,4,2
+normal_baseline_fixed_9.py,0.0,[],0,1,2
+normal_baseline_fixed_10.py,0.0,[],0,15,2
+normal_baseline_fixed_11.py,1.0,[],2,2,0
+normal_baseline_fixed_12.py,0.0,[],0,4,2
+normal_baseline_fixed_13.py,0.0,[],0,2,2
+normal_baseline_fixed_14.py,0.6666666666666666,['mutant_14_1.py'],2,3,0
+normal_baseline_fixed_15.py,1.0,[],1,1,0
+normal_baseline_fixed_18.py,0.0,[],0,8,2
+normal_baseline_fixed_20.py,0.0,[],0,8,2
+normal_baseline_fixed_21.py,0.0,[],0,4,2
+normal_baseline_fixed_24.py,1.0,[],3,3,0
+normal_baseline_fixed_25.py,0.0,[],0,13,2
+normal_baseline_fixed_26.py,0.5,['mutant_26_0.py'],1,2,0
+normal_baseline_fixed_31.py,1.0,[],7,7,0
+normal_baseline_fixed_33.py,0.0,[],0,2,2
+normal_baseline_fixed_35.py,0.6666666666666666,['mutant_35_2.py'],2,3,0
+normal_baseline_fixed_36.py,0.5,"['mutant_36_4.py', 'mutant_36_0.py', 'mutant_36_1.py', 'mutant_36_2.py']",4,8,0
+normal_baseline_fixed_37.py,0.0,"['mutant_37_7.py', 'mutant_37_3.py', 'mutant_37_1.py', 'mutant_37_6.py', 'mutant_37_0.py', 'mutant_37_5.py']",0,8,1
+normal_baseline_fixed_38.py,0.0,[],0,15,2
+normal_baseline_fixed_39.py,0.0,[],0,22,2
+normal_baseline_fixed_40.py,0.3333333333333333,"['mutant_40_1.py', 'mutant_40_4.py', 'mutant_40_5.py', 'mutant_40_0.py']",2,6,0
+normal_baseline_fixed_42.py,1.0,[],1,1,0
+normal_baseline_fixed_43.py,0.75,['mutant_43_0.py'],3,4,0
+normal_baseline_fixed_44.py,0.0,[],0,7,2
+normal_baseline_fixed_45.py,0.0,[],0,5,2
+normal_baseline_fixed_46.py,0.7692307692307693,"['mutant_46_1.py', 'mutant_46_16.py', 'mutant_46_8.py']",10,17,1
+normal_baseline_fixed_47.py,0.8571428571428571,['mutant_47_0.py'],6,13,1
+normal_baseline_fixed_48.py,1.0,[],2,4,1
+normal_baseline_fixed_49.py,1.0,[],4,4,0
+normal_baseline_fixed_52.py,0.3333333333333333,"['mutant_52_2.py', 'mutant_52_1.py']",1,3,0
+normal_baseline_fixed_54.py,1.0,[],1,1,0
+normal_baseline_fixed_55.py,1.0,[],5,7,1
+normal_baseline_fixed_56.py,1.0,[],8,8,0
+normal_baseline_fixed_57.py,0.0,[],0,4,2
+normal_baseline_fixed_59.py,0.75,"['mutant_59_9.py', 'mutant_59_1.py', 'mutant_59_7.py']",9,12,0
+normal_baseline_fixed_60.py,1.0,[],1,1,0
+normal_baseline_fixed_61.py,0.0,"['mutant_61_6.py', 'mutant_61_1.py', 'mutant_61_7.py', 'mutant_61_3.py', 'mutant_61_0.py', 'mutant_61_4.py', 'mutant_61_5.py', 'mutant_61_2.py']",0,8,0
+normal_baseline_fixed_62.py,0.0,[],0,4,2
+normal_baseline_fixed_63.py,1.0,[],8,11,1
+normal_baseline_fixed_66.py,0.0,"['mutant_66_1.py', 'mutant_66_0.py']",0,2,0
+normal_baseline_fixed_69.py,0.0,[],0,10,2
+normal_baseline_fixed_70.py,1.0,[],2,4,1
+normal_baseline_fixed_71.py,0.0,[],0,30,2
+normal_baseline_fixed_72.py,0.18181818181818182,"['mutant_72_9.py', 'mutant_72_8.py', 'mutant_72_1.py', 'mutant_72_2.py', 'mutant_72_0.py', 'mutant_72_7.py', 'mutant_72_5.py', 'mutant_72_10.py', 'mutant_72_4.py']",2,11,0
+normal_baseline_fixed_73.py,0.0,[],0,7,2
+normal_baseline_fixed_74.py,0.6,"['mutant_74_4.py', 'mutant_74_0.py']",3,5,0
+normal_baseline_fixed_75.py,1.0,[],1,1,0
+normal_baseline_fixed_76.py,0.8571428571428571,['mutant_76_6.py'],6,10,1
+normal_baseline_fixed_77.py,0.0,[],0,5,2
+normal_baseline_fixed_78.py,0.6666666666666666,['mutant_78_0.py'],2,3,0
+normal_baseline_fixed_79.py,0.0,[],0,3,2
+normal_baseline_fixed_80.py,0.0,[],0,13,2
+normal_baseline_fixed_81.py,0.0,[],0,35,2
+normal_baseline_fixed_82.py,1.0,[],7,7,0
+normal_baseline_fixed_83.py,0.0,[],0,7,2
+normal_baseline_fixed_84.py,0.0,[],0,1,2
+normal_baseline_fixed_85.py,0.0,[],0,2,2
+normal_baseline_fixed_88.py,0.5,"['mutant_88_3.py', 'mutant_88_1.py']",2,6,1
+normal_baseline_fixed_89.py,0.6666666666666666,"['mutant_89_6.py', 'mutant_89_3.py']",4,9,1
+normal_baseline_fixed_91.py,0.5,['mutant_91_1.py'],1,3,1
+normal_baseline_fixed_92.py,0.7,"['mutant_92_2.py', 'mutant_92_5.py', 'mutant_92_1.py']",7,10,0
+normal_baseline_fixed_93.py,0.0,[],0,2,2
+normal_baseline_fixed_95.py,0.6818181818181818,"['mutant_95_4.py', 'mutant_95_3.py', 'mutant_95_21.py', 'mutant_95_20.py', 'mutant_95_12.py', 'mutant_95_0.py', 'mutant_95_1.py']",15,23,1
+normal_baseline_fixed_96.py,0.0,[],0,5,2
+normal_baseline_fixed_97.py,1.0,[],5,5,0
+normal_baseline_fixed_98.py,1.0,[],3,3,0
+normal_baseline_fixed_99.py,0.0,[],0,20,2
+normal_baseline_fixed_101.py,0.0,"['mutant_101_1.py', 'mutant_101_0.py', 'mutant_101_2.py', 'mutant_101_3.py']",0,4,0
+normal_baseline_fixed_102.py,0.0,[],0,13,2
+normal_baseline_fixed_104.py,0.0,[],0,3,2
+normal_baseline_fixed_105.py,0.0,[],0,1,2
+normal_baseline_fixed_106.py,0.0,[],0,10,2
+normal_baseline_fixed_107.py,0.0,[],0,15,2
+normal_baseline_fixed_109.py,0.6,"['mutant_109_7.py', 'mutant_109_6.py']",3,8,1
+normal_baseline_fixed_111.py,0.0,[],0,10,2
+normal_baseline_fixed_112.py,0.0,[],0,5,2
+normal_baseline_fixed_113.py,0.0,[],0,10,2
+normal_baseline_fixed_114.py,0.0,[],0,12,2
+normal_baseline_fixed_116.py,0.0,[],0,1,2
+normal_baseline_fixed_117.py,0.0,[],0,5,2
+normal_baseline_fixed_118.py,0.0,[],0,14,2
+normal_baseline_fixed_119.py,0.0,[],0,11,2
+normal_baseline_fixed_120.py,0.0,[],0,5,2
+normal_baseline_fixed_121.py,0.0,[],0,5,2
+normal_baseline_fixed_123.py,0.0,[],0,18,2
+normal_baseline_fixed_124.py,0.12903225806451613,"['mutant_124_15.py', 'mutant_124_21.py', 'mutant_124_18.py', 'mutant_124_26.py', 'mutant_124_11.py', 'mutant_124_28.py', 'mutant_124_5.py', 'mutant_124_19.py', 'mutant_124_14.py', 'mutant_124_23.py', 'mutant_124_4.py', 'mutant_124_1.py', 'mutant_124_29.py', 'mutant_124_10.py', 'mutant_124_9.py', 'mutant_124_20.py', 'mutant_124_13.py', 'mutant_124_12.py', 'mutant_124_25.py', 'mutant_124_22.py', 'mutant_124_2.py', 'mutant_124_27.py', 'mutant_124_24.py', 'mutant_124_16.py', 'mutant_124_31.py', 'mutant_124_30.py', 'mutant_124_3.py']",4,32,1
+normal_baseline_fixed_125.py,0.0,[],0,7,2
+normal_baseline_fixed_126.py,1.0,[],8,8,0
+normal_baseline_fixed_127.py,0.0,[],0,14,2
+normal_baseline_fixed_128.py,0.3333333333333333,"['mutant_128_0.py', 'mutant_128_1.py']",1,3,0
+normal_baseline_fixed_129.py,0.0,[],0,23,2
+normal_baseline_fixed_130.py,0.0,[],0,16,2
+normal_baseline_fixed_131.py,0.7777777777777778,"['mutant_131_0.py', 'mutant_131_2.py']",7,9,0
+normal_baseline_fixed_132.py,0.0,[],0,12,2
+normal_baseline_fixed_133.py,0.0,[],0,2,2
+normal_baseline_fixed_134.py,0.0,"['mutant_134_4.py', 'mutant_134_7.py', 'mutant_134_6.py']",0,8,1
+normal_baseline_fixed_135.py,0.0,[],0,10,2
+normal_baseline_fixed_136.py,0.0,[],0,4,2
+normal_baseline_fixed_137.py,0.0,[],0,6,2
+normal_baseline_fixed_138.py,0.0,"['mutant_138_3.py', 'mutant_138_0.py', 'mutant_138_1.py', 'mutant_138_4.py', 'mutant_138_2.py']",0,5,0
+normal_baseline_fixed_141.py,0.9166666666666666,['mutant_141_11.py'],11,12,0
+normal_baseline_fixed_144.py,0.3333333333333333,"['mutant_144_3.py', 'mutant_144_4.py', 'mutant_144_1.py', 'mutant_144_7.py', 'mutant_144_5.py', 'mutant_144_9.py', 'mutant_144_8.py', 'mutant_144_0.py']",4,12,0
+normal_baseline_fixed_146.py,0.2,"['mutant_146_2.py', 'mutant_146_1.py', 'mutant_146_9.py', 'mutant_146_0.py', 'mutant_146_4.py', 'mutant_146_7.py', 'mutant_146_5.py', 'mutant_146_6.py']",2,10,0
+normal_baseline_fixed_147.py,0.0,[],0,14,2
+normal_baseline_fixed_148.py,0.0,[],0,14,2
+normal_baseline_fixed_150.py,0.0,[],0,6,2
+normal_baseline_fixed_151.py,0.42857142857142855,"['mutant_151_4.py', 'mutant_151_2.py', 'mutant_151_0.py', 'mutant_151_5.py']",3,7,0
+normal_baseline_fixed_152.py,0.0,['mutant_152_0.py'],0,1,0
+normal_baseline_fixed_153.py,0.0,[],0,11,2
+normal_baseline_fixed_154.py,0.0,[],0,12,2
+normal_baseline_fixed_156.py,0.0,[],0,8,2
+normal_baseline_fixed_157.py,0.4117647058823529,"['mutant_157_9.py', 'mutant_157_11.py', 'mutant_157_10.py', 'mutant_157_13.py', 'mutant_157_17.py', 'mutant_157_2.py', 'mutant_157_6.py', 'mutant_157_4.py', 'mutant_157_12.py', 'mutant_157_0.py', 'mutant_157_7.py', 'mutant_157_1.py', 'mutant_157_3.py', 'mutant_157_19.py', 'mutant_157_16.py', 'mutant_157_15.py', 'mutant_157_8.py', 'mutant_157_18.py', 'mutant_157_14.py', 'mutant_157_5.py']",14,34,0
+normal_baseline_fixed_158.py,0.0,[],0,2,2
+normal_baseline_fixed_159.py,0.0,[],0,6,2
+normal_baseline_fixed_161.py,0.0,[],0,9,2
+normal_baseline_fixed_163.py,0.0,[],0,3,2

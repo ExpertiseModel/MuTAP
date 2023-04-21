@@ -1,0 +1,128 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/76/script_NDS_76.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/76/Copilot/test_76_cp_few_shot.py
+[*] 0 tests passed:
+   - test_76_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_76: 
+--------------------------------------------------------------------------------
+  3:     if n == 1:
+  4:         return x == 1
+  5:     power = 1
+  6:     while power < x:
+- 7:         power = power * n
++ 7:         power = power / n
+  8:     return power == x
+--------------------------------------------------------------------------------
+[0.00621 s] survived
+   - [#   2] AOR script_NDS_76: 
+--------------------------------------------------------------------------------
+  3:     if n == 1:
+  4:         return x == 1
+  5:     power = 1
+  6:     while power < x:
+- 7:         power = power * n
++ 7:         power = power // n
+  8:     return power == x
+--------------------------------------------------------------------------------
+[0.00565 s] survived
+   - [#   3] AOR script_NDS_76: 
+--------------------------------------------------------------------------------
+  3:     if n == 1:
+  4:         return x == 1
+  5:     power = 1
+  6:     while power < x:
+- 7:         power = power * n
++ 7:         power = power ** n
+  8:     return power == x
+--------------------------------------------------------------------------------
+[0.00601 s] survived
+   - [#   4] COI script_NDS_76: 
+--------------------------------------------------------------------------------
+  1: def is_simple_power(x, n):
+  2:     
+- 3:     if n == 1:
++ 3:     if not (n == 1):
+  4:         return x == 1
+  5:     power = 1
+  6:     while power < x:
+  7:         power = power * n
+--------------------------------------------------------------------------------
+[0.00475 s] survived
+   - [#   5] COI script_NDS_76: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if n == 1:
+  4:         return x == 1
+  5:     power = 1
+- 6:     while power < x:
++ 6:     while not (power < x):
+  7:         power = power * n
+  8:     return power == x
+--------------------------------------------------------------------------------
+[0.00458 s] survived
+   - [#   6] ROR script_NDS_76: 
+--------------------------------------------------------------------------------
+  1: def is_simple_power(x, n):
+  2:     
+- 3:     if n == 1:
++ 3:     if n != 1:
+  4:         return x == 1
+  5:     power = 1
+  6:     while power < x:
+  7:         power = power * n
+--------------------------------------------------------------------------------
+[0.00594 s] survived
+   - [#   7] ROR script_NDS_76: 
+--------------------------------------------------------------------------------
+  1: def is_simple_power(x, n):
+  2:     
+  3:     if n == 1:
+- 4:         return x == 1
++ 4:         return x != 1
+  5:     power = 1
+  6:     while power < x:
+  7:         power = power * n
+  8:     return power == x
+--------------------------------------------------------------------------------
+[0.00569 s] survived
+   - [#   8] ROR script_NDS_76: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if n == 1:
+  4:         return x == 1
+  5:     power = 1
+- 6:     while power < x:
++ 6:     while power > x:
+  7:         power = power * n
+  8:     return power == x
+--------------------------------------------------------------------------------
+[0.00540 s] survived
+   - [#   9] ROR script_NDS_76: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if n == 1:
+  4:         return x == 1
+  5:     power = 1
+- 6:     while power < x:
++ 6:     while power <= x:
+  7:         power = power * n
+  8:     return power == x
+--------------------------------------------------------------------------------
+[0.00566 s] survived
+   - [#  10] ROR script_NDS_76: 
+--------------------------------------------------------------------------------
+  4:         return x == 1
+  5:     power = 1
+  6:     while power < x:
+  7:         power = power * n
+- 8:     return power == x
++ 8:     return power != x
+--------------------------------------------------------------------------------
+[0.00529 s] survived
+[*] Mutation score [0.17910 s]: 0.0%
+   - all: 10
+   - killed: 0 (0.0%)
+   - survived: 10 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

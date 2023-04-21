@@ -1,0 +1,77 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/159/script_NDS_159.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/159/Copilot/test_159_cp_few_shot.py
+[*] 0 tests passed:
+   - test_159_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_159: 
+--------------------------------------------------------------------------------
+  1: def eat(number, need, remaining):
+  2:     
+  3:     if need <= remaining:
+- 4:         return [number + need, remaining - need]
++ 4:         return [number - need, remaining - need]
+  5:     else:
+  6:         return [number + remaining, 0]
+--------------------------------------------------------------------------------
+[0.00735 s] survived
+   - [#   2] AOR script_NDS_159: 
+--------------------------------------------------------------------------------
+  1: def eat(number, need, remaining):
+  2:     
+  3:     if need <= remaining:
+- 4:         return [number + need, remaining - need]
++ 4:         return [number + need, remaining + need]
+  5:     else:
+  6:         return [number + remaining, 0]
+--------------------------------------------------------------------------------
+[0.00778 s] survived
+   - [#   3] AOR script_NDS_159: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if need <= remaining:
+  4:         return [number + need, remaining - need]
+  5:     else:
+- 6:         return [number + remaining, 0]
++ 6:         return [number - remaining, 0]
+--------------------------------------------------------------------------------
+[0.00664 s] survived
+   - [#   4] COI script_NDS_159: 
+--------------------------------------------------------------------------------
+  1: def eat(number, need, remaining):
+  2:     
+- 3:     if need <= remaining:
++ 3:     if not (need <= remaining):
+  4:         return [number + need, remaining - need]
+  5:     else:
+  6:         return [number + remaining, 0]
+--------------------------------------------------------------------------------
+[0.00466 s] survived
+   - [#   5] ROR script_NDS_159: 
+--------------------------------------------------------------------------------
+  1: def eat(number, need, remaining):
+  2:     
+- 3:     if need <= remaining:
++ 3:     if need >= remaining:
+  4:         return [number + need, remaining - need]
+  5:     else:
+  6:         return [number + remaining, 0]
+--------------------------------------------------------------------------------
+[0.00684 s] survived
+   - [#   6] ROR script_NDS_159: 
+--------------------------------------------------------------------------------
+  1: def eat(number, need, remaining):
+  2:     
+- 3:     if need <= remaining:
++ 3:     if need < remaining:
+  4:         return [number + need, remaining - need]
+  5:     else:
+  6:         return [number + remaining, 0]
+--------------------------------------------------------------------------------
+[0.00728 s] survived
+[*] Mutation score [0.12153 s]: 0.0%
+   - all: 6
+   - killed: 0 (0.0%)
+   - survived: 6 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

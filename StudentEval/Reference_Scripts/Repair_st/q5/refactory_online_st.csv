@@ -1,0 +1,5022 @@
+Question,Sampling Rate,Experiment ID,File Name,Status,Match (Rfty Code),Match (Ori Code),Buggy Code,Buggy Mutation,Refactored Correct Code,Original Correct File Name,Rule ID,Repair,Stru. Matching Time,Online Refactoring Time,GCR Time,Stru. Mutation Time,Block Mapping Time,Variable Mapping Time,Specification&Synthesis Time,Total Time,#Passed Test Case,#Test Case,RPS
+question_5,100,0,wrong_5_001.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    result = [ ]
+    while ( k >= 0 ) :
+        big = max ( lst )
+        result . append ( big )
+        lst . remove ( big )
+        k -= 1
+    return result
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while ( k >= 0 ) :
+        big = max ( lst )
+        result . append ( big )
+        lst . remove ( big )
+        k -= 1
+    return result
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while ( k > 0 ) :
+        big = max ( lst )
+        result . append ( big )
+        lst . remove ( big )
+        k -= 1
+    return result
+
+
+",{'top_k': 'correct_5_015.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    result = [ ]
+    while ( k > 0 ) :
+        big = max ( lst )
+        result . append ( big )
+        lst . remove ( big )
+        k -= 1
+    return result
+",N/A,1.250,0.141,0.000,0.000,0.078,0.078,1.562,5,5,0.029
+question_5,100,0,wrong_5_002.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    lst_res = lst
+    sort = [ ]
+    while lst_res :
+        largest = lst_res [ 0 ]
+        for elements in lst_res :
+            if ( element > largest ) :
+                largest = element
+        lst_res . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+","def top_k ( lst , k ) :
+    lst_res = lst
+    sort = [ ]
+    while lst_res :
+        largest = lst_res [ 0 ]
+        for elements in lst_res :
+            if ( element > largest ) :
+                largest = element
+        lst_res . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+","def top_k ( lst , k ) :
+    lst_res = lst
+    sort = [ ]
+    while lst_res :
+        largest = lst_res [ 0 ]
+        for elements in lst_res :
+            if ( elements > largest ) :
+                largest = elements
+        lst_res . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+",{'top_k': 'correct_5_009.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = lst
+    lst_res = [ ]
+    while sort :
+        largest = sort [ 0 ]
+        for elements in sort :
+            if ( elements > largest ) :
+                largest = elements
+        sort . remove ( largest )
+        lst_res . append ( largest )
+    return lst_res [ : k ]
+",N/A,0.609,0.406,0.000,0.000,0.297,15.922,17.266,5,5,0.222
+question_5,100,0,wrong_5_003.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    tmp = [ ]
+    while ( len ( lst ) > 0 ) :
+        tmp . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return tmp [ : 5 ]
+
+
+","def top_k ( lst , k ) :
+    tmp = [ ]
+    while ( len ( lst ) > 0 ) :
+        tmp . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return tmp [ : 5 ]
+
+
+","def top_k ( lst , k ) :
+    tmp = [ ]
+    while ( len ( lst ) > 0 ) :
+        tmp . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return tmp [ : k ]
+
+
+",{'top_k': 'correct_5_038.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    tmp = [ ]
+    while ( len ( lst ) > 0 ) :
+        tmp . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return tmp [ : k ]
+",N/A,0.641,0.156,0.000,0.000,0.062,0.078,0.953,5,5,0.029
+question_5,100,0,wrong_5_004.py,success_wo_mut,1,0,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( ele > biggest ) :
+                biggest = ele
+        lst . remove ( element )
+        sort . append ( element )
+        if ( len ( sort ) == k ) :
+            break
+    return sort
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( ele > biggest ) :
+                biggest = ele
+        lst . remove ( element )
+        sort . append ( element )
+        if ( len ( sort ) == k ) :
+            break
+    return sort
+
+
+","
+
+def top_k(lst, k):
+    newlist = []
+    counter = k
+    while (counter > 0):
+        biggest = lst[0]
+        for i in lst[1:]:
+            if (biggest > i):
+                continue
+            biggest = i
+            continue
+        if True:
+            pass
+        newlist += [biggest]
+        counter -= 1
+        lst.remove(biggest)
+    return newlist
+",{'top_k': 'correct_5_188.py'},"{'top_k': 'B1.h,A1.a'}","def top_k ( lst , k ) :
+    ref_newlist = [ ]
+    ref_counter = k
+    while ( ref_counter > 0 ) :
+        biggest = lst [ 0 ]
+        for ref_i in lst [ 1 : ] :
+            if ( biggest > ref_i ) :
+                continue
+            biggest = ref_i
+            continue
+        if True :
+            pass
+        ref_newlist += [ biggest ]
+        ref_counter -= 1
+        lst . remove ( biggest )
+    return ref_newlist
+",N/A,2.578,0.016,0.000,0.000,0.250,0.906,3.766,5,5,0.936
+question_5,100,0,wrong_5_005.py,success_wo_mut,1,0,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( element )
+        sort . append ( element )
+        if ( len ( sort ) == k ) :
+            break
+    return sort
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( element )
+        sort . append ( element )
+        if ( len ( sort ) == k ) :
+            break
+    return sort
+
+
+","
+
+def top_k(lst, k):
+    newlist = []
+    counter = k
+    while (counter > 0):
+        biggest = lst[0]
+        for i in lst[1:]:
+            if (biggest > i):
+                continue
+            biggest = i
+            continue
+        if True:
+            pass
+        newlist += [biggest]
+        counter -= 1
+        lst.remove(biggest)
+    return newlist
+",{'top_k': 'correct_5_188.py'},"{'top_k': 'B1.h,A1.a'}","def top_k ( lst , k ) :
+    ref_newlist = [ ]
+    ref_counter = k
+    while ( ref_counter > 0 ) :
+        biggest = lst [ 0 ]
+        for ref_i in lst [ 1 : ] :
+            if ( biggest > ref_i ) :
+                continue
+            biggest = ref_i
+            continue
+        if True :
+            pass
+        ref_newlist += [ biggest ]
+        ref_counter -= 1
+        lst . remove ( biggest )
+    return ref_newlist
+",N/A,1.328,0.031,0.000,0.000,0.391,0.891,2.672,5,5,0.936
+question_5,100,0,wrong_5_006.py,success_wo_mut,1,0,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort . append ( biggest )
+        if ( len ( sort ) == k ) :
+            break
+    return sort
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort . append ( biggest )
+        if ( len ( sort ) == k ) :
+            break
+    return sort
+
+
+","
+
+def top_k(lst, k):
+    newlist = []
+    counter = k
+    while (counter > 0):
+        biggest = lst[0]
+        for i in lst[1:]:
+            if (biggest > i):
+                continue
+            biggest = i
+            continue
+        if True:
+            pass
+        newlist += [biggest]
+        counter -= 1
+        lst.remove(biggest)
+    return newlist
+",{'top_k': 'correct_5_188.py'},"{'top_k': 'B1.h,A1.a'}","def top_k ( lst , k ) :
+    ref_newlist = [ ]
+    ref_counter = k
+    while ( ref_counter > 0 ) :
+        biggest = lst [ 0 ]
+        for ref_i in lst [ 1 : ] :
+            if ( biggest > ref_i ) :
+                continue
+            biggest = ref_i
+            continue
+        if True :
+            pass
+        ref_newlist += [ biggest ]
+        ref_counter -= 1
+        lst . remove ( biggest )
+    return ref_newlist
+",N/A,1.297,0.016,0.000,0.000,0.391,0.891,2.609,5,5,0.894
+question_5,100,0,wrong_5_007.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    lst1 = [ ]
+    for i in lst :
+        if ( i >= k ) :
+            lst1 . append ( i )
+    sort = [ ]
+    while lst1 :
+        biggest = lst [ 0 ]
+        for element in lst1 :
+            if ( element > biggest ) :
+                biggest = element
+        lst1 . remove ( biggest )
+        sort . append ( biggest )
+    return sort
+
+
+","def top_k ( lst , k ) :
+    lst1 = [ ]
+    if ( lst == [ ] ) :
+        pass
+        if ( i >= k ) :
+            lst1 . append ( i )
+        pass
+    else :
+        pass
+    sort = [ ]
+    while lst1 :
+        biggest = lst [ 0 ]
+        for element in lst1 :
+            pass
+            if ( element > biggest ) :
+                biggest = element
+            pass
+        lst1 . remove ( biggest )
+        sort . append ( biggest )
+    return sort
+","
+
+def top_k(lst, k):
+    if (lst == []):
+        if True:
+            return []
+    else:
+        pass
+    sort = []
+    while lst:
+        largest = lst[0]
+        for i in lst:
+            if (i > largest):
+                largest = i
+        lst.remove(largest)
+        sort.append(largest)
+    return sort[:k]
+    pass
+",{'top_k': 'correct_5_148.py'},"{'top_k': 'B2.l,B1.f'}","def top_k ( lst1 , k ) :
+    if ( lst1 == [ ] ) :
+        pass
+        if ( element >= k ) :
+            lst1 . append ( element )
+        pass
+    else :
+        pass
+    ref_sort = [ ]
+    while lst1 :
+        biggest = lst1 [ 0 ]
+        for element in lst1 :
+            pass
+            if ( element > biggest ) :
+                biggest = element
+            pass
+        lst1 . remove ( biggest )
+        ref_sort . append ( biggest )
+    return ref_sort [ : k ]
+    pass
+",N/A,19.297,0.047,0.000,0.016,0.203,18.031,37.609,5,5,0.382
+question_5,100,0,wrong_5_008.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    return sort [ : ( k + 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    return sort [ : ( k + 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    return sort [ : k ]
+
+
+",{'top_k': 'correct_5_010.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    return sort [ : k ]
+",N/A,1.375,1.234,0.000,0.000,0.609,0.094,3.312,5,5,0.067
+question_5,100,0,wrong_5_009.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    n = ( len ( lst ) - k )
+    counter = 0
+    while ( counter < k ) :
+        lst . remove ( min ( lst ) )
+        counter = ( counter + 1 )
+    sort_list = [ ]
+    while ( lst != [ ] ) :
+        sort_lst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return sort_list
+
+
+","def top_k ( lst , k ) :
+    n = ( len ( lst ) - k )
+    counter = 0
+    if True :
+        lst . remove ( min ( lst ) )
+        counter = ( counter + 1 )
+    sort_list = [ ]
+    while ( lst != [ ] ) :
+        sort_lst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return sort_list
+","
+
+def top_k(lst, k):
+    lst2 = []
+    if True:
+        pass
+    while lst:
+        a = max(lst)
+        lst2.append(a)
+        lst.remove(a)
+    return lst2[0:k]
+",{'top_k': 'correct_5_078.py'},{'top_k': 'B1.h'},"def top_k ( sort_list , k ) :
+    n = [ ]
+    if True :
+        pass
+    while ( sort_list != [ ] ) :
+        ref_a = max ( sort_list )
+        n . append ( ref_a )
+        sort_list . remove ( ref_a )
+    return n [ 0 : k ]
+",N/A,11.266,0.031,0.000,0.000,0.078,33.375,44.781,5,5,0.828
+question_5,100,0,wrong_5_010.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    n = ( len ( lst ) - k )
+    counter = 0
+    while ( counter < k ) :
+        lst . remove ( min ( lst ) )
+        counter = ( counter + 1 )
+    sort_list = [ ]
+    while ( lst != [ ] ) :
+        sort_list . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return sort_list
+
+
+","def top_k ( lst , k ) :
+    n = ( len ( lst ) - k )
+    counter = 0
+    if True :
+        lst . remove ( min ( lst ) )
+        counter = ( counter + 1 )
+    sort_list = [ ]
+    while ( lst != [ ] ) :
+        sort_list . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return sort_list
+","
+
+def top_k(lst, k):
+    lst2 = []
+    if True:
+        pass
+    while lst:
+        a = max(lst)
+        lst2.append(a)
+        lst.remove(a)
+    return lst2[0:k]
+",{'top_k': 'correct_5_078.py'},{'top_k': 'B1.h'},"def top_k ( lst , k ) :
+    n = [ ]
+    if True :
+        pass
+    while ( lst != [ ] ) :
+        ref_a = max ( lst )
+        n . append ( ref_a )
+        lst . remove ( ref_a )
+    return n [ 0 : k ]
+",N/A,8.750,0.031,0.000,0.000,0.141,33.375,42.328,5,5,0.776
+question_5,100,0,wrong_5_011.py,fail_exception,N/A,1,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,1.656,N/A,N/A,N/A
+question_5,100,0,wrong_5_012.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        if ( e < pivot ) :
+            lower . append ( e )
+        if ( x == pivot ) :
+            plist . append ( e )
+        if ( x > pivot ) :
+            higher . append ( e )
+    sort_list = ( ( lower + plist ) + higher )
+    return sort_list [ : k ]
+
+
+","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        pass
+        for i in range ( x , len ( lst ) ) :
+            pass
+            if ( e < pivot ) :
+                lower . append ( e )
+            pass
+            if ( x == pivot ) :
+                pass
+            plist . append ( e )
+        pass
+        if ( x > pivot ) :
+            higher . append ( e )
+        pass
+    sort_list = ( ( lower + plist ) + higher )
+    return sort_list [ : k ]
+","
+
+def top_k(lst, k):
+    if True:
+        pass
+    for x in range((k + 1)):
+        max = x
+        for i in range(x, len(lst)):
+            if True:
+                pass
+            if (lst[i] > lst[max]):
+                max = i
+        if (x <= (len(lst) - 1)):
+            (lst[max], lst[x]) = (lst[x], lst[max])
+    new = lst[:k]
+    return new
+",{'top_k': 'correct_5_262.py'},"{'top_k': 'B1.h,B1.h'}","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        pass
+    for ref_x in range ( ( k + 1 ) ) :
+        ref_max = ref_x
+        for i in range ( ref_x , len ( lst ) ) :
+            pass
+            if True :
+                pass
+            pass
+            if ( lst [ i ] > lst [ ref_max ] ) :
+                ref_max = i
+        pass
+        if ( ref_x <= ( len ( lst ) - 1 ) ) :
+            ( lst [ ref_max ] , lst [ ref_x ] ) = ( lst [ ref_x ] , lst [ ref_max ] )
+        pass
+    sort_list = lst [ : k ]
+    return sort_list
+",N/A,34.984,1.375,0.000,0.000,0.297,0.688,37.391,5,5,1.176
+question_5,100,0,wrong_5_013.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        if ( e < pivot ) :
+            lower . append ( e )
+        if ( x == pivot ) :
+            plist . append ( e )
+        if ( x > pivot ) :
+            higher . append ( e )
+    sort_list = ( ( higher + plist ) + lower )
+    return sort_list [ : k ]
+
+
+","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        pass
+        for i in range ( x , len ( lst ) ) :
+            pass
+            if ( e < pivot ) :
+                lower . append ( e )
+            pass
+            if ( x == pivot ) :
+                pass
+            plist . append ( e )
+        pass
+        if ( x > pivot ) :
+            higher . append ( e )
+        pass
+    sort_list = ( ( higher + plist ) + lower )
+    return sort_list [ : k ]
+","
+
+def top_k(lst, k):
+    if True:
+        pass
+    for x in range((k + 1)):
+        max = x
+        for i in range(x, len(lst)):
+            if True:
+                pass
+            if (lst[i] > lst[max]):
+                max = i
+        if (x <= (len(lst) - 1)):
+            (lst[max], lst[x]) = (lst[x], lst[max])
+    new = lst[:k]
+    return new
+",{'top_k': 'correct_5_262.py'},"{'top_k': 'B1.h,B1.h'}","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        pass
+    for ref_x in range ( ( k + 1 ) ) :
+        ref_max = ref_x
+        for i in range ( ref_x , len ( lst ) ) :
+            pass
+            if True :
+                pass
+            pass
+            if ( lst [ i ] > lst [ ref_max ] ) :
+                ref_max = i
+        pass
+        if ( ref_x <= ( len ( lst ) - 1 ) ) :
+            ( lst [ ref_max ] , lst [ ref_x ] ) = ( lst [ ref_x ] , lst [ ref_max ] )
+        pass
+    sort_list = lst [ : k ]
+    return sort_list
+",N/A,32.844,1.375,0.000,0.000,0.297,0.656,35.203,5,5,1.176
+question_5,100,0,wrong_5_014.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        if ( e < pivot ) :
+            lower . append ( e )
+        if ( e == pivot ) :
+            plist . append ( e )
+        if ( e > pivot ) :
+            higher . append ( e )
+    sort_list = ( ( higher + plist ) + lower )
+    return sort_list [ : k ]
+
+
+","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        pass
+        for x in range ( ( k + 1 ) ) :
+            pass
+            if ( e < pivot ) :
+                lower . append ( e )
+            pass
+            if ( e == pivot ) :
+                max = i
+            plist . append ( e )
+        pass
+        if ( e > pivot ) :
+            higher . append ( e )
+        pass
+    sort_list = ( ( higher + plist ) + lower )
+    return sort_list [ : k ]
+","
+
+def top_k(lst, k):
+    if True:
+        pass
+    for x in range((k + 1)):
+        max = x
+        for i in range(x, len(lst)):
+            if True:
+                pass
+            if (lst[i] > lst[max]):
+                max = i
+        if (x <= (len(lst) - 1)):
+            (lst[max], lst[x]) = (lst[x], lst[max])
+    new = lst[:k]
+    return new
+",{'top_k': 'correct_5_262.py'},"{'top_k': 'B1.h,B1.h'}","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        pass
+    for x in range ( ( k + 1 ) ) :
+        max = x
+        for ref_i in range ( x , len ( lst ) ) :
+            pass
+            if True :
+                pass
+            pass
+            if ( lst [ ref_i ] > lst [ max ] ) :
+                max = ref_i
+        pass
+        if ( x <= ( len ( lst ) - 1 ) ) :
+            ( lst [ max ] , lst [ x ] ) = ( lst [ x ] , lst [ max ] )
+        pass
+    sort_list = lst [ : k ]
+    return sort_list
+",N/A,35.578,2.812,0.000,0.016,0.359,0.703,39.531,5,5,1.176
+question_5,100,0,wrong_5_015.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        if ( e < pivot ) :
+            lower . append ( e )
+        if ( e == pivot ) :
+            plist . append ( e )
+        if ( e > pivot ) :
+            higher . append ( e )
+    sort_list = ( ( lower + plist ) + higher )
+    sort_list = sort_list [ : : ( - 1 ) ]
+    return sort_list [ : k ]
+
+
+","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        pass
+        for i in range ( x , len ( lst ) ) :
+            pass
+            if ( e < pivot ) :
+                lower . append ( e )
+            pass
+            if ( e == pivot ) :
+                max = i
+            plist . append ( e )
+        pass
+        if ( e > pivot ) :
+            higher . append ( e )
+        pass
+    sort_list = ( ( lower + plist ) + higher )
+    sort_list = sort_list [ : : ( - 1 ) ]
+    return sort_list [ : k ]
+","
+
+def top_k(lst, k):
+    if True:
+        pass
+    for x in range((k + 1)):
+        max = x
+        for i in range(x, len(lst)):
+            if True:
+                pass
+            if (lst[i] > lst[max]):
+                max = i
+        if (x <= (len(lst) - 1)):
+            (lst[max], lst[x]) = (lst[x], lst[max])
+    new = lst[:k]
+    return new
+",{'top_k': 'correct_5_262.py'},"{'top_k': 'B1.h,B1.h'}","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        pass
+    for ref_x in range ( ( k + 1 ) ) :
+        max = ref_x
+        for i in range ( ref_x , len ( lst ) ) :
+            pass
+            if True :
+                pass
+            pass
+            if ( lst [ i ] > lst [ max ] ) :
+                max = i
+        pass
+        if ( ref_x <= ( len ( lst ) - 1 ) ) :
+            ( lst [ max ] , lst [ ref_x ] ) = ( lst [ ref_x ] , lst [ max ] )
+        pass
+    sort_list = lst [ : k ]
+    return sort_list
+",N/A,33.906,1.641,0.000,0.016,0.344,0.906,36.859,5,5,1.085
+question_5,100,0,wrong_5_016.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    for e in lst :
+        if ( e < pivot ) :
+            lower . append ( e )
+        if ( e == pivot ) :
+            plist . append ( e )
+        if ( e > pivot ) :
+            higher . append ( e )
+    sort_list = ( ( lower + plist ) + higher )
+    sort_list = sort_list [ : : ( - 1 ) ]
+    if ( k == len ( lst ) ) :
+        return sort_list [ : ( k - 1 ) ]
+    elif ( k > len ( lst ) ) :
+        return sort_list
+    else :
+        return sort_list [ : k ]
+
+
+","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        return lst
+    lower = [ ]
+    higher = [ ]
+    plist = [ ]
+    pivot = lst [ 0 ]
+    if ( e < pivot ) :
+        lower . append ( e )
+    pass
+    while lst :
+        plist . append ( e )
+        for element in lst :
+            pass
+            if ( e > pivot ) :
+                higher . append ( e )
+            pass
+        sort_list = ( ( lower + plist ) + higher )
+        sort_list = sort_list [ : : ( - 1 ) ]
+        if ( k == len ( lst ) ) :
+            return sort_list [ : ( k - 1 ) ]
+        else :
+            return sort_list
+        return sort_list [ : k ]
+    pass
+","
+
+def top_k(lst, k):
+    if (k == 0):
+        return []
+    if ((lst == []) and True):
+        pass
+    sort = []
+    while lst:
+        biggest = lst[0]
+        for element in lst:
+            if (element > biggest):
+                biggest = element
+        lst.remove(biggest)
+        sort.append(biggest)
+        if (len(sort) == k):
+            return sort
+        else:
+            continue
+",{'top_k': 'correct_5_296.py'},"{'top_k': 'B1.h,A2.c'}","def top_k ( lst , k ) :
+    pass
+    if ( k == 0 ) :
+        return [ ]
+    if ( ( lst == [ ] ) and True ) :
+        pass
+    ref_sort = [ ]
+    while lst :
+        ref_biggest = lst [ 0 ]
+        for element in lst :
+            pass
+            if ( element > ref_biggest ) :
+                ref_biggest = element
+            pass
+        lst . remove ( ref_biggest )
+        ref_sort . append ( ref_biggest )
+        if ( len ( ref_sort ) == k ) :
+            return ref_sort
+        else :
+            continue
+    pass
+",N/A,31.328,1.031,0.000,0.016,0.188,6.359,38.953,5,5,0.811
+question_5,100,0,wrong_5_017.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for number in lst :
+            if ( number > biggest ) :
+                biggest = number
+        lst . remove ( biggest )
+        result . append ( oldest )
+    return result [ : k ]
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for number in lst :
+            if ( number > biggest ) :
+                biggest = number
+        lst . remove ( biggest )
+        result . append ( oldest )
+    return result [ : k ]
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for number in lst :
+            if ( number > biggest ) :
+                biggest = number
+        lst . remove ( biggest )
+        result . append ( biggest )
+    return result [ : k ]
+
+
+",{'top_k': 'correct_5_090.py'},{'top_k': ''},"def top_k ( result , k ) :
+    ref_result = [ ]
+    while result :
+        biggest = result [ 0 ]
+        for number in result :
+            if ( number > biggest ) :
+                biggest = number
+        result . remove ( biggest )
+        ref_result . append ( biggest )
+    return ref_result [ : k ]
+",N/A,1.375,0.734,0.000,0.000,0.234,5.797,8.172,5,5,0.214
+question_5,100,0,wrong_5_018.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : ( k + 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : ( k + 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+",{'top_k': 'correct_5_052.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+",N/A,0.625,1.109,0.000,0.000,0.391,0.094,2.234,5,5,0.067
+question_5,100,0,wrong_5_019.py,fail_timeout,1,1,"def top_k ( lst , k ) :
+    arranged = [ ]
+    while ( k > 0 ) :
+        lst . remove ( max ( lst ) )
+        arranged . append ( max ( lst ) )
+        k -= 1
+    return arranged
+    pass
+
+
+","def top_k ( lst , k ) :
+    arranged = [ ]
+    while ( k > 0 ) :
+        lst . remove ( max ( lst ) )
+        arranged . append ( max ( lst ) )
+        k -= 1
+    return arranged
+    pass
+
+
+","def top_k ( lst , k ) :
+    a = [ ]
+    while ( k > 0 ) :
+        a . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+        k -= 1
+    return a
+
+
+",{'top_k': 'correct_5_189.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    arranged = [ ]
+    while ( k > 0 ) :
+        arranged . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+        k -= 1
+    return arranged
+    pass
+",N/A,0.875,0.297,0.000,0.000,0.062,59.969,61.203,5,5,N/A
+question_5,100,0,wrong_5_020.py,fail_timeout,1,1,"def top_k ( lst , k ) :
+    arranged = [ ]
+    while ( k > 0 ) :
+        lst . remove ( max ( lst ) )
+        arranged . append ( max ( lst ) )
+        k = ( k - 1 )
+    return arranged
+    pass
+
+
+","def top_k ( lst , k ) :
+    arranged = [ ]
+    while ( k > 0 ) :
+        lst . remove ( max ( lst ) )
+        arranged . append ( max ( lst ) )
+        k = ( k - 1 )
+    return arranged
+    pass
+
+
+","def top_k ( lst , k ) :
+    arranged = [ ]
+    while ( k > 0 ) :
+        arranged . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+        k = ( k - 1 )
+    return arranged
+    pass
+
+
+",{'top_k': 'correct_5_107.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    arranged = [ ]
+    while ( k > 0 ) :
+        arranged . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+        k = ( k - 1 )
+    return arranged
+    pass
+",N/A,0.625,0.234,0.000,0.000,0.016,60.031,60.922,5,5,N/A
+question_5,100,0,wrong_5_021.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    r = [ ]
+    for qwerty in range ( 0 , k ) :
+        biggest = lst [ 0 ]
+        for k in lst :
+            if ( biggest < k ) :
+                biggest = k
+        r . append [ biggest ]
+        lst . remove [ biggest ]
+    return r
+
+
+","def top_k ( lst , k ) :
+    r = [ ]
+    for qwerty in range ( 0 , k ) :
+        biggest = lst [ 0 ]
+        for k in lst :
+            if ( biggest < k ) :
+                biggest = k
+        r . append [ biggest ]
+        lst . remove [ biggest ]
+    return r
+
+
+","def top_k ( lst , k ) :
+    rs = [ ]
+    for qwerty in range ( 0 , k ) :
+        biggest = lst [ 0 ]
+        for k in lst :
+            if ( biggest < k ) :
+                biggest = k
+        rs . append ( biggest )
+        lst . remove ( biggest )
+    return rs
+
+
+",{'top_k': 'correct_5_030.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    r = [ ]
+    for qwerty in range ( 0 , k ) :
+        biggest = lst [ 0 ]
+        for k in lst :
+            if ( biggest < k ) :
+                biggest = k
+        r . append ( biggest )
+        lst . remove ( biggest )
+    return r
+",N/A,0.625,0.156,0.000,0.000,0.156,0.109,1.062,5,5,0.089
+question_5,100,0,wrong_5_022.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    rs = [ ]
+    for qwerty in range ( 0 , k ) :
+        biggest = lst [ 0 ]
+        for k in lst :
+            if ( biggest < k ) :
+                biggest = k
+        rs . append [ biggest ]
+        lst . remove [ biggest ]
+    return r
+
+
+","def top_k ( lst , k ) :
+    rs = [ ]
+    for qwerty in range ( 0 , k ) :
+        biggest = lst [ 0 ]
+        for k in lst :
+            if ( biggest < k ) :
+                biggest = k
+        rs . append [ biggest ]
+        lst . remove [ biggest ]
+    return r
+
+
+","def top_k ( lst , k ) :
+    rs = [ ]
+    for qwerty in range ( 0 , k ) :
+        biggest = lst [ 0 ]
+        for k in lst :
+            if ( biggest < k ) :
+                biggest = k
+        rs . append ( biggest )
+        lst . remove ( biggest )
+    return rs
+
+
+",{'top_k': 'correct_5_030.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    rs = [ ]
+    for qwerty in range ( 0 , k ) :
+        biggest = lst [ 0 ]
+        for k in lst :
+            if ( biggest < k ) :
+                biggest = k
+        rs . append ( biggest )
+        lst . remove ( biggest )
+    return rs
+",N/A,0.641,0.156,0.000,0.000,0.156,0.250,1.203,5,5,0.111
+question_5,100,0,wrong_5_023.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                oldest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop [ 0 ] )
+    return sort_k
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                oldest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop [ 0 ] )
+    return sort_k
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop ( 0 ) )
+        n += 1
+    return sort_k
+
+
+",{'top_k': 'correct_5_057.py'},{'top_k': ''},"def top_k ( sort_k , k ) :
+    sort = [ ]
+    while sort_k :
+        biggest = sort_k [ 0 ]
+        for i in sort_k [ 1 : ] :
+            if ( i > biggest ) :
+                biggest = i
+        sort_k . remove ( biggest )
+        sort . append ( biggest )
+    ref_n = 1
+    n = [ ]
+    while ( ref_n <= k ) :
+        n . append ( sort . pop ( 0 ) )
+        ref_n += 1
+    return n
+",N/A,0.641,0.047,0.000,0.000,0.500,9.953,11.188,5,5,0.274
+question_5,100,0,wrong_5_024.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                oldest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop [ 0 ] )
+        n += 1
+    return sort_k
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                oldest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop [ 0 ] )
+        n += 1
+    return sort_k
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop ( 0 ) )
+        n += 1
+    return sort_k
+
+
+",{'top_k': 'correct_5_057.py'},{'top_k': ''},"def top_k ( sort_k , k ) :
+    sort = [ ]
+    while sort_k :
+        biggest = sort_k [ 0 ]
+        for i in sort_k [ 1 : ] :
+            if ( i > biggest ) :
+                biggest = i
+        sort_k . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    ref_sort_k = [ ]
+    while ( n <= k ) :
+        ref_sort_k . append ( sort . pop ( 0 ) )
+        n += 1
+    return ref_sort_k
+",N/A,0.688,0.062,0.000,0.000,0.531,26.031,27.312,5,5,0.167
+question_5,100,0,wrong_5_025.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                oldest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop ( 0 ) )
+        n += 1
+    return sort_k
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                oldest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop ( 0 ) )
+        n += 1
+    return sort_k
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop ( 0 ) )
+        n += 1
+    return sort_k
+
+
+",{'top_k': 'correct_5_057.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop ( 0 ) )
+        n += 1
+    return sort_k
+",N/A,0.656,0.062,0.000,0.000,0.609,0.250,1.594,5,5,0.015
+question_5,100,0,wrong_5_026.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return [ ]
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i [ 1 ] > largest [ 1 ] ) :
+                largest = i
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return [ ]
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i [ 1 ] > largest [ 1 ] ) :
+                largest = i
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return [ ]
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+    pass
+
+
+",{'top_k': 'correct_5_018.py'},{'top_k': ''},"def top_k ( sort , k ) :
+    if ( sort == [ ] ) :
+        return [ ]
+    ref_sort = [ ]
+    while sort :
+        largest = sort [ 0 ]
+        for i in sort :
+            if ( i > largest ) :
+                largest = i
+        sort . remove ( largest )
+        ref_sort . append ( largest )
+    return ref_sort [ : k ]
+    pass
+",N/A,0.672,0.031,0.000,0.000,0.219,20.641,21.594,5,5,0.268
+question_5,100,0,wrong_5_027.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sorted_lst = lst
+    while sorted_lst :
+        largest = sorted_lst [ 0 ]
+        for element in sorted_lst :
+            if ( element > largest ) :
+                largest = element
+        sorted_lst . remove ( largest )
+        sorted_lst . append ( largest )
+    return sorted_lst [ : ( k - 1 ) ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    sorted_lst = lst
+    while sorted_lst :
+        largest = sorted_lst [ 0 ]
+        for element in sorted_lst :
+            if ( element > largest ) :
+                largest = element
+        sorted_lst . remove ( largest )
+        sorted_lst . append ( largest )
+    return sorted_lst [ : ( k - 1 ) ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sorted_lst . append ( largest )
+    return sorted_lst [ : k ]
+    pass
+
+
+",{'top_k': 'correct_5_060.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sorted_lst . append ( largest )
+    return sorted_lst [ : k ]
+    pass
+",N/A,0.656,1.219,0.000,0.000,5.406,24.625,31.922,5,5,0.174
+question_5,100,0,wrong_5_028.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        sort . append ( i )
+    return sort [ : ( k - 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        sort . append ( i )
+    return sort [ : ( k - 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+",{'top_k': 'correct_5_167.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+",N/A,0.703,1.438,0.000,0.000,5.344,17.953,25.453,5,5,0.225
+question_5,100,0,wrong_5_029.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sorted_list = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for element in lst :
+            if ( element < smallest ) :
+                smallest = element
+            lst . remove ( element )
+            sorted_list . append ( element )
+    return list . reverse ( sorted_list ) [ : ( k - 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sorted_list = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for element in lst :
+            if ( element < smallest ) :
+                smallest = element
+            lst . remove ( element )
+            sorted_list . append ( element )
+    return list . reverse ( sorted_list ) [ : ( k - 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sorted_list = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for element in lst :
+            if ( element < smallest ) :
+                smallest = element
+        lst . remove ( smallest )
+        sorted_list . append ( smallest )
+    final = sorted_list [ : : ( - 1 ) ]
+    return final [ : k ]
+
+
+",{'top_k': 'correct_5_091.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sorted_list = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for element in lst :
+            if ( element < smallest ) :
+                smallest = element
+        lst . remove ( smallest )
+        sorted_list . append ( smallest )
+    ref_final = sorted_list [ : : ( - 1 ) ]
+    return ref_final [ : k ]
+",N/A,0.719,1.609,0.000,0.000,0.312,0.109,2.781,5,5,0.354
+question_5,100,0,wrong_5_030.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    ( sort , output ) = ( [ ] , [ ] )
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        lst . remove ( largest )
+        sort . append ( largest )
+    for j in sort :
+        output . append ( j )
+        if ( len ( output ) == k ) :
+            break
+    return output
+
+
+","def top_k ( lst , k ) :
+    ( sort , output ) = ( [ ] , [ ] )
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        lst . remove ( largest )
+        sort . append ( largest )
+    for j in sort :
+        output . append ( j )
+        if ( len ( output ) == k ) :
+            break
+    return output
+
+
+","def top_k ( lst , k ) :
+    new_list = [ ]
+    while lst :
+        maximum = lst [ 0 ]
+        for i in lst :
+            if ( i > maximum ) :
+                maximum = i
+        new_list . append ( maximum )
+        lst . remove ( maximum )
+    new_list_2 = [ ]
+    counter = 0
+    for i in new_list :
+        if ( counter < k ) :
+            new_list_2 . append ( new_list [ counter ] )
+            counter = ( counter + 1 )
+    return new_list_2
+
+
+",{'top_k': 'correct_5_047.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    ( sort , output ) = ( [ ] , [ ] )
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        lst . remove ( largest )
+        sort . append ( largest )
+    ref_new_list_2 = [ ]
+    ref_counter = 0
+    for i in sort :
+        if ( ref_counter < k ) :
+            ref_new_list_2 . append ( sort [ ref_counter ] )
+            ref_counter = ( ref_counter + 1 )
+    return ref_new_list_2
+",N/A,0.688,0.047,0.000,0.000,0.672,2.734,4.172,5,5,0.458
+question_5,100,0,wrong_5_031.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for numbers in lst :
+            if ( numbers > largest ) :
+                largest = numbers
+        new_lst . append ( lst . pop ( largest ) )
+    return new_lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for numbers in lst :
+            if ( numbers > largest ) :
+                largest = numbers
+        new_lst . append ( lst . pop ( largest ) )
+    return new_lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for numbers in lst :
+            if ( numbers > largest ) :
+                largest = numbers
+        new_lst . append ( largest )
+        lst . remove ( largest )
+    return new_lst [ : k ]
+
+
+",{'top_k': 'correct_5_013.py'},{'top_k': ''},"def top_k ( new_lst , k ) :
+    ref_new_lst = [ ]
+    while new_lst :
+        largest = new_lst [ 0 ]
+        for numbers in new_lst :
+            if ( numbers > largest ) :
+                largest = numbers
+        ref_new_lst . append ( largest )
+        new_lst . remove ( largest )
+    return ref_new_lst [ : k ]
+",N/A,0.625,0.953,0.000,0.000,0.234,5.672,7.516,5,5,0.350
+question_5,100,0,wrong_5_032.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for numbers in lst :
+            if ( numbers > largest ) :
+                largest = numbers
+        new_lst . append ( numbers )
+        lst . remove ( numbers )
+    return new_lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for numbers in lst :
+            if ( numbers > largest ) :
+                largest = numbers
+        new_lst . append ( numbers )
+        lst . remove ( numbers )
+    return new_lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for numbers in lst :
+            if ( numbers > largest ) :
+                largest = numbers
+        new_lst . append ( largest )
+        lst . remove ( largest )
+    return new_lst [ : k ]
+
+
+",{'top_k': 'correct_5_013.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for numbers in lst :
+            if ( numbers > largest ) :
+                largest = numbers
+        new_lst . append ( largest )
+        lst . remove ( largest )
+    return new_lst [ : k ]
+",N/A,0.625,0.703,0.000,0.000,0.391,10.516,12.234,5,5,0.048
+question_5,100,0,wrong_5_033.py,success_wo_mut,1,0,"def top_k ( lst , k ) :
+    final = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+            lst . remove ( largest )
+            final . append ( largest )
+        if ( len ( final ) == k ) :
+            break
+    return final
+
+
+","def top_k ( lst , k ) :
+    final = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+            lst . remove ( largest )
+            final . append ( largest )
+        if ( len ( final ) == k ) :
+            break
+    return final
+
+
+","
+
+def top_k(lst, k):
+    newlist = []
+    counter = k
+    while (counter > 0):
+        biggest = lst[0]
+        for i in lst[1:]:
+            if (biggest > i):
+                continue
+            biggest = i
+            continue
+        if True:
+            pass
+        newlist += [biggest]
+        counter -= 1
+        lst.remove(biggest)
+    return newlist
+",{'top_k': 'correct_5_188.py'},"{'top_k': 'B1.h,A1.a'}","def top_k ( lst , k ) :
+    ref_newlist = [ ]
+    ref_counter = k
+    while ( ref_counter > 0 ) :
+        ref_biggest = lst [ 0 ]
+        for ref_i in lst [ 1 : ] :
+            if ( ref_biggest > ref_i ) :
+                continue
+            ref_biggest = ref_i
+            continue
+        if True :
+            pass
+        ref_newlist += [ ref_biggest ]
+        ref_counter -= 1
+        lst . remove ( ref_biggest )
+    return ref_newlist
+",N/A,2.938,0.016,0.000,0.000,0.297,5.438,8.703,5,5,1.021
+question_5,100,0,wrong_5_034.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    final = [ ]
+    while lst :
+        element = max ( lst )
+        final += [ element ]
+        lst . remove ( element )
+        if ( len ( final ) == k ) :
+            break
+    return final
+
+
+","def top_k ( lst , k ) :
+    final = [ ]
+    while lst :
+        element = max ( lst )
+        final += [ element ]
+        lst . remove ( element )
+        if ( len ( final ) == k ) :
+            break
+    return final
+
+
+","def top_k ( lst , k ) :
+    unsorted = lst
+    result = [ ]
+    while True :
+        if ( len ( result ) == k ) :
+            break
+        result += [ max ( unsorted ) ]
+        unsorted . remove ( max ( unsorted ) )
+    return result
+
+
+",{'top_k': 'correct_5_186.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    ref_unsorted = lst
+    ref_result = [ ]
+    while lst :
+        if ( len ( ref_result ) == k ) :
+            break
+        ref_result += [ max ( ref_unsorted ) ]
+        ref_unsorted . remove ( max ( ref_unsorted ) )
+    return ref_result
+",N/A,0.672,0.016,0.000,0.000,0.078,7.797,8.578,5,5,0.829
+question_5,100,0,wrong_5_035.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return [ ]
+    else :
+        final = [ ]
+        while lst :
+            element = max ( lst )
+            final += [ element ]
+            lst . remove ( element )
+            if ( len ( final ) == k ) :
+                break
+        return final
+
+
+","def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return [ ]
+    else :
+        final = [ ]
+        while lst :
+            element = max ( lst )
+            final += [ element ]
+            lst . remove ( element )
+            if ( len ( final ) == k ) :
+                break
+        return final
+
+
+","def top_k ( lst , k ) :
+    if ( ( lst == [ ] ) or ( k == 0 ) ) :
+        return [ ]
+    else :
+        final = [ ]
+        while lst :
+            element = max ( lst )
+            final += [ element ]
+            lst . remove ( element )
+            if ( len ( final ) == k ) :
+                break
+        return final
+
+
+",{'top_k': 'correct_5_036.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    if ( ( lst == [ ] ) or ( k == 0 ) ) :
+        return [ ]
+    else :
+        final = [ ]
+        while lst :
+            element = max ( lst )
+            final += [ element ]
+            lst . remove ( element )
+            if ( len ( final ) == k ) :
+                break
+        return final
+",N/A,0.609,0.047,0.000,0.000,0.062,0.109,0.844,5,5,0.143
+question_5,100,0,wrong_5_036.py,fail_timeout,0,0,"def top_k ( lst , k ) :
+    if ( lst == [ ] ) :
+        return [ ]
+    elif ( k == 0 ) :
+        return lst
+    else :
+        final = [ ]
+        while lst :
+            element = max ( lst )
+            final += [ element ]
+            lst . remove ( element )
+            if ( len ( final ) == k ) :
+                break
+        return final
+
+
+","def top_k ( lst , k ) :
+    pass
+    if ( lst == [ ] ) :
+        return [ ]
+    elif ( k == 0 ) :
+        return lst
+    else :
+        final = [ ]
+        while lst :
+            element = max ( lst )
+            final += [ element ]
+            lst . remove ( element )
+        return False
+    l = [ ]
+    if ( len ( final ) == k ) :
+        break
+        if True :
+            pass
+        return final
+    pass
+","
+
+def top_k(lst, k):
+    l = []
+    if (k > len(lst)):
+        return False
+    elif (k == 1):
+        return lst
+    else:
+        while (len(l) < k):
+            a = max(lst)
+            lst.remove(a)
+            l.append(a)
+        return l
+    if True:
+        if True:
+            pass
+        pass
+",{'top_k': 'correct_5_400.py'},"{'top_k': 'B1.h,B1.f'}","def top_k ( lst , k ) :
+    l = [ ]
+    if ( lst == [ ] ) :
+        return [ ]
+    elif ( k == 1 ) :
+        return lst
+    else :
+        while ( len ( l ) < k ) :
+            element = max ( lst )
+            lst . remove ( element )
+            l . append ( element )
+        return l
+    if ( len ( final ) == k ) :
+        if True :
+            pass
+        pass
+    pass
+",N/A,11.422,0.078,0.000,0.016,0.031,51.719,63.266,5,5,N/A
+question_5,100,0,wrong_5_037.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for i in lst :
+            if ( i < smallest ) :
+                smallest = i
+        lst . remove ( smallest )
+        sort . append ( smallest )
+    counter = k
+    while ( counter != len ( lst ) ) :
+        lst . pop ( )
+        counter += 1
+    return lst
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for i in lst :
+            if ( i < smallest ) :
+                smallest = i
+        lst . remove ( smallest )
+        sort . append ( smallest )
+    counter = k
+    while ( counter != len ( lst ) ) :
+        lst . pop ( )
+        counter += 1
+    return lst
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    n = 1
+    sort_k = [ ]
+    while ( n <= k ) :
+        sort_k . append ( sort . pop ( 0 ) )
+        n += 1
+    return sort_k
+
+
+",{'top_k': 'correct_5_057.py'},{'top_k': ''},"def top_k ( lst , counter ) :
+    sort = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for i in lst [ 1 : ] :
+            if ( i > smallest ) :
+                smallest = i
+        lst . remove ( smallest )
+        sort . append ( smallest )
+    ref_n = 1
+    ref_sort_k = [ ]
+    while ( ref_n <= counter ) :
+        ref_sort_k . append ( sort . pop ( 0 ) )
+        ref_n += 1
+    return ref_sort_k
+",N/A,1.969,0.078,0.000,0.000,0.656,28.594,31.312,5,5,0.386
+question_5,100,0,wrong_5_038.py,fail_timeout,1,1,"def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ i ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : 4 ]
+
+
+","def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ i ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : 4 ]
+
+
+","def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ lst [ i ] ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+
+
+",{'top_k': 'correct_5_206.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ lst [ i ] ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+",N/A,0.922,0.047,0.000,0.000,0.453,58.875,60.328,5,5,N/A
+question_5,100,0,wrong_5_039.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ i ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : 4 ]
+
+
+","def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ i ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : 4 ]
+
+
+","def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ lst [ i ] ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+
+
+",{'top_k': 'correct_5_206.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ lst [ i ] ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+",N/A,0.609,0.016,0.000,0.000,0.344,58.984,59.969,5,5,0.073
+question_5,100,0,wrong_5_040.py,fail_timeout,1,1,"def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ i ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : ( k + 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ i ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : ( k + 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ lst [ i ] ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+
+
+",{'top_k': 'correct_5_206.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ lst [ i ] ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+",N/A,0.625,0.047,0.000,0.000,0.328,59.031,60.062,5,5,N/A
+question_5,100,0,wrong_5_041.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ i ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ i ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ lst [ i ] ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+
+
+",{'top_k': 'correct_5_206.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    i = 0
+    while ( ( i + 1 ) < len ( lst ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            lst . extend ( [ lst [ i ] ] )
+            lst . pop ( i )
+            i = 0
+        else :
+            i += 1
+    return lst [ : k ]
+",N/A,0.609,0.047,0.000,0.000,0.328,58.953,59.953,5,5,0.055
+question_5,100,0,wrong_5_042.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    x = len ( lst )
+    while ( x >= ( x - k ) ) :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    x = len ( lst )
+    while ( x >= ( x - k ) ) :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+",{'top_k': 'correct_5_052.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    x = len ( lst )
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+",N/A,0.609,1.562,0.000,0.000,0.469,0.516,3.172,5,5,0.200
+question_5,100,0,wrong_5_043.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+                lst . remove ( largest )
+                a . append ( largest )
+    return a [ : k ]
+
+
+","def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+                lst . remove ( largest )
+                a . append ( largest )
+    return a [ : k ]
+
+
+","def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        lst . remove ( largest )
+        a . append ( largest )
+    return a [ : k ]
+
+
+",{'top_k': 'correct_5_218.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in lst :
+            if ( i > largest ) :
+                largest = i
+        lst . remove ( largest )
+        a . append ( largest )
+    return a [ : k ]
+",N/A,0.609,1.047,0.000,0.000,5.375,0.125,7.172,5,5,0.095
+question_5,100,0,wrong_5_044.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    af_sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in a :
+            if ( element > biggest ) :
+                biggest = element
+            lst . remove ( biggest )
+            af_sort . append ( biggest )
+    return af_sort [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    af_sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in a :
+            if ( element > biggest ) :
+                biggest = element
+            lst . remove ( biggest )
+            af_sort . append ( biggest )
+    return af_sort [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    af_sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        af_sort . append ( biggest )
+    return af_sort [ 0 : k ]
+
+
+",{'top_k': 'correct_5_205.py'},{'top_k': ''},"def top_k ( af_sort , k ) :
+    ref_af_sort = [ ]
+    while af_sort :
+        biggest = af_sort [ 0 ]
+        for element in af_sort :
+            if ( element > biggest ) :
+                biggest = element
+        af_sort . remove ( biggest )
+        ref_af_sort . append ( biggest )
+    return ref_af_sort [ 0 : k ]
+",N/A,0.609,0.922,0.000,0.000,0.219,0.188,1.953,5,5,0.233
+question_5,100,0,wrong_5_045.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    newlst = [ ]
+    while ( len ( newlst ) <= k ) :
+        maximum = lst [ 0 ]
+        for i in lst :
+            if ( i > maximum ) :
+                maximum = i
+        newlst . append ( maximum )
+        lst . remove ( maximum )
+    return newlst
+
+
+","def top_k ( lst , k ) :
+    newlst = [ ]
+    while ( len ( newlst ) <= k ) :
+        maximum = lst [ 0 ]
+        for i in lst :
+            if ( i > maximum ) :
+                maximum = i
+        newlst . append ( maximum )
+        lst . remove ( maximum )
+    return newlst
+
+
+","def top_k ( lst , k ) :
+    newlst = [ ]
+    while ( len ( newlst ) < k ) :
+        maximum = lst [ 0 ]
+        for i in lst :
+            if ( i > maximum ) :
+                maximum = i
+        newlst . append ( maximum )
+        lst . remove ( maximum )
+    return newlst
+
+
+",{'top_k': 'correct_5_174.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    newlst = [ ]
+    while ( len ( newlst ) < k ) :
+        maximum = lst [ 0 ]
+        for i in lst :
+            if ( i > maximum ) :
+                maximum = i
+        newlst . append ( maximum )
+        lst . remove ( maximum )
+    return newlst
+",N/A,0.672,0.891,0.000,0.000,0.312,0.109,2.016,5,5,0.023
+question_5,100,0,wrong_5_046.py,fail_timeout,1,1,"def top_k ( lst , k ) :
+    new_list = [ ]
+    while ( len ( new_list ) < k ) :
+        maximum = max ( lst )
+        new_lst . append ( lst )
+        lst . remove ( maximum )
+    return new_lst
+
+
+","def top_k ( lst , k ) :
+    new_list = [ ]
+    while ( len ( new_list ) < k ) :
+        maximum = max ( lst )
+        new_lst . append ( lst )
+        lst . remove ( maximum )
+    return new_lst
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while ( len ( new_lst ) < k ) :
+        maximum = max ( lst )
+        new_lst . append ( maximum )
+        lst . remove ( maximum )
+    return new_lst
+
+
+",{'top_k': 'correct_5_025.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new_list = [ ]
+    while ( len ( new_list ) < k ) :
+        maximum = max ( lst )
+        new_list . append ( maximum )
+        lst . remove ( maximum )
+    return new_lst
+",N/A,0.656,0.188,0.000,0.000,0.047,60.016,60.922,0,5,N/A
+question_5,100,0,wrong_5_047.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        for n in range ( 1 , len ( lst ) ) :
+            biggest = lst [ 0 ]
+            if ( lst [ n ] > biggest ) :
+                biggest = lst [ n ]
+                lst . remove ( biggest )
+                sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : 3 ]
+
+
+","def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        for n in range ( 1 , len ( lst ) ) :
+            biggest = lst [ 0 ]
+            if ( lst [ n ] > biggest ) :
+                biggest = lst [ n ]
+                lst . remove ( biggest )
+                sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : 3 ]
+
+
+","def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for n in range ( len ( lst ) ) :
+            if ( lst [ n ] >= biggest ) :
+                biggest = lst [ n ]
+        lst . remove ( biggest )
+        sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+
+
+",{'top_k': 'correct_5_115.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for n in range ( len ( lst ) ) :
+            if ( lst [ n ] > biggest ) :
+                biggest = lst [ n ]
+        lst . remove ( biggest )
+        sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+",N/A,0.781,1.297,0.000,0.000,2.312,0.250,4.656,5,5,0.333
+question_5,100,0,wrong_5_048.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        for n in range ( 1 , len ( lst ) ) :
+            biggest = lst [ 0 ]
+            if ( lst [ n ] >= biggest ) :
+                biggest = lst [ n ]
+                lst . remove ( biggest )
+                sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        for n in range ( 1 , len ( lst ) ) :
+            biggest = lst [ 0 ]
+            if ( lst [ n ] >= biggest ) :
+                biggest = lst [ n ]
+                lst . remove ( biggest )
+                sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for n in range ( len ( lst ) ) :
+            if ( lst [ n ] >= biggest ) :
+                biggest = lst [ n ]
+        lst . remove ( biggest )
+        sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+
+
+",{'top_k': 'correct_5_115.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for n in range ( len ( lst ) ) :
+            if ( lst [ n ] >= biggest ) :
+                biggest = lst [ n ]
+        lst . remove ( biggest )
+        sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+",N/A,0.609,1.250,0.000,0.000,1.281,0.141,3.297,5,5,0.315
+question_5,100,0,wrong_5_049.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for n in lst :
+            if ( lst [ n ] >= biggest ) :
+                biggest = lst [ n ]
+        lst . remove ( biggest )
+        sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for n in lst :
+            if ( lst [ n ] >= biggest ) :
+                biggest = lst [ n ]
+        lst . remove ( biggest )
+        sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    sorted_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for n in range ( len ( lst ) ) :
+            if ( lst [ n ] >= biggest ) :
+                biggest = lst [ n ]
+        lst . remove ( biggest )
+        sorted_lst . append ( biggest )
+    return sorted_lst [ 0 : k ]
+
+
+",{'top_k': 'correct_5_115.py'},{'top_k': ''},"def top_k ( sorted_lst , k ) :
+    ref_sorted_lst = [ ]
+    while sorted_lst :
+        biggest = sorted_lst [ 0 ]
+        for n in range ( len ( sorted_lst ) ) :
+            if ( sorted_lst [ n ] >= biggest ) :
+                biggest = sorted_lst [ n ]
+        sorted_lst . remove ( biggest )
+        ref_sorted_lst . append ( biggest )
+    return ref_sorted_lst [ 0 : k ]
+",N/A,0.594,0.953,0.000,0.000,0.266,22.859,24.703,5,5,0.286
+question_5,100,0,wrong_5_050.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    newlist = [ ]
+    while ( len ( newlist ) < k ) :
+        newlist += [ max ( lst ) ]
+        for i in range ( len ( lst ) ) :
+            if ( i == max ( lst ) ) :
+                print ( i )
+                break
+        del lst [ i ]
+    return newlist
+
+
+","def top_k ( lst , k ) :
+    newlist = [ ]
+    while ( len ( newlist ) < k ) :
+        newlist += [ max ( lst ) ]
+        for i in range ( len ( lst ) ) :
+            if ( i == max ( lst ) ) :
+                print ( i )
+                break
+        del lst [ i ]
+    return newlist
+
+
+","def top_k ( lst , k ) :
+    newlist = [ ]
+    while ( len ( newlist ) < k ) :
+        newlist += [ max ( lst ) ]
+        for i in range ( len ( lst ) ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                break
+        del lst [ i ]
+    return newlist
+
+
+",{'top_k': 'correct_5_157.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    newlist = [ ]
+    while ( len ( newlist ) < k ) :
+        newlist += [ max ( lst ) ]
+        for i in range ( len ( lst ) ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                break
+        del lst [ i ]
+    return newlist
+",N/A,0.641,1.016,0.000,0.000,0.109,0.219,2.016,5,5,0.143
+question_5,100,0,wrong_5_051.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+                lst . remove ( biggest )
+                a . append ( biggest )
+    return a [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+                lst . remove ( biggest )
+                a . append ( biggest )
+    return a [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    return sort [ 0 : k ]
+
+
+",{'top_k': 'correct_5_017.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        a . append ( biggest )
+    return a [ 0 : k ]
+",N/A,0.594,1.047,0.000,0.000,5.359,0.125,7.141,5,5,0.093
+question_5,100,0,wrong_5_052.py,fail_other,1,1,"def top_k ( lst , k ) :
+    a = sort_list ( lst )
+    return a [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    a = sort_list ( lst )
+    return a [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    a = sort_list ( lst )
+    return a [ 0 : k ]
+
+
+",{'top_k': 'correct_5_288.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    a = sort_list ( lst )
+    return a [ 0 : k ]
+",N/A,0.609,0.062,0.000,0.000,0.016,0.000,0.703,0,5,N/A
+question_5,100,0,wrong_5_053.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    count = 0
+    op = [ ]
+    big = lst [ 0 ]
+    while ( count < k ) :
+        op += max ( lst )
+        count += 1
+    return op
+
+
+","def top_k ( lst , k ) :
+    count = 0
+    op = [ ]
+    big = lst [ 0 ]
+    while ( count < k ) :
+        op += max ( lst )
+        count += 1
+    return op
+
+
+","def top_k ( lst , k ) :
+    count = 0
+    op = [ ]
+    while ( count < k ) :
+        op += [ max ( lst ) ]
+        lst . remove ( max ( lst ) )
+        count += 1
+    return op
+
+
+",{'top_k': 'correct_5_233.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    op = 0
+    count = [ ]
+    while ( op < k ) :
+        count += [ max ( lst ) ]
+        lst . remove ( max ( lst ) )
+        op += 1
+    return count
+",N/A,0.609,0.312,0.000,0.000,0.047,47.594,48.562,5,5,0.588
+question_5,100,0,wrong_5_054.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    count = 0
+    op = [ ]
+    big = lst [ 0 ]
+    while ( count < k ) :
+        op += [ max ( lst ) ]
+        count += 1
+    return op
+
+
+","def top_k ( lst , k ) :
+    count = 0
+    op = [ ]
+    big = lst [ 0 ]
+    while ( count < k ) :
+        op += [ max ( lst ) ]
+        count += 1
+    return op
+
+
+","def top_k ( lst , k ) :
+    count = 0
+    op = [ ]
+    while ( count < k ) :
+        op += [ max ( lst ) ]
+        lst . remove ( max ( lst ) )
+        count += 1
+    return op
+
+
+",{'top_k': 'correct_5_233.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    count = 0
+    op = [ ]
+    big = lst [ 0 ]
+    while ( count < k ) :
+        op += [ max ( lst ) ]
+        lst . remove ( max ( lst ) )
+        count += 1
+    return op
+",N/A,0.688,0.328,0.000,0.000,0.094,51.172,52.297,5,5,0.200
+question_5,100,0,wrong_5_055.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    values = [ ]
+    greatest = lst [ 0 ]
+    while ( len ( values ) < k ) :
+        for item in lst :
+            if ( item > greatest ) :
+                greatest = item
+        lst . remove ( greatest )
+        values . append ( greatest )
+        greatest = lst [ 0 ]
+    return values
+
+
+","def top_k ( lst , k ) :
+    values = [ ]
+    greatest = lst [ 0 ]
+    while ( len ( values ) < k ) :
+        for item in lst :
+            if ( item > greatest ) :
+                greatest = item
+        lst . remove ( greatest )
+        values . append ( greatest )
+        greatest = lst [ 0 ]
+    return values
+
+
+","def top_k ( lst , k ) :
+    values = [ ]
+    while ( len ( values ) < k ) :
+        greatest = lst [ 0 ]
+        for item in lst :
+            if ( item > greatest ) :
+                greatest = item
+        lst . remove ( greatest )
+        values . append ( greatest )
+    return values
+
+
+",{'top_k': 'correct_5_261.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    values = [ ]
+    greatest = lst [ 0 ]
+    while ( len ( values ) < k ) :
+        greatest = lst [ 0 ]
+        for item in lst :
+            if ( item > greatest ) :
+                greatest = item
+        lst . remove ( greatest )
+        values . append ( greatest )
+    return values
+",N/A,0.641,1.750,0.000,0.000,0.250,0.156,2.828,5,5,0.240
+question_5,100,0,wrong_5_056.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    values = [ ]
+    while ( len ( values ) < k ) :
+        for item in lst :
+            greatest = lst [ 0 ]
+            if ( item > greatest ) :
+                greatest = item
+        lst . remove ( greatest )
+        values . append ( greatest )
+    return values
+
+
+","def top_k ( lst , k ) :
+    values = [ ]
+    while ( len ( values ) < k ) :
+        for item in lst :
+            greatest = lst [ 0 ]
+            if ( item > greatest ) :
+                greatest = item
+        lst . remove ( greatest )
+        values . append ( greatest )
+    return values
+
+
+","def top_k ( lst , k ) :
+    values = [ ]
+    while ( len ( values ) < k ) :
+        greatest = lst [ 0 ]
+        for item in lst :
+            if ( item > greatest ) :
+                greatest = item
+        lst . remove ( greatest )
+        values . append ( greatest )
+    return values
+
+
+",{'top_k': 'correct_5_261.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    values = [ ]
+    while ( len ( values ) < k ) :
+        greatest = lst [ 0 ]
+        for item in lst :
+            if ( item > greatest ) :
+                greatest = item
+        lst . remove ( greatest )
+        values . append ( greatest )
+    return values
+",N/A,1.766,1.234,0.000,0.000,0.312,0.109,3.453,5,5,0.136
+question_5,100,0,wrong_5_057.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort . append ( biggest )
+        if ( len ( sort ) == k ) :
+            return sort
+        else :
+            continue
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort . append ( biggest )
+        if ( len ( sort ) == k ) :
+            return sort
+        else :
+            continue
+
+
+","def top_k ( lst , k ) :
+    n = [ ]
+    while lst :
+        big = lst [ 0 ]
+        for ele in lst :
+            if ( ele > big ) :
+                big = ele
+        if ( len ( n ) == k ) :
+            break
+        else :
+            n . append ( big )
+            lst . remove ( big )
+    return n
+    pass
+
+
+",{'top_k': 'correct_5_163.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        if ( len ( sort ) == k ) :
+            return sort
+        else :
+            sort . append ( biggest )
+            lst . remove ( biggest )
+    return sort
+    pass
+",N/A,0.688,0.016,0.000,0.000,0.672,11.391,12.797,5,5,0.404
+question_5,100,0,wrong_5_058.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new_lst = [ ]
+    for i in range ( k ) :
+        new_lst . append ( max ( lst ) )
+    return new_lst
+    pass
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    for i in range ( k ) :
+        new_lst . append ( max ( lst ) )
+    return new_lst
+    pass
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    for i in range ( k ) :
+        new_lst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return new_lst
+    pass
+
+
+",{'top_k': 'correct_5_082.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new_lst = [ ]
+    for i in range ( k ) :
+        new_lst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return new_lst
+    pass
+",N/A,0.609,0.188,0.000,0.000,0.047,0.078,0.938,5,5,0.304
+question_5,100,0,wrong_5_059.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new_lst = [ ]
+    for i in range ( k ) :
+        new_lst . append ( lst . remove ( max ( lst ) ) )
+    return new_lst
+    pass
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    for i in range ( k ) :
+        new_lst . append ( lst . remove ( max ( lst ) ) )
+    return new_lst
+    pass
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    for i in range ( k ) :
+        new_lst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return new_lst
+    pass
+
+
+",{'top_k': 'correct_5_082.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new_lst = [ ]
+    for i in range ( k ) :
+        new_lst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return new_lst
+    pass
+",N/A,0.625,0.172,0.000,0.000,0.031,0.094,0.938,5,5,0.308
+question_5,100,0,wrong_5_060.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for x in lst :
+            if ( x < lst [ 0 ] ) :
+                biggest = x
+        lst . remove ( biggest )
+        new_lst . append ( biggest )
+    return new_lst [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for x in lst :
+            if ( x < lst [ 0 ] ) :
+                biggest = x
+        lst . remove ( biggest )
+        new_lst . append ( biggest )
+    return new_lst [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    return sort [ 0 : k ]
+
+
+",{'top_k': 'correct_5_017.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for x in lst :
+            if ( x > biggest ) :
+                biggest = x
+        lst . remove ( biggest )
+        new_lst . append ( biggest )
+    return new_lst [ 0 : k ]
+",N/A,0.656,1.281,0.000,0.000,0.406,0.188,2.531,5,5,0.109
+question_5,100,0,wrong_5_061.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for x in lst :
+            if ( x > lst [ 0 ] ) :
+                biggest = x
+        lst . remove ( biggest )
+        new_lst . append ( biggest )
+    return new_lst [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for x in lst :
+            if ( x > lst [ 0 ] ) :
+                biggest = x
+        lst . remove ( biggest )
+        new_lst . append ( biggest )
+    return new_lst [ 0 : k ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+        lst . remove ( biggest )
+        sort . append ( biggest )
+    return sort [ 0 : k ]
+
+
+",{'top_k': 'correct_5_017.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for x in lst :
+            if ( x > biggest ) :
+                biggest = x
+        lst . remove ( biggest )
+        new_lst . append ( biggest )
+    return new_lst [ 0 : k ]
+",N/A,0.609,1.203,0.000,0.000,0.375,0.188,2.422,5,5,0.087
+question_5,100,0,wrong_5_062.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        a . append ( biggest )
+    return a [ : 3 ]
+
+
+","def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        a . append ( biggest )
+    return a [ : 3 ]
+
+
+","def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        a . append ( biggest )
+    return a [ : k ]
+
+
+",{'top_k': 'correct_5_084.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    a = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        a . append ( biggest )
+    return a [ : k ]
+",N/A,1.031,0.750,0.000,0.000,0.375,0.203,2.359,5,5,0.024
+question_5,100,0,wrong_5_063.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    if ( k <= 0 ) :
+        return [ ]
+    else :
+        maxi = max ( lst )
+        length = len ( lst )
+        for i in range ( length ) :
+            if ( lst [ i ] == maxi ) :
+                pos = i
+        new_list = lst . copy ( )
+        new_list . pop ( pos )
+        return ( [ maxi ] + top_k ( new_lst , ( k - 1 ) ) )
+
+
+","def top_k ( lst , k ) :
+    if ( k <= 0 ) :
+        return [ ]
+    else :
+        maxi = max ( lst )
+        length = len ( lst )
+        for i in range ( length ) :
+            if ( lst [ i ] == maxi ) :
+                pos = i
+        new_list = lst . copy ( )
+        new_list . pop ( pos )
+        return ( [ maxi ] + top_k ( new_lst , ( k - 1 ) ) )
+
+
+","def top_k ( lst , k ) :
+    if ( k <= 0 ) :
+        return [ ]
+    else :
+        maxi = max ( lst )
+        length = len ( lst )
+        for i in range ( length ) :
+            if ( lst [ i ] == maxi ) :
+                pos = i
+        new_list = lst . copy ( )
+        new_list . pop ( pos )
+        return ( [ maxi ] + top_k ( new_list , ( k - 1 ) ) )
+
+
+",{'top_k': 'correct_5_258.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    if ( k <= 0 ) :
+        return [ ]
+    else :
+        maxi = max ( lst )
+        length = len ( lst )
+        for i in range ( length ) :
+            if ( lst [ i ] == maxi ) :
+                pos = i
+        new_list = lst . copy ( )
+        new_list . pop ( pos )
+        return ( [ maxi ] + top_k ( new_list , ( k - 1 ) ) )
+",N/A,0.625,0.047,0.000,0.000,0.219,0.156,1.062,5,5,0.017
+question_5,100,0,wrong_5_064.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , ( - 1 ) ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                counter += 1
+    return results
+    pass
+
+
+","def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , ( - 1 ) ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                counter += 1
+    return results
+    pass
+
+
+","def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                break
+        counter += 1
+    return results
+
+
+",{'top_k': 'correct_5_110.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                break
+        counter += 1
+    return results
+    pass
+",N/A,0.641,1.094,0.000,0.000,3.219,0.188,5.219,5,5,0.151
+question_5,100,0,wrong_5_065.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    x = [ ]
+    for i in range ( ( k - 1 ) ) :
+        y = i
+        for j in lst :
+            if ( y < j ) :
+                y = j
+        x += y
+    return x
+    pass
+
+
+","def top_k ( lst , k ) :
+    x = [ ]
+    for i in range ( ( k - 1 ) ) :
+        y = i
+        for j in lst :
+            if ( y < j ) :
+                y = j
+        x += y
+    return x
+    pass
+
+
+","def top_k ( lst , k ) :
+    x = [ ]
+    for i in range ( k ) :
+        a = 0
+        for ele in lst :
+            if ( ele >= a ) :
+                a = ele
+        lst . remove ( a )
+        x . append ( a )
+    return x
+
+
+",{'top_k': 'correct_5_250.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    x = [ ]
+    for i in range ( k ) :
+        y = 0
+        for j in lst :
+            if ( y < j ) :
+                y = j
+        lst . remove ( y )
+        x . append ( y )
+    return x
+    pass
+",N/A,0.641,0.250,0.000,0.000,0.219,1.047,2.188,5,5,0.351
+question_5,100,0,wrong_5_066.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    a = lst
+    sort = [ ]
+    while a :
+        largest = a [ 0 ]
+        for item in a :
+            if ( item [ 1 ] > largest [ 1 ] ) :
+                largest = item
+        a . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+","def top_k ( lst , k ) :
+    a = lst
+    sort = [ ]
+    while a :
+        largest = a [ 0 ]
+        for item in a :
+            if ( item [ 1 ] > largest [ 1 ] ) :
+                largest = item
+        a . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+","def top_k ( lst , k ) :
+    a = lst
+    sort = [ ]
+    while a :
+        largest = a [ 0 ]
+        for item in a :
+            if ( item > largest ) :
+                largest = item
+        a . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+",{'top_k': 'correct_5_089.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = lst
+    a = [ ]
+    while sort :
+        largest = sort [ 0 ]
+        for item in sort :
+            if ( item > largest ) :
+                largest = item
+        sort . remove ( largest )
+        a . append ( largest )
+    return a [ : k ]
+",N/A,0.766,0.906,0.000,0.000,0.344,14.344,16.375,5,5,0.275
+question_5,100,0,wrong_5_067.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new = [ ]
+    while ( i in range ( ( k - 1 ) ) ) :
+        new . append ( lst . pop ( max ( lst ) ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new = [ ]
+    while ( i in range ( ( k - 1 ) ) ) :
+        new . append ( lst . pop ( max ( lst ) ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while ( len ( result ) < k ) :
+        result . append ( lst . pop ( lst . index ( max ( lst ) ) ) )
+    return result
+
+
+",{'top_k': 'correct_5_066.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( new ) < k ) :
+        new . append ( lst . pop ( lst . index ( max ( lst ) ) ) )
+    return new
+",N/A,0.781,0.312,0.000,0.000,0.031,20.828,21.969,5,5,0.367
+question_5,100,0,wrong_5_068.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new = [ ]
+    for i in range ( ( k - 1 ) ) :
+        new . append ( lst . pop ( max ( lst ) ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new = [ ]
+    for i in range ( ( k - 1 ) ) :
+        new . append ( lst . pop ( max ( lst ) ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    ls = [ ]
+    for i in range ( k ) :
+        ls . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return ls
+
+
+",{'top_k': 'reference.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new = [ ]
+    for i in range ( k ) :
+        new . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return new
+",N/A,0.734,0.328,0.000,0.000,0.031,0.109,1.203,5,5,0.393
+question_5,100,0,wrong_5_069.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) > ( len ( lst ) - k ) ) :
+        new . append ( lst . pop ( max ( lst ) ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) > ( len ( lst ) - k ) ) :
+        new . append ( lst . pop ( max ( lst ) ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while ( len ( result ) < k ) :
+        result . append ( lst . pop ( lst . index ( max ( lst ) ) ) )
+    return result
+
+
+",{'top_k': 'correct_5_066.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( new ) < k ) :
+        new . append ( lst . pop ( lst . index ( max ( lst ) ) ) )
+    return new
+",N/A,0.938,0.328,0.000,0.000,0.031,21.859,23.188,5,5,0.312
+question_5,100,0,wrong_5_070.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) > ( len ( lst ) - k ) ) :
+        new . append ( lst . remove ( max ( lst ) ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) > ( len ( lst ) - k ) ) :
+        new . append ( lst . remove ( max ( lst ) ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while ( len ( result ) < k ) :
+        result . append ( lst . pop ( lst . index ( max ( lst ) ) ) )
+    return result
+
+
+",{'top_k': 'correct_5_066.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( new ) < k ) :
+        new . append ( lst . pop ( lst . index ( max ( lst ) ) ) )
+    return new
+",N/A,0.625,0.297,0.000,0.000,0.031,21.766,22.734,5,5,0.312
+question_5,100,0,wrong_5_071.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) >= ( len ( lst ) - k ) ) :
+        top = max ( lst )
+        new . append ( lst . remove ( top ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) >= ( len ( lst ) - k ) ) :
+        top = max ( lst )
+        new . append ( lst . remove ( top ) )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while ( len ( new_lst ) < k ) :
+        maximum = max ( lst )
+        new_lst . append ( maximum )
+        lst . remove ( maximum )
+    return new_lst
+
+
+",{'top_k': 'correct_5_025.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( new ) < k ) :
+        top = max ( lst )
+        new . append ( top )
+        lst . remove ( top )
+    return new
+",N/A,0.578,0.328,0.000,0.000,0.062,50.172,51.141,5,5,0.371
+question_5,100,0,wrong_5_072.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , ( - 1 ) ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                counter += 1
+    return results
+
+
+","def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , ( - 1 ) ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                counter += 1
+    return results
+
+
+","def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                break
+        counter += 1
+    return results
+
+
+",{'top_k': 'correct_5_110.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                break
+        counter += 1
+    return results
+",N/A,0.625,1.031,0.000,0.000,3.219,0.188,5.062,5,5,0.154
+question_5,100,0,wrong_5_073.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                counter += 1
+        continue
+    return results
+
+
+","def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                counter += 1
+        continue
+    return results
+
+
+","def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                break
+        counter += 1
+    return results
+
+
+",{'top_k': 'correct_5_110.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                break
+        counter += 1
+    return results
+",N/A,0.641,0.906,0.000,0.000,0.125,17.359,19.062,5,5,0.118
+question_5,100,0,wrong_5_074.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                counter += 1
+    return results
+
+
+","def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                counter += 1
+    return results
+
+
+","def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                break
+        counter += 1
+    return results
+
+
+",{'top_k': 'correct_5_110.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    results = [ ]
+    counter = 0
+    while ( counter < k ) :
+        for i in range ( ( - len ( lst ) ) , 0 ) :
+            if ( lst [ i ] == max ( lst ) ) :
+                results . append ( lst . pop ( i ) )
+                break
+        counter += 1
+    return results
+",N/A,0.641,0.906,0.000,0.000,0.156,0.125,1.828,5,5,0.100
+question_5,100,0,wrong_5_075.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) >= ( len ( lst ) - k ) ) :
+        top = max ( lst )
+        new . append ( top )
+        lst . remove ( top )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) >= ( len ( lst ) - k ) ) :
+        top = max ( lst )
+        new . append ( top )
+        lst . remove ( top )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while ( len ( new_lst ) < k ) :
+        maximum = max ( lst )
+        new_lst . append ( maximum )
+        lst . remove ( maximum )
+    return new_lst
+
+
+",{'top_k': 'correct_5_025.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( new ) < k ) :
+        top = max ( lst )
+        new . append ( top )
+        lst . remove ( top )
+    return new
+",N/A,0.609,0.281,0.000,0.000,0.094,0.078,1.062,5,5,0.189
+question_5,100,0,wrong_5_076.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) > ( len ( lst ) - k ) ) :
+        top = max ( lst )
+        new . append ( top )
+        lst . remove ( top )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( lst ) > ( len ( lst ) - k ) ) :
+        top = max ( lst )
+        new . append ( top )
+        lst . remove ( top )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while ( len ( new_lst ) < k ) :
+        maximum = max ( lst )
+        new_lst . append ( maximum )
+        lst . remove ( maximum )
+    return new_lst
+
+
+",{'top_k': 'correct_5_025.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new = [ ]
+    while ( len ( new ) < k ) :
+        top = max ( lst )
+        new . append ( top )
+        lst . remove ( top )
+    return new
+",N/A,0.625,0.266,0.000,0.000,0.078,0.078,1.078,5,5,0.189
+question_5,100,0,wrong_5_077.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        minimum = lst [ 0 ]
+        for x in lst :
+            if ( x > minimum ) :
+                minimum = x
+        result . append ( minimum )
+        lst . remove ( minimum )
+    return lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        minimum = lst [ 0 ]
+        for x in lst :
+            if ( x > minimum ) :
+                minimum = x
+        result . append ( minimum )
+        lst . remove ( minimum )
+    return lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        minimum = lst [ 0 ]
+        for x in lst :
+            if ( x > minimum ) :
+                minimum = x
+        result . append ( minimum )
+        lst . remove ( minimum )
+    return result [ : k ]
+
+
+",{'top_k': 'correct_5_032.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        minimum = lst [ 0 ]
+        for x in lst :
+            if ( x > minimum ) :
+                minimum = x
+        result . append ( minimum )
+        lst . remove ( minimum )
+    return result [ : k ]
+",N/A,0.609,0.578,0.000,0.000,0.391,0.156,1.781,5,5,0.024
+question_5,100,0,wrong_5_078.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+                lst . remove ( largest )
+                sort . append ( largest )
+    return sort [ : k ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+                lst . remove ( largest )
+                sort . append ( largest )
+    return sort [ : k ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+
+
+",{'top_k': 'correct_5_052.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ : k ]
+",N/A,0.609,0.969,0.000,0.000,5.375,0.141,7.125,5,5,0.095
+question_5,100,0,wrong_5_079.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort_lst = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for element in lst :
+            if ( element < smallest ) :
+                smallest = element
+        lst . remove ( smallest )
+        sort_lst . append ( smallest )
+    return sort_lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    sort_lst = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for element in lst :
+            if ( element < smallest ) :
+                smallest = element
+        lst . remove ( smallest )
+        sort_lst . append ( smallest )
+    return sort_lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    sort_lst = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        lst . remove ( biggest )
+        sort_lst . append ( biggest )
+    return sort_lst [ : k ]
+
+
+",{'top_k': 'correct_5_146.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort_lst = [ ]
+    while lst :
+        smallest = lst [ 0 ]
+        for element in lst :
+            if ( element > smallest ) :
+                smallest = element
+        lst . remove ( smallest )
+        sort_lst . append ( smallest )
+    return sort_lst [ : k ]
+",N/A,0.641,1.031,0.000,0.000,0.375,0.188,2.250,5,5,0.024
+question_5,100,0,wrong_5_080.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sotsot = [ ]
+    while ( len ( sotsot ) <= k ) :
+        sotsot . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return sotsot
+
+
+","def top_k ( lst , k ) :
+    sotsot = [ ]
+    while ( len ( sotsot ) <= k ) :
+        sotsot . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return sotsot
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    while ( len ( new_lst ) != k ) :
+        new_lst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return new_lst
+
+
+",{'top_k': 'correct_5_086.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sotsot = [ ]
+    while ( len ( sotsot ) != k ) :
+        sotsot . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return sotsot
+",N/A,0.625,0.219,0.000,0.000,0.031,0.078,0.953,5,5,0.032
+question_5,100,0,wrong_5_081.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    sotsot = [ ]
+    while lst :
+        while ( len ( sotsot ) <= k ) :
+            sotsot . append ( max ( lst ) )
+            lst . remove ( max ( lst ) )
+        return sotsot
+
+
+","def top_k ( lst , k ) :
+    sotsot = [ ]
+    while lst :
+        pass
+        if True :
+            sotsot . append ( max ( lst ) )
+            lst . remove ( max ( lst ) )
+        return sotsot
+    pass
+","
+
+def top_k(lst, k):
+    max_lst = []
+    i = 0
+    while (i < k):
+        max_lst.append(max(lst))
+        if True:
+            pass
+        lst.remove(max(lst))
+        i += 1
+    return max_lst
+",{'top_k': 'correct_5_182.py'},{'top_k': 'B1.h'},"def top_k ( lst , k ) :
+    sotsot = [ ]
+    ref_i = 0
+    while ( ref_i < k ) :
+        sotsot . append ( max ( lst ) )
+        if True :
+            pass
+        lst . remove ( max ( lst ) )
+        ref_i += 1
+    return sotsot
+",N/A,9.953,0.031,0.000,0.000,0.062,7.766,17.812,5,5,0.455
+question_5,100,0,wrong_5_082.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    sotsot = [ ]
+    while lst :
+        while ( len ( sotsot ) <= k ) :
+            sotsot . append ( max ( lst ) )
+            lst . remove ( max ( lst ) )
+        return sotsot
+
+
+","def top_k ( lst , k ) :
+    sotsot = [ ]
+    while lst :
+        pass
+        if True :
+            sotsot . append ( max ( lst ) )
+            lst . remove ( max ( lst ) )
+        return sotsot
+    pass
+","
+
+def top_k(lst, k):
+    max_lst = []
+    i = 0
+    while (i < k):
+        max_lst.append(max(lst))
+        if True:
+            pass
+        lst.remove(max(lst))
+        i += 1
+    return max_lst
+",{'top_k': 'correct_5_182.py'},{'top_k': 'B1.h'},"def top_k ( lst , k ) :
+    sotsot = [ ]
+    ref_i = 0
+    while ( ref_i < k ) :
+        sotsot . append ( max ( lst ) )
+        if True :
+            pass
+        lst . remove ( max ( lst ) )
+        ref_i += 1
+    return sotsot
+",N/A,10.000,0.016,0.000,0.016,0.078,7.781,17.891,5,5,0.455
+question_5,100,0,wrong_5_083.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    result = [ ]
+    for i in range ( len ( lst ) ) :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        result . append ( largest )
+    return lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    for i in range ( len ( lst ) ) :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        result . append ( largest )
+    return lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    for i in range ( len ( lst ) ) :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        result . append ( largest )
+    return result [ : k ]
+
+
+",{'top_k': 'correct_5_165.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    result = [ ]
+    for i in range ( len ( lst ) ) :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        result . append ( largest )
+    return result [ : k ]
+",N/A,2.688,0.141,0.000,0.000,0.531,0.281,3.656,5,5,0.021
+question_5,100,0,wrong_5_084.py,fail_other,1,0,"def top_k ( lst , k ) :
+    new_list = [ ]
+    for i in lst :
+        if ( k == 0 ) :
+            break
+        new_list += max ( lst )
+        ( k - 1 )
+    return lst
+    pass
+
+
+","def top_k ( lst , k ) :
+    new_list = [ ]
+    for i in lst :
+        if ( k == 0 ) :
+            break
+        new_list += max ( lst )
+        ( k - 1 )
+    return lst
+    pass
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    for i in range ( len ( lst ) ) :
+        if ( len ( result ) < k ) :
+            largest = get_largest ( lst )
+            lst . remove ( largest )
+            result . append ( largest )
+    return result
+
+
+",{'top_k': 'correct_5_191.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new_list = [ ]
+    for i in range ( len ( lst ) ) :
+        if ( len ( new_list ) < k ) :
+            ref_largest = get_largest ( lst )
+            lst . remove ( ref_largest )
+            new_list . append ( ref_largest )
+    return new_list
+",N/A,0.609,0.016,0.000,0.000,0.031,0.266,0.938,1,5,N/A
+question_5,100,0,wrong_5_085.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    result = [ ]
+    while ( len ( lst ) > ( len ( lst ) - k ) ) :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        result . append ( biggest )
+        lst . remove ( biggest )
+    return result
+    pass
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while ( len ( lst ) > ( len ( lst ) - k ) ) :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        result . append ( biggest )
+        lst . remove ( biggest )
+    return result
+    pass
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    length = len ( lst )
+    while ( len ( lst ) > ( length - k ) ) :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        result . append ( biggest )
+        lst . remove ( biggest )
+    return result
+    pass
+
+
+",{'top_k': 'correct_5_323.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    result = [ ]
+    ref_length = len ( lst )
+    while ( len ( lst ) > ( ref_length - k ) ) :
+        biggest = lst [ 0 ]
+        for element in lst :
+            if ( element > biggest ) :
+                biggest = element
+        result . append ( biggest )
+        lst . remove ( biggest )
+    return result
+    pass
+",N/A,0.625,1.156,0.000,0.000,0.344,0.188,2.344,5,5,0.160
+question_5,100,0,wrong_5_086.py,fail_timeout,1,1,"def top_k ( lst , k ) :
+    list = [ ]
+    while ( len ( list ) < k ) :
+        a = max ( lst )
+        lst . remove ( a )
+        new . append ( a )
+    return list
+
+
+","def top_k ( lst , k ) :
+    list = [ ]
+    while ( len ( list ) < k ) :
+        a = max ( lst )
+        lst . remove ( a )
+        new . append ( a )
+    return list
+
+
+","def top_k ( lst , k ) :
+    list = [ ]
+    while ( len ( list ) < k ) :
+        a = max ( lst )
+        lst . remove ( a )
+        list . append ( a )
+    return list
+
+
+",{'top_k': 'correct_5_255.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    list = [ ]
+    while ( len ( list ) < k ) :
+        a = max ( lst )
+        lst . remove ( a )
+        list . append ( a )
+    return list
+",N/A,0.625,0.219,0.000,0.000,0.031,60.016,60.906,5,5,N/A
+question_5,100,0,wrong_5_087.py,fail_timeout,1,1,"def top_k ( lst , k ) :
+    list = [ ]
+    while ( len ( lst ) < k ) :
+        a = max ( lst )
+        lst . remove ( a )
+        new . append ( a )
+    return list
+
+
+","def top_k ( lst , k ) :
+    list = [ ]
+    while ( len ( lst ) < k ) :
+        a = max ( lst )
+        lst . remove ( a )
+        new . append ( a )
+    return list
+
+
+","def top_k ( lst , k ) :
+    list = [ ]
+    while ( len ( list ) < k ) :
+        a = max ( lst )
+        lst . remove ( a )
+        list . append ( a )
+    return list
+
+
+",{'top_k': 'correct_5_255.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    list = [ ]
+    while ( len ( list ) < k ) :
+        a = max ( lst )
+        lst . remove ( a )
+        list . append ( a )
+    return list
+",N/A,0.625,0.203,0.000,0.000,0.047,60.000,60.891,5,5,N/A
+question_5,100,0,wrong_5_088.py,fail_exception,N/A,1,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.609,N/A,N/A,N/A
+question_5,100,0,wrong_5_089.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    newlist = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+            else :
+                continue
+        lst . remove ( biggest )
+        if ( len ( newlist ) == k ) :
+            break
+        else :
+            newlist . append ( biggest )
+        return newlist
+
+
+","def top_k ( lst , k ) :
+    newlist = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+            else :
+                continue
+        lst . remove ( biggest )
+        if ( len ( newlist ) == k ) :
+            break
+        else :
+            newlist . append ( biggest )
+        return newlist
+
+
+","def top_k ( lst , k ) :
+    newlist = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+            else :
+                continue
+        lst . remove ( biggest )
+        if ( len ( newlist ) == k ) :
+            break
+        else :
+            newlist . append ( biggest )
+    return newlist
+
+
+",{'top_k': 'correct_5_353.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    newlist = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for i in lst :
+            if ( i > biggest ) :
+                biggest = i
+            else :
+                continue
+        lst . remove ( biggest )
+        if ( len ( newlist ) == k ) :
+            break
+        else :
+            newlist . append ( biggest )
+    return newlist
+",N/A,0.594,0.047,0.000,0.000,0.281,0.078,1.031,5,5,0.042
+question_5,100,0,wrong_5_090.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        big = max ( lst )
+        sort . append ( big )
+        lst . remove ( big )
+    output = [ n for n in lst if ( lst . index ( n ) < k ) ]
+    return output
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        big = max ( lst )
+        sort . append ( big )
+        lst . remove ( big )
+    output = [ n for n in lst if ( lst . index ( n ) < k ) ]
+    return output
+
+
+","def top_k ( lst , k ) :
+    lst2 = [ ]
+    while lst :
+        a = max ( lst )
+        lst2 . append ( a )
+        lst . remove ( a )
+    return lst2 [ 0 : k ]
+
+
+",{'top_k': 'correct_5_078.py'},{'top_k': ''},"def top_k ( output , k ) :
+    sort = [ ]
+    while output :
+        big = max ( output )
+        sort . append ( big )
+        output . remove ( big )
+    return sort [ 0 : k ]
+",N/A,0.609,0.344,0.000,0.000,0.094,0.188,1.250,5,5,0.463
+question_5,100,0,wrong_5_091.py,fail_other,0,0,"def top_k ( lst , k ) :
+    lst2 = [ ]
+    max = lst [ 0 ]
+    for i in lst :
+        if ( i > max ) :
+            max = i
+        while ( len ( lst2 ) != k ) :
+            lst2 . append ( max )
+    return lst2
+
+
+","def top_k ( lst , k ) :
+    lst2 = [ ]
+    max = lst [ 0 ]
+    for i in lst :
+        pass
+        if ( i > max ) :
+            max = i
+            if False :
+                result = [ ]
+            pass
+        elif True :
+            lst2 . append ( max )
+        pass
+    return lst2
+","
+
+def top_k(lst, k):
+    result = []
+    for i in range(len(lst)):
+        if (len(result) < k):
+            largest = get_largest(lst)
+            lst.remove(largest)
+            if False:
+                pass
+            result.append(largest)
+        elif True:
+            pass
+    return result
+",{'top_k': 'correct_5_191.py'},"{'top_k': 'B2.k,B1.g'}","def top_k ( lst , k ) :
+    lst2 = [ ]
+    for i in range ( len ( lst ) ) :
+        pass
+        if ( len ( lst2 ) < k ) :
+            ref_largest = get_largest ( lst )
+            lst . remove ( ref_largest )
+            if False :
+                pass
+            lst2 . append ( ref_largest )
+        elif True :
+            pass
+        pass
+    return lst2
+",N/A,9.734,0.031,0.000,0.000,0.125,0.469,10.375,1,5,N/A
+question_5,100,0,wrong_5_092.py,fail_other,0,0,"def top_k ( lst , k ) :
+    lst2 = [ ]
+    max = lst [ 0 ]
+    for i in lst :
+        if ( i > max ) :
+            max = i
+        lst . pop ( max )
+        while ( len ( lst2 ) != k ) :
+            lst2 . append ( max )
+    return lst2
+
+
+","def top_k ( lst , k ) :
+    lst2 = [ ]
+    max = lst [ 0 ]
+    for i in lst :
+        pass
+        if ( i > max ) :
+            max = i
+            if False :
+                pass
+            lst . pop ( max )
+        elif True :
+            lst2 . append ( max )
+        pass
+    return lst2
+","
+
+def top_k(lst, k):
+    result = []
+    for i in range(len(lst)):
+        if (len(result) < k):
+            largest = get_largest(lst)
+            lst.remove(largest)
+            if False:
+                pass
+            result.append(largest)
+        elif True:
+            pass
+    return result
+",{'top_k': 'correct_5_191.py'},"{'top_k': 'B2.k,B1.g'}","def top_k ( lst , k ) :
+    lst2 = [ ]
+    for i in range ( len ( lst ) ) :
+        pass
+        if ( len ( lst2 ) < k ) :
+            ref_largest = get_largest ( lst )
+            lst . remove ( ref_largest )
+            if False :
+                pass
+            lst2 . append ( ref_largest )
+        elif True :
+            pass
+        pass
+    return lst2
+",N/A,11.375,0.062,0.000,0.016,0.266,0.500,12.250,1,5,N/A
+question_5,100,0,wrong_5_093.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for elem in lst :
+            if ( elem > biggest ) :
+                biggest = elem
+        lst . remove ( biggest )
+        result . append ( biggest )
+    return result [ : 3 ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for elem in lst :
+            if ( elem > biggest ) :
+                biggest = elem
+        lst . remove ( biggest )
+        result . append ( biggest )
+    return result [ : 3 ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for elem in lst :
+            if ( elem > biggest ) :
+                biggest = elem
+        lst . remove ( biggest )
+        result . append ( biggest )
+    return result [ : k ]
+    pass
+
+
+",{'top_k': 'correct_5_172.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    result = [ ]
+    while lst :
+        biggest = lst [ 0 ]
+        for elem in lst :
+            if ( elem > biggest ) :
+                biggest = elem
+        lst . remove ( biggest )
+        result . append ( biggest )
+    return result [ : k ]
+    pass
+",N/A,1.250,0.828,0.000,0.000,0.391,0.281,2.766,5,5,0.023
+question_5,100,0,wrong_5_094.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    for i in range ( len ( lst ) ) :
+        for j in range ( ( len ( lst ) - 1 ) ) :
+            if ( lst [ j ] > lst [ ( j + 1 ) ] ) :
+                lst [ j ] = lst [ ( j + 1 ) ]
+                lst [ ( j + 1 ) ] = lst [ j ]
+    lst . reverse ( )
+    return lst [ : k ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    for i in range ( len ( lst ) ) :
+        for j in range ( ( len ( lst ) - 1 ) ) :
+            if ( lst [ j ] > lst [ ( j + 1 ) ] ) :
+                lst [ j ] = lst [ ( j + 1 ) ]
+                lst [ ( j + 1 ) ] = lst [ j ]
+    lst . reverse ( )
+    return lst [ : k ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    for i in range ( len ( lst ) ) :
+        for j in range ( ( len ( lst ) - 1 ) ) :
+            if ( lst [ j ] > lst [ ( j + 1 ) ] ) :
+                ( lst [ j ] , lst [ ( j + 1 ) ] ) = ( lst [ ( j + 1 ) ] , lst [ j ] )
+    lst . reverse ( )
+    return lst [ : k ]
+    pass
+
+
+",{'top_k': 'correct_5_379.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    for i in range ( len ( lst ) ) :
+        for j in range ( ( len ( lst ) - 1 ) ) :
+            if ( lst [ j ] > lst [ ( j + 1 ) ] ) :
+                ( lst [ j ] , lst [ ( j + 1 ) ] ) = ( lst [ ( j + 1 ) ] , lst [ j ] )
+    lst . reverse ( )
+    return lst [ : k ]
+    pass
+",N/A,0.656,0.328,0.000,0.000,0.266,0.312,1.578,5,5,0.043
+question_5,100,0,wrong_5_095.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    for i in range ( len ( lst ) ) :
+        for j in range ( ( len ( lst ) - 1 ) ) :
+            if ( lst [ j ] > lst [ ( j + 1 ) ] ) :
+                lst [ j ] = lst [ ( j + 1 ) ]
+                lst [ ( j + 1 ) ] = lst [ j ]
+    lst . reverse ( )
+    return lst [ : k ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    for i in range ( len ( lst ) ) :
+        for j in range ( ( len ( lst ) - 1 ) ) :
+            if ( lst [ j ] > lst [ ( j + 1 ) ] ) :
+                lst [ j ] = lst [ ( j + 1 ) ]
+                lst [ ( j + 1 ) ] = lst [ j ]
+    lst . reverse ( )
+    return lst [ : k ]
+    pass
+
+
+","def top_k ( lst , k ) :
+    for i in range ( len ( lst ) ) :
+        for j in range ( ( len ( lst ) - 1 ) ) :
+            if ( lst [ j ] > lst [ ( j + 1 ) ] ) :
+                ( lst [ j ] , lst [ ( j + 1 ) ] ) = ( lst [ ( j + 1 ) ] , lst [ j ] )
+    lst . reverse ( )
+    return lst [ : k ]
+    pass
+
+
+",{'top_k': 'correct_5_379.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    for i in range ( len ( lst ) ) :
+        for j in range ( ( len ( lst ) - 1 ) ) :
+            if ( lst [ j ] > lst [ ( j + 1 ) ] ) :
+                ( lst [ j ] , lst [ ( j + 1 ) ] ) = ( lst [ ( j + 1 ) ] , lst [ j ] )
+    lst . reverse ( )
+    return lst [ : k ]
+    pass
+",N/A,0.609,0.281,0.000,0.000,0.250,0.312,1.500,5,5,0.043
+question_5,100,0,wrong_5_096.py,fail_other,1,0,"def top_k ( lst , k ) :
+    for i in range ( ( len ( lst ) - 1 ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            ( lst [ i ] , lst [ ( i + 1 ) ] ) = ( lst [ ( i + 1 ) ] , lst [ i ] )
+    return lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    for i in range ( ( len ( lst ) - 1 ) ) :
+        if ( lst [ i ] < lst [ ( i + 1 ) ] ) :
+            ( lst [ i ] , lst [ ( i + 1 ) ] ) = ( lst [ ( i + 1 ) ] , lst [ i ] )
+    return lst [ : k ]
+
+
+","def top_k ( lst , k ) :
+    result = [ ]
+    for i in range ( len ( lst ) ) :
+        if ( len ( result ) < k ) :
+            largest = get_largest ( lst )
+            lst . remove ( largest )
+            result . append ( largest )
+    return result
+
+
+",{'top_k': 'correct_5_191.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    ref_result = [ ]
+    for ref_i in range ( len ( lst ) ) :
+        if ( len ( ref_result ) < k ) :
+            i = get_largest ( lst )
+            lst . remove ( i )
+            ref_result . append ( i )
+    return ref_result
+",N/A,0.609,0.016,0.000,0.000,0.031,0.250,0.922,1,5,N/A
+question_5,100,0,wrong_5_097.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in range ( len ( lst ) ) :
+            if ( lst [ i ] > largest ) :
+                largest = lst [ i ]
+        sort . append ( largest )
+        lst . remove ( largest )
+    return sort [ : ( k + 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in range ( len ( lst ) ) :
+            if ( lst [ i ] > largest ) :
+                largest = lst [ i ]
+        sort . append ( largest )
+        lst . remove ( largest )
+    return sort [ : ( k + 1 ) ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in range ( len ( lst ) ) :
+            if ( lst [ i ] > largest ) :
+                largest = lst [ i ]
+        sort . append ( largest )
+        lst . remove ( largest )
+    return sort [ : k ]
+
+
+",{'top_k': 'correct_5_093.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for i in range ( len ( lst ) ) :
+            if ( lst [ i ] > largest ) :
+                largest = lst [ i ]
+        sort . append ( largest )
+        lst . remove ( largest )
+    return sort [ : k ]
+",N/A,0.625,0.938,0.000,0.000,0.375,0.094,2.047,5,5,0.055
+question_5,100,0,wrong_5_098.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    l = [ ]
+    if ( k > len ( lst ) ) :
+        return False
+    elif ( k == 1 ) :
+        return lst
+    else :
+        a = max ( lst )
+        lst . remove ( a )
+        l . append ( a )
+        return top_k ( lst , ( k - 1 ) )
+    pass
+
+
+","def top_k ( lst , k ) :
+    l = [ ]
+    if ( k > len ( lst ) ) :
+        return False
+        if True :
+            return lst
+        a = max ( lst )
+        lst . remove ( a )
+        l . append ( a )
+        return top_k ( lst , ( k - 1 ) )
+    pass
+","
+
+def top_k(lst, k):
+    if (len(lst) < k):
+        if True:
+            return lst
+    return sorted(lst, reverse=True)[:k]
+",{'top_k': 'copilot_q5_r1_5.py'},"{'top_k': 'B1.f,A1.a'}","def top_k ( lst , k ) :
+    if ( k > len ( lst ) ) :
+        if True :
+            return lst
+    return sorted ( lst , reverse = True ) [ : k ]
+",N/A,5.016,0.016,0.000,0.000,0.016,0.031,5.109,5,5,0.771
+question_5,100,0,wrong_5_099.py,success_w_mut,0,0,"def top_k ( lst , k ) :
+    l = [ ]
+    if ( k > len ( lst ) ) :
+        return False
+    elif ( k == 1 ) :
+        return lst
+    else :
+        a = max ( lst )
+        lst . remove ( a )
+        l . append ( a )
+        top_k ( lst , ( k - 1 ) )
+        return l
+    pass
+
+
+","def top_k ( lst , k ) :
+    l = [ ]
+    if ( k > len ( lst ) ) :
+        return False
+        if True :
+            return lst
+        a = max ( lst )
+        lst . remove ( a )
+        l . append ( a )
+        top_k ( lst , ( k - 1 ) )
+        return l
+    pass
+","
+
+def top_k(lst, k):
+    if (len(lst) < k):
+        if True:
+            return lst
+    return sorted(lst, reverse=True)[:k]
+",{'top_k': 'copilot_q5_r1_5.py'},"{'top_k': 'B1.f,A1.a'}","def top_k ( lst , k ) :
+    if ( k > len ( lst ) ) :
+        if True :
+            return lst
+    return sorted ( lst , reverse = True ) [ : k ]
+",N/A,5.031,0.016,0.000,0.000,0.031,0.016,5.109,5,5,0.780
+question_5,100,0,wrong_5_100.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    l = [ ]
+    if ( k > len ( lst ) ) :
+        return False
+    elif ( k == 1 ) :
+        return lst
+    else :
+        while ( len ( l ) <= k ) :
+            a = max ( lst )
+            lst . remove ( a )
+            l . append ( a )
+        return l
+    pass
+
+
+","def top_k ( lst , k ) :
+    l = [ ]
+    if ( k > len ( lst ) ) :
+        return False
+    elif ( k == 1 ) :
+        return lst
+    else :
+        while ( len ( l ) <= k ) :
+            a = max ( lst )
+            lst . remove ( a )
+            l . append ( a )
+        return l
+    pass
+
+
+","def top_k ( lst , k ) :
+    l = [ ]
+    if ( k > len ( lst ) ) :
+        return False
+    elif ( k == 1 ) :
+        return lst
+    else :
+        while ( len ( l ) < k ) :
+            a = max ( lst )
+            lst . remove ( a )
+            l . append ( a )
+        return l
+    pass
+
+
+",{'top_k': 'correct_5_380.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    l = [ ]
+    if ( k > len ( lst ) ) :
+        return False
+    elif ( k == 1 ) :
+        return lst
+    else :
+        while ( len ( l ) < k ) :
+            a = max ( lst )
+            lst . remove ( a )
+            l . append ( a )
+        return l
+    pass
+",N/A,0.688,0.047,0.000,0.000,0.078,0.109,0.938,5,5,0.020
+question_5,100,0,wrong_5_101.py,fail_exception,N/A,1,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.656,N/A,N/A,N/A
+question_5,100,0,wrong_5_102.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        new_lst . append ( lst . remove ( max ( lst ) ) )
+
+
+","def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        new_lst . append ( lst . remove ( max ( lst ) ) )
+
+
+","def top_k ( lst , k ) :
+    count = 0
+    op = [ ]
+    while ( count < k ) :
+        op += [ max ( lst ) ]
+        lst . remove ( max ( lst ) )
+        count += 1
+    return op
+
+
+",{'top_k': 'correct_5_233.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    ref_count = 0
+    ref_op = [ ]
+    while ( ref_count < k ) :
+        ref_op += [ max ( lst ) ]
+        lst . remove ( max ( lst ) )
+        ref_count += 1
+    return ref_op
+",N/A,0.656,0.312,0.000,0.000,0.062,21.906,22.953,5,5,0.731
+question_5,100,0,wrong_5_103.py,fail_timeout,1,1,"def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        maxi = max ( lst )
+        new_lst . append ( maxi )
+        lst . remove ( maxi )
+
+
+","def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        maxi = max ( lst )
+        new_lst . append ( maxi )
+        lst . remove ( maxi )
+
+
+","def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        maxi = max ( lst )
+        new_lst . append ( maxi )
+        lst . remove ( maxi )
+        counter += 1
+    return new_lst
+
+
+",{'top_k': 'correct_5_020.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        maxi = max ( lst )
+        new_lst . append ( maxi )
+        lst . remove ( maxi )
+        counter += 1
+",N/A,0.609,0.203,0.000,0.000,0.125,59.906,60.859,0,5,N/A
+question_5,100,0,wrong_5_104.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        maxi = max ( lst )
+        new_lst . append ( maxi )
+        lst . remove ( maxi )
+        counter += 1
+
+
+","def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        maxi = max ( lst )
+        new_lst . append ( maxi )
+        lst . remove ( maxi )
+        counter += 1
+
+
+","def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        maxi = max ( lst )
+        new_lst . append ( maxi )
+        lst . remove ( maxi )
+        counter += 1
+    return new_lst
+
+
+",{'top_k': 'correct_5_020.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    counter = 0
+    new_lst = [ ]
+    while ( counter < k ) :
+        maxi = max ( lst )
+        new_lst . append ( maxi )
+        lst . remove ( maxi )
+        counter += 1
+    return new_lst
+",N/A,0.609,0.156,0.000,0.000,0.125,0.031,0.922,5,5,0.057
+question_5,100,0,wrong_5_105.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ 0 : 3 ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ 0 : 3 ]
+
+
+","def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ 0 : k ]
+
+
+",{'top_k': 'correct_5_177.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    sort = [ ]
+    while lst :
+        largest = lst [ 0 ]
+        for element in lst :
+            if ( element > largest ) :
+                largest = element
+        lst . remove ( largest )
+        sort . append ( largest )
+    return sort [ 0 : k ]
+",N/A,0.609,0.797,0.000,0.000,0.375,0.188,1.984,5,5,0.023
+question_5,100,0,wrong_5_106.py,fail_other,1,1,"def top_k ( lst , k ) :
+    new = [ ]
+    lst . sort ( )
+    for i in range ( ( k - 1 ) ) :
+        new . append ( lst [ i ] )
+    return new
+
+
+","def top_k ( lst , k ) :
+    new = [ ]
+    lst . sort ( )
+    for i in range ( ( k - 1 ) ) :
+        new . append ( lst [ i ] )
+    return new
+
+
+","def top_k ( lst , k ) :
+    newlist = sort ( lst )
+    finish = [ ]
+    for i in range ( k ) :
+        finish . append ( lst [ i ] )
+    return finish
+
+
+",{'top_k': 'correct_5_416.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new = sort ( lst )
+    ref_finish = [ ]
+    for i in range ( k ) :
+        ref_finish . append ( lst [ i ] )
+    return ref_finish
+",N/A,0.625,0.250,0.000,0.000,0.031,0.250,1.156,0,5,N/A
+question_5,100,0,wrong_5_107.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    newlst = [ ]
+    for i in range ( ( k + 1 ) ) :
+        newlst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return newlst
+
+
+","def top_k ( lst , k ) :
+    newlst = [ ]
+    for i in range ( ( k + 1 ) ) :
+        newlst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return newlst
+
+
+","def top_k ( lst , k ) :
+    newlst = [ ]
+    for i in range ( k ) :
+        newlst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return newlst
+
+
+",{'top_k': 'correct_5_073.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    newlst = [ ]
+    for i in range ( k ) :
+        newlst . append ( max ( lst ) )
+        lst . remove ( max ( lst ) )
+    return newlst
+",N/A,0.609,0.156,0.000,0.000,0.062,0.016,0.859,5,5,0.094
+question_5,100,0,wrong_5_108.py,success_wo_mut,1,1,"def top_k ( lst , k ) :
+    new_lst = [ ]
+    counter = 0
+    while ( counter <= k ) :
+        highest = lst [ 0 ]
+        for x in lst :
+            if ( x > highest ) :
+                highest = x
+        new_lst . append ( highest )
+        lst . remove ( highest )
+        counter += 1
+    return new_lst
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    counter = 0
+    while ( counter <= k ) :
+        highest = lst [ 0 ]
+        for x in lst :
+            if ( x > highest ) :
+                highest = x
+        new_lst . append ( highest )
+        lst . remove ( highest )
+        counter += 1
+    return new_lst
+
+
+","def top_k ( lst , k ) :
+    new_lst = [ ]
+    counter = 1
+    while ( counter <= k ) :
+        highest = lst [ 0 ]
+        for x in lst :
+            if ( x > highest ) :
+                highest = x
+        new_lst . append ( highest )
+        lst . remove ( highest )
+        counter += 1
+    return new_lst
+
+
+",{'top_k': 'correct_5_383.py'},{'top_k': ''},"def top_k ( lst , k ) :
+    new_lst = [ ]
+    counter = 1
+    while ( counter <= k ) :
+        highest = lst [ 0 ]
+        for x in lst :
+            if ( x > highest ) :
+                highest = x
+        new_lst . append ( highest )
+        lst . remove ( highest )
+        counter += 1
+    return new_lst
+",N/A,0.609,1.359,0.000,0.000,0.422,0.234,2.625,5,5,0.020

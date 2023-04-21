@@ -1,0 +1,45 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/StudentEval/Reference_Scripts/Tests/q1/script_q1.py
+   - tests: /home/arghavan/Git_Code/codex_test/StudentEval/Reference_Scripts/Tests/q1/script_q1_cp_few_shot.py
+[*] 0 tests passed:
+   - script_q1_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_q1: 
+--------------------------------------------------------------------------------
+  1: 
+  2: def search(x, seq):
+  3:     for i in range(len(seq)):
+- 4:         if x <= seq[i]:
++ 4:         if not (x <= seq[i]):
+  5:             return i
+  6:     return len(seq)
+--------------------------------------------------------------------------------
+[0.01014 s] survived
+   - [#   2] ROR script_q1: 
+--------------------------------------------------------------------------------
+  1: 
+  2: def search(x, seq):
+  3:     for i in range(len(seq)):
+- 4:         if x <= seq[i]:
++ 4:         if x >= seq[i]:
+  5:             return i
+  6:     return len(seq)
+--------------------------------------------------------------------------------
+[0.00735 s] survived
+   - [#   3] ROR script_q1: 
+--------------------------------------------------------------------------------
+  1: 
+  2: def search(x, seq):
+  3:     for i in range(len(seq)):
+- 4:         if x <= seq[i]:
++ 4:         if x < seq[i]:
+  5:             return i
+  6:     return len(seq)
+--------------------------------------------------------------------------------
+[0.00735 s] survived
+[*] Mutation score [0.08634 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,65 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/3/script_NDS_3.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/3/Copilot/test_3_cp_few_shot.py
+[*] 0 tests passed:
+   - test_3_cp_few_shot [0.00010 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR script_NDS_3: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     balance = 0
+   7:     
+   8:     for op in operations:
+-  9:         balance += op
++  9:         balance -= op
+  10:         if balance < 0:
+  11:             return True
+  12:     
+  13:     return False
+--------------------------------------------------------------------------------
+[0.00742 s] survived
+   - [#   2] COI script_NDS_3: 
+--------------------------------------------------------------------------------
+   6:     balance = 0
+   7:     
+   8:     for op in operations:
+   9:         balance += op
+- 10:         if balance < 0:
++ 10:         if not (balance < 0):
+  11:             return True
+  12:     
+  13:     return False
+--------------------------------------------------------------------------------
+[0.00592 s] survived
+   - [#   3] ROR script_NDS_3: 
+--------------------------------------------------------------------------------
+   6:     balance = 0
+   7:     
+   8:     for op in operations:
+   9:         balance += op
+- 10:         if balance < 0:
++ 10:         if balance > 0:
+  11:             return True
+  12:     
+  13:     return False
+--------------------------------------------------------------------------------
+[0.00632 s] survived
+   - [#   4] ROR script_NDS_3: 
+--------------------------------------------------------------------------------
+   6:     balance = 0
+   7:     
+   8:     for op in operations:
+   9:         balance += op
+- 10:         if balance < 0:
++ 10:         if balance <= 0:
+  11:             return True
+  12:     
+  13:     return False
+--------------------------------------------------------------------------------
+[0.00619 s] survived
+[*] Mutation score [0.09851 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

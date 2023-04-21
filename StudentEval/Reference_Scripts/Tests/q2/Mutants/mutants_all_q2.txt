@@ -1,0 +1,178 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/StudentEval/Reference_Scripts/Tests/q2/script_q2.py
+   - tests: /home/arghavan/Git_Code/codex_test/StudentEval/Reference_Scripts/Tests/q2/script_q2_cp_few_shot.py
+[*] 0 tests passed:
+   - script_q2_cp_few_shot [0.00005 s]
+[*] Start mutants generation and execution:
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+   - [#   1] ASR script_q2: 
+--------------------------------------------------------------------------------
+   3: def unique_day(day, possible_birthdays):
+   4:     count = 0
+   5:     for birthday in possible_birthdays:
+   6:         if birthday[1] == day:
+-  7:             count += 1
++  7:             count -= 1
+   8:     return count == 1
+   9: 
+  10: 
+  11: def unique_month(month, possible_birthdays):
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00000 s] incompetent
+   - [#   2] ASR script_q2: 
+--------------------------------------------------------------------------------
+  11: def unique_month(month, possible_birthdays):
+  12:     count = 0
+  13:     for birthday in possible_birthdays:
+  14:         if birthday[0] == month:
+- 15:             count += 1
++ 15:             count -= 1
+  16:     return count == 1
+  17: 
+  18: 
+  19: def contains_unique_day(month, possible_birthdays):
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00617 s] survived
+   - [#   3] COI script_q2: 
+--------------------------------------------------------------------------------
+   2: 
+   3: def unique_day(day, possible_birthdays):
+   4:     count = 0
+   5:     for birthday in possible_birthdays:
+-  6:         if birthday[1] == day:
++  6:         if not (birthday[1] == day):
+   7:             count += 1
+   8:     return count == 1
+   9: 
+  10: 
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00000 s] incompetent
+   - [#   4] COI script_q2: 
+--------------------------------------------------------------------------------
+  10: 
+  11: def unique_month(month, possible_birthdays):
+  12:     count = 0
+  13:     for birthday in possible_birthdays:
+- 14:         if birthday[0] == month:
++ 14:         if not (birthday[0] == month):
+  15:             count += 1
+  16:     return count == 1
+  17: 
+  18: 
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00856 s] survived
+   - [#   5] COI script_q2: 
+--------------------------------------------------------------------------------
+  17: 
+  18: 
+  19: def contains_unique_day(month, possible_birthdays):
+  20:     for birthday in possible_birthdays:
+- 21:         if (birthday[0] == month and unique_day(birthday[1], possible_birthdays)):
++ 21:         if not ((birthday[0] == month and unique_day(birthday[1], possible_birthdays))):
+  22:             return True
+  23:     return False
+  24: 
+  25: 
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00000 s] incompetent
+   - [#   6] LCR script_q2: 
+--------------------------------------------------------------------------------
+  17: 
+  18: 
+  19: def contains_unique_day(month, possible_birthdays):
+  20:     for birthday in possible_birthdays:
+- 21:         if (birthday[0] == month and unique_day(birthday[1], possible_birthdays)):
++ 21:         if (birthday[0] == month or unique_day(birthday[1], possible_birthdays)):
+  22:             return True
+  23:     return False
+  24: 
+  25: 
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00476 s] survived
+   - [#   7] ROR script_q2: 
+--------------------------------------------------------------------------------
+   2: 
+   3: def unique_day(day, possible_birthdays):
+   4:     count = 0
+   5:     for birthday in possible_birthdays:
+-  6:         if birthday[1] == day:
++  6:         if birthday[1] != day:
+   7:             count += 1
+   8:     return count == 1
+   9: 
+  10: 
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00000 s] incompetent
+   - [#   8] ROR script_q2: 
+--------------------------------------------------------------------------------
+   4:     count = 0
+   5:     for birthday in possible_birthdays:
+   6:         if birthday[1] == day:
+   7:             count += 1
+-  8:     return count == 1
++  8:     return count != 1
+   9: 
+  10: 
+  11: def unique_month(month, possible_birthdays):
+  12:     count = 0
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00000 s] incompetent
+   - [#   9] ROR script_q2: 
+--------------------------------------------------------------------------------
+  10: 
+  11: def unique_month(month, possible_birthdays):
+  12:     count = 0
+  13:     for birthday in possible_birthdays:
+- 14:         if birthday[0] == month:
++ 14:         if birthday[0] != month:
+  15:             count += 1
+  16:     return count == 1
+  17: 
+  18: 
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00517 s] survived
+   - [#  10] ROR script_q2: 
+--------------------------------------------------------------------------------
+  12:     count = 0
+  13:     for birthday in possible_birthdays:
+  14:         if birthday[0] == month:
+  15:             count += 1
+- 16:     return count == 1
++ 16:     return count != 1
+  17: 
+  18: 
+  19: def contains_unique_day(month, possible_birthdays):
+  20:     for birthday in possible_birthdays:
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00594 s] survived
+   - [#  11] ROR script_q2: 
+--------------------------------------------------------------------------------
+  17: 
+  18: 
+  19: def contains_unique_day(month, possible_birthdays):
+  20:     for birthday in possible_birthdays:
+- 21:         if (birthday[0] == month and unique_day(birthday[1], possible_birthdays)):
++ 21:         if (birthday[0] != month and unique_day(birthday[1], possible_birthdays)):
+  22:             return True
+  23:     return False
+  24: 
+  25: 
+--------------------------------------------------------------------------------
+b'\x15\xd6\xc2\x7f3`t\x16\x1c\xe8\xaa\xdd\xe7\xc2\x18\xcfJ/\x06t'
+[0.00000 s] incompetent
+[*] Mutation score [0.38707 s]: 0.0%
+   - all: 11
+   - killed: 0 (0.0%)
+   - survived: 5 (45.5%)
+   - incompetent: 6 (54.5%)
+   - timeout: 0 (0.0%)

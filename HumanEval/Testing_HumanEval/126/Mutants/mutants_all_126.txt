@@ -1,0 +1,120 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/126/script_NDS_126.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/126/Copilot/test_126_cp_few_shot.py
+[*] 0 tests passed:
+   - test_126_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_126: 
+--------------------------------------------------------------------------------
+   4:     for i in lst:
+   5:         count_digit[i] += 1
+   6:     if any((count_digit[i] > 2 for i in lst)):
+   7:         return False
+-  8:     if all((lst[i - 1] <= lst[i] for i in range(1, len(lst)))):
++  8:     if all((lst[i + 1] <= lst[i] for i in range(1, len(lst)))):
+   9:         return True
+  10:     else:
+  11:         return False
+--------------------------------------------------------------------------------
+[0.00543 s] survived
+   - [#   2] ASR script_NDS_126: 
+--------------------------------------------------------------------------------
+   1: def is_sorted(lst):
+   2:     
+   3:     count_digit = dict([(i, 0) for i in lst])
+   4:     for i in lst:
+-  5:         count_digit[i] += 1
++  5:         count_digit[i] -= 1
+   6:     if any((count_digit[i] > 2 for i in lst)):
+   7:         return False
+   8:     if all((lst[i - 1] <= lst[i] for i in range(1, len(lst)))):
+   9:         return True
+--------------------------------------------------------------------------------
+[0.00642 s] survived
+   - [#   3] COI script_NDS_126: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     count_digit = dict([(i, 0) for i in lst])
+   4:     for i in lst:
+   5:         count_digit[i] += 1
+-  6:     if any((count_digit[i] > 2 for i in lst)):
++  6:     if not (any((count_digit[i] > 2 for i in lst))):
+   7:         return False
+   8:     if all((lst[i - 1] <= lst[i] for i in range(1, len(lst)))):
+   9:         return True
+  10:     else:
+--------------------------------------------------------------------------------
+[0.00655 s] survived
+   - [#   4] COI script_NDS_126: 
+--------------------------------------------------------------------------------
+   4:     for i in lst:
+   5:         count_digit[i] += 1
+   6:     if any((count_digit[i] > 2 for i in lst)):
+   7:         return False
+-  8:     if all((lst[i - 1] <= lst[i] for i in range(1, len(lst)))):
++  8:     if not (all((lst[i - 1] <= lst[i] for i in range(1, len(lst))))):
+   9:         return True
+  10:     else:
+  11:         return False
+--------------------------------------------------------------------------------
+[0.00601 s] survived
+   - [#   5] ROR script_NDS_126: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     count_digit = dict([(i, 0) for i in lst])
+   4:     for i in lst:
+   5:         count_digit[i] += 1
+-  6:     if any((count_digit[i] > 2 for i in lst)):
++  6:     if any((count_digit[i] < 2 for i in lst)):
+   7:         return False
+   8:     if all((lst[i - 1] <= lst[i] for i in range(1, len(lst)))):
+   9:         return True
+  10:     else:
+--------------------------------------------------------------------------------
+[0.00509 s] survived
+   - [#   6] ROR script_NDS_126: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     count_digit = dict([(i, 0) for i in lst])
+   4:     for i in lst:
+   5:         count_digit[i] += 1
+-  6:     if any((count_digit[i] > 2 for i in lst)):
++  6:     if any((count_digit[i] >= 2 for i in lst)):
+   7:         return False
+   8:     if all((lst[i - 1] <= lst[i] for i in range(1, len(lst)))):
+   9:         return True
+  10:     else:
+--------------------------------------------------------------------------------
+[0.00678 s] survived
+   - [#   7] ROR script_NDS_126: 
+--------------------------------------------------------------------------------
+   4:     for i in lst:
+   5:         count_digit[i] += 1
+   6:     if any((count_digit[i] > 2 for i in lst)):
+   7:         return False
+-  8:     if all((lst[i - 1] <= lst[i] for i in range(1, len(lst)))):
++  8:     if all((lst[i - 1] >= lst[i] for i in range(1, len(lst)))):
+   9:         return True
+  10:     else:
+  11:         return False
+--------------------------------------------------------------------------------
+[0.00611 s] survived
+   - [#   8] ROR script_NDS_126: 
+--------------------------------------------------------------------------------
+   4:     for i in lst:
+   5:         count_digit[i] += 1
+   6:     if any((count_digit[i] > 2 for i in lst)):
+   7:         return False
+-  8:     if all((lst[i - 1] <= lst[i] for i in range(1, len(lst)))):
++  8:     if all((lst[i - 1] < lst[i] for i in range(1, len(lst)))):
+   9:         return True
+  10:     else:
+  11:         return False
+--------------------------------------------------------------------------------
+[0.00446 s] survived
+[*] Mutation score [0.27890 s]: 0.0%
+   - all: 8
+   - killed: 0 (0.0%)
+   - survived: 8 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

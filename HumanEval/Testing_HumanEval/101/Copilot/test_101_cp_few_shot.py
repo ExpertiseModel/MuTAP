@@ -1,0 +1,7 @@
+from script_101_cp_few_shot import words_string
+def test_words_string():
+    assert words_string("Hi, my name is John") == ["Hi", "my", "name", "is", "John"]
+    assert words_string("One, two, three, four, five, six") == ["One", "two", "three", "four", "five", "six"]
+    assert words_string("One, two, three, four, five, six, seven, eight, nine, ten") == ["One", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+    assert words_string("One, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty") == ["One", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"]
+    assert words_string("One, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twenty-one, twenty-two, twenty-three, twenty-four, twenty-five, twenty-six, twenty-seven, twenty-eight, twenty-nine, thirty") == ["One", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven", "twenty-eight", "twenty-nine", "thirty"]

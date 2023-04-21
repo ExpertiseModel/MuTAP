@@ -1,0 +1,210 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/38/script_NDS_38.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/38/Copilot/test_38_cp_few_shot.py
+[*] 0 tests passed:
+   - test_38_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 / i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00696 s] survived
+   - [#   2] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 // i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00615 s] survived
+   - [#   3] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 ** i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00713 s] survived
+   - [#   4] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 * i:min((3 / i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00657 s] survived
+   - [#   5] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 * i:min((3 // i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00592 s] survived
+   - [#   6] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 * i:min((3 ** i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00624 s] survived
+   - [#   7] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 * i:min((3 * i) - 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00838 s] survived
+   - [#   8] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) - 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00724 s] survived
+   - [#   9] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) / 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00763 s] survived
+   - [#  10] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) * 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00633 s] survived
+   - [#  11] AOR script_NDS_38: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     
+   4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+-  6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
++  6:     groups = [group[1:] - group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+   9: 
+  10: def decode_cyclic(s: str):
+--------------------------------------------------------------------------------
+[0.00690 s] survived
+   - [#  12] ROR script_NDS_38: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     
+   4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+-  6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
++  6:     groups = [group[1:] + group[0] if len(group) != 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+   9: 
+  10: def decode_cyclic(s: str):
+--------------------------------------------------------------------------------
+[0.00645 s] survived
+   - [#  13] SIR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00641 s] survived
+   - [#  14] SIR script_NDS_38: 
+--------------------------------------------------------------------------------
+   1: def encode_cyclic(s: str):
+   2:     
+   3:     
+-  4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
++  4:     groups = [s[3 * i:] for i in range((len(s) + 2) // 3)]
+   5:     
+   6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+--------------------------------------------------------------------------------
+[0.00543 s] survived
+   - [#  15] SIR script_NDS_38: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     
+   4:     groups = [s[3 * i:min((3 * i) + 3, len(s))] for i in range((len(s) + 2) // 3)]
+   5:     
+-  6:     groups = [group[1:] + group[0] if len(group) == 3 else group for group in groups]
++  6:     groups = [group[:] + group[0] if len(group) == 3 else group for group in groups]
+   7:     return ''.join(groups)
+   8: 
+   9: 
+  10: def decode_cyclic(s: str):
+--------------------------------------------------------------------------------
+[0.00756 s] survived
+[*] Mutation score [0.42648 s]: 0.0%
+   - all: 15
+   - killed: 0 (0.0%)
+   - survived: 15 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

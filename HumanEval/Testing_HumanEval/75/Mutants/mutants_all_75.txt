@@ -1,0 +1,275 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/75/script_NDS_75.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/75/Copilot/test_75_cp_few_shot.py
+[*] 0 tests passed:
+   - test_75_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_75: 
+--------------------------------------------------------------------------------
+   1: def is_multiply_prime(a):
+   2:     
+   3:     def is_prime(n):
+   4:         for j in range(2, n):
+-  5:             if n % j == 0:
++  5:             if n * j == 0:
+   6:                 return False
+   7:         return True
+   8:     
+   9:     for i in range(2, 101):
+--------------------------------------------------------------------------------
+[0.00546 s] survived
+   - [#   2] AOR script_NDS_75: 
+--------------------------------------------------------------------------------
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+- 18:                 if (i * j) * k == a:
++ 18:                 if (i / j) * k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00759 s] survived
+   - [#   3] AOR script_NDS_75: 
+--------------------------------------------------------------------------------
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+- 18:                 if (i * j) * k == a:
++ 18:                 if (i // j) * k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00689 s] survived
+   - [#   4] AOR script_NDS_75: 
+--------------------------------------------------------------------------------
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+- 18:                 if (i * j) * k == a:
++ 18:                 if (i ** j) * k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00608 s] survived
+   - [#   5] AOR script_NDS_75: 
+--------------------------------------------------------------------------------
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+- 18:                 if (i * j) * k == a:
++ 18:                 if (i * j) / k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00748 s] survived
+   - [#   6] AOR script_NDS_75: 
+--------------------------------------------------------------------------------
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+- 18:                 if (i * j) * k == a:
++ 18:                 if (i * j) // k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00610 s] survived
+   - [#   7] AOR script_NDS_75: 
+--------------------------------------------------------------------------------
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+- 18:                 if (i * j) * k == a:
++ 18:                 if (i * j) ** k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00682 s] survived
+   - [#   8] BCR script_NDS_75: 
+--------------------------------------------------------------------------------
+   7:         return True
+   8:     
+   9:     for i in range(2, 101):
+  10:         if not (is_prime(i)):
+- 11:             continue
++ 11:             break
+  12:         for j in range(2, 101):
+  13:             if not (is_prime(j)):
+  14:                 continue
+  15:             for k in range(2, 101):
+--------------------------------------------------------------------------------
+[0.00575 s] survived
+   - [#   9] BCR script_NDS_75: 
+--------------------------------------------------------------------------------
+  10:         if not (is_prime(i)):
+  11:             continue
+  12:         for j in range(2, 101):
+  13:             if not (is_prime(j)):
+- 14:                 continue
++ 14:                 break
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+  18:                 if (i * j) * k == a:
+--------------------------------------------------------------------------------
+[0.00744 s] survived
+   - [#  10] BCR script_NDS_75: 
+--------------------------------------------------------------------------------
+  13:             if not (is_prime(j)):
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+- 17:                     continue
++ 17:                     break
+  18:                 if (i * j) * k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00722 s] survived
+   - [#  11] COD script_NDS_75: 
+--------------------------------------------------------------------------------
+   6:                 return False
+   7:         return True
+   8:     
+   9:     for i in range(2, 101):
+- 10:         if not (is_prime(i)):
++ 10:         if is_prime(i):
+  11:             continue
+  12:         for j in range(2, 101):
+  13:             if not (is_prime(j)):
+  14:                 continue
+--------------------------------------------------------------------------------
+[0.00748 s] survived
+   - [#  12] COD script_NDS_75: 
+--------------------------------------------------------------------------------
+   9:     for i in range(2, 101):
+  10:         if not (is_prime(i)):
+  11:             continue
+  12:         for j in range(2, 101):
+- 13:             if not (is_prime(j)):
++ 13:             if is_prime(j):
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+--------------------------------------------------------------------------------
+[0.00655 s] survived
+   - [#  13] COD script_NDS_75: 
+--------------------------------------------------------------------------------
+  12:         for j in range(2, 101):
+  13:             if not (is_prime(j)):
+  14:                 continue
+  15:             for k in range(2, 101):
+- 16:                 if not (is_prime(k)):
++ 16:                 if is_prime(k):
+  17:                     continue
+  18:                 if (i * j) * k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00601 s] survived
+   - [#  14] COI script_NDS_75: 
+--------------------------------------------------------------------------------
+   1: def is_multiply_prime(a):
+   2:     
+   3:     def is_prime(n):
+   4:         for j in range(2, n):
+-  5:             if n % j == 0:
++  5:             if not (n % j == 0):
+   6:                 return False
+   7:         return True
+   8:     
+   9:     for i in range(2, 101):
+--------------------------------------------------------------------------------
+[0.00494 s] survived
+   - [#  15] COI script_NDS_75: 
+--------------------------------------------------------------------------------
+   6:                 return False
+   7:         return True
+   8:     
+   9:     for i in range(2, 101):
+- 10:         if not (is_prime(i)):
++ 10:         if not ((not (is_prime(i)))):
+  11:             continue
+  12:         for j in range(2, 101):
+  13:             if not (is_prime(j)):
+  14:                 continue
+--------------------------------------------------------------------------------
+[0.00543 s] survived
+   - [#  16] COI script_NDS_75: 
+--------------------------------------------------------------------------------
+   9:     for i in range(2, 101):
+  10:         if not (is_prime(i)):
+  11:             continue
+  12:         for j in range(2, 101):
+- 13:             if not (is_prime(j)):
++ 13:             if not ((not (is_prime(j)))):
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+--------------------------------------------------------------------------------
+[0.00817 s] survived
+   - [#  17] COI script_NDS_75: 
+--------------------------------------------------------------------------------
+  12:         for j in range(2, 101):
+  13:             if not (is_prime(j)):
+  14:                 continue
+  15:             for k in range(2, 101):
+- 16:                 if not (is_prime(k)):
++ 16:                 if not ((not (is_prime(k)))):
+  17:                     continue
+  18:                 if (i * j) * k == a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00660 s] survived
+   - [#  18] COI script_NDS_75: 
+--------------------------------------------------------------------------------
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+- 18:                 if (i * j) * k == a:
++ 18:                 if not ((i * j) * k == a):
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00765 s] survived
+   - [#  19] ROR script_NDS_75: 
+--------------------------------------------------------------------------------
+   1: def is_multiply_prime(a):
+   2:     
+   3:     def is_prime(n):
+   4:         for j in range(2, n):
+-  5:             if n % j == 0:
++  5:             if n % j != 0:
+   6:                 return False
+   7:         return True
+   8:     
+   9:     for i in range(2, 101):
+--------------------------------------------------------------------------------
+[0.00587 s] survived
+   - [#  20] ROR script_NDS_75: 
+--------------------------------------------------------------------------------
+  14:                 continue
+  15:             for k in range(2, 101):
+  16:                 if not (is_prime(k)):
+  17:                     continue
+- 18:                 if (i * j) * k == a:
++ 18:                 if (i * j) * k != a:
+  19:                     return True
+  20:     return False
+--------------------------------------------------------------------------------
+[0.00486 s] survived
+[*] Mutation score [0.56077 s]: 0.0%
+   - all: 20
+   - killed: 0 (0.0%)
+   - survived: 20 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

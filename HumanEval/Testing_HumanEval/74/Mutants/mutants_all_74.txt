@@ -1,0 +1,79 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/74/script_NDS_74.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/74/Copilot/test_74_cp_few_shot.py
+[*] 0 tests passed:
+   - test_74_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR script_NDS_74: 
+--------------------------------------------------------------------------------
+   1: def total_match(lst1, lst2):
+   2:     
+   3:     l1 = 0
+   4:     for st in lst1:
+-  5:         l1 += len(st)
++  5:         l1 -= len(st)
+   6:     
+   7:     l2 = 0
+   8:     for st in lst2:
+   9:         l2 += len(st)
+--------------------------------------------------------------------------------
+[0.00582 s] survived
+   - [#   2] ASR script_NDS_74: 
+--------------------------------------------------------------------------------
+   5:         l1 += len(st)
+   6:     
+   7:     l2 = 0
+   8:     for st in lst2:
+-  9:         l2 += len(st)
++  9:         l2 -= len(st)
+  10:     
+  11:     if l1 <= l2:
+  12:         return lst1
+  13:     else:
+--------------------------------------------------------------------------------
+[0.00646 s] survived
+   - [#   3] COI script_NDS_74: 
+--------------------------------------------------------------------------------
+   7:     l2 = 0
+   8:     for st in lst2:
+   9:         l2 += len(st)
+  10:     
+- 11:     if l1 <= l2:
++ 11:     if not (l1 <= l2):
+  12:         return lst1
+  13:     else:
+  14:         return lst2
+--------------------------------------------------------------------------------
+[0.00718 s] survived
+   - [#   4] ROR script_NDS_74: 
+--------------------------------------------------------------------------------
+   7:     l2 = 0
+   8:     for st in lst2:
+   9:         l2 += len(st)
+  10:     
+- 11:     if l1 <= l2:
++ 11:     if l1 >= l2:
+  12:         return lst1
+  13:     else:
+  14:         return lst2
+--------------------------------------------------------------------------------
+[0.00697 s] survived
+   - [#   5] ROR script_NDS_74: 
+--------------------------------------------------------------------------------
+   7:     l2 = 0
+   8:     for st in lst2:
+   9:         l2 += len(st)
+  10:     
+- 11:     if l1 <= l2:
++ 11:     if l1 < l2:
+  12:         return lst1
+  13:     else:
+  14:         return lst2
+--------------------------------------------------------------------------------
+[0.00522 s] survived
+[*] Mutation score [0.12514 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

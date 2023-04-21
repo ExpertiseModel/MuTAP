@@ -1,0 +1,23 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/105/script_NDS_105.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/105/Copilot/test_105_cp_few_shot.py
+[*] 0 tests passed:
+   - test_105_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] EHD script_NDS_105: 
+--------------------------------------------------------------------------------
+  16:     for var in sorted_arr:
+  17:         try:
+  18:             new_arr.append(dic[var])
+  19:         except:
+- 20:             pass
++ 20:             raise
+  21:     return new_arr
+--------------------------------------------------------------------------------
+[0.00718 s] survived
+[*] Mutation score [0.08098 s]: 0.0%
+   - all: 1
+   - killed: 0 (0.0%)
+   - survived: 1 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

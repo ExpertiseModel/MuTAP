@@ -1,0 +1,28 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/30/script_NDS_30.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/30/Copilot/test_30_cp_few_shot.py
+[*] 0 tests passed:
+   - test_30_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] ROR script_NDS_30: 
+--------------------------------------------------------------------------------
+  1: def get_positive(l: list):
+  2:     
+- 3:     return [e for e in l if e > 0]
++ 3:     return [e for e in l if e < 0]
+--------------------------------------------------------------------------------
+[0.00576 s] survived
+   - [#   2] ROR script_NDS_30: 
+--------------------------------------------------------------------------------
+  1: def get_positive(l: list):
+  2:     
+- 3:     return [e for e in l if e > 0]
++ 3:     return [e for e in l if e >= 0]
+--------------------------------------------------------------------------------
+[0.00649 s] survived
+[*] Mutation score [0.04565 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

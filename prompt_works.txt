@@ -1,0 +1,70 @@
+﻿example_function = """def search(x, seq):
+for i in range(len(seq)):
+if x <= seq[i]:
+return i
+return len(seq)"""
+
+example_test= """def test(self):
+self.assertEqual(search(1, [1]), 0)
+self.assertEqual(search(1, [1, 2]), 0)
+self.assertEqual(search(2, [1, 2]), 1)
+self.assertEqual(search(3, [1, 2]), 2)
+self.assertEqual(search(4, [1, 2]), 2)
+self.assertEqual(search(5, [1, 2]), 2)"""
+
+mutant_example= """def search(x, seq):
+if seq == ():
+return 0
+else:
+for i, elem in enumerate(seq):
+if x <= elem:
+return i
+elif x > seq[-1]:
+return len(seq)"""
+
+#inital_prompt, output= unit_test_from_function(example_function, print_text=True)
+print("\n")
+#print(inital_prompt)
+
+inital_prompt = """Generate test cases for
+```python
+def search(x, seq):
+for i in range(len(seq)):
+if x <= seq[i]:
+return i
+return len(seq)
+
+def test():
+assert
+```"""
+final_prompt = f""" {inital_prompt}
+The following test cases cannot detect the exception in
+```python 
+{mutant_example}
+
+{example_test} 
+```
+
+generate a new test cases to test the exception in:
+```python 
+{mutant_example}
+
+# test case ```
+"""
+print(final_prompt)
+
+
+
+#the out put
+def test(self):
+        self.assertEqual(search(1, [1]), 0)
+        self.assertEqual(search(1, [1, 2]), 0)
+        self.assertEqual(search(2, [1, 2]), 1)
+        self.assertEqual(search(3, [1, 2]), 2)
+        self.assertEqual(search(4, [1, 2]), 2)
+        self.assertEqual(search(5, [1, 2]), 2) 
+        self.assertEqual(search(1, []), 0)
+        self.assertEqual(search(5, []), 0)
+        self.assertEqual(search(1, [1, 2, 3, 4]), 0)
+        self.assertEqual(search(5, [1, 2, 3, 4]), 4)
+

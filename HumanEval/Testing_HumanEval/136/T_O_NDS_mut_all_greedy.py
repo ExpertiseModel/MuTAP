@@ -1,0 +1,6 @@
+def largest_smallest_integers(lst):
+    
+    smallest = list(filter(lambda x: x < 0, lst))
+    largest = list(filter(lambda x: x > 0, lst))
+    return (max(smallest) if smallest else None, min(largest) if largest else None)
+assert largest_smallest_integers([-3, -2, -1, 0, 1, 3, -4]) == (-1, 1)

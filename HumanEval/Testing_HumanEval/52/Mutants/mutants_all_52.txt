@@ -1,0 +1,45 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/52/script_NDS_52.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/52/Copilot/test_52_cp_few_shot.py
+[*] 0 tests passed:
+   - test_52_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_52: 
+--------------------------------------------------------------------------------
+  1: def below_threshold(l: list, t: int):
+  2:     
+  3:     for e in l:
+- 4:         if e >= t:
++ 4:         if not (e >= t):
+  5:             return False
+  6:     return True
+--------------------------------------------------------------------------------
+[0.00588 s] survived
+   - [#   2] ROR script_NDS_52: 
+--------------------------------------------------------------------------------
+  1: def below_threshold(l: list, t: int):
+  2:     
+  3:     for e in l:
+- 4:         if e >= t:
++ 4:         if e <= t:
+  5:             return False
+  6:     return True
+--------------------------------------------------------------------------------
+[0.00781 s] survived
+   - [#   3] ROR script_NDS_52: 
+--------------------------------------------------------------------------------
+  1: def below_threshold(l: list, t: int):
+  2:     
+  3:     for e in l:
+- 4:         if e >= t:
++ 4:         if e > t:
+  5:             return False
+  6:     return True
+--------------------------------------------------------------------------------
+[0.00513 s] survived
+[*] Mutation score [0.06464 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

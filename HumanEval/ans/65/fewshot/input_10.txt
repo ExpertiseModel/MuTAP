@@ -1,0 +1,1 @@
+circular_shift(123, 10) 

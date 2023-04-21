@@ -1,0 +1,52 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/97/script_NDS_97.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/97/Copilot/test_97_cp_few_shot.py
+[*] 0 tests passed:
+   - test_97_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_97: 
+--------------------------------------------------------------------------------
+  1: def multiply(a, b):
+  2:     
+- 3:     return abs(a % 10) * abs(b % 10)
++ 3:     return abs(a * 10) * abs(b % 10)
+--------------------------------------------------------------------------------
+[0.00752 s] survived
+   - [#   2] AOR script_NDS_97: 
+--------------------------------------------------------------------------------
+  1: def multiply(a, b):
+  2:     
+- 3:     return abs(a % 10) * abs(b % 10)
++ 3:     return abs(a % 10) / abs(b % 10)
+--------------------------------------------------------------------------------
+[0.00532 s] survived
+   - [#   3] AOR script_NDS_97: 
+--------------------------------------------------------------------------------
+  1: def multiply(a, b):
+  2:     
+- 3:     return abs(a % 10) * abs(b % 10)
++ 3:     return abs(a % 10) // abs(b % 10)
+--------------------------------------------------------------------------------
+[0.00643 s] survived
+   - [#   4] AOR script_NDS_97: 
+--------------------------------------------------------------------------------
+  1: def multiply(a, b):
+  2:     
+- 3:     return abs(a % 10) * abs(b % 10)
++ 3:     return abs(a % 10) ** abs(b % 10)
+--------------------------------------------------------------------------------
+[0.00584 s] survived
+   - [#   5] AOR script_NDS_97: 
+--------------------------------------------------------------------------------
+  1: def multiply(a, b):
+  2:     
+- 3:     return abs(a % 10) * abs(b % 10)
++ 3:     return abs(a % 10) * abs(b * 10)
+--------------------------------------------------------------------------------
+[0.00535 s] survived
+[*] Mutation score [0.08465 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

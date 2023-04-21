@@ -1,0 +1,36 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/79/script_NDS_79.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/79/Copilot/test_79_cp_few_shot.py
+[*] 0 tests passed:
+   - test_79_cp_few_shot [0.00005 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_79: 
+--------------------------------------------------------------------------------
+  1: def decimal_to_binary(decimal):
+  2:     
+- 3:     return ('db' + bin(decimal)[2:]) + 'db'
++ 3:     return ('db' - bin(decimal)[2:]) + 'db'
+--------------------------------------------------------------------------------
+[0.00602 s] survived
+   - [#   2] AOR script_NDS_79: 
+--------------------------------------------------------------------------------
+  1: def decimal_to_binary(decimal):
+  2:     
+- 3:     return ('db' + bin(decimal)[2:]) + 'db'
++ 3:     return ('db' + bin(decimal)[2:]) - 'db'
+--------------------------------------------------------------------------------
+[0.00652 s] survived
+   - [#   3] SIR script_NDS_79: 
+--------------------------------------------------------------------------------
+  1: def decimal_to_binary(decimal):
+  2:     
+- 3:     return ('db' + bin(decimal)[2:]) + 'db'
++ 3:     return ('db' + bin(decimal)[:]) + 'db'
+--------------------------------------------------------------------------------
+[0.00589 s] survived
+[*] Mutation score [0.05666 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

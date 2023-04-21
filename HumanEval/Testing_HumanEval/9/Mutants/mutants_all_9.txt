@@ -1,0 +1,26 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/9/script_NDS_9.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/9/Copilot/test_9_cp_few_shot.py
+[*] 0 tests passed:
+   - test_9_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_9: 
+--------------------------------------------------------------------------------
+   6:     running_max = None
+   7:     result = []
+   8:     
+   9:     for n in numbers:
+- 10:         if running_max is None:
++ 10:         if not (running_max is None):
+  11:             running_max = n
+  12:         else:
+  13:             running_max = max(running_max, n)
+  14:         
+--------------------------------------------------------------------------------
+[0.00827 s] survived
+[*] Mutation score [0.08656 s]: 0.0%
+   - all: 1
+   - killed: 0 (0.0%)
+   - survived: 1 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

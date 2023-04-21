@@ -1,0 +1,42 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/163/script_NDS_163.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/163/Copilot/test_163_cp_few_shot.py
+[*] 0 tests passed:
+   - test_163_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_163: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     lower = max(2, min(a, b))
+  4:     upper = min(8, max(a, b))
+  5:     
+- 6:     return [i for i in range(lower, upper + 1) if i % 2 == 0]
++ 6:     return [i for i in range(lower, upper - 1) if i % 2 == 0]
+--------------------------------------------------------------------------------
+[0.00600 s] survived
+   - [#   2] AOR script_NDS_163: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     lower = max(2, min(a, b))
+  4:     upper = min(8, max(a, b))
+  5:     
+- 6:     return [i for i in range(lower, upper + 1) if i % 2 == 0]
++ 6:     return [i for i in range(lower, upper + 1) if i * 2 == 0]
+--------------------------------------------------------------------------------
+[0.00581 s] survived
+   - [#   3] ROR script_NDS_163: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     lower = max(2, min(a, b))
+  4:     upper = min(8, max(a, b))
+  5:     
+- 6:     return [i for i in range(lower, upper + 1) if i % 2 == 0]
++ 6:     return [i for i in range(lower, upper + 1) if i % 2 != 0]
+--------------------------------------------------------------------------------
+[0.00577 s] survived
+[*] Mutation score [0.09992 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

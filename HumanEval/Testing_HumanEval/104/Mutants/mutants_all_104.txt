@@ -1,0 +1,48 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/104/script_NDS_104.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/104/Copilot/test_104_cp_few_shot.py
+[*] 0 tests passed:
+   - test_104_cp_few_shot [0.00011 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_104: 
+--------------------------------------------------------------------------------
+  1: def unique_digits(x):
+  2:     
+  3:     odd_digit_elements = []
+  4:     for i in x:
+- 5:         if all((int(c) % 2 == 1 for c in str(i))):
++ 5:         if all((int(c) * 2 == 1 for c in str(i))):
+  6:             odd_digit_elements.append(i)
+  7:     return sorted(odd_digit_elements)
+--------------------------------------------------------------------------------
+[0.00511 s] survived
+   - [#   2] COI script_NDS_104: 
+--------------------------------------------------------------------------------
+  1: def unique_digits(x):
+  2:     
+  3:     odd_digit_elements = []
+  4:     for i in x:
+- 5:         if all((int(c) % 2 == 1 for c in str(i))):
++ 5:         if not (all((int(c) % 2 == 1 for c in str(i)))):
+  6:             odd_digit_elements.append(i)
+  7:     return sorted(odd_digit_elements)
+--------------------------------------------------------------------------------
+[0.00502 s] survived
+   - [#   3] ROR script_NDS_104: 
+--------------------------------------------------------------------------------
+  1: def unique_digits(x):
+  2:     
+  3:     odd_digit_elements = []
+  4:     for i in x:
+- 5:         if all((int(c) % 2 == 1 for c in str(i))):
++ 5:         if all((int(c) % 2 != 1 for c in str(i))):
+  6:             odd_digit_elements.append(i)
+  7:     return sorted(odd_digit_elements)
+--------------------------------------------------------------------------------
+[0.00635 s] survived
+[*] Mutation score [0.10129 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

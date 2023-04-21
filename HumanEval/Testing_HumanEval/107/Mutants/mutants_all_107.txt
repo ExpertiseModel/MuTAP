@@ -1,0 +1,206 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/107/script_NDS_107.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/107/Copilot/test_107_cp_few_shot.py
+[*] 0 tests passed:
+   - test_107_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_107: 
+--------------------------------------------------------------------------------
+   1: def even_odd_palindrome(n):
+   2:     
+   3:     def is_palindrome(n):
+-  4:         return str(n) == str(n)[::-1]
++  4:         return str(n) == str(n)[::1]
+   5:     
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+--------------------------------------------------------------------------------
+[0.00617 s] survived
+   - [#   2] AOR script_NDS_107: 
+--------------------------------------------------------------------------------
+   1: def even_odd_palindrome(n):
+   2:     
+   3:     def is_palindrome(n):
+-  4:         return str(n) == str(n)[::-1]
++  4:         return str(n) == str(n)[::+1]
+   5:     
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+--------------------------------------------------------------------------------
+[0.00569 s] survived
+   - [#   3] AOR script_NDS_107: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+-  9:     for i in range(1, n + 1):
++  9:     for i in range(1, n - 1):
+  10:         if (i % 2 == 1 and is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+  12:         elif (i % 2 == 0 and is_palindrome(i)):
+  13:             even_palindrome_count += 1
+--------------------------------------------------------------------------------
+[0.00711 s] survived
+   - [#   4] AOR script_NDS_107: 
+--------------------------------------------------------------------------------
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+   9:     for i in range(1, n + 1):
+- 10:         if (i % 2 == 1 and is_palindrome(i)):
++ 10:         if (i * 2 == 1 and is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+  12:         elif (i % 2 == 0 and is_palindrome(i)):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00534 s] survived
+   - [#   5] AOR script_NDS_107: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     for i in range(1, n + 1):
+  10:         if (i % 2 == 1 and is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+- 12:         elif (i % 2 == 0 and is_palindrome(i)):
++ 12:         elif (i * 2 == 0 and is_palindrome(i)):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00564 s] survived
+   - [#   6] ASR script_NDS_107: 
+--------------------------------------------------------------------------------
+   7:     odd_palindrome_count = 0
+   8:     
+   9:     for i in range(1, n + 1):
+  10:         if (i % 2 == 1 and is_palindrome(i)):
+- 11:             odd_palindrome_count += 1
++ 11:             odd_palindrome_count -= 1
+  12:         elif (i % 2 == 0 and is_palindrome(i)):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00689 s] survived
+   - [#   7] ASR script_NDS_107: 
+--------------------------------------------------------------------------------
+   9:     for i in range(1, n + 1):
+  10:         if (i % 2 == 1 and is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+  12:         elif (i % 2 == 0 and is_palindrome(i)):
+- 13:             even_palindrome_count += 1
++ 13:             even_palindrome_count -= 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00735 s] survived
+   - [#   8] COI script_NDS_107: 
+--------------------------------------------------------------------------------
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+   9:     for i in range(1, n + 1):
+- 10:         if (i % 2 == 1 and is_palindrome(i)):
++ 10:         if not ((i % 2 == 1 and is_palindrome(i))):
+  11:             odd_palindrome_count += 1
+  12:         elif (i % 2 == 0 and is_palindrome(i)):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00622 s] survived
+   - [#   9] COI script_NDS_107: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     for i in range(1, n + 1):
+  10:         if (i % 2 == 1 and is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+- 12:         elif (i % 2 == 0 and is_palindrome(i)):
++ 12:         elif not ((i % 2 == 0 and is_palindrome(i))):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00635 s] survived
+   - [#  10] LCR script_NDS_107: 
+--------------------------------------------------------------------------------
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+   9:     for i in range(1, n + 1):
+- 10:         if (i % 2 == 1 and is_palindrome(i)):
++ 10:         if (i % 2 == 1 or is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+  12:         elif (i % 2 == 0 and is_palindrome(i)):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00745 s] survived
+   - [#  11] LCR script_NDS_107: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     for i in range(1, n + 1):
+  10:         if (i % 2 == 1 and is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+- 12:         elif (i % 2 == 0 and is_palindrome(i)):
++ 12:         elif (i % 2 == 0 or is_palindrome(i)):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00768 s] survived
+   - [#  12] ROR script_NDS_107: 
+--------------------------------------------------------------------------------
+   1: def even_odd_palindrome(n):
+   2:     
+   3:     def is_palindrome(n):
+-  4:         return str(n) == str(n)[::-1]
++  4:         return str(n) != str(n)[::-1]
+   5:     
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+--------------------------------------------------------------------------------
+[0.00536 s] survived
+   - [#  13] ROR script_NDS_107: 
+--------------------------------------------------------------------------------
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+   9:     for i in range(1, n + 1):
+- 10:         if (i % 2 == 1 and is_palindrome(i)):
++ 10:         if (i % 2 != 1 and is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+  12:         elif (i % 2 == 0 and is_palindrome(i)):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00630 s] survived
+   - [#  14] ROR script_NDS_107: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     for i in range(1, n + 1):
+  10:         if (i % 2 == 1 and is_palindrome(i)):
+  11:             odd_palindrome_count += 1
+- 12:         elif (i % 2 == 0 and is_palindrome(i)):
++ 12:         elif (i % 2 != 0 and is_palindrome(i)):
+  13:             even_palindrome_count += 1
+  14:     return (even_palindrome_count, odd_palindrome_count)
+--------------------------------------------------------------------------------
+[0.00471 s] survived
+   - [#  15] SIR script_NDS_107: 
+--------------------------------------------------------------------------------
+   1: def even_odd_palindrome(n):
+   2:     
+   3:     def is_palindrome(n):
+-  4:         return str(n) == str(n)[::-1]
++  4:         return str(n) == str(n)[:]
+   5:     
+   6:     even_palindrome_count = 0
+   7:     odd_palindrome_count = 0
+   8:     
+--------------------------------------------------------------------------------
+[0.00500 s] survived
+[*] Mutation score [0.39589 s]: 0.0%
+   - all: 15
+   - killed: 0 (0.0%)
+   - survived: 15 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

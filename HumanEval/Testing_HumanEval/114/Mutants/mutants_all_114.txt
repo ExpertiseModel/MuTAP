@@ -1,0 +1,168 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/114/script_NDS_114.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/114/Copilot/test_114_cp_few_shot.py
+[*] 0 tests passed:
+   - test_114_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_114: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     max_sum = 0
+   4:     s = 0
+   5:     for num in nums:
+-  6:         s += -num
++  6:         s += num
+   7:         if s < 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+--------------------------------------------------------------------------------
+[0.00612 s] survived
+   - [#   2] AOD script_NDS_114: 
+--------------------------------------------------------------------------------
+   7:         if s < 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+- 11:         max_sum = max((-i for i in nums))
++ 11:         max_sum = max((i for i in nums))
+  12:     min_sum = -max_sum
+  13:     return min_sum
+--------------------------------------------------------------------------------
+[0.00639 s] survived
+   - [#   3] AOD script_NDS_114: 
+--------------------------------------------------------------------------------
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+  11:         max_sum = max((-i for i in nums))
+- 12:     min_sum = -max_sum
++ 12:     min_sum = max_sum
+  13:     return min_sum
+--------------------------------------------------------------------------------
+[0.00586 s] survived
+   - [#   4] AOR script_NDS_114: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     max_sum = 0
+   4:     s = 0
+   5:     for num in nums:
+-  6:         s += -num
++  6:         s += +num
+   7:         if s < 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+--------------------------------------------------------------------------------
+[0.00556 s] survived
+   - [#   5] AOR script_NDS_114: 
+--------------------------------------------------------------------------------
+   7:         if s < 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+- 11:         max_sum = max((-i for i in nums))
++ 11:         max_sum = max((+i for i in nums))
+  12:     min_sum = -max_sum
+  13:     return min_sum
+--------------------------------------------------------------------------------
+[0.00507 s] survived
+   - [#   6] AOR script_NDS_114: 
+--------------------------------------------------------------------------------
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+  11:         max_sum = max((-i for i in nums))
+- 12:     min_sum = -max_sum
++ 12:     min_sum = +max_sum
+  13:     return min_sum
+--------------------------------------------------------------------------------
+[0.00685 s] survived
+   - [#   7] ASR script_NDS_114: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     max_sum = 0
+   4:     s = 0
+   5:     for num in nums:
+-  6:         s += -num
++  6:         s -= -num
+   7:         if s < 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+--------------------------------------------------------------------------------
+[0.00643 s] survived
+   - [#   8] COI script_NDS_114: 
+--------------------------------------------------------------------------------
+   3:     max_sum = 0
+   4:     s = 0
+   5:     for num in nums:
+   6:         s += -num
+-  7:         if s < 0:
++  7:         if not (s < 0):
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+  11:         max_sum = max((-i for i in nums))
+--------------------------------------------------------------------------------
+[0.00695 s] survived
+   - [#   9] COI script_NDS_114: 
+--------------------------------------------------------------------------------
+   6:         s += -num
+   7:         if s < 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+- 10:     if max_sum == 0:
++ 10:     if not (max_sum == 0):
+  11:         max_sum = max((-i for i in nums))
+  12:     min_sum = -max_sum
+  13:     return min_sum
+--------------------------------------------------------------------------------
+[0.00791 s] survived
+   - [#  10] ROR script_NDS_114: 
+--------------------------------------------------------------------------------
+   3:     max_sum = 0
+   4:     s = 0
+   5:     for num in nums:
+   6:         s += -num
+-  7:         if s < 0:
++  7:         if s > 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+  11:         max_sum = max((-i for i in nums))
+--------------------------------------------------------------------------------
+[0.00850 s] survived
+   - [#  11] ROR script_NDS_114: 
+--------------------------------------------------------------------------------
+   3:     max_sum = 0
+   4:     s = 0
+   5:     for num in nums:
+   6:         s += -num
+-  7:         if s < 0:
++  7:         if s <= 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+  10:     if max_sum == 0:
+  11:         max_sum = max((-i for i in nums))
+--------------------------------------------------------------------------------
+[0.00516 s] survived
+   - [#  12] ROR script_NDS_114: 
+--------------------------------------------------------------------------------
+   6:         s += -num
+   7:         if s < 0:
+   8:             s = 0
+   9:         max_sum = max(s, max_sum)
+- 10:     if max_sum == 0:
++ 10:     if max_sum != 0:
+  11:         max_sum = max((-i for i in nums))
+  12:     min_sum = -max_sum
+  13:     return min_sum
+--------------------------------------------------------------------------------
+[0.00589 s] survived
+[*] Mutation score [0.29993 s]: 0.0%
+   - all: 12
+   - killed: 0 (0.0%)
+   - survived: 12 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

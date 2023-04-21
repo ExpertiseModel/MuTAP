@@ -1,0 +1,64 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/4/script_NDS_4.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/4/Copilot/test_4_cp_few_shot.py
+[*] 0 tests passed:
+   - test_4_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_4: 
+--------------------------------------------------------------------------------
+  2: 
+  3: 
+  4: def mean_absolute_deviation(numbers: List[float]) -> float:
+  5:     
+- 6:     mean = sum(numbers) / len(numbers)
++ 6:     mean = sum(numbers) // len(numbers)
+  7:     return sum((abs(x - mean) for x in numbers)) / len(numbers)
+--------------------------------------------------------------------------------
+[0.00535 s] survived
+   - [#   2] AOR script_NDS_4: 
+--------------------------------------------------------------------------------
+  2: 
+  3: 
+  4: def mean_absolute_deviation(numbers: List[float]) -> float:
+  5:     
+- 6:     mean = sum(numbers) / len(numbers)
++ 6:     mean = sum(numbers) * len(numbers)
+  7:     return sum((abs(x - mean) for x in numbers)) / len(numbers)
+--------------------------------------------------------------------------------
+[0.00593 s] survived
+   - [#   3] AOR script_NDS_4: 
+--------------------------------------------------------------------------------
+  3: 
+  4: def mean_absolute_deviation(numbers: List[float]) -> float:
+  5:     
+  6:     mean = sum(numbers) / len(numbers)
+- 7:     return sum((abs(x - mean) for x in numbers)) / len(numbers)
++ 7:     return sum((abs(x + mean) for x in numbers)) / len(numbers)
+--------------------------------------------------------------------------------
+[0.00663 s] survived
+   - [#   4] AOR script_NDS_4: 
+--------------------------------------------------------------------------------
+  3: 
+  4: def mean_absolute_deviation(numbers: List[float]) -> float:
+  5:     
+  6:     mean = sum(numbers) / len(numbers)
+- 7:     return sum((abs(x - mean) for x in numbers)) / len(numbers)
++ 7:     return sum((abs(x - mean) for x in numbers)) // len(numbers)
+--------------------------------------------------------------------------------
+[0.00818 s] survived
+   - [#   5] AOR script_NDS_4: 
+--------------------------------------------------------------------------------
+  3: 
+  4: def mean_absolute_deviation(numbers: List[float]) -> float:
+  5:     
+  6:     mean = sum(numbers) / len(numbers)
+- 7:     return sum((abs(x - mean) for x in numbers)) / len(numbers)
++ 7:     return sum((abs(x - mean) for x in numbers)) * len(numbers)
+--------------------------------------------------------------------------------
+[0.00517 s] survived
+[*] Mutation score [0.12870 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,137 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/103/script_NDS_103.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/103/Copilot/test_103_cp_few_shot.py
+[*] 0 tests passed:
+   - test_103_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_103: 
+--------------------------------------------------------------------------------
+  1: def rounded_avg(n, m):
+  2:     
+  3:     if m < n:
+- 4:         return -1
++ 4:         return 1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+  8:     return bin(round(summation / ((m - n) + 1)))
+--------------------------------------------------------------------------------
+[0.00514 s] survived
+   - [#   2] AOR script_NDS_103: 
+--------------------------------------------------------------------------------
+  1: def rounded_avg(n, m):
+  2:     
+  3:     if m < n:
+- 4:         return -1
++ 4:         return +1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+  8:     return bin(round(summation / ((m - n) + 1)))
+--------------------------------------------------------------------------------
+[0.00792 s] survived
+   - [#   3] AOR script_NDS_103: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     if m < n:
+  4:         return -1
+  5:     summation = 0
+- 6:     for i in range(n, m + 1):
++ 6:     for i in range(n, m - 1):
+  7:         summation += i
+  8:     return bin(round(summation / ((m - n) + 1)))
+--------------------------------------------------------------------------------
+[0.00596 s] survived
+   - [#   4] AOR script_NDS_103: 
+--------------------------------------------------------------------------------
+  4:         return -1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+- 8:     return bin(round(summation / ((m - n) + 1)))
++ 8:     return bin(round(summation // ((m - n) + 1)))
+--------------------------------------------------------------------------------
+[0.00647 s] survived
+   - [#   5] AOR script_NDS_103: 
+--------------------------------------------------------------------------------
+  4:         return -1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+- 8:     return bin(round(summation / ((m - n) + 1)))
++ 8:     return bin(round(summation * ((m - n) + 1)))
+--------------------------------------------------------------------------------
+[0.00599 s] survived
+   - [#   6] AOR script_NDS_103: 
+--------------------------------------------------------------------------------
+  4:         return -1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+- 8:     return bin(round(summation / ((m - n) + 1)))
++ 8:     return bin(round(summation / ((m + n) + 1)))
+--------------------------------------------------------------------------------
+[0.00632 s] survived
+   - [#   7] AOR script_NDS_103: 
+--------------------------------------------------------------------------------
+  4:         return -1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+- 8:     return bin(round(summation / ((m - n) + 1)))
++ 8:     return bin(round(summation / ((m - n) - 1)))
+--------------------------------------------------------------------------------
+[0.00693 s] survived
+   - [#   8] ASR script_NDS_103: 
+--------------------------------------------------------------------------------
+  3:     if m < n:
+  4:         return -1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+- 7:         summation += i
++ 7:         summation -= i
+  8:     return bin(round(summation / ((m - n) + 1)))
+--------------------------------------------------------------------------------
+[0.00703 s] survived
+   - [#   9] COI script_NDS_103: 
+--------------------------------------------------------------------------------
+  1: def rounded_avg(n, m):
+  2:     
+- 3:     if m < n:
++ 3:     if not (m < n):
+  4:         return -1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+--------------------------------------------------------------------------------
+[0.00504 s] survived
+   - [#  10] ROR script_NDS_103: 
+--------------------------------------------------------------------------------
+  1: def rounded_avg(n, m):
+  2:     
+- 3:     if m < n:
++ 3:     if m > n:
+  4:         return -1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+--------------------------------------------------------------------------------
+[0.00506 s] survived
+   - [#  11] ROR script_NDS_103: 
+--------------------------------------------------------------------------------
+  1: def rounded_avg(n, m):
+  2:     
+- 3:     if m < n:
++ 3:     if m <= n:
+  4:         return -1
+  5:     summation = 0
+  6:     for i in range(n, m + 1):
+  7:         summation += i
+--------------------------------------------------------------------------------
+[0.00808 s] survived
+[*] Mutation score [0.22889 s]: 0.0%
+   - all: 11
+   - killed: 0 (0.0%)
+   - survived: 11 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

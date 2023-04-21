@@ -1,0 +1,34 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/14/script_NDS_14.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/14/Copilot/test_14_cp_few_shot.py
+[*] 0 tests passed:
+   - test_14_cp_few_shot [0.00005 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_14: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     result = []
+   7:     
+   8:     for i in range(len(string)):
+-  9:         result.append(string[:i + 1])
++  9:         result.append(string[:i - 1])
+  10:     return result
+--------------------------------------------------------------------------------
+[0.00635 s] survived
+   - [#   2] SIR script_NDS_14: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     result = []
+   7:     
+   8:     for i in range(len(string)):
+-  9:         result.append(string[:i + 1])
++  9:         result.append(string[:])
+  10:     return result
+--------------------------------------------------------------------------------
+[0.00742 s] survived
+[*] Mutation score [0.07966 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

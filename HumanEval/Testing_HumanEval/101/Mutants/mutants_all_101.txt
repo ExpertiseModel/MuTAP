@@ -1,0 +1,64 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/101/script_NDS_101.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/101/Copilot/test_101_cp_few_shot.py
+[*] 0 tests passed:
+   - test_101_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] COD script_NDS_101: 
+--------------------------------------------------------------------------------
+   1: def words_string(s):
+   2:     
+-  3:     if not s:
++  3:     if s:
+   4:         return []
+   5:     
+   6:     s_list = []
+   7:     
+--------------------------------------------------------------------------------
+[0.00680 s] survived
+   - [#   2] COI script_NDS_101: 
+--------------------------------------------------------------------------------
+   1: def words_string(s):
+   2:     
+-  3:     if not s:
++  3:     if not ((not s)):
+   4:         return []
+   5:     
+   6:     s_list = []
+   7:     
+--------------------------------------------------------------------------------
+[0.00541 s] survived
+   - [#   3] COI script_NDS_101: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     s_list = []
+   7:     
+   8:     for letter in s:
+-  9:         if letter == ',':
++  9:         if not (letter == ','):
+  10:             s_list.append(' ')
+  11:         else:
+  12:             s_list.append(letter)
+  13:     
+--------------------------------------------------------------------------------
+[0.00524 s] survived
+   - [#   4] ROR script_NDS_101: 
+--------------------------------------------------------------------------------
+   5:     
+   6:     s_list = []
+   7:     
+   8:     for letter in s:
+-  9:         if letter == ',':
++  9:         if letter != ',':
+  10:             s_list.append(' ')
+  11:         else:
+  12:             s_list.append(letter)
+  13:     
+--------------------------------------------------------------------------------
+[0.00829 s] survived
+[*] Mutation score [0.12668 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

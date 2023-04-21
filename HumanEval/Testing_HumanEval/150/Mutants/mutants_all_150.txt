@@ -1,0 +1,90 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/150/script_NDS_150.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/150/Copilot/test_150_cp_few_shot.py
+[*] 0 tests passed:
+   - test_150_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_150: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     if n == 1:
+   4:         return y
+   5:     for i in range(2, n):
+-  6:         if n % i == 0:
++  6:         if n * i == 0:
+   7:             return y
+   8:             break
+   9:     else:
+  10:         return x
+--------------------------------------------------------------------------------
+[0.00714 s] survived
+   - [#   2] BCR script_NDS_150: 
+--------------------------------------------------------------------------------
+   4:         return y
+   5:     for i in range(2, n):
+   6:         if n % i == 0:
+   7:             return y
+-  8:             break
++  8:             continue
+   9:     else:
+  10:         return x
+--------------------------------------------------------------------------------
+[0.00574 s] survived
+   - [#   3] COI script_NDS_150: 
+--------------------------------------------------------------------------------
+   1: def x_or_y(n, x, y):
+   2:     
+-  3:     if n == 1:
++  3:     if not (n == 1):
+   4:         return y
+   5:     for i in range(2, n):
+   6:         if n % i == 0:
+   7:             return y
+--------------------------------------------------------------------------------
+[0.00705 s] survived
+   - [#   4] COI script_NDS_150: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     if n == 1:
+   4:         return y
+   5:     for i in range(2, n):
+-  6:         if n % i == 0:
++  6:         if not (n % i == 0):
+   7:             return y
+   8:             break
+   9:     else:
+  10:         return x
+--------------------------------------------------------------------------------
+[0.00600 s] survived
+   - [#   5] ROR script_NDS_150: 
+--------------------------------------------------------------------------------
+   1: def x_or_y(n, x, y):
+   2:     
+-  3:     if n == 1:
++  3:     if n != 1:
+   4:         return y
+   5:     for i in range(2, n):
+   6:         if n % i == 0:
+   7:             return y
+--------------------------------------------------------------------------------
+[0.00829 s] survived
+   - [#   6] ROR script_NDS_150: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     if n == 1:
+   4:         return y
+   5:     for i in range(2, n):
+-  6:         if n % i == 0:
++  6:         if n % i != 0:
+   7:             return y
+   8:             break
+   9:     else:
+  10:         return x
+--------------------------------------------------------------------------------
+[0.00748 s] survived
+[*] Mutation score [0.14087 s]: 0.0%
+   - all: 6
+   - killed: 0 (0.0%)
+   - survived: 6 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

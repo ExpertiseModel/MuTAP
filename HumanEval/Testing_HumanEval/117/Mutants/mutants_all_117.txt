@@ -1,0 +1,77 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/117/script_NDS_117.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/117/Copilot/test_117_cp_few_shot.py
+[*] 0 tests passed:
+   - test_117_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR script_NDS_117: 
+--------------------------------------------------------------------------------
+   4:     for word in s.split():
+   5:         n_consonants = 0
+   6:         for i in range(0, len(word)):
+   7:             if word[i].lower() not in ['a', 'e', 'i', 'o', 'u']:
+-  8:                 n_consonants += 1
++  8:                 n_consonants -= 1
+   9:         if n_consonants == n:
+  10:             result.append(word)
+  11:     return result
+--------------------------------------------------------------------------------
+[0.00634 s] survived
+   - [#   2] COD script_NDS_117: 
+--------------------------------------------------------------------------------
+   3:     result = []
+   4:     for word in s.split():
+   5:         n_consonants = 0
+   6:         for i in range(0, len(word)):
+-  7:             if word[i].lower() not in ['a', 'e', 'i', 'o', 'u']:
++  7:             if word[i].lower() in ['a', 'e', 'i', 'o', 'u']:
+   8:                 n_consonants += 1
+   9:         if n_consonants == n:
+  10:             result.append(word)
+  11:     return result
+--------------------------------------------------------------------------------
+[0.00652 s] survived
+   - [#   3] COI script_NDS_117: 
+--------------------------------------------------------------------------------
+   3:     result = []
+   4:     for word in s.split():
+   5:         n_consonants = 0
+   6:         for i in range(0, len(word)):
+-  7:             if word[i].lower() not in ['a', 'e', 'i', 'o', 'u']:
++  7:             if not (word[i].lower() not in ['a', 'e', 'i', 'o', 'u']):
+   8:                 n_consonants += 1
+   9:         if n_consonants == n:
+  10:             result.append(word)
+  11:     return result
+--------------------------------------------------------------------------------
+[0.00481 s] survived
+   - [#   4] COI script_NDS_117: 
+--------------------------------------------------------------------------------
+   5:         n_consonants = 0
+   6:         for i in range(0, len(word)):
+   7:             if word[i].lower() not in ['a', 'e', 'i', 'o', 'u']:
+   8:                 n_consonants += 1
+-  9:         if n_consonants == n:
++  9:         if not (n_consonants == n):
+  10:             result.append(word)
+  11:     return result
+--------------------------------------------------------------------------------
+[0.00643 s] survived
+   - [#   5] ROR script_NDS_117: 
+--------------------------------------------------------------------------------
+   5:         n_consonants = 0
+   6:         for i in range(0, len(word)):
+   7:             if word[i].lower() not in ['a', 'e', 'i', 'o', 'u']:
+   8:                 n_consonants += 1
+-  9:         if n_consonants == n:
++  9:         if n_consonants != n:
+  10:             result.append(word)
+  11:     return result
+--------------------------------------------------------------------------------
+[0.00751 s] survived
+[*] Mutation score [0.16916 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

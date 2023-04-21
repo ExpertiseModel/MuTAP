@@ -1,0 +1,52 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/21/script_NDS_21.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/21/Copilot/test_21_cp_few_shot.py
+[*] 0 tests passed:
+   - test_21_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_21: 
+--------------------------------------------------------------------------------
+  4: def rescale_to_unit(numbers: List[float]) -> List[float]:
+  5:     
+  6:     min_number = min(numbers)
+  7:     max_number = max(numbers)
+- 8:     return [(x - min_number) / (max_number - min_number) for x in numbers]
++ 8:     return [(x + min_number) / (max_number - min_number) for x in numbers]
+--------------------------------------------------------------------------------
+[0.00566 s] survived
+   - [#   2] AOR script_NDS_21: 
+--------------------------------------------------------------------------------
+  4: def rescale_to_unit(numbers: List[float]) -> List[float]:
+  5:     
+  6:     min_number = min(numbers)
+  7:     max_number = max(numbers)
+- 8:     return [(x - min_number) / (max_number - min_number) for x in numbers]
++ 8:     return [(x - min_number) // (max_number - min_number) for x in numbers]
+--------------------------------------------------------------------------------
+[0.00611 s] survived
+   - [#   3] AOR script_NDS_21: 
+--------------------------------------------------------------------------------
+  4: def rescale_to_unit(numbers: List[float]) -> List[float]:
+  5:     
+  6:     min_number = min(numbers)
+  7:     max_number = max(numbers)
+- 8:     return [(x - min_number) / (max_number - min_number) for x in numbers]
++ 8:     return [(x - min_number) * (max_number - min_number) for x in numbers]
+--------------------------------------------------------------------------------
+[0.00586 s] survived
+   - [#   4] AOR script_NDS_21: 
+--------------------------------------------------------------------------------
+  4: def rescale_to_unit(numbers: List[float]) -> List[float]:
+  5:     
+  6:     min_number = min(numbers)
+  7:     max_number = max(numbers)
+- 8:     return [(x - min_number) / (max_number - min_number) for x in numbers]
++ 8:     return [(x - min_number) / (max_number + min_number) for x in numbers]
+--------------------------------------------------------------------------------
+[0.00623 s] survived
+[*] Mutation score [0.11606 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

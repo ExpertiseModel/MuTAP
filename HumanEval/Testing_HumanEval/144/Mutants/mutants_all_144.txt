@@ -1,0 +1,165 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/144/script_NDS_144.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/144/Copilot/test_144_cp_few_shot.py
+[*] 0 tests passed:
+   - test_144_cp_few_shot [0.00008 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  1: def simplify(x, n):
+  2:     
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+- 5:     numerator = int(a) * int(c)
++ 5:     numerator = int(a) / int(c)
+  6:     denom = int(b) * int(d)
+  7:     if numerator / denom == int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00627 s] survived
+   - [#   2] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  1: def simplify(x, n):
+  2:     
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+- 5:     numerator = int(a) * int(c)
++ 5:     numerator = int(a) // int(c)
+  6:     denom = int(b) * int(d)
+  7:     if numerator / denom == int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00577 s] survived
+   - [#   3] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  1: def simplify(x, n):
+  2:     
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+- 5:     numerator = int(a) * int(c)
++ 5:     numerator = int(a) ** int(c)
+  6:     denom = int(b) * int(d)
+  7:     if numerator / denom == int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00566 s] survived
+   - [#   4] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+- 6:     denom = int(b) * int(d)
++ 6:     denom = int(b) / int(d)
+  7:     if numerator / denom == int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00603 s] survived
+   - [#   5] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+- 6:     denom = int(b) * int(d)
++ 6:     denom = int(b) // int(d)
+  7:     if numerator / denom == int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00636 s] survived
+   - [#   6] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+- 6:     denom = int(b) * int(d)
++ 6:     denom = int(b) ** int(d)
+  7:     if numerator / denom == int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00541 s] survived
+   - [#   7] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+  6:     denom = int(b) * int(d)
+- 7:     if numerator / denom == int(numerator / denom):
++ 7:     if numerator // denom == int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00510 s] survived
+   - [#   8] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+  6:     denom = int(b) * int(d)
+- 7:     if numerator / denom == int(numerator / denom):
++ 7:     if numerator * denom == int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00840 s] survived
+   - [#   9] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+  6:     denom = int(b) * int(d)
+- 7:     if numerator / denom == int(numerator / denom):
++ 7:     if numerator / denom == int(numerator // denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00692 s] survived
+   - [#  10] AOR script_NDS_144: 
+--------------------------------------------------------------------------------
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+  6:     denom = int(b) * int(d)
+- 7:     if numerator / denom == int(numerator / denom):
++ 7:     if numerator / denom == int(numerator * denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00555 s] survived
+   - [#  11] COI script_NDS_144: 
+--------------------------------------------------------------------------------
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+  6:     denom = int(b) * int(d)
+- 7:     if numerator / denom == int(numerator / denom):
++ 7:     if not (numerator / denom == int(numerator / denom)):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00739 s] survived
+   - [#  12] ROR script_NDS_144: 
+--------------------------------------------------------------------------------
+  3:     (a, b) = x.split('/')
+  4:     (c, d) = n.split('/')
+  5:     numerator = int(a) * int(c)
+  6:     denom = int(b) * int(d)
+- 7:     if numerator / denom == int(numerator / denom):
++ 7:     if numerator / denom != int(numerator / denom):
+  8:         return True
+  9:     return False
+--------------------------------------------------------------------------------
+[0.00743 s] survived
+[*] Mutation score [0.31802 s]: 0.0%
+   - all: 12
+   - killed: 0 (0.0%)
+   - survived: 12 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

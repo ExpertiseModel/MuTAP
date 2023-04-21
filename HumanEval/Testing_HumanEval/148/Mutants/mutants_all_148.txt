@@ -1,0 +1,182 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/148/script_NDS_148.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/148/Copilot/test_148_cp_few_shot.py
+[*] 0 tests passed:
+   - test_148_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_148: 
+--------------------------------------------------------------------------------
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+-  9:         return planet_names[planet1_index + 1:planet2_index]
++  9:         return planet_names[planet1_index - 1:planet2_index]
+  10:     else:
+  11:         return planet_names[planet2_index + 1:planet1_index]
+--------------------------------------------------------------------------------
+[0.00588 s] survived
+   - [#   2] AOR script_NDS_148: 
+--------------------------------------------------------------------------------
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+   9:         return planet_names[planet1_index + 1:planet2_index]
+  10:     else:
+- 11:         return planet_names[planet2_index + 1:planet1_index]
++ 11:         return planet_names[planet2_index - 1:planet1_index]
+--------------------------------------------------------------------------------
+[0.00819 s] survived
+   - [#   3] COD script_NDS_148: 
+--------------------------------------------------------------------------------
+   1: def bf(planet1, planet2):
+   2:     
+   3:     planet_names = ('Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune')
+-  4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2):
++  4:     if (planet1 in planet_names or planet2 not in planet_names or planet1 == planet2):
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+--------------------------------------------------------------------------------
+[0.00537 s] survived
+   - [#   4] COD script_NDS_148: 
+--------------------------------------------------------------------------------
+   1: def bf(planet1, planet2):
+   2:     
+   3:     planet_names = ('Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune')
+-  4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2):
++  4:     if (planet1 not in planet_names or planet2 in planet_names or planet1 == planet2):
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+--------------------------------------------------------------------------------
+[0.00775 s] survived
+   - [#   5] COI script_NDS_148: 
+--------------------------------------------------------------------------------
+   1: def bf(planet1, planet2):
+   2:     
+   3:     planet_names = ('Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune')
+-  4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2):
++  4:     if not ((planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2)):
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+--------------------------------------------------------------------------------
+[0.00592 s] survived
+   - [#   6] COI script_NDS_148: 
+--------------------------------------------------------------------------------
+   4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2):
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+-  8:     if planet1_index < planet2_index:
++  8:     if not (planet1_index < planet2_index):
+   9:         return planet_names[planet1_index + 1:planet2_index]
+  10:     else:
+  11:         return planet_names[planet2_index + 1:planet1_index]
+--------------------------------------------------------------------------------
+[0.00549 s] survived
+   - [#   7] LCR script_NDS_148: 
+--------------------------------------------------------------------------------
+   1: def bf(planet1, planet2):
+   2:     
+   3:     planet_names = ('Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune')
+-  4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2):
++  4:     if (planet1 not in planet_names and planet2 not in planet_names and planet1 == planet2):
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+--------------------------------------------------------------------------------
+[0.00818 s] survived
+   - [#   8] ROR script_NDS_148: 
+--------------------------------------------------------------------------------
+   1: def bf(planet1, planet2):
+   2:     
+   3:     planet_names = ('Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune')
+-  4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2):
++  4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 != planet2):
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+--------------------------------------------------------------------------------
+[0.00748 s] survived
+   - [#   9] ROR script_NDS_148: 
+--------------------------------------------------------------------------------
+   4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2):
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+-  8:     if planet1_index < planet2_index:
++  8:     if planet1_index > planet2_index:
+   9:         return planet_names[planet1_index + 1:planet2_index]
+  10:     else:
+  11:         return planet_names[planet2_index + 1:planet1_index]
+--------------------------------------------------------------------------------
+[0.00584 s] survived
+   - [#  10] ROR script_NDS_148: 
+--------------------------------------------------------------------------------
+   4:     if (planet1 not in planet_names or planet2 not in planet_names or planet1 == planet2):
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+-  8:     if planet1_index < planet2_index:
++  8:     if planet1_index <= planet2_index:
+   9:         return planet_names[planet1_index + 1:planet2_index]
+  10:     else:
+  11:         return planet_names[planet2_index + 1:planet1_index]
+--------------------------------------------------------------------------------
+[0.00596 s] survived
+   - [#  11] SIR script_NDS_148: 
+--------------------------------------------------------------------------------
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+-  9:         return planet_names[planet1_index + 1:planet2_index]
++  9:         return planet_names[:planet2_index]
+  10:     else:
+  11:         return planet_names[planet2_index + 1:planet1_index]
+--------------------------------------------------------------------------------
+[0.00504 s] survived
+   - [#  12] SIR script_NDS_148: 
+--------------------------------------------------------------------------------
+   5:         return ()
+   6:     planet1_index = planet_names.index(planet1)
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+-  9:         return planet_names[planet1_index + 1:planet2_index]
++  9:         return planet_names[planet1_index + 1:]
+  10:     else:
+  11:         return planet_names[planet2_index + 1:planet1_index]
+--------------------------------------------------------------------------------
+[0.00775 s] survived
+   - [#  13] SIR script_NDS_148: 
+--------------------------------------------------------------------------------
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+   9:         return planet_names[planet1_index + 1:planet2_index]
+  10:     else:
+- 11:         return planet_names[planet2_index + 1:planet1_index]
++ 11:         return planet_names[:planet1_index]
+--------------------------------------------------------------------------------
+[0.00617 s] survived
+   - [#  14] SIR script_NDS_148: 
+--------------------------------------------------------------------------------
+   7:     planet2_index = planet_names.index(planet2)
+   8:     if planet1_index < planet2_index:
+   9:         return planet_names[planet1_index + 1:planet2_index]
+  10:     else:
+- 11:         return planet_names[planet2_index + 1:planet1_index]
++ 11:         return planet_names[planet2_index + 1:]
+--------------------------------------------------------------------------------
+[0.00508 s] survived
+[*] Mutation score [0.36994 s]: 0.0%
+   - all: 14
+   - killed: 0 (0.0%)
+   - survived: 14 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

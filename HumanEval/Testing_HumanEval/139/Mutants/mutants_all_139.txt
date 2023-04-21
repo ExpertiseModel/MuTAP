@@ -1,0 +1,94 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/139/script_NDS_139.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/139/Copilot/test_139_cp_few_shot.py
+[*] 0 tests passed:
+   - test_139_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_139: 
+--------------------------------------------------------------------------------
+  1: def special_factorial(n):
+  2:     
+  3:     fact_i = 1
+  4:     special_fact = 1
+- 5:     for i in range(1, n + 1):
++ 5:     for i in range(1, n - 1):
+  6:         fact_i *= i
+  7:         special_fact *= fact_i
+  8:     return special_fact
+--------------------------------------------------------------------------------
+[0.00648 s] survived
+   - [#   2] ASR script_NDS_139: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     fact_i = 1
+  4:     special_fact = 1
+  5:     for i in range(1, n + 1):
+- 6:         fact_i *= i
++ 6:         fact_i /= i
+  7:         special_fact *= fact_i
+  8:     return special_fact
+--------------------------------------------------------------------------------
+[0.00524 s] survived
+   - [#   3] ASR script_NDS_139: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     fact_i = 1
+  4:     special_fact = 1
+  5:     for i in range(1, n + 1):
+- 6:         fact_i *= i
++ 6:         fact_i //= i
+  7:         special_fact *= fact_i
+  8:     return special_fact
+--------------------------------------------------------------------------------
+[0.00570 s] survived
+   - [#   4] ASR script_NDS_139: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     fact_i = 1
+  4:     special_fact = 1
+  5:     for i in range(1, n + 1):
+- 6:         fact_i *= i
++ 6:         fact_i **= i
+  7:         special_fact *= fact_i
+  8:     return special_fact
+--------------------------------------------------------------------------------
+[0.00566 s] survived
+   - [#   5] ASR script_NDS_139: 
+--------------------------------------------------------------------------------
+  3:     fact_i = 1
+  4:     special_fact = 1
+  5:     for i in range(1, n + 1):
+  6:         fact_i *= i
+- 7:         special_fact *= fact_i
++ 7:         special_fact /= fact_i
+  8:     return special_fact
+--------------------------------------------------------------------------------
+[0.00560 s] survived
+   - [#   6] ASR script_NDS_139: 
+--------------------------------------------------------------------------------
+  3:     fact_i = 1
+  4:     special_fact = 1
+  5:     for i in range(1, n + 1):
+  6:         fact_i *= i
+- 7:         special_fact *= fact_i
++ 7:         special_fact //= fact_i
+  8:     return special_fact
+--------------------------------------------------------------------------------
+[0.00631 s] survived
+   - [#   7] ASR script_NDS_139: 
+--------------------------------------------------------------------------------
+  3:     fact_i = 1
+  4:     special_fact = 1
+  5:     for i in range(1, n + 1):
+  6:         fact_i *= i
+- 7:         special_fact *= fact_i
++ 7:         special_fact **= fact_i
+  8:     return special_fact
+--------------------------------------------------------------------------------
+[0.00610 s] survived
+[*] Mutation score [0.13699 s]: 0.0%
+   - all: 7
+   - killed: 0 (0.0%)
+   - survived: 7 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

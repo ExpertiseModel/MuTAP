@@ -1,0 +1,20 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/2/script_NDS_2.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/2/Copilot/test_2_cp_few_shot.py
+[*] 0 tests passed:
+   - test_2_cp_few_shot [0.00005 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_2: 
+--------------------------------------------------------------------------------
+  1: def truncate_number(number: float) -> float:
+  2:     
+- 3:     return number % 1.0
++ 3:     return number * 1.0
+--------------------------------------------------------------------------------
+[0.00563 s] survived
+[*] Mutation score [0.02883 s]: 0.0%
+   - all: 1
+   - killed: 0 (0.0%)
+   - survived: 1 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

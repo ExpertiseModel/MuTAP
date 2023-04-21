@@ -1,0 +1,118 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/156/script_NDS_156.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/156/Copilot/test_156_cp_few_shot.py
+[*] 0 tests passed:
+   - test_156_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_156: 
+--------------------------------------------------------------------------------
+   6:         'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+   7:     i = 12
+   8:     res = ''
+   9:     while number:
+- 10:         div = number // num[i]
++ 10:         div = number / num[i]
+  11:         number %= num[i]
+  12:         while div:
+  13:             res += sym[i]
+  14:             div -= 1
+--------------------------------------------------------------------------------
+[0.00792 s] survived
+   - [#   2] AOR script_NDS_156: 
+--------------------------------------------------------------------------------
+   6:         'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+   7:     i = 12
+   8:     res = ''
+   9:     while number:
+- 10:         div = number // num[i]
++ 10:         div = number * num[i]
+  11:         number %= num[i]
+  12:         while div:
+  13:             res += sym[i]
+  14:             div -= 1
+--------------------------------------------------------------------------------
+[0.00765 s] survived
+   - [#   3] ASR script_NDS_156: 
+--------------------------------------------------------------------------------
+   7:     i = 12
+   8:     res = ''
+   9:     while number:
+  10:         div = number // num[i]
+- 11:         number %= num[i]
++ 11:         number *= num[i]
+  12:         while div:
+  13:             res += sym[i]
+  14:             div -= 1
+  15:         i -= 1
+--------------------------------------------------------------------------------
+[0.00680 s] survived
+   - [#   4] ASR script_NDS_156: 
+--------------------------------------------------------------------------------
+   9:     while number:
+  10:         div = number // num[i]
+  11:         number %= num[i]
+  12:         while div:
+- 13:             res += sym[i]
++ 13:             res -= sym[i]
+  14:             div -= 1
+  15:         i -= 1
+  16:     return res.lower()
+--------------------------------------------------------------------------------
+[0.00643 s] survived
+   - [#   5] ASR script_NDS_156: 
+--------------------------------------------------------------------------------
+  10:         div = number // num[i]
+  11:         number %= num[i]
+  12:         while div:
+  13:             res += sym[i]
+- 14:             div -= 1
++ 14:             div += 1
+  15:         i -= 1
+  16:     return res.lower()
+--------------------------------------------------------------------------------
+[0.00567 s] survived
+   - [#   6] ASR script_NDS_156: 
+--------------------------------------------------------------------------------
+  11:         number %= num[i]
+  12:         while div:
+  13:             res += sym[i]
+  14:             div -= 1
+- 15:         i -= 1
++ 15:         i += 1
+  16:     return res.lower()
+--------------------------------------------------------------------------------
+[0.00830 s] survived
+   - [#   7] COI script_NDS_156: 
+--------------------------------------------------------------------------------
+   5:     sym = ['I', 'IV', 'V', 'IX', 'X', 'XL', \
+   6:         'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+   7:     i = 12
+   8:     res = ''
+-  9:     while number:
++  9:     while not number:
+  10:         div = number // num[i]
+  11:         number %= num[i]
+  12:         while div:
+  13:             res += sym[i]
+--------------------------------------------------------------------------------
+[0.00894 s] survived
+   - [#   8] COI script_NDS_156: 
+--------------------------------------------------------------------------------
+   8:     res = ''
+   9:     while number:
+  10:         div = number // num[i]
+  11:         number %= num[i]
+- 12:         while div:
++ 12:         while not div:
+  13:             res += sym[i]
+  14:             div -= 1
+  15:         i -= 1
+  16:     return res.lower()
+--------------------------------------------------------------------------------
+[0.00544 s] survived
+[*] Mutation score [0.27924 s]: 0.0%
+   - all: 8
+   - killed: 0 (0.0%)
+   - survived: 8 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,62 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/12/script_NDS_12.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/12/Copilot/test_12_cp_few_shot.py
+[*] 0 tests passed:
+   - test_12_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] COD script_NDS_12: 
+--------------------------------------------------------------------------------
+   2: 
+   3: 
+   4: def longest(strings: List[str]) -> Optional[str]:
+   5:     
+-  6:     if not strings:
++  6:     if strings:
+   7:         return None
+   8:     
+   9:     maxlen = max((len(x) for x in strings))
+  10:     for s in strings:
+--------------------------------------------------------------------------------
+[0.00606 s] survived
+   - [#   2] COI script_NDS_12: 
+--------------------------------------------------------------------------------
+   2: 
+   3: 
+   4: def longest(strings: List[str]) -> Optional[str]:
+   5:     
+-  6:     if not strings:
++  6:     if not ((not strings)):
+   7:         return None
+   8:     
+   9:     maxlen = max((len(x) for x in strings))
+  10:     for s in strings:
+--------------------------------------------------------------------------------
+[0.00592 s] survived
+   - [#   3] COI script_NDS_12: 
+--------------------------------------------------------------------------------
+   7:         return None
+   8:     
+   9:     maxlen = max((len(x) for x in strings))
+  10:     for s in strings:
+- 11:         if len(s) == maxlen:
++ 11:         if not (len(s) == maxlen):
+  12:             return s
+--------------------------------------------------------------------------------
+[0.00538 s] survived
+   - [#   4] ROR script_NDS_12: 
+--------------------------------------------------------------------------------
+   7:         return None
+   8:     
+   9:     maxlen = max((len(x) for x in strings))
+  10:     for s in strings:
+- 11:         if len(s) == maxlen:
++ 11:         if len(s) != maxlen:
+  12:             return s
+--------------------------------------------------------------------------------
+[0.00771 s] survived
+[*] Mutation score [0.12747 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

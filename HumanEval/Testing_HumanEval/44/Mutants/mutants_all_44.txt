@@ -1,0 +1,94 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/44/script_NDS_44.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/44/Copilot/test_44_cp_few_shot.py
+[*] 0 tests passed:
+   - test_44_cp_few_shot [0.00005 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_44: 
+--------------------------------------------------------------------------------
+  1: def change_base(x: int, base: int):
+  2:     
+  3:     ret = ''
+  4:     while x > 0:
+- 5:         ret = str(x % base) + ret
++ 5:         ret = str(x * base) + ret
+  6:         x //= base
+  7:     return ret
+--------------------------------------------------------------------------------
+[0.00466 s] survived
+   - [#   2] AOR script_NDS_44: 
+--------------------------------------------------------------------------------
+  1: def change_base(x: int, base: int):
+  2:     
+  3:     ret = ''
+  4:     while x > 0:
+- 5:         ret = str(x % base) + ret
++ 5:         ret = str(x % base) - ret
+  6:         x //= base
+  7:     return ret
+--------------------------------------------------------------------------------
+[0.00535 s] survived
+   - [#   3] ASR script_NDS_44: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     ret = ''
+  4:     while x > 0:
+  5:         ret = str(x % base) + ret
+- 6:         x //= base
++ 6:         x /= base
+  7:     return ret
+--------------------------------------------------------------------------------
+[0.00615 s] survived
+   - [#   4] ASR script_NDS_44: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     ret = ''
+  4:     while x > 0:
+  5:         ret = str(x % base) + ret
+- 6:         x //= base
++ 6:         x *= base
+  7:     return ret
+--------------------------------------------------------------------------------
+[0.00570 s] survived
+   - [#   5] COI script_NDS_44: 
+--------------------------------------------------------------------------------
+  1: def change_base(x: int, base: int):
+  2:     
+  3:     ret = ''
+- 4:     while x > 0:
++ 4:     while not (x > 0):
+  5:         ret = str(x % base) + ret
+  6:         x //= base
+  7:     return ret
+--------------------------------------------------------------------------------
+[0.00539 s] survived
+   - [#   6] ROR script_NDS_44: 
+--------------------------------------------------------------------------------
+  1: def change_base(x: int, base: int):
+  2:     
+  3:     ret = ''
+- 4:     while x > 0:
++ 4:     while x < 0:
+  5:         ret = str(x % base) + ret
+  6:         x //= base
+  7:     return ret
+--------------------------------------------------------------------------------
+[0.00603 s] survived
+   - [#   7] ROR script_NDS_44: 
+--------------------------------------------------------------------------------
+  1: def change_base(x: int, base: int):
+  2:     
+  3:     ret = ''
+- 4:     while x > 0:
++ 4:     while x >= 0:
+  5:         ret = str(x % base) + ret
+  6:         x //= base
+  7:     return ret
+--------------------------------------------------------------------------------
+[0.00605 s] survived
+[*] Mutation score [0.14365 s]: 0.0%
+   - all: 7
+   - killed: 0 (0.0%)
+   - survived: 7 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

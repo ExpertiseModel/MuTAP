@@ -1,0 +1,188 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/145/script_NDS_145.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/145/Copilot/test_145_cp_few_shot.py
+[*] 0 tests passed:
+   - test_145_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_145: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = (1 * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00730 s] survived
+   - [#   2] AOD script_NDS_145: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) * n, 1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00610 s] survived
+   - [#   3] AOR script_NDS_145: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((+1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00665 s] survived
+   - [#   4] AOR script_NDS_145: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) / n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00564 s] survived
+   - [#   5] AOR script_NDS_145: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) // n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00629 s] survived
+   - [#   6] AOR script_NDS_145: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) ** n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00541 s] survived
+   - [#   7] AOR script_NDS_145: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) * n, +1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00629 s] survived
+   - [#   8] AOR script_NDS_145: 
+--------------------------------------------------------------------------------
+   4:         neg = 1
+   5:         if n < 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+-  8:         n[0] = n[0] * neg
++  8:         n[0] = n[0] / neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00611 s] survived
+   - [#   9] AOR script_NDS_145: 
+--------------------------------------------------------------------------------
+   4:         neg = 1
+   5:         if n < 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+-  8:         n[0] = n[0] * neg
++  8:         n[0] = n[0] // neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00627 s] survived
+   - [#  10] AOR script_NDS_145: 
+--------------------------------------------------------------------------------
+   4:         neg = 1
+   5:         if n < 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+-  8:         n[0] = n[0] * neg
++  8:         n[0] = n[0] ** neg
+   9:         return sum(n)
+  10:     return sorted(nums, key=digits_sum)
+--------------------------------------------------------------------------------
+[0.00558 s] survived
+   - [#  11] COI script_NDS_145: 
+--------------------------------------------------------------------------------
+   1: def order_by_points(nums):
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+-  5:         if n < 0:
++  5:         if not (n < 0):
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+--------------------------------------------------------------------------------
+[0.00710 s] survived
+   - [#  12] ROR script_NDS_145: 
+--------------------------------------------------------------------------------
+   1: def order_by_points(nums):
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+-  5:         if n < 0:
++  5:         if n > 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+--------------------------------------------------------------------------------
+[0.00685 s] survived
+   - [#  13] ROR script_NDS_145: 
+--------------------------------------------------------------------------------
+   1: def order_by_points(nums):
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+-  5:         if n < 0:
++  5:         if n <= 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+--------------------------------------------------------------------------------
+[0.00599 s] survived
+[*] Mutation score [0.33545 s]: 0.0%
+   - all: 13
+   - killed: 0 (0.0%)
+   - survived: 13 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

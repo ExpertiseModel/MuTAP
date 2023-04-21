@@ -1,0 +1,32 @@
+
+
+def unique_day(day, possible_birthdays):
+    count = 0
+    for birthday in possible_birthdays:
+        if birthday[1] == day:
+            count += 1
+    return count == 1
+
+
+def test():
+    unique_day(1,
+        [(1, 1, 1),
+         (2, 2, 2),
+         (3, 3, 3)]) == True
+    assert unique_day(2,
+        [(1, 1, 1),
+         (2, 2, 2),
+         (3, 3, 3)]) == True
+    assert unique_day(3,
+        [(1, 1, 1),
+         (2, 2, 2),
+         (3, 3, 3)]) == True
+    assert unique_day(4,
+        [(1, 1, 1),
+         (2, 2, 2),
+         (3, 3, 3)]) == False
+    assert unique_day(5,
+        [(1, 1, 1),
+         (2, 2, 2),
+         (3, 3, 3)]) == False
+    assert unique_day

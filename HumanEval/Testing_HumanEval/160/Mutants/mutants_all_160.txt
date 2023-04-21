@@ -1,0 +1,45 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/160/script_NDS_160.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/160/Copilot/test_160_cp_few_shot.py
+[*] 0 tests passed:
+   - test_160_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_160: 
+--------------------------------------------------------------------------------
+  1: def do_algebra(operator, operand):
+  2:     
+  3:     expression = str(operand[0])
+  4:     for (oprt, oprn) in zip(operator, operand[1:]):
+- 5:         expression += oprt + str(oprn)
++ 5:         expression += oprt - str(oprn)
+  6:     return eval(expression)
+--------------------------------------------------------------------------------
+[0.00595 s] survived
+   - [#   2] ASR script_NDS_160: 
+--------------------------------------------------------------------------------
+  1: def do_algebra(operator, operand):
+  2:     
+  3:     expression = str(operand[0])
+  4:     for (oprt, oprn) in zip(operator, operand[1:]):
+- 5:         expression += oprt + str(oprn)
++ 5:         expression -= oprt + str(oprn)
+  6:     return eval(expression)
+--------------------------------------------------------------------------------
+[0.00548 s] survived
+   - [#   3] SIR script_NDS_160: 
+--------------------------------------------------------------------------------
+  1: def do_algebra(operator, operand):
+  2:     
+  3:     expression = str(operand[0])
+- 4:     for (oprt, oprn) in zip(operator, operand[1:]):
++ 4:     for (oprt, oprn) in zip(operator, operand[:]):
+  5:         expression += oprt + str(oprn)
+  6:     return eval(expression)
+--------------------------------------------------------------------------------
+[0.00489 s] survived
+[*] Mutation score [0.09046 s]: 0.0%
+   - all: 3
+   - killed: 0 (0.0%)
+   - survived: 3 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

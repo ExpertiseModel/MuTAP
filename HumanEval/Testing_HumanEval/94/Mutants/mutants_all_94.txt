@@ -1,0 +1,190 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/94/script_NDS_94.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/94/Copilot/test_94_cp_few_shot.py
+[*] 0 tests passed:
+   - test_94_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_94: 
+--------------------------------------------------------------------------------
+   1: def skjkasdkd(lst):
+   2:     
+   3:     def isPrime(n):
+-  4:         for i in range(2, int(n ** 0.5) + 1):
++  4:         for i in range(2, int(n * 0.5) + 1):
+   5:             if n % i == 0:
+   6:                 return False
+   7:         
+   8:         return True
+--------------------------------------------------------------------------------
+[0.00565 s] survived
+   - [#   2] AOR script_NDS_94: 
+--------------------------------------------------------------------------------
+   1: def skjkasdkd(lst):
+   2:     
+   3:     def isPrime(n):
+-  4:         for i in range(2, int(n ** 0.5) + 1):
++  4:         for i in range(2, int(n ** 0.5) - 1):
+   5:             if n % i == 0:
+   6:                 return False
+   7:         
+   8:         return True
+--------------------------------------------------------------------------------
+[0.00796 s] survived
+   - [#   3] AOR script_NDS_94: 
+--------------------------------------------------------------------------------
+   1: def skjkasdkd(lst):
+   2:     
+   3:     def isPrime(n):
+   4:         for i in range(2, int(n ** 0.5) + 1):
+-  5:             if n % i == 0:
++  5:             if n * i == 0:
+   6:                 return False
+   7:         
+   8:         return True
+   9:     maxx = 0
+--------------------------------------------------------------------------------
+[0.00540 s] survived
+   - [#   4] ASR script_NDS_94: 
+--------------------------------------------------------------------------------
+  10:     i = 0
+  11:     while i < len(lst):
+  12:         if (lst[i] > maxx and isPrime(lst[i])):
+  13:             maxx = lst[i]
+- 14:         i += 1
++ 14:         i -= 1
+  15:     result = sum((int(digit) for digit in str(maxx)))
+  16:     return result
+--------------------------------------------------------------------------------
+[0.00603 s] survived
+   - [#   5] COI script_NDS_94: 
+--------------------------------------------------------------------------------
+   1: def skjkasdkd(lst):
+   2:     
+   3:     def isPrime(n):
+   4:         for i in range(2, int(n ** 0.5) + 1):
+-  5:             if n % i == 0:
++  5:             if not (n % i == 0):
+   6:                 return False
+   7:         
+   8:         return True
+   9:     maxx = 0
+--------------------------------------------------------------------------------
+[0.00586 s] survived
+   - [#   6] COI script_NDS_94: 
+--------------------------------------------------------------------------------
+   7:         
+   8:         return True
+   9:     maxx = 0
+  10:     i = 0
+- 11:     while i < len(lst):
++ 11:     while not (i < len(lst)):
+  12:         if (lst[i] > maxx and isPrime(lst[i])):
+  13:             maxx = lst[i]
+  14:         i += 1
+  15:     result = sum((int(digit) for digit in str(maxx)))
+--------------------------------------------------------------------------------
+[0.00730 s] survived
+   - [#   7] COI script_NDS_94: 
+--------------------------------------------------------------------------------
+   8:         return True
+   9:     maxx = 0
+  10:     i = 0
+  11:     while i < len(lst):
+- 12:         if (lst[i] > maxx and isPrime(lst[i])):
++ 12:         if not ((lst[i] > maxx and isPrime(lst[i]))):
+  13:             maxx = lst[i]
+  14:         i += 1
+  15:     result = sum((int(digit) for digit in str(maxx)))
+  16:     return result
+--------------------------------------------------------------------------------
+[0.00575 s] survived
+   - [#   8] LCR script_NDS_94: 
+--------------------------------------------------------------------------------
+   8:         return True
+   9:     maxx = 0
+  10:     i = 0
+  11:     while i < len(lst):
+- 12:         if (lst[i] > maxx and isPrime(lst[i])):
++ 12:         if (lst[i] > maxx or isPrime(lst[i])):
+  13:             maxx = lst[i]
+  14:         i += 1
+  15:     result = sum((int(digit) for digit in str(maxx)))
+  16:     return result
+--------------------------------------------------------------------------------
+[0.00799 s] survived
+   - [#   9] ROR script_NDS_94: 
+--------------------------------------------------------------------------------
+   1: def skjkasdkd(lst):
+   2:     
+   3:     def isPrime(n):
+   4:         for i in range(2, int(n ** 0.5) + 1):
+-  5:             if n % i == 0:
++  5:             if n % i != 0:
+   6:                 return False
+   7:         
+   8:         return True
+   9:     maxx = 0
+--------------------------------------------------------------------------------
+[0.00612 s] survived
+   - [#  10] ROR script_NDS_94: 
+--------------------------------------------------------------------------------
+   7:         
+   8:         return True
+   9:     maxx = 0
+  10:     i = 0
+- 11:     while i < len(lst):
++ 11:     while i > len(lst):
+  12:         if (lst[i] > maxx and isPrime(lst[i])):
+  13:             maxx = lst[i]
+  14:         i += 1
+  15:     result = sum((int(digit) for digit in str(maxx)))
+--------------------------------------------------------------------------------
+[0.00809 s] survived
+   - [#  11] ROR script_NDS_94: 
+--------------------------------------------------------------------------------
+   7:         
+   8:         return True
+   9:     maxx = 0
+  10:     i = 0
+- 11:     while i < len(lst):
++ 11:     while i <= len(lst):
+  12:         if (lst[i] > maxx and isPrime(lst[i])):
+  13:             maxx = lst[i]
+  14:         i += 1
+  15:     result = sum((int(digit) for digit in str(maxx)))
+--------------------------------------------------------------------------------
+[0.00546 s] survived
+   - [#  12] ROR script_NDS_94: 
+--------------------------------------------------------------------------------
+   8:         return True
+   9:     maxx = 0
+  10:     i = 0
+  11:     while i < len(lst):
+- 12:         if (lst[i] > maxx and isPrime(lst[i])):
++ 12:         if (lst[i] < maxx and isPrime(lst[i])):
+  13:             maxx = lst[i]
+  14:         i += 1
+  15:     result = sum((int(digit) for digit in str(maxx)))
+  16:     return result
+--------------------------------------------------------------------------------
+[0.00598 s] survived
+   - [#  13] ROR script_NDS_94: 
+--------------------------------------------------------------------------------
+   8:         return True
+   9:     maxx = 0
+  10:     i = 0
+  11:     while i < len(lst):
+- 12:         if (lst[i] > maxx and isPrime(lst[i])):
++ 12:         if (lst[i] >= maxx and isPrime(lst[i])):
+  13:             maxx = lst[i]
+  14:         i += 1
+  15:     result = sum((int(digit) for digit in str(maxx)))
+  16:     return result
+--------------------------------------------------------------------------------
+[0.00665 s] survived
+[*] Mutation score [0.41238 s]: 0.0%
+   - all: 13
+   - killed: 0 (0.0%)
+   - survived: 13 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

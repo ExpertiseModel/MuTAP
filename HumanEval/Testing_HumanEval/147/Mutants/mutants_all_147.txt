@@ -1,0 +1,182 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/147/script_NDS_147.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/147/Copilot/test_147_cp_few_shot.py
+[*] 0 tests passed:
+   - test_147_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   1: def get_max_triples(n):
+   2:     
+-  3:     A = [((i * i) - i) + 1 for i in range(1, n + 1)]
++  3:     A = [((i / i) - i) + 1 for i in range(1, n + 1)]
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+--------------------------------------------------------------------------------
+[0.00596 s] survived
+   - [#   2] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   1: def get_max_triples(n):
+   2:     
+-  3:     A = [((i * i) - i) + 1 for i in range(1, n + 1)]
++  3:     A = [((i // i) - i) + 1 for i in range(1, n + 1)]
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+--------------------------------------------------------------------------------
+[0.00733 s] survived
+   - [#   3] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   1: def get_max_triples(n):
+   2:     
+-  3:     A = [((i * i) - i) + 1 for i in range(1, n + 1)]
++  3:     A = [((i ** i) - i) + 1 for i in range(1, n + 1)]
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+--------------------------------------------------------------------------------
+[0.00482 s] survived
+   - [#   4] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   1: def get_max_triples(n):
+   2:     
+-  3:     A = [((i * i) - i) + 1 for i in range(1, n + 1)]
++  3:     A = [((i * i) + i) + 1 for i in range(1, n + 1)]
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+--------------------------------------------------------------------------------
+[0.00532 s] survived
+   - [#   5] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   1: def get_max_triples(n):
+   2:     
+-  3:     A = [((i * i) - i) + 1 for i in range(1, n + 1)]
++  3:     A = [((i * i) - i) - 1 for i in range(1, n + 1)]
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+--------------------------------------------------------------------------------
+[0.00705 s] survived
+   - [#   6] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   1: def get_max_triples(n):
+   2:     
+-  3:     A = [((i * i) - i) + 1 for i in range(1, n + 1)]
++  3:     A = [((i * i) - i) + 1 for i in range(1, n - 1)]
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+--------------------------------------------------------------------------------
+[0.00721 s] survived
+   - [#   7] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     A = [((i * i) - i) + 1 for i in range(1, n + 1)]
+   4:     ans = []
+   5:     for i in range(n):
+-  6:         for j in range(i + 1, n):
++  6:         for j in range(i - 1, n):
+   7:             for k in range(j + 1, n):
+   8:                 if ((A[i] + A[j]) + A[k]) % 3 == 0:
+   9:                     ans += [(A[i], A[j], A[k])]
+  10:     return len(ans)
+--------------------------------------------------------------------------------
+[0.00731 s] survived
+   - [#   8] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   3:     A = [((i * i) - i) + 1 for i in range(1, n + 1)]
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+-  7:             for k in range(j + 1, n):
++  7:             for k in range(j - 1, n):
+   8:                 if ((A[i] + A[j]) + A[k]) % 3 == 0:
+   9:                     ans += [(A[i], A[j], A[k])]
+  10:     return len(ans)
+--------------------------------------------------------------------------------
+[0.00714 s] survived
+   - [#   9] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+-  8:                 if ((A[i] + A[j]) + A[k]) % 3 == 0:
++  8:                 if ((A[i] - A[j]) + A[k]) % 3 == 0:
+   9:                     ans += [(A[i], A[j], A[k])]
+  10:     return len(ans)
+--------------------------------------------------------------------------------
+[0.00778 s] survived
+   - [#  10] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+-  8:                 if ((A[i] + A[j]) + A[k]) % 3 == 0:
++  8:                 if ((A[i] + A[j]) - A[k]) % 3 == 0:
+   9:                     ans += [(A[i], A[j], A[k])]
+  10:     return len(ans)
+--------------------------------------------------------------------------------
+[0.00756 s] survived
+   - [#  11] AOR script_NDS_147: 
+--------------------------------------------------------------------------------
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+-  8:                 if ((A[i] + A[j]) + A[k]) % 3 == 0:
++  8:                 if ((A[i] + A[j]) + A[k]) * 3 == 0:
+   9:                     ans += [(A[i], A[j], A[k])]
+  10:     return len(ans)
+--------------------------------------------------------------------------------
+[0.00528 s] survived
+   - [#  12] ASR script_NDS_147: 
+--------------------------------------------------------------------------------
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+   8:                 if ((A[i] + A[j]) + A[k]) % 3 == 0:
+-  9:                     ans += [(A[i], A[j], A[k])]
++  9:                     ans -= [(A[i], A[j], A[k])]
+  10:     return len(ans)
+--------------------------------------------------------------------------------
+[0.00617 s] survived
+   - [#  13] COI script_NDS_147: 
+--------------------------------------------------------------------------------
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+-  8:                 if ((A[i] + A[j]) + A[k]) % 3 == 0:
++  8:                 if not (((A[i] + A[j]) + A[k]) % 3 == 0):
+   9:                     ans += [(A[i], A[j], A[k])]
+  10:     return len(ans)
+--------------------------------------------------------------------------------
+[0.00802 s] survived
+   - [#  14] ROR script_NDS_147: 
+--------------------------------------------------------------------------------
+   4:     ans = []
+   5:     for i in range(n):
+   6:         for j in range(i + 1, n):
+   7:             for k in range(j + 1, n):
+-  8:                 if ((A[i] + A[j]) + A[k]) % 3 == 0:
++  8:                 if ((A[i] + A[j]) + A[k]) % 3 != 0:
+   9:                     ans += [(A[i], A[j], A[k])]
+  10:     return len(ans)
+--------------------------------------------------------------------------------
+[0.00718 s] survived
+[*] Mutation score [0.45922 s]: 0.0%
+   - all: 14
+   - killed: 0 (0.0%)
+   - survived: 14 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

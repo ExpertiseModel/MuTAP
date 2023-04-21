@@ -1,0 +1,124 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/113/script_NDS_113.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/113/Copilot/test_113_cp_few_shot.py
+[*] 0 tests passed:
+   - test_113_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  1: def odd_count(lst):
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+- 5:         n = sum((int(d) % 2 == 1 for d in arr))
++ 5:         n = sum((int(d) * 2 == 1 for d in arr))
+  6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00731 s] survived
+   - [#   2] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+  5:         n = sum((int(d) % 2 == 1 for d in arr))
+- 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
++ 6:         res.append(((((((('the number of odd elements ' - str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00933 s] survived
+   - [#   3] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+  5:         n = sum((int(d) % 2 == 1 for d in arr))
+- 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
++ 6:         res.append(((((((('the number of odd elements ' + str(n)) - 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00629 s] survived
+   - [#   4] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+  5:         n = sum((int(d) % 2 == 1 for d in arr))
+- 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
++ 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') - str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00643 s] survived
+   - [#   5] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+  5:         n = sum((int(d) % 2 == 1 for d in arr))
+- 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
++ 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) - 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00491 s] survived
+   - [#   6] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+  5:         n = sum((int(d) % 2 == 1 for d in arr))
+- 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
++ 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') - str(n)) + ' of the ') + str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00613 s] survived
+   - [#   7] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+  5:         n = sum((int(d) % 2 == 1 for d in arr))
+- 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
++ 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) - ' of the ') + str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00695 s] survived
+   - [#   8] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+  5:         n = sum((int(d) % 2 == 1 for d in arr))
+- 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
++ 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') - str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00622 s] survived
+   - [#   9] AOR script_NDS_113: 
+--------------------------------------------------------------------------------
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+  5:         n = sum((int(d) % 2 == 1 for d in arr))
+- 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
++ 6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) - 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00857 s] survived
+   - [#  10] ROR script_NDS_113: 
+--------------------------------------------------------------------------------
+  1: def odd_count(lst):
+  2:     
+  3:     res = []
+  4:     for arr in lst:
+- 5:         n = sum((int(d) % 2 == 1 for d in arr))
++ 5:         n = sum((int(d) % 2 != 1 for d in arr))
+  6:         res.append(((((((('the number of odd elements ' + str(n)) + 'n the str') + str(n)) + 'ng ') + str(n)) + ' of the ') + str(n)) + 'nput.')
+  7:     return res
+--------------------------------------------------------------------------------
+[0.00551 s] survived
+[*] Mutation score [0.27722 s]: 0.0%
+   - all: 10
+   - killed: 0 (0.0%)
+   - survived: 10 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

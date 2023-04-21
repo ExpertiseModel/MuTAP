@@ -1,0 +1,20 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/84/script_NDS_84.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/84/Copilot/test_84_cp_few_shot.py
+[*] 0 tests passed:
+   - test_84_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] SIR script_NDS_84: 
+--------------------------------------------------------------------------------
+  1: def solve(N):
+  2:     
+- 3:     return bin(sum((int(i) for i in str(N))))[2:]
++ 3:     return bin(sum((int(i) for i in str(N))))[:]
+--------------------------------------------------------------------------------
+[0.00625 s] survived
+[*] Mutation score [0.03907 s]: 0.0%
+   - all: 1
+   - killed: 0 (0.0%)
+   - survived: 1 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

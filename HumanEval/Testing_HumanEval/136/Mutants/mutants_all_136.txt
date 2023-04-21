@@ -1,0 +1,52 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/136/script_NDS_136.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/136/Copilot/test_136_cp_few_shot.py
+[*] 0 tests passed:
+   - test_136_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] ROR script_NDS_136: 
+--------------------------------------------------------------------------------
+  1: def largest_smallest_integers(lst):
+  2:     
+- 3:     smallest = list(filter((lambda x: (x < 0)), lst))
++ 3:     smallest = list(filter((lambda x: (x > 0)), lst))
+  4:     largest = list(filter((lambda x: (x > 0)), lst))
+  5:     return (max(smallest) if smallest else None, min(largest) if largest else None)
+--------------------------------------------------------------------------------
+[0.00493 s] survived
+   - [#   2] ROR script_NDS_136: 
+--------------------------------------------------------------------------------
+  1: def largest_smallest_integers(lst):
+  2:     
+- 3:     smallest = list(filter((lambda x: (x < 0)), lst))
++ 3:     smallest = list(filter((lambda x: (x <= 0)), lst))
+  4:     largest = list(filter((lambda x: (x > 0)), lst))
+  5:     return (max(smallest) if smallest else None, min(largest) if largest else None)
+--------------------------------------------------------------------------------
+[0.00592 s] survived
+   - [#   3] ROR script_NDS_136: 
+--------------------------------------------------------------------------------
+  1: def largest_smallest_integers(lst):
+  2:     
+  3:     smallest = list(filter((lambda x: (x < 0)), lst))
+- 4:     largest = list(filter((lambda x: (x > 0)), lst))
++ 4:     largest = list(filter((lambda x: (x < 0)), lst))
+  5:     return (max(smallest) if smallest else None, min(largest) if largest else None)
+--------------------------------------------------------------------------------
+[0.00651 s] survived
+   - [#   4] ROR script_NDS_136: 
+--------------------------------------------------------------------------------
+  1: def largest_smallest_integers(lst):
+  2:     
+  3:     smallest = list(filter((lambda x: (x < 0)), lst))
+- 4:     largest = list(filter((lambda x: (x > 0)), lst))
++ 4:     largest = list(filter((lambda x: (x >= 0)), lst))
+  5:     return (max(smallest) if smallest else None, min(largest) if largest else None)
+--------------------------------------------------------------------------------
+[0.00631 s] survived
+[*] Mutation score [0.12237 s]: 0.0%
+   - all: 4
+   - killed: 0 (0.0%)
+   - survived: 4 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

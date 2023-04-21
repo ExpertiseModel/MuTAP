@@ -1,0 +1,30 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/90/script_NDS_90.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/90/Copilot/test_90_cp_few_shot.py
+[*] 0 tests passed:
+   - test_90_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] ROR script_NDS_90: 
+--------------------------------------------------------------------------------
+  1: def next_smallest(lst):
+  2:     
+  3:     lst = sorted(set(lst))
+- 4:     return None if len(lst) < 2 else lst[1]
++ 4:     return None if len(lst) > 2 else lst[1]
+--------------------------------------------------------------------------------
+[0.00579 s] survived
+   - [#   2] ROR script_NDS_90: 
+--------------------------------------------------------------------------------
+  1: def next_smallest(lst):
+  2:     
+  3:     lst = sorted(set(lst))
+- 4:     return None if len(lst) < 2 else lst[1]
++ 4:     return None if len(lst) <= 2 else lst[1]
+--------------------------------------------------------------------------------
+[0.00789 s] survived
+[*] Mutation score [0.05842 s]: 0.0%
+   - all: 2
+   - killed: 0 (0.0%)
+   - survived: 2 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

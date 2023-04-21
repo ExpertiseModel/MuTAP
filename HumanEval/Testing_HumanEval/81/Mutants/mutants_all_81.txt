@@ -1,0 +1,502 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/81/script_NDS_81.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/81/Copilot/test_81_cp_few_shot.py
+[*] 0 tests passed:
+   - test_81_cp_few_shot [0.00007 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+   3:     
+   4:     
+   5:     letter_grade = []
+   6:     for gpa in grades:
+-  7:         if gpa == 4.0:
++  7:         if not (gpa == 4.0):
+   8:             letter_grade.append('A+')
+   9:         elif gpa > 3.7:
+  10:             letter_grade.append('A')
+  11:         elif gpa > 3.3:
+--------------------------------------------------------------------------------
+[0.00761 s] survived
+   - [#   2] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+   5:     letter_grade = []
+   6:     for gpa in grades:
+   7:         if gpa == 4.0:
+   8:             letter_grade.append('A+')
+-  9:         elif gpa > 3.7:
++  9:         elif not (gpa > 3.7):
+  10:             letter_grade.append('A')
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+--------------------------------------------------------------------------------
+[0.00591 s] survived
+   - [#   3] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+   7:         if gpa == 4.0:
+   8:             letter_grade.append('A+')
+   9:         elif gpa > 3.7:
+  10:             letter_grade.append('A')
+- 11:         elif gpa > 3.3:
++ 11:         elif not (gpa > 3.3):
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+--------------------------------------------------------------------------------
+[0.00613 s] survived
+   - [#   4] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+   9:         elif gpa > 3.7:
+  10:             letter_grade.append('A')
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+- 13:         elif gpa > 3.0:
++ 13:         elif not (gpa > 3.0):
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+--------------------------------------------------------------------------------
+[0.00763 s] survived
+   - [#   5] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+- 15:         elif gpa > 2.7:
++ 15:         elif not (gpa > 2.7):
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+--------------------------------------------------------------------------------
+[0.00611 s] survived
+   - [#   6] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+- 17:         elif gpa > 2.3:
++ 17:         elif not (gpa > 2.3):
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+--------------------------------------------------------------------------------
+[0.00688 s] survived
+   - [#   7] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+- 19:         elif gpa > 2.0:
++ 19:         elif not (gpa > 2.0):
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+--------------------------------------------------------------------------------
+[0.00924 s] survived
+   - [#   8] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+- 21:         elif gpa > 1.7:
++ 21:         elif not (gpa > 1.7):
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+--------------------------------------------------------------------------------
+[0.00595 s] survived
+   - [#   9] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+- 23:         elif gpa > 1.3:
++ 23:         elif not (gpa > 1.3):
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+--------------------------------------------------------------------------------
+[0.00604 s] survived
+   - [#  10] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+- 25:         elif gpa > 1.0:
++ 25:         elif not (gpa > 1.0):
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+  28:             letter_grade.append('D')
+  29:         elif gpa > 0.0:
+--------------------------------------------------------------------------------
+[0.00822 s] survived
+   - [#  11] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+- 27:         elif gpa > 0.7:
++ 27:         elif not (gpa > 0.7):
+  28:             letter_grade.append('D')
+  29:         elif gpa > 0.0:
+  30:             letter_grade.append('D-')
+  31:         else:
+--------------------------------------------------------------------------------
+[0.00719 s] survived
+   - [#  12] COI script_NDS_81: 
+--------------------------------------------------------------------------------
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+  28:             letter_grade.append('D')
+- 29:         elif gpa > 0.0:
++ 29:         elif not (gpa > 0.0):
+  30:             letter_grade.append('D-')
+  31:         else:
+  32:             letter_grade.append('E')
+  33:     return letter_grade
+--------------------------------------------------------------------------------
+[0.00769 s] survived
+   - [#  13] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+   3:     
+   4:     
+   5:     letter_grade = []
+   6:     for gpa in grades:
+-  7:         if gpa == 4.0:
++  7:         if gpa != 4.0:
+   8:             letter_grade.append('A+')
+   9:         elif gpa > 3.7:
+  10:             letter_grade.append('A')
+  11:         elif gpa > 3.3:
+--------------------------------------------------------------------------------
+[0.00528 s] survived
+   - [#  14] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+   5:     letter_grade = []
+   6:     for gpa in grades:
+   7:         if gpa == 4.0:
+   8:             letter_grade.append('A+')
+-  9:         elif gpa > 3.7:
++  9:         elif gpa < 3.7:
+  10:             letter_grade.append('A')
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+--------------------------------------------------------------------------------
+[0.00873 s] survived
+   - [#  15] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+   5:     letter_grade = []
+   6:     for gpa in grades:
+   7:         if gpa == 4.0:
+   8:             letter_grade.append('A+')
+-  9:         elif gpa > 3.7:
++  9:         elif gpa >= 3.7:
+  10:             letter_grade.append('A')
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+--------------------------------------------------------------------------------
+[0.00586 s] survived
+   - [#  16] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+   7:         if gpa == 4.0:
+   8:             letter_grade.append('A+')
+   9:         elif gpa > 3.7:
+  10:             letter_grade.append('A')
+- 11:         elif gpa > 3.3:
++ 11:         elif gpa < 3.3:
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+--------------------------------------------------------------------------------
+[0.00571 s] survived
+   - [#  17] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+   7:         if gpa == 4.0:
+   8:             letter_grade.append('A+')
+   9:         elif gpa > 3.7:
+  10:             letter_grade.append('A')
+- 11:         elif gpa > 3.3:
++ 11:         elif gpa >= 3.3:
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+--------------------------------------------------------------------------------
+[0.00711 s] survived
+   - [#  18] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+   9:         elif gpa > 3.7:
+  10:             letter_grade.append('A')
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+- 13:         elif gpa > 3.0:
++ 13:         elif gpa < 3.0:
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+--------------------------------------------------------------------------------
+[0.00592 s] survived
+   - [#  19] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+   9:         elif gpa > 3.7:
+  10:             letter_grade.append('A')
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+- 13:         elif gpa > 3.0:
++ 13:         elif gpa >= 3.0:
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+--------------------------------------------------------------------------------
+[0.00627 s] survived
+   - [#  20] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+- 15:         elif gpa > 2.7:
++ 15:         elif gpa < 2.7:
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+--------------------------------------------------------------------------------
+[0.00845 s] survived
+   - [#  21] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  11:         elif gpa > 3.3:
+  12:             letter_grade.append('A-')
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+- 15:         elif gpa > 2.7:
++ 15:         elif gpa >= 2.7:
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+--------------------------------------------------------------------------------
+[0.00714 s] survived
+   - [#  22] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+- 17:         elif gpa > 2.3:
++ 17:         elif gpa < 2.3:
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+--------------------------------------------------------------------------------
+[0.00563 s] survived
+   - [#  23] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  13:         elif gpa > 3.0:
+  14:             letter_grade.append('B+')
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+- 17:         elif gpa > 2.3:
++ 17:         elif gpa >= 2.3:
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+--------------------------------------------------------------------------------
+[0.01005 s] survived
+   - [#  24] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+- 19:         elif gpa > 2.0:
++ 19:         elif gpa < 2.0:
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+--------------------------------------------------------------------------------
+[0.00644 s] survived
+   - [#  25] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  15:         elif gpa > 2.7:
+  16:             letter_grade.append('B')
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+- 19:         elif gpa > 2.0:
++ 19:         elif gpa >= 2.0:
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+--------------------------------------------------------------------------------
+[0.00620 s] survived
+   - [#  26] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+- 21:         elif gpa > 1.7:
++ 21:         elif gpa < 1.7:
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+--------------------------------------------------------------------------------
+[0.00571 s] survived
+   - [#  27] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  17:         elif gpa > 2.3:
+  18:             letter_grade.append('B-')
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+- 21:         elif gpa > 1.7:
++ 21:         elif gpa >= 1.7:
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+--------------------------------------------------------------------------------
+[0.00775 s] survived
+   - [#  28] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+- 23:         elif gpa > 1.3:
++ 23:         elif gpa < 1.3:
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+--------------------------------------------------------------------------------
+[0.00671 s] survived
+   - [#  29] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  19:         elif gpa > 2.0:
+  20:             letter_grade.append('C+')
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+- 23:         elif gpa > 1.3:
++ 23:         elif gpa >= 1.3:
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+--------------------------------------------------------------------------------
+[0.00454 s] survived
+   - [#  30] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+- 25:         elif gpa > 1.0:
++ 25:         elif gpa < 1.0:
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+  28:             letter_grade.append('D')
+  29:         elif gpa > 0.0:
+--------------------------------------------------------------------------------
+[0.00610 s] survived
+   - [#  31] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  21:         elif gpa > 1.7:
+  22:             letter_grade.append('C')
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+- 25:         elif gpa > 1.0:
++ 25:         elif gpa >= 1.0:
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+  28:             letter_grade.append('D')
+  29:         elif gpa > 0.0:
+--------------------------------------------------------------------------------
+[0.00619 s] survived
+   - [#  32] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+- 27:         elif gpa > 0.7:
++ 27:         elif gpa < 0.7:
+  28:             letter_grade.append('D')
+  29:         elif gpa > 0.0:
+  30:             letter_grade.append('D-')
+  31:         else:
+--------------------------------------------------------------------------------
+[0.00670 s] survived
+   - [#  33] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  23:         elif gpa > 1.3:
+  24:             letter_grade.append('C-')
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+- 27:         elif gpa > 0.7:
++ 27:         elif gpa >= 0.7:
+  28:             letter_grade.append('D')
+  29:         elif gpa > 0.0:
+  30:             letter_grade.append('D-')
+  31:         else:
+--------------------------------------------------------------------------------
+[0.00713 s] survived
+   - [#  34] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+  28:             letter_grade.append('D')
+- 29:         elif gpa > 0.0:
++ 29:         elif gpa < 0.0:
+  30:             letter_grade.append('D-')
+  31:         else:
+  32:             letter_grade.append('E')
+  33:     return letter_grade
+--------------------------------------------------------------------------------
+[0.00861 s] survived
+   - [#  35] ROR script_NDS_81: 
+--------------------------------------------------------------------------------
+  25:         elif gpa > 1.0:
+  26:             letter_grade.append('D+')
+  27:         elif gpa > 0.7:
+  28:             letter_grade.append('D')
+- 29:         elif gpa > 0.0:
++ 29:         elif gpa >= 0.0:
+  30:             letter_grade.append('D-')
+  31:         else:
+  32:             letter_grade.append('E')
+  33:     return letter_grade
+--------------------------------------------------------------------------------
+[0.00677 s] survived
+[*] Mutation score [1.38428 s]: 0.0%
+   - all: 35
+   - killed: 0 (0.0%)
+   - survived: 35 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

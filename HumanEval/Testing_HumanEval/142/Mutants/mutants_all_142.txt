@@ -1,0 +1,165 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/142/script_NDS_142.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/142/Copilot/test_142_cp_few_shot.py
+[*] 0 tests passed:
+   - test_142_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_142: 
+--------------------------------------------------------------------------------
+   1: def sum_squares(lst):
+   2:     
+   3:     result = []
+   4:     for i in range(len(lst)):
+-  5:         if i % 3 == 0:
++  5:         if i * 3 == 0:
+   6:             result.append(lst[i] ** 2)
+   7:         elif (i % 4 == 0 and i % 3 != 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+--------------------------------------------------------------------------------
+[0.00528 s] survived
+   - [#   2] AOR script_NDS_142: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     result = []
+   4:     for i in range(len(lst)):
+   5:         if i % 3 == 0:
+-  6:             result.append(lst[i] ** 2)
++  6:             result.append(lst[i] * 2)
+   7:         elif (i % 4 == 0 and i % 3 != 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+  10:             result.append(lst[i])
+--------------------------------------------------------------------------------
+[0.00658 s] survived
+   - [#   3] AOR script_NDS_142: 
+--------------------------------------------------------------------------------
+   3:     result = []
+   4:     for i in range(len(lst)):
+   5:         if i % 3 == 0:
+   6:             result.append(lst[i] ** 2)
+-  7:         elif (i % 4 == 0 and i % 3 != 0):
++  7:         elif (i * 4 == 0 and i % 3 != 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+  10:             result.append(lst[i])
+  11:     return sum(result)
+--------------------------------------------------------------------------------
+[0.00624 s] survived
+   - [#   4] AOR script_NDS_142: 
+--------------------------------------------------------------------------------
+   3:     result = []
+   4:     for i in range(len(lst)):
+   5:         if i % 3 == 0:
+   6:             result.append(lst[i] ** 2)
+-  7:         elif (i % 4 == 0 and i % 3 != 0):
++  7:         elif (i % 4 == 0 and i * 3 != 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+  10:             result.append(lst[i])
+  11:     return sum(result)
+--------------------------------------------------------------------------------
+[0.00827 s] survived
+   - [#   5] AOR script_NDS_142: 
+--------------------------------------------------------------------------------
+   4:     for i in range(len(lst)):
+   5:         if i % 3 == 0:
+   6:             result.append(lst[i] ** 2)
+   7:         elif (i % 4 == 0 and i % 3 != 0):
+-  8:             result.append(lst[i] ** 3)
++  8:             result.append(lst[i] * 3)
+   9:         else:
+  10:             result.append(lst[i])
+  11:     return sum(result)
+--------------------------------------------------------------------------------
+[0.00530 s] survived
+   - [#   6] COI script_NDS_142: 
+--------------------------------------------------------------------------------
+   1: def sum_squares(lst):
+   2:     
+   3:     result = []
+   4:     for i in range(len(lst)):
+-  5:         if i % 3 == 0:
++  5:         if not (i % 3 == 0):
+   6:             result.append(lst[i] ** 2)
+   7:         elif (i % 4 == 0 and i % 3 != 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+--------------------------------------------------------------------------------
+[0.00609 s] survived
+   - [#   7] COI script_NDS_142: 
+--------------------------------------------------------------------------------
+   3:     result = []
+   4:     for i in range(len(lst)):
+   5:         if i % 3 == 0:
+   6:             result.append(lst[i] ** 2)
+-  7:         elif (i % 4 == 0 and i % 3 != 0):
++  7:         elif not ((i % 4 == 0 and i % 3 != 0)):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+  10:             result.append(lst[i])
+  11:     return sum(result)
+--------------------------------------------------------------------------------
+[0.00577 s] survived
+   - [#   8] LCR script_NDS_142: 
+--------------------------------------------------------------------------------
+   3:     result = []
+   4:     for i in range(len(lst)):
+   5:         if i % 3 == 0:
+   6:             result.append(lst[i] ** 2)
+-  7:         elif (i % 4 == 0 and i % 3 != 0):
++  7:         elif (i % 4 == 0 or i % 3 != 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+  10:             result.append(lst[i])
+  11:     return sum(result)
+--------------------------------------------------------------------------------
+[0.00558 s] survived
+   - [#   9] ROR script_NDS_142: 
+--------------------------------------------------------------------------------
+   1: def sum_squares(lst):
+   2:     
+   3:     result = []
+   4:     for i in range(len(lst)):
+-  5:         if i % 3 == 0:
++  5:         if i % 3 != 0:
+   6:             result.append(lst[i] ** 2)
+   7:         elif (i % 4 == 0 and i % 3 != 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+--------------------------------------------------------------------------------
+[0.00545 s] survived
+   - [#  10] ROR script_NDS_142: 
+--------------------------------------------------------------------------------
+   3:     result = []
+   4:     for i in range(len(lst)):
+   5:         if i % 3 == 0:
+   6:             result.append(lst[i] ** 2)
+-  7:         elif (i % 4 == 0 and i % 3 != 0):
++  7:         elif (i % 4 != 0 and i % 3 != 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+  10:             result.append(lst[i])
+  11:     return sum(result)
+--------------------------------------------------------------------------------
+[0.00552 s] survived
+   - [#  11] ROR script_NDS_142: 
+--------------------------------------------------------------------------------
+   3:     result = []
+   4:     for i in range(len(lst)):
+   5:         if i % 3 == 0:
+   6:             result.append(lst[i] ** 2)
+-  7:         elif (i % 4 == 0 and i % 3 != 0):
++  7:         elif (i % 4 == 0 and i % 3 == 0):
+   8:             result.append(lst[i] ** 3)
+   9:         else:
+  10:             result.append(lst[i])
+  11:     return sum(result)
+--------------------------------------------------------------------------------
+[0.00583 s] survived
+[*] Mutation score [0.31277 s]: 0.0%
+   - all: 11
+   - killed: 0 (0.0%)
+   - survived: 11 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

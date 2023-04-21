@@ -1,0 +1,1 @@
+concatenate(["a", "b", "c"]) 

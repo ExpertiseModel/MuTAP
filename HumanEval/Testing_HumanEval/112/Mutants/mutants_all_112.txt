@@ -1,0 +1,57 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/112/script_NDS_112.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/112/Copilot/test_112_cp_few_shot.py
+[*] 0 tests passed:
+   - test_112_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_112: 
+--------------------------------------------------------------------------------
+  1: def reverse_delete(s, c):
+  2:     
+  3:     s = ''.join([char for char in s if char not in c])
+- 4:     return (s, s[::-1] == s)
++ 4:     return (s, s[::1] == s)
+--------------------------------------------------------------------------------
+[0.00503 s] survived
+   - [#   2] AOR script_NDS_112: 
+--------------------------------------------------------------------------------
+  1: def reverse_delete(s, c):
+  2:     
+  3:     s = ''.join([char for char in s if char not in c])
+- 4:     return (s, s[::-1] == s)
++ 4:     return (s, s[::+1] == s)
+--------------------------------------------------------------------------------
+[0.00586 s] survived
+   - [#   3] COD script_NDS_112: 
+--------------------------------------------------------------------------------
+  1: def reverse_delete(s, c):
+  2:     
+- 3:     s = ''.join([char for char in s if char not in c])
++ 3:     s = ''.join([char for char in s if char in c])
+  4:     return (s, s[::-1] == s)
+--------------------------------------------------------------------------------
+[0.00597 s] survived
+   - [#   4] ROR script_NDS_112: 
+--------------------------------------------------------------------------------
+  1: def reverse_delete(s, c):
+  2:     
+  3:     s = ''.join([char for char in s if char not in c])
+- 4:     return (s, s[::-1] == s)
++ 4:     return (s, s[::-1] != s)
+--------------------------------------------------------------------------------
+[0.00473 s] survived
+   - [#   5] SIR script_NDS_112: 
+--------------------------------------------------------------------------------
+  1: def reverse_delete(s, c):
+  2:     
+  3:     s = ''.join([char for char in s if char not in c])
+- 4:     return (s, s[::-1] == s)
++ 4:     return (s, s[:] == s)
+--------------------------------------------------------------------------------
+[0.00677 s] survived
+[*] Mutation score [0.10660 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

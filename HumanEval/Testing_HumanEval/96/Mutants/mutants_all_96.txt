@@ -1,0 +1,79 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/96/script_NDS_96.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/96/Copilot/test_96_cp_few_shot.py
+[*] 0 tests passed:
+   - test_96_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_96: 
+--------------------------------------------------------------------------------
+   3:     primes = []
+   4:     for i in range(2, n):
+   5:         is_prime = True
+   6:         for j in range(2, i):
+-  7:             if i % j == 0:
++  7:             if i * j == 0:
+   8:                 is_prime = False
+   9:                 break
+  10:         if is_prime:
+  11:             primes.append(i)
+--------------------------------------------------------------------------------
+[0.00780 s] survived
+   - [#   2] BCR script_NDS_96: 
+--------------------------------------------------------------------------------
+   5:         is_prime = True
+   6:         for j in range(2, i):
+   7:             if i % j == 0:
+   8:                 is_prime = False
+-  9:                 break
++  9:                 continue
+  10:         if is_prime:
+  11:             primes.append(i)
+  12:     return primes
+--------------------------------------------------------------------------------
+[0.00714 s] survived
+   - [#   3] COI script_NDS_96: 
+--------------------------------------------------------------------------------
+   3:     primes = []
+   4:     for i in range(2, n):
+   5:         is_prime = True
+   6:         for j in range(2, i):
+-  7:             if i % j == 0:
++  7:             if not (i % j == 0):
+   8:                 is_prime = False
+   9:                 break
+  10:         if is_prime:
+  11:             primes.append(i)
+--------------------------------------------------------------------------------
+[0.00535 s] survived
+   - [#   4] COI script_NDS_96: 
+--------------------------------------------------------------------------------
+   6:         for j in range(2, i):
+   7:             if i % j == 0:
+   8:                 is_prime = False
+   9:                 break
+- 10:         if is_prime:
++ 10:         if not is_prime:
+  11:             primes.append(i)
+  12:     return primes
+--------------------------------------------------------------------------------
+[0.00710 s] survived
+   - [#   5] ROR script_NDS_96: 
+--------------------------------------------------------------------------------
+   3:     primes = []
+   4:     for i in range(2, n):
+   5:         is_prime = True
+   6:         for j in range(2, i):
+-  7:             if i % j == 0:
++  7:             if i % j != 0:
+   8:                 is_prime = False
+   9:                 break
+  10:         if is_prime:
+  11:             primes.append(i)
+--------------------------------------------------------------------------------
+[0.00520 s] survived
+[*] Mutation score [0.14628 s]: 0.0%
+   - all: 5
+   - killed: 0 (0.0%)
+   - survived: 5 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

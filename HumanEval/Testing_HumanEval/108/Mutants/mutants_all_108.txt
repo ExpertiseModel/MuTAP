@@ -1,0 +1,208 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/108/script_NDS_108.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/108/Copilot/test_108_cp_few_shot.py
+[*] 0 tests passed:
+   - test_108_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD script_NDS_108: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = (1 * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00584 s] survived
+   - [#   2] AOD script_NDS_108: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) * n, 1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00590 s] survived
+   - [#   3] AOR script_NDS_108: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((+1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00780 s] survived
+   - [#   4] AOR script_NDS_108: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) / n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00608 s] survived
+   - [#   5] AOR script_NDS_108: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) // n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00597 s] survived
+   - [#   6] AOR script_NDS_108: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) ** n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00565 s] survived
+   - [#   7] AOR script_NDS_108: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+   5:         if n < 0:
+-  6:             (n, neg) = ((-1) * n, -1)
++  6:             (n, neg) = ((-1) * n, +1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00718 s] survived
+   - [#   8] AOR script_NDS_108: 
+--------------------------------------------------------------------------------
+   4:         neg = 1
+   5:         if n < 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+-  8:         n[0] = n[0] * neg
++  8:         n[0] = n[0] / neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00778 s] survived
+   - [#   9] AOR script_NDS_108: 
+--------------------------------------------------------------------------------
+   4:         neg = 1
+   5:         if n < 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+-  8:         n[0] = n[0] * neg
++  8:         n[0] = n[0] // neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00674 s] survived
+   - [#  10] AOR script_NDS_108: 
+--------------------------------------------------------------------------------
+   4:         neg = 1
+   5:         if n < 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+-  8:         n[0] = n[0] * neg
++  8:         n[0] = n[0] ** neg
+   9:         return sum(n)
+  10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00835 s] survived
+   - [#  11] COI script_NDS_108: 
+--------------------------------------------------------------------------------
+   1: def count_nums(arr):
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+-  5:         if n < 0:
++  5:         if not (n < 0):
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+--------------------------------------------------------------------------------
+[0.00708 s] survived
+   - [#  12] ROR script_NDS_108: 
+--------------------------------------------------------------------------------
+   1: def count_nums(arr):
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+-  5:         if n < 0:
++  5:         if n > 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+--------------------------------------------------------------------------------
+[0.00689 s] survived
+   - [#  13] ROR script_NDS_108: 
+--------------------------------------------------------------------------------
+   1: def count_nums(arr):
+   2:     
+   3:     def digits_sum(n):
+   4:         neg = 1
+-  5:         if n < 0:
++  5:         if n <= 0:
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+--------------------------------------------------------------------------------
+[0.00669 s] survived
+   - [#  14] ROR script_NDS_108: 
+--------------------------------------------------------------------------------
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+- 10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
++ 10:     return len(list(filter((lambda x: (x < 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00624 s] survived
+   - [#  15] ROR script_NDS_108: 
+--------------------------------------------------------------------------------
+   6:             (n, neg) = ((-1) * n, -1)
+   7:         n = [int(i) for i in str(n)]
+   8:         n[0] = n[0] * neg
+   9:         return sum(n)
+- 10:     return len(list(filter((lambda x: (x > 0)), [digits_sum(i) for i in arr])))
++ 10:     return len(list(filter((lambda x: (x >= 0)), [digits_sum(i) for i in arr])))
+--------------------------------------------------------------------------------
+[0.00578 s] survived
+[*] Mutation score [0.43955 s]: 0.0%
+   - all: 15
+   - killed: 0 (0.0%)
+   - survived: 15 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

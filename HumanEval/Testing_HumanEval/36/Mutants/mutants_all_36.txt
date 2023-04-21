@@ -1,0 +1,118 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/36/script_NDS_36.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/36/Copilot/test_36_cp_few_shot.py
+[*] 0 tests passed:
+   - test_36_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_NDS_36: 
+--------------------------------------------------------------------------------
+   1: def fizz_buzz(n: int):
+   2:     
+   3:     ns = []
+   4:     for i in range(n):
+-  5:         if (i % 11 == 0 or i % 13 == 0):
++  5:         if (i * 11 == 0 or i % 13 == 0):
+   6:             ns.append(i)
+   7:     s = ''.join(list(map(str, ns)))
+   8:     ans = 0
+   9:     for c in s:
+--------------------------------------------------------------------------------
+[0.00581 s] survived
+   - [#   2] AOR script_NDS_36: 
+--------------------------------------------------------------------------------
+   1: def fizz_buzz(n: int):
+   2:     
+   3:     ns = []
+   4:     for i in range(n):
+-  5:         if (i % 11 == 0 or i % 13 == 0):
++  5:         if (i % 11 == 0 or i * 13 == 0):
+   6:             ns.append(i)
+   7:     s = ''.join(list(map(str, ns)))
+   8:     ans = 0
+   9:     for c in s:
+--------------------------------------------------------------------------------
+[0.00582 s] survived
+   - [#   3] ASR script_NDS_36: 
+--------------------------------------------------------------------------------
+   6:             ns.append(i)
+   7:     s = ''.join(list(map(str, ns)))
+   8:     ans = 0
+   9:     for c in s:
+- 10:         ans += c == '7'
++ 10:         ans -= c == '7'
+  11:     return ans
+--------------------------------------------------------------------------------
+[0.00482 s] survived
+   - [#   4] COI script_NDS_36: 
+--------------------------------------------------------------------------------
+   1: def fizz_buzz(n: int):
+   2:     
+   3:     ns = []
+   4:     for i in range(n):
+-  5:         if (i % 11 == 0 or i % 13 == 0):
++  5:         if not ((i % 11 == 0 or i % 13 == 0)):
+   6:             ns.append(i)
+   7:     s = ''.join(list(map(str, ns)))
+   8:     ans = 0
+   9:     for c in s:
+--------------------------------------------------------------------------------
+[0.00648 s] survived
+   - [#   5] LCR script_NDS_36: 
+--------------------------------------------------------------------------------
+   1: def fizz_buzz(n: int):
+   2:     
+   3:     ns = []
+   4:     for i in range(n):
+-  5:         if (i % 11 == 0 or i % 13 == 0):
++  5:         if (i % 11 == 0 and i % 13 == 0):
+   6:             ns.append(i)
+   7:     s = ''.join(list(map(str, ns)))
+   8:     ans = 0
+   9:     for c in s:
+--------------------------------------------------------------------------------
+[0.00576 s] survived
+   - [#   6] ROR script_NDS_36: 
+--------------------------------------------------------------------------------
+   1: def fizz_buzz(n: int):
+   2:     
+   3:     ns = []
+   4:     for i in range(n):
+-  5:         if (i % 11 == 0 or i % 13 == 0):
++  5:         if (i % 11 != 0 or i % 13 == 0):
+   6:             ns.append(i)
+   7:     s = ''.join(list(map(str, ns)))
+   8:     ans = 0
+   9:     for c in s:
+--------------------------------------------------------------------------------
+[0.00519 s] survived
+   - [#   7] ROR script_NDS_36: 
+--------------------------------------------------------------------------------
+   1: def fizz_buzz(n: int):
+   2:     
+   3:     ns = []
+   4:     for i in range(n):
+-  5:         if (i % 11 == 0 or i % 13 == 0):
++  5:         if (i % 11 == 0 or i % 13 != 0):
+   6:             ns.append(i)
+   7:     s = ''.join(list(map(str, ns)))
+   8:     ans = 0
+   9:     for c in s:
+--------------------------------------------------------------------------------
+[0.00672 s] survived
+   - [#   8] ROR script_NDS_36: 
+--------------------------------------------------------------------------------
+   6:             ns.append(i)
+   7:     s = ''.join(list(map(str, ns)))
+   8:     ans = 0
+   9:     for c in s:
+- 10:         ans += c == '7'
++ 10:         ans += c != '7'
+  11:     return ans
+--------------------------------------------------------------------------------
+[0.00544 s] survived
+[*] Mutation score [0.22358 s]: 0.0%
+   - all: 8
+   - killed: 0 (0.0%)
+   - survived: 8 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)
