@@ -6,7 +6,7 @@ This is a replication package for the article
     
 The paper aims to encode the expertise of developers, learned from different source of information, into embedding vectors.<br />
 These vectors are learned based on doc2vec model that is trained on three different sources of information: repository meta data, issue resolving history and API calls.<br />
-![](https://github.com/ExpertiseModel/EmbeddingVectors/blob/main/detailed_diagram.jpg)
+![](https://github.com/ExpertiseModel/MuTAP/blob/master/diagram_mutant.png)
 
 
 We name these models: dev2vec:repos, dev2vec:Issues and dev2vec:APIs <br />
