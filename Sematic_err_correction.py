@@ -1,7 +1,6 @@
 import os
 import subprocess
-
-
+import sys
 
 def check_test_oracle_sematic(function_to_correct):
     if not os.path.exists(os.path.join(os.getcwd(), "temp_dir")):
@@ -128,7 +127,7 @@ def check_test_oracle_sematic(function_to_correct):
 
 
 def apply_semantix_fix (DATASET, SCRIPT, script_string, output_string, csv_name):
-    if DATASET == "StudentEval":
+    if DATASET == "Refactory":
         CODE_DIR = os.path.join(
                 os.getcwd(),
                 DATASET,
@@ -172,48 +171,56 @@ def apply_semantix_fix (DATASET, SCRIPT, script_string, output_string, csv_name)
     return ("done")
 
 
-
-#for 26, 28, 37, 40, 44, 48, 101, 120, 121, 136, 163
-#apply_semantix_fix("HumanEval",str(142), "T_O_NDS_synxfixed_", "T_O_NDS_semticfixed_", "normal_semantic_fix.csv")
-#apply_semantix_fix("StudentEval","q"+str(4), "T_O_NDS_synxfixed_", "T_O_NDS_semticfixed_", "normal_semantic_fix.csv")
-
-#apply_semantix_fix("HumanEval",str(163), "T_O_FS_synxfixed_", "T_O_FS_semticfixed_", "fewshot_semantic_fix.csv")
-
-# DATASET = "HumanEval"
-# SCRIPT = str(163)
-# script_string = "T_O_NDS_Mut_all_"
-# output_string = "T_O_NDS_Mut_all_semticfixed_"
-# csv_name = "normal_mut_all_semantic_fix.csv"
-# CODE_DIR = os.path.join(
-#                 os.getcwd(),
-#                 DATASET,
-#                 "Testing_" + DATASET, 
-#                 "",
-#             )
     
-# script_name = script_string + SCRIPT + ".py"
-# input_path = os.path.join(CODE_DIR,  SCRIPT, "Codex", script_name)
+def main():
+    arguments = sys.argv
+    if len(arguments) != 6:
+        raise SystemExit('6 inputs are required: semantic_err_correction.py [dataset] [task_num] [input prefix name] [output prefix name] [csv report filename (.csv)]')
+    else:
+        DATASET = arguments[1]
+        task_num = arguments[2]
+        input_string = arguments[3]
+        output_string = arguments[4]
+        semantic_report = arguments[5]
 
-# if os.path.exists(input_path):
-#     apply_semantix_fix("HumanEval",SCRIPT, script_string, output_string, csv_name)
-    
 
+        
+        if os.path.splitext(semantic_report)[1] == ".csv":
+            if DATASET == "HumanEval":
+                CODE_DIR = os.path.join(
+                os.getcwd(),
+                DATASET,
+                "Testing_" + DATASET, 
+                "",
+                )
+                script_name = input_string + task_num + ".py"
+                input_path = os.path.join(CODE_DIR,  task_num, "Codex", script_name)  
+                if os.path.exists(input_path):
+                    apply_semantix_fix(DATASET,task_num, input_string, output_string, semantic_report)
 
-DATASET = "StudentEval"
-SCRIPT = "q"+str(5)
-script_string = "T_O_FS_Mut_all_"
-output_string = "T_O_FS_Mut_all_semticfixed_"
-csv_name = "st_fewshot_mut_all_semantic_fix.csv"
-CODE_DIR = os.path.join(
+            elif DATASET == "Refactory":
+                CODE_DIR = os.path.join(
                 os.getcwd(),
                 DATASET,
                 "Reference_Scripts", "Tests", 
                 "",
-            )
-    
-script_name = script_string + SCRIPT + ".py"
-input_path = os.path.join(CODE_DIR,  SCRIPT, "Codex", script_name)
+                )
+                SCRIPT_num = "q"+str(task_num)
+                script_name = input_string + SCRIPT_num + ".py"
+                input_path = os.path.join(CODE_DIR,  SCRIPT_num, "Codex", script_name)  
+                if os.path.exists(input_path):
+                    apply_semantix_fix(DATASET, SCRIPT_num, input_string, output_string, semantic_report)
 
-if os.path.exists(input_path):
-    apply_semantix_fix(DATASET,SCRIPT, script_string, output_string, csv_name)
+            else:
+                raise SystemExit("Error : Dataset name is not valid")
+        else:
+            raise SystemExit("Error : the report file should be a csv")
+
+if __name__ == '__main__':
+    main()
+
+
+
+
+
     

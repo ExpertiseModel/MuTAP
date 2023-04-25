@@ -1,20 +1,24 @@
 import os
 import subprocess, time
+import sys
 
-def Generate_Mutants():
-    for num in range(1, 6):
-       # DATASET = "HumanEval"
-        #SCRIPT = str(num)
+def Generate_Mutants(DATASET,num,input_string):
+    if DATASET == "HumanEval":
+        SCRIPT = str(num)
 
-        #CODE_DIR = os.path.join(
-            #     os.getcwd(),
-            #     DATASET,
-            #     "Testing_" + DATASET,
-            #     SCRIPT,
-            #     "",
-            # )
+        CODE_DIR = os.path.join(
+                os.getcwd(),
+                DATASET,
+                "Testing_" + DATASET,
+                SCRIPT,
+                "",
+            )
+        SCRIPT_NAME = input_string + SCRIPT + ".py"
+        TEST_NAME = "test_" + SCRIPT + "_cp_few_shot.py"
+        target_path = os.path.join(CODE_DIR, SCRIPT_NAME)
+        test_path = os.path.join(CODE_DIR, 'Copilot', TEST_NAME)
 
-        DATASET = "StudentEval"
+    if DATASET == "Refactory":
         SCRIPT = "q"+str(num)
 
         CODE_DIR = os.path.join(
@@ -24,15 +28,11 @@ def Generate_Mutants():
                 SCRIPT,
                 "",
             )
-        
-        #SCRIPT_NAME = "script_NDS_" + SCRIPT + ".py"
         SCRIPT_NAME = "script_" + SCRIPT + ".py"
-        #TEST_NAME = "test_" + SCRIPT + "_cp_few_shot.py"
         TEST_NAME = "script_" + SCRIPT + "_cp_few_shot.py"
-
         target_path = os.path.join(CODE_DIR, SCRIPT_NAME)
-        #test_path = os.path.join(CODE_DIR, 'Copilot', TEST_NAME)
         test_path = os.path.join(CODE_DIR, TEST_NAME)
+
 
         os.makedirs(os.path.join(CODE_DIR, "Mutants"), exist_ok=True)
         
@@ -52,20 +52,21 @@ def Generate_Mutants():
 
 
 
-def Seperate_Mutants():
-    for num in range(1, 5):
-        # DATASET = "HumanEval"
-        # SCRIPT = str(num)
+def Seperate_Mutants(DATASET, num, input_string, csv_file_mut_type):
+    if DATASET == "HumanEval":
+    
+        SCRIPT = str(num)
 
-        # CODE_DIR = os.path.join(
-        #         os.getcwd(),
-        #         DATASET,
-        #         "Testing_" + DATASET,
-        #         "",
-        #     )
+        CODE_DIR = os.path.join(
+                os.getcwd(),
+                DATASET,
+                "Testing_" + DATASET,
+                "",
+            )
         
-        # SCRIPT_NAME = "script_NDS_" + SCRIPT + ".py"
-        DATASET = "StudentEval"
+        SCRIPT_NAME = input_string + SCRIPT + ".py"
+
+    if DATASET == "Refactory":
         SCRIPT = "q"+str(num)
 
         CODE_DIR = os.path.join(
@@ -75,51 +76,71 @@ def Seperate_Mutants():
                 "",
             )
         
-        SCRIPT_NAME = "script_" + SCRIPT + ".py"
-        MUTANT_NAME = "mutants_all_" + SCRIPT + ".txt"
+        SCRIPT_NAME = input_string + SCRIPT + ".py"
 
-        SCRIPT_PATH = os.path.join(CODE_DIR, SCRIPT, SCRIPT_NAME)
-        MUTANT_PATH = os.path.join(CODE_DIR, SCRIPT, "Mutants")
+    MUTANT_NAME = "mutants_all_" + SCRIPT + ".txt"
 
-        csv_path = os.path.join(CODE_DIR, "st_mutant_type.csv")
+    SCRIPT_PATH = os.path.join(CODE_DIR, SCRIPT, SCRIPT_NAME)
+    MUTANT_PATH = os.path.join(CODE_DIR, SCRIPT, "Mutants")
 
-        i=0
-        try:
-            with open( SCRIPT_PATH ,'r',encoding='utf-8') as file:
-                org_data = file.readlines()
-                file.close()
-            with open(os.path.join(MUTANT_PATH, MUTANT_NAME), 'r') as f:
-                for ln in f:
-                    ln = ln.lstrip(' ')
-                    if ln.startswith("- [#"):
-                        ln_mut = ln.split()
-                        mut_type = ln_mut[3]
-                    if ln.startswith("+"):
-                        ln_partition = ln.split(":")
-                        ln_num = (ln_partition[0][1:]).lstrip(' ')
-                        ln_content= ln[6:]
-                        #print(org_data)
-                        temp = org_data[:]
-                        temp[int(ln_num) -1 ] = ln_content
-                        #print(org_data)
-                        name = "mutant_" + SCRIPT +"_" + str(i)+".py"
-                        SUB_MU_NAME = os.path.join(MUTANT_PATH, name)
-                        mutant = open(SUB_MU_NAME, 'w')
-                        for item in temp:
-                            mutant.write(item)
-                        mutant.close()
+    csv_path = os.path.join(CODE_DIR, csv_file_mut_type)
 
-                        with open(csv_path,'a') as csv_file:
-                            csv_file.write(name + "," + str(mut_type))
-                            csv_file.write("\n")
-                            csv_file.close()
-                        i+=1
-                        print("generate mutant: " + name)
-        except Exception as e:
-            print("file not found: " + e)
+    i=0
+    try:
+        with open( SCRIPT_PATH ,'r',encoding='utf-8') as file:
+            org_data = file.readlines()
+            file.close()
+        with open(os.path.join(MUTANT_PATH, MUTANT_NAME), 'r') as f:
+            for ln in f:
+                ln = ln.lstrip(' ')
+                if ln.startswith("- [#"):
+                    ln_mut = ln.split()
+                    mut_type = ln_mut[3]
+                if ln.startswith("+"):
+                    ln_partition = ln.split(":")
+                    ln_num = (ln_partition[0][1:]).lstrip(' ')
+                    ln_content= ln[6:]
+                    #print(org_data)
+                    temp = org_data[:]
+                    temp[int(ln_num) -1 ] = ln_content
+                    #print(org_data)
+                    name = "mutant_" + SCRIPT +"_" + str(i)+".py"
+                    SUB_MU_NAME = os.path.join(MUTANT_PATH, name)
+                    mutant = open(SUB_MU_NAME, 'w')
+                    for item in temp:
+                        mutant.write(item)
+                    mutant.close()
+
+                    with open(csv_path,'a') as csv_file:
+                        csv_file.write(name + "," + str(mut_type))
+                        csv_file.write("\n")
+                        csv_file.close()
+                    i+=1
+                    print("generate mutant: " + name)
+    except Exception as e:
+        print("file not found: " + e)
 
 
 
-if __name__ == "__main__":
-   # Generate_Mutants()
-    Seperate_Mutants()
+
+
+
+def main():
+    arguments = sys.argv
+    if len(arguments) != 5:
+        raise SystemExit('5 inputs are required: Mutants_generation.py [dataset] [task_num] [input prefix name] [csv report filename (.csv)]')
+    else:
+        DATASET = arguments[1]
+        task_num = arguments[2]
+        input_string = arguments[3]
+        mut_type_report = arguments[4]
+
+        if os.path.splitext(mut_type_report)[1] == ".csv":
+            Generate_Mutants(DATASET, task_num,input_string)
+            Seperate_Mutants(DATASET,task_num, input_string, mut_type_report)
+
+        else:
+            raise SystemExit("Error : the report file should be a csv")
+
+if __name__ == '__main__':
+    main()

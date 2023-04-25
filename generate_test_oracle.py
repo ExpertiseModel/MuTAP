@@ -3,6 +3,7 @@ import re
 import openai 
 import os
 #from Sematic_err_correction import check_test_oracle_sematic
+import sys
 
 openai.api_key = "My_key"
 #a function to generate the intial prompt to call the model
@@ -257,7 +258,7 @@ def check_test_oracle_synx(function_to_correct, rep):
 
 
 def apply_syntax_fix (DATASET, SCRIPT, name_string, output_string, csv_name):
-    if DATASET == "StudentEval":
+    if DATASET == "Refactory":
         CODE_DIR = os.path.join(
                 os.getcwd(),
                 DATASET,
@@ -300,23 +301,37 @@ def apply_syntax_fix (DATASET, SCRIPT, name_string, output_string, csv_name):
 
     return("done")
 
-#141
-#for till 100
-#generate_test_oracle_intial("HumanEval", str(154), "script_NDS_", "test_oracle_NDS_")
 
-#5, 14, 26, 28, 47, 53, 55, 57, 68, 85, 88, 89, 90, 95, 97, 101, 114, 117, 128, 135
-#generate_test_oracle_intial("normal","HumanEval", str(163), "script_NDS_", "test_oracle_FS_")
-#for till
-#apply_syntax_fix("HumanEval", str(85), "test_oracle_NDS_", "T_O_NDS_synxfixed_", "normal_synx_fix.csv")
+def main():
+    arguments = sys.argv
+    if len(arguments) != 7:
+        raise SystemExit('7 inputs are required: generate_test_oracle.py [prompt type] [dataset] [task_num] [script name] [output prefix name] [csv report filename (.csv)]')
+    else:
+        prompt_type = arguments[1]
+        DATASET= arguments[2]
+        task_num = arguments[3]
+        script_name = arguments[4]
+        initial_output_name = arguments[5]
+        syntax_report = arguments[6]
+        
+        if os.path.splitext(syntax_report)[1] == ".csv":
+            if DATASET == "HumanEval":
+                generate_test_oracle_intial(prompt_type, DATASET, task_num, script_name, "test_oracle_NDS_")
+                apply_syntax_fix(DATASET, task_num, "test_oracle_NDS_", initial_output_name, syntax_report)
+            
 
-#apply_syntax_fix("HumanEval", str(163), "test_oracle_FS_", "T_O_FS_synxfixed_", "fewshot_synx_fix.csv")
+            elif DATASET == "Refactory":
+                SCRIPT_num = "q"+str(task_num)
+                generate_test_oracle_student(prompt_type, DATASET, SCRIPT_num, script_name, "test_oracle_NDS_")
+                apply_syntax_fix(DATASET, SCRIPT_num, "test_oracle_NDS_", initial_output_name, syntax_report)
 
-#generate_test_oracle_student("StudentEval", "q"+str(1), "script_", "test_oracle_NDS_")
+            else:
+                raise SystemExit("Error : Dataset name is not valid")
+        else:
+            raise SystemExit("Error : the report file should be a csv")
 
-#generate_test_oracle_student("fewshot","StudentEval", "q"+str(5), "script_", "test_oracle_FS_")
-#apply_syntax_fix("StudentEval", "q"+str(5), "test_oracle_NDS_", "T_O_NDS_synxfixed_", "normal_synx_fix.csv")
-
-#92
+if __name__ == '__main__':
+    main()
 
 
 

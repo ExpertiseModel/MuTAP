@@ -1,7 +1,7 @@
 import os
 import subprocess
 import pandas as pd
-
+import sys
 
 
 def paths_list(dir_path):
@@ -18,7 +18,7 @@ def MS_generator (DATASET, SCRIPT, script_string, csv_name):
 
     result_dt = pd.DataFrame(columns = ["name" ,"MS","lst_survived","n_killed","n_all_mut","is_problematic","lst_problematic","lst_timeout","lst_killed"])
     
-    if DATASET == "StudentEval":
+    if DATASET == "Refactory":
         CODE_DIR = os.path.join(
                 os.getcwd(),
                 DATASET,
@@ -201,3 +201,21 @@ for i in range(1, 164):
 #         MS_generator(DATASET, SCRIPT, script_string, csv_name)
 
 
+def main():
+    arguments = sys.argv
+    if len(arguments) != 5:
+        raise SystemExit('5 inputs are required: Mutation_Score.py [dataset] [task_num] [testfile prefix name] [csv report filename (.csv)]')
+    else:
+        DATASET = arguments[1]
+        task_num = arguments[2]
+        testfile_string = arguments[3]
+        MS_report = arguments[5]
+
+    if os.path.splitext(MS_report)[1] == ".csv":
+          MS_generator(DATASET, task_num, testfile_string, MS_report)
+
+    else:
+         raise SystemExit("Error : the report file should be a csv")
+
+if __name__ == '__main__':
+    main()
