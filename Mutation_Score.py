@@ -150,57 +150,6 @@ def MS_generator (DATASET, SCRIPT, script_string, csv_name):
 
 
 
-
-#for i in range(161, 164):
-    # MS_generator("HumanEval", str(i), "T_O_FS_semticfixed_", "fewshot_mutant_score.csv")
-
-#MS_generator("StudentEval", "q"+str(5), "T_O_NDS_semticfixed_", "st_normal_mutant_score.csv")
-
-
-DATASET = "HumanEval"
-script_string_mut = "normal_baseline_fixed_"
-script_string = "T_O_NDS_semticfixed_"
-csv_name = "normal_bsl_mut_type.csv"
-
-CODE_DIR = os.path.join(
-                os.getcwd(),
-                DATASET,
-                "Testing_" + DATASET, 
-                "",
-            )
-for i in range(1, 164):   
-    SCRIPT = str(i)
-    script_name = script_string_mut + SCRIPT + ".py"
-    input_path = os.path.join(CODE_DIR,  SCRIPT, "Codex", script_name)
-    if os.path.exists(input_path):
-        print("mut all")
-        MS_generator("HumanEval", SCRIPT, script_string_mut, csv_name)
-    #else:
-        #MS_generator("HumanEval", SCRIPT, script_string, csv_name)
-
-
-# DATASET = "StudentEval"
-# script_string_mut = "T_O_FS_Mut_all_semticfixed_"
-# script_string = "T_O_FS_semticfixed_"
-# csv_name = "st_fewshot_mut_all_mutant_score.csv"
-
-# CODE_DIR = os.path.join(
-#                 os.getcwd(),
-#                 DATASET,
-#                 "Reference_Scripts", "Tests", 
-#                 "",
-#             )
-# for i in range(3, 4):   
-#     SCRIPT = "q"+str(i)
-#     script_name = script_string_mut + SCRIPT + ".py"
-#     input_path = os.path.join(CODE_DIR,  SCRIPT, "Codex", script_name)
-#     if os.path.exists(input_path):
-#         print("mut all")
-#         MS_generator(DATASET, SCRIPT, script_string_mut, csv_name)
-#     else:
-#         MS_generator(DATASET, SCRIPT, script_string, csv_name)
-
-
 def main():
     arguments = sys.argv
     if len(arguments) != 5:

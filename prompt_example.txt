@@ -38,14 +38,14 @@ def test():
 assert
 ```"""
 final_prompt = f""" {inital_prompt}
-The following test cases cannot detect the exception in
+The following test cases cannot detect the fault in
 ```python 
 {mutant_example}
 
 {example_test} 
 ```
 
-generate a new test cases to test the exception in:
+generate a new test cases to test the fault in:
 ```python 
 {mutant_example}
 

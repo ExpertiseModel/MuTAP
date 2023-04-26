@@ -139,13 +139,9 @@ def apply_semantix_fix (DATASET, SCRIPT, script_string, output_string, csv_name)
 
 
 
-#for 26, 28, 37, 40, 44, 48, 101, 120, 121, 136, 163
-#apply_semantix_fix("HumanEval",str(142), "T_O_NDS_synxfixed_", "T_O_NDS_semticfixed_", "normal_semantic_fix.csv")
-#apply_semantix_fix("StudentEval","q"+str(4), "T_O_NDS_synxfixed_", "T_O_NDS_semticfixed_", "normal_semantic_fix.csv")
 
-#apply_semantix_fix("HumanEval",str(163), "T_O_FS_synxfixed_", "T_O_FS_semticfixed_", "fewshot_semantic_fix.csv")
 
-for i in range(100, 164):
+for i in range(1, 164):
    
     DATASET = "HumanEval"
     SCRIPT = str(i)
