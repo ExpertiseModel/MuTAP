@@ -106,7 +106,7 @@ python greedy_test_generator.py "HumanEval" "greedy_FS_results.scv"
 The final test case that `MuTAP` generates for this example `PUT` is as follows:
 ```python
 def test():
-    assert any_int(3, -2, 1) == True
+    assert any_int(3, 2, 5) == True
     assert any_int(-3, -2, 1) == True
     assert any_int(3, 2, 2) == False
     assert any_int(3, 2, 1) == True
