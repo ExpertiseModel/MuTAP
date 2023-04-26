@@ -84,13 +84,13 @@ python augmented_prompt.py "fewshot" "HumanEval" 92 "T_O_FS_semticfixed_" test_o
 ```
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## Citation
-<a href="https://arxiv.org/abs/2207.05132"><strong>Dev2vec: Representing Domain Expertise of Developers in an Embedding Space</strong></a>
+<a href=""><strong>Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing</strong></a>
 ```
-@article{dakhel2022dev2vec,
-  title={Dev2vec: Representing Domain Expertise of Developers in an Embedding Space},
-  author={Dakhel, Arghavan Moradi and Desmarais, Michel C and Khomh, Foutse},
-  journal={arXiv preprint arXiv:2207.05132},
-  year={2022}
+@article{,
+  title={Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing},
+  author={},
+  journal={},
+  year={}
 }
 ```
 
