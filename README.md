@@ -84,13 +84,13 @@ python augmented_prompt.py "fewshot" "HumanEval" 92 "T_O_FS_semticfixed_" test_o
 ```
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## Citation
-<a href=""><strong>Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing</strong></a>
+<strong>Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing</strong>
 ```
 @article{,
   title={Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing},
-  author={},
-  journal={},
-  year={}
+  author={anonymous},
+  journal={anonymous},
+  year={2023}
 }
 ```
 
