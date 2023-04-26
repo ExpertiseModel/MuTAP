@@ -102,6 +102,17 @@ python augmented_prompt.py "fewshot" "HumanEval" 92 "T_O_FS_semticfixed_" "test_
 python Merge_all_mut.py  "HumanEval" 92 "T_O_FS_semticfixed_" "test_oracle_FS_Mut_" "T_O_FS_Mut_all_"
 python greedy_test_generator.py "HumanEval" "greedy_FS_results.scv"
 ```
+
+The final test case that `MuTAP` generates for this example `PUT` is as follows:
+```python
+def test():
+    assert any_int(3, -2, 1) == True
+    assert any_int(-3, -2, 1) == True
+    assert any_int(3, 2, 2) == False
+    assert any_int(3, 2, 1) == True
+    assert any_int(3.6, -2.2, 2) == False
+    
+  ```
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## Citation
 <strong>Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing</strong>
