@@ -76,9 +76,11 @@ def any_int(x, y, z):
           return False
 ```
 ```python
-python generate_test_oracle.py "fewshot" "HumanEval" 92 "script_NDS_" "T_O_NDS_synxfixed_" "fewshot_synx_fix.csv"
-python semantic_err_correction.py "HumanEval" 92 [test name] "T_O_NDS_synxfixed_" "fewshot_semantic_fix.csv"
-
+python generate_test_oracle.py "fewshot" "HumanEval" 92 "script_NDS_" "T_O_FS_synxfixed_" "fewshot_synx_fix.csv"
+python semantic_err_correction.py "HumanEval" 92 "T_O_FS_synxfixed_" "T_O_FS_semticfixed_" "fewshot_semantic_fix.csv"
+python Mutants_generation.py "HumanEval" 92 "script_NDS_" "mutant_type.csv"
+python Mutation_Score.py "HumanEval" 92  "T_O_FS_semticfixed_" "fewshot_mutant_score.csv"
+python augmented_prompt.py "fewshot" "HumanEval" 92 "T_O_FS_semticfixed_" test_oracle_FS_Mut_" "fewshot_mutant_score.csv"
 ```
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## Citation
