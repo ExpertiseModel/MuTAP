@@ -1,7 +1,7 @@
 # MuTAP
 
 `MuTAP` is a prompt-based learning technique to generate effective test cases with Large Language Models (LLMs). This is an implementation of a method described in 
-'<strong>Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing</strong>'. <br />
+'<strong>Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing</strong>' that has been submitted to ICSME 2023. <br />
 
 ![](https://github.com/ExpertiseModel/MuTAP/blob/master/diagram_mutant.png)
 
@@ -17,7 +17,7 @@ $ python generate_test_oracle.py [prompt type] [dataset] [task_num] [script name
 - `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
 - `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
 - `[script name]` is the name of PUT.
-- `[output prefix name]' is the prefix to name the output or the test cases.
+- `[output prefix name]` is the prefix to name the output or the test cases.
 - `[csv report filename (.csv)]` is a report on different number of attempts on LLMC and fixing its syntax erros. It is up to 10 attemps. 
 
 ## 2. Functional repair
@@ -28,7 +28,7 @@ $ python semantic_err_correction.py [dataset] [task_num] [test name] [output pre
 - `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
 - `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
 - `[test name]` is the name of Initial Unit Test (IUT), generated in step 1.
-- `[output prefix name]' is the prefix to name the output or the test cases.
+- `[output prefix name]` is the prefix to name the output or the test cases.
 - `[csv report filename (.csv)]` is a report on a summary of functional repair (number of assertions with functional issue, number of fixed, etc.) 
 
 ## 3. Generate mutants
@@ -38,7 +38,7 @@ $ python Mutants_generation.py [dataset] [task_num] [script name] [csv report fi
 ```
 - `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
 - `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
-- - `[script name]` is the name of PUT.
+- `[script name]` is the name of PUT.
 - `[csv report filename (.csv)]` generates a reports on different types of mutants that it injected into `PUT`.
 
 ## 4. Calculte Mutation Score (MS)
@@ -60,7 +60,7 @@ $ python augmented_prompt.py [prompt type] [dataset] [task_num] [script name] [o
 - `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
 - `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
 - `[script name]` is the name of PUT.
-- `[output prefix name]' is the prefix to name the output or the test cases.
+- `[output prefix name]` is the prefix to name the output or the test cases.
 - `[csv report filename (.csv)]` is the report MS and surviving mutants, generated in step 4.
 
 ## 6. Merge test cases
@@ -72,7 +72,7 @@ python Merge_all_mut.py [dataset] [task_num] [inital test name] [augmented test 
 - `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
 - `[inital test name]` is the name of the files including intial test cases.
 - `[augmented test name]` is the name of the files including test cases after calling augmented prompt on LLMC.
-- `[output name]' is the name of the file including final test cases.
+- `[output name]` is the name of the file including final test cases.
 
 ## 7. Greedy minimazation
 This step tries to minimize the number of assertions while maximizing the MS. `greedy_test_generator.py` runs on all `PUT`
