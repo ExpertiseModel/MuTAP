@@ -52,7 +52,7 @@ $ python Mutation_Score.py [dataset] [task_num] [test name] [csv report filename
 - `[csv report filename (.csv)]` is a report on MS and list of surviving mutants.
 
 ## 5. Prompt augmentation
-The surviving mutant in step 4 indicates the weaknesses of `IUT'. In our prompt-based learning technique, `MuTAP` uses those mutants to imrove the effectivness of the `IUT`.
+The surviving mutant in step 4 indicates the weaknesses of `IUT'. In our prompt-based learning technique, `MuTAP` uses those mutants to imrove the effectivness of the `IUT`. The final output is named Augmented Unit Test (AUT).
 ```
 $ python augmented_prompt.py [prompt type] [dataset] [task_num] [script name] [output prefix name] [csv report filename (.csv)]
 ```
@@ -63,6 +63,24 @@ $ python augmented_prompt.py [prompt type] [dataset] [task_num] [script name] [o
 - `[output prefix name]' is the prefix to name the output or the test cases.
 - `[csv report filename (.csv)]` is the report MS and surviving mutants, generated in step 4.
 
+## 6. Merge test cases
+This step merges `IUT` with the `AUT`.
+```
+python Merge_all_mut.py [dataset] [task_num] [inital test name] [augmented test name] [output name]
+```
+- `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
+- `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
+- `[inital test name]` is the name of the files including intial test cases.
+- `[augmented test name]` is the name of the files including test cases after calling augmented prompt on LLMC.
+- `[output name]' is the name of the file including final test cases.
+
+## 7. Greedy minimazation
+This step tries to minimize the number of assertions while maximizing the MS. `greedy_test_generator.py` runs on all `PUT`
+```
+python greedy_test_generator.py [dataset] [csv report filename (.csv)]
+```
+- `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
+- `[csv report filename (.csv)]' is report file on applying greedy algorithm on all `PUT`s within the dataset.
 ## Example
 Here is an example `PUT` from `HumanEval` dataset. We used `few-shot learning` technique to generate the initial input for this example.
 
@@ -80,7 +98,9 @@ python generate_test_oracle.py "fewshot" "HumanEval" 92 "script_NDS_" "T_O_FS_sy
 python semantic_err_correction.py "HumanEval" 92 "T_O_FS_synxfixed_" "T_O_FS_semticfixed_" "fewshot_semantic_fix.csv"
 python Mutants_generation.py "HumanEval" 92 "script_NDS_" "mutant_type.csv"
 python Mutation_Score.py "HumanEval" 92  "T_O_FS_semticfixed_" "fewshot_mutant_score.csv"
-python augmented_prompt.py "fewshot" "HumanEval" 92 "T_O_FS_semticfixed_" test_oracle_FS_Mut_" "fewshot_mutant_score.csv"
+python augmented_prompt.py "fewshot" "HumanEval" 92 "T_O_FS_semticfixed_" "test_oracle_FS_Mut_" "fewshot_mutant_score.csv"
+python Merge_all_mut.py  "HumanEval" 92 "T_O_FS_semticfixed_" "test_oracle_FS_Mut_" "T_O_FS_Mut_all_"
+python greedy_test_generator.py "HumanEval" "greedy_FS_results.scv"
 ```
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## Citation
