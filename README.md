@@ -20,7 +20,7 @@ $ python generate_test_oracle.py [prompt type] [dataset] [task_num] [script name
 - `[output prefix name]' is the prefix to name the output or the test cases.
 - `[csv report filename (.csv)]` is a report on different number of attempts on LLMC and fixing its syntax erros. It is up to 10 attemps. 
 
-## 2. Functional Repair
+## 2. Functional repair
 `semantic_err_correction.py` repairs the functional errors in assertions.
 ```
 $ python semantic_err_correction.py [dataset] [task_num] [test name] [output prefix name] [csv report filename (.csv)]
@@ -31,25 +31,49 @@ $ python semantic_err_correction.py [dataset] [task_num] [test name] [output pre
 - `[output prefix name]' is the prefix to name the output or the test cases.
 - `[csv report filename (.csv)]` is a report on a summary of functional repair (number of assertions with functional issue, number of fixed, etc.) 
 
-### Run generate mutants:
-
+## 3. Generate mutants
+We use `MutPy` [cite] to generate mutants of a `PUT`.
 ```
-$ python Mutants_generation.py [dataset] [task_num] [input prefix name] [csv report filename (.csv)]
+$ python Mutants_generation.py [dataset] [task_num] [script name] [csv report filename (.csv)]
 ```
+- `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
+- `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
+- - `[script name]` is the name of PUT.
+- `[csv report filename (.csv)]` generates a reports on different types of mutants that it injected into `PUT`.
 
-### calculte mutation score:
-
+## 4. Calculte Mutation Score (MS)
+After generating mutants, `Mutation_Score.py` calculate the MS for `IUT`.
 ```
-$ python Mutation_Score.py [dataset] [task_num] [testfile prefix name] [csv report filename (.csv)]
+$ python Mutation_Score.py [dataset] [task_num] [test name] [csv report filename (.csv)]
 ```
+- `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
+- `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
+- `[test name]` is the name of Initial Unit Test (IUT), generated in step 1.
+- `[csv report filename (.csv)]` is a report on MS and list of surviving mutants.
 
-### prompt augmentation:
-
+## 5. Prompt augmentation
+The surviving mutant in step 4 indicates the weaknesses of `IUT'. In our prompt-based learning technique, `MuTAP` uses those mutants to imrove the effectivness of the `IUT`.
 ```
-$ python augmented_prompt.py [prompt type] [dataset] [task_num] [input prefix name] [output prefix name] [csv report filename (.csv)]
+$ python augmented_prompt.py [prompt type] [dataset] [task_num] [script name] [output prefix name] [csv report filename (.csv)]
 ```
+- `[prompt type]` defines the type of intial prompt. It is `normal` to indicate `zero-shot learning` or `fewshot` to indicate `few-shot learning`.
+- `[dataset]` indicate the database. We have two dataset in our experiment. The first one is `HumanEval` and the second one is `Refactory` that is a benchmark for bug repairing.
+- `[task_num]` is the identifier or task number within the dataset. It is within `[1,163]` for `HumanEval` dataset, and within `[1,5]` for `Refoctory`.
+- `[script name]` is the name of PUT.
+- `[output prefix name]' is the prefix to name the output or the test cases.
+- `[csv report filename (.csv)]` is the report MS and surviving mutants, generated in step 4.
 
-The model that is used to generated embedding vectors for dev2vec:APIs is the pretrained model from the article <a href="https://ieeexplore.ieee.org/abstract/document/9401957?casa_token=G8DjJLSm2sQAAAAA:3h8AEP8d0XLzSgHaVkSal9k7AyQ1pfXt18uuCCeIyiCMEmEKqlkgR1xsaoJj-iJIbGVP-hbeRg"><strong>Representation of Developer Expertise in Open Source Software</strong></a> <br />
+## Example
+Here is an example `PUT` from `HumanEval` dataset. We used `few-shot learning` technique to generate the initial input for this example.
+
+```python
+def any_int(x, y, z): 
+          if isinstance(x,int) and isinstance(y,int) and isinstance(z,int):    
+               if (x+y==z) or (x+z==y) or (y+z==x):           
+                    return True       
+               return False   
+          return False
+```
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## Citation
