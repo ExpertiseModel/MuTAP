@@ -6,6 +6,10 @@ def any_int(x, y, z):
             return True
         return False
     return False
-assert any_int(3, -2, 1) == True
-assert any_int(-3, -2, 1) == True
-assert any_int(3, 2, 2) == False
+
+def test():
+    assert any_int(3, 2, 5) == True
+    assert any_int(-3, -2, 1) == True
+    assert any_int(3, 2, 2) == False
+    assert any_int(3, 2, 1) == True
+    assert any_int(3.6, -2.2, 2) == False

@@ -1,1 +1,0 @@
-["the number of odd elements 2 in the string 2 of the input.", "the number of odd elements 0 in the string 0 of the input.", "the number of odd elements 2 in the string 2 of the input."]

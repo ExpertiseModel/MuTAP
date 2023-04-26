@@ -1,1 +1,0 @@
-triangle_area(10, 10, 10) 

@@ -209,7 +209,7 @@ def main():
         DATASET = arguments[1]
         task_num = arguments[2]
         testfile_string = arguments[3]
-        MS_report = arguments[5]
+        MS_report = arguments[4]
 
     if os.path.splitext(MS_report)[1] == ".csv":
           MS_generator(DATASET, task_num, testfile_string, MS_report)

@@ -1,1 +1,0 @@
-strange_sort_list([]) 

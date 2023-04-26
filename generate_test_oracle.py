@@ -316,8 +316,8 @@ def main():
         
         if os.path.splitext(syntax_report)[1] == ".csv":
             if DATASET == "HumanEval":
-                generate_test_oracle_intial(prompt_type, DATASET, task_num, script_name, "test_oracle_NDS_")
-                apply_syntax_fix(DATASET, task_num, "test_oracle_NDS_", initial_output_name, syntax_report)
+                generate_test_oracle_intial(prompt_type, DATASET, str(task_num), script_name, "test_oracle_NDS_")
+                apply_syntax_fix(DATASET, str(task_num), "test_oracle_NDS_", initial_output_name, syntax_report)
             
 
             elif DATASET == "Refactory":

@@ -1,1 +1,0 @@
-triangle_area(6, 6, 6) 

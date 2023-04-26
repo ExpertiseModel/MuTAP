@@ -1,4 +1,5 @@
 import os
+import sys
 
 
 def paths_list(dir_path):
@@ -34,6 +35,7 @@ def merge_asserts(file_path):
     return test_content
 
 def Mut_all_in_one (DATASET, SCRIPT, code_string, script_string, output_string):
+
     CODE_DIR = os.path.join(
                 os.getcwd(),
                 DATASET,
@@ -80,13 +82,33 @@ def Mut_all_in_one (DATASET, SCRIPT, code_string, script_string, output_string):
     return (OUTPUT_NAME +"\n")
 
 
+def main():
+    arguments = sys.argv
+    if len(arguments) != 6:
+        raise SystemExit('6 inputs are required: Merge_all_mut.py [dataset] [task_num] [inital test name] [augmented test name] [output name]')
+    else:
+        DATASET = arguments[1]
+        task_num = arguments[2]
+        IUT = arguments[3]
+        AUT = arguments[4]
+        output_namr = arguments[5]
+
+        
+        if DATASET == "HumanEval":
+            Mut_all_in_one (DATASET, str(task_num), IUT, AUT, output_namr) 
+
+        elif DATASET == "Refactory":
+            SCRIPT_num = "q"+str(task_num)
+            Mut_all_in_one (DATASET, SCRIPT_num, IUT, AUT, output_namr) 
+
+        else:
+            raise SystemExit("Error : Dataset name is not valid")
+        
+if __name__ == '__main__':
+    main()
 
 
+         
 
-script_string= "test_oracle_NDS_Mut_"
-code_string = "T_O_NDS_semticfixed_"
-output_string = "T_O_NDS_Mut_all_"
-SCRIPT = str(137)
-DATASET = "HumanEval"
 
-Mut_all_in_one (DATASET, SCRIPT, code_string, script_string, output_string)  
+ 

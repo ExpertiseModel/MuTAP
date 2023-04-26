@@ -1,1 +1,0 @@
-move_one_ball([1]) 

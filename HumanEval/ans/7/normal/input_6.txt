@@ -1,1 +1,0 @@
-filter_by_substring(["a", "b", "c"], "c") 

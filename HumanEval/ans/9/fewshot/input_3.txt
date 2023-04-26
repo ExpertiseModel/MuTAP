@@ -1,1 +1,0 @@
-rolling_max([1, 2]) 

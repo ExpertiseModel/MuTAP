@@ -1,1 +1,0 @@
-largest_divisor(18) 

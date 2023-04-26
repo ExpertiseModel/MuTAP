@@ -1,1 +1,0 @@
-digitSum("aA1Aa") 

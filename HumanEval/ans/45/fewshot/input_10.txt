@@ -1,1 +1,0 @@
-triangle_area(15, 11) 

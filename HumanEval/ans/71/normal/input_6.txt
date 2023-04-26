@@ -1,1 +1,0 @@
-triangle_area(4, 4, 4) 

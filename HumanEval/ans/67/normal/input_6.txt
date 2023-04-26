@@ -1,1 +1,0 @@
-fruit_distribution("6 7", 13) 

@@ -1,1 +1,0 @@
-is_simple_power(256, 4) 

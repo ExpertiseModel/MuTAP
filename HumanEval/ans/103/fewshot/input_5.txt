@@ -1,1 +1,0 @@
-rounded_avg(1, 7) 
