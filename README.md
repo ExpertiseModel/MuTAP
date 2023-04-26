@@ -67,6 +67,7 @@ $ python augmented_prompt.py [prompt type] [dataset] [task_num] [script name] [o
 Here is an example `PUT` from `HumanEval` dataset. We used `few-shot learning` technique to generate the initial input for this example.
 
 ```python
+#the PUT92
 def any_int(x, y, z): 
           if isinstance(x,int) and isinstance(y,int) and isinstance(z,int):    
                if (x+y==z) or (x+z==y) or (y+z==x):           
@@ -74,7 +75,11 @@ def any_int(x, y, z):
                return False   
           return False
 ```
+```python
+python generate_test_oracle.py "fewshot" "HumanEval" 92 "script_NDS_" "T_O_NDS_synxfixed_" "fewshot_synx_fix.csv"
+python semantic_err_correction.py "HumanEval" 92 [test name] "T_O_NDS_synxfixed_" "fewshot_semantic_fix.csv"
 
+```
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## Citation
 <a href="https://arxiv.org/abs/2207.05132"><strong>Dev2vec: Representing Domain Expertise of Developers in an Embedding Space</strong></a>
