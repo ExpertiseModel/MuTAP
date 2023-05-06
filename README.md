@@ -1,7 +1,7 @@
 # MuTAP
 
 `MuTAP` is a prompt-based learning technique to generate effective test cases with Large Language Models (LLMs). This is an implementation of a method described in 
-'<strong>Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing</strong>' that has been submitted to ICSME 2023. <br />
+'<strong>Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing</strong>'. <br />
 
 ![](https://github.com/ExpertiseModel/MuTAP/blob/master/diagram_mutant.png)
 
