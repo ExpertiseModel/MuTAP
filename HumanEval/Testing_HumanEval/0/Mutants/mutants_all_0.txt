@@ -1,0 +1,96 @@
+[*] Start mutation process:
+   - targets: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/0/script_0.py
+   - tests: /home/arghavan/Git_Code/codex_test/HumanEval/Testing_HumanEval/0/script_0_cp_few_shot.py
+[*] 0 tests passed:
+   - script_0_cp_few_shot [0.00006 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR script_0: 
+--------------------------------------------------------------------------------
+  11:     '''
+  12:     for (idx, elem) in enumerate(numbers):
+  13:         for (idx2, elem2) in enumerate(numbers):
+  14:             if idx != idx2:
+- 15:                 distance = abs(elem - elem2)
++ 15:                 distance = abs(elem + elem2)
+  16:                 if distance < threshold:
+  17:                     return True
+  18:     
+  19:     return False
+--------------------------------------------------------------------------------
+[0.00465 s] survived
+   - [#   2] COI script_0: 
+--------------------------------------------------------------------------------
+  10:     True
+  11:     '''
+  12:     for (idx, elem) in enumerate(numbers):
+  13:         for (idx2, elem2) in enumerate(numbers):
+- 14:             if idx != idx2:
++ 14:             if not (idx != idx2):
+  15:                 distance = abs(elem - elem2)
+  16:                 if distance < threshold:
+  17:                     return True
+  18:     
+--------------------------------------------------------------------------------
+[0.00541 s] survived
+   - [#   3] COI script_0: 
+--------------------------------------------------------------------------------
+  12:     for (idx, elem) in enumerate(numbers):
+  13:         for (idx2, elem2) in enumerate(numbers):
+  14:             if idx != idx2:
+  15:                 distance = abs(elem - elem2)
+- 16:                 if distance < threshold:
++ 16:                 if not (distance < threshold):
+  17:                     return True
+  18:     
+  19:     return False
+  20: 
+--------------------------------------------------------------------------------
+[0.00533 s] survived
+   - [#   4] ROR script_0: 
+--------------------------------------------------------------------------------
+  10:     True
+  11:     '''
+  12:     for (idx, elem) in enumerate(numbers):
+  13:         for (idx2, elem2) in enumerate(numbers):
+- 14:             if idx != idx2:
++ 14:             if idx == idx2:
+  15:                 distance = abs(elem - elem2)
+  16:                 if distance < threshold:
+  17:                     return True
+  18:     
+--------------------------------------------------------------------------------
+[0.00589 s] survived
+   - [#   5] ROR script_0: 
+--------------------------------------------------------------------------------
+  12:     for (idx, elem) in enumerate(numbers):
+  13:         for (idx2, elem2) in enumerate(numbers):
+  14:             if idx != idx2:
+  15:                 distance = abs(elem - elem2)
+- 16:                 if distance < threshold:
++ 16:                 if distance > threshold:
+  17:                     return True
+  18:     
+  19:     return False
+  20: 
+--------------------------------------------------------------------------------
+[0.00783 s] survived
+   - [#   6] ROR script_0: 
+--------------------------------------------------------------------------------
+  12:     for (idx, elem) in enumerate(numbers):
+  13:         for (idx2, elem2) in enumerate(numbers):
+  14:             if idx != idx2:
+  15:                 distance = abs(elem - elem2)
+- 16:                 if distance < threshold:
++ 16:                 if distance <= threshold:
+  17:                     return True
+  18:     
+  19:     return False
+  20: 
+--------------------------------------------------------------------------------
+[0.00781 s] survived
+[*] Mutation score [0.18863 s]: 0.0%
+   - all: 6
+   - killed: 0 (0.0%)
+   - survived: 6 (100.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)

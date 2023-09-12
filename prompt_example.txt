@@ -1,70 +1,67 @@
-﻿example_function = """def search(x, seq):
-for i in range(len(seq)):
-if x <= seq[i]:
-return i
-return len(seq)"""
-
-example_test= """def test(self):
-self.assertEqual(search(1, [1]), 0)
-self.assertEqual(search(1, [1, 2]), 0)
-self.assertEqual(search(2, [1, 2]), 1)
-self.assertEqual(search(3, [1, 2]), 2)
-self.assertEqual(search(4, [1, 2]), 2)
-self.assertEqual(search(5, [1, 2]), 2)"""
-
-mutant_example= """def search(x, seq):
-if seq == ():
-return 0
-else:
-for i, elem in enumerate(seq):
-if x <= elem:
-return i
-elif x > seq[-1]:
-return len(seq)"""
-
-#inital_prompt, output= unit_test_from_function(example_function, print_text=True)
-print("\n")
-#print(inital_prompt)
-
-inital_prompt = """Generate test cases for
+﻿############
+//prompt
+############
+{"role": "system", "content": "You are a Python 
+coding assistant. Always answer with Python code."},
+{"role": "user", "content":
+#Generate test cases for the following code:
 ```python
-def search(x, seq):
-for i in range(len(seq)):
-if x <= seq[i]:
-return i
-return len(seq)
-
-def test():
-assert
-```"""
-final_prompt = f""" {inital_prompt}
-The following test cases cannot detect the fault in
-```python 
-{mutant_example}
-
-{example_test} 
+def choose_num(x, y):
+    if x > y:
+        return -1
+    if y % 2 == 0:
+        return y
+    if x == y:
+        return -1
+    return y - 1
 ```
+},
 
-generate a new test cases to test the fault in:
-```python 
-{mutant_example}
+{"role": "assistant", "content":
+```python
+#test cases
+def test():
+     assert choose_num(6,10) == 10
+     assert choose_num(11,6) == -1
+     assert choose_num(8,12) == 12
+```
+},
 
-# test case ```
-"""
-print(final_prompt)
+{"role": "user", "content":
+#The test function, test(), cannot detect the fault in the following code:
+```python
+def choose_num(x, y):
+    
+    if x > y:
+        return -1
+    if y % 2 == 0:
+        return y
+    if x != y: 
+        return -1
+    return y - 1
+```
+#Provide a new test case to detect the fault in the prior code:
+```python
+#test case
+def test():
+    assert
+}
 
+##################################
+//Generated output of llama-2-chat
+##################################
+"Here is a new test case to test the fault in the 
+previous code:"
+choose_num(5, 5) == -1
 
-
-#the out put
-def test(self):
-        self.assertEqual(search(1, [1]), 0)
-        self.assertEqual(search(1, [1, 2]), 0)
-        self.assertEqual(search(2, [1, 2]), 1)
-        self.assertEqual(search(3, [1, 2]), 2)
-        self.assertEqual(search(4, [1, 2]), 2)
-        self.assertEqual(search(5, [1, 2]), 2) 
-        self.assertEqual(search(1, []), 0)
-        self.assertEqual(search(5, []), 0)
-        self.assertEqual(search(1, [1, 2, 3, 4]), 0)
-        self.assertEqual(search(5, [1, 2, 3, 4]), 4)
-
+```python
+def test(): 
+     assertchoose_num(5, 5) == -1
+```
+"This test case checks for the scenario where both x 
+and y are equal. In the modified code, the condition 
+if x != y will evaluate to False, and the expected 
+result is -1. However, in the original code,
+the condition if x == y will evaluate to True, and 
+the incorrect result would be y - 1, which is 4 
+instead of -1."

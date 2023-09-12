@@ -26,10 +26,5 @@ def make_palindrome(string: str) -> str:
     return string + string[:beginning_of_suffix][::-1]
 
 
-METADATA = {
-    'author': 'jt',
-    'dataset': 'test'
-}
-
 
 

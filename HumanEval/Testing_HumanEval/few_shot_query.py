@@ -1,4 +1,3 @@
-from typing import List
 
 #<code> 
 
@@ -43,5 +42,5 @@ def test():
     assert has_close_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0], 0.1) == True
 #</test>
 
-#<code>
+
 

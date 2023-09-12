@@ -3,20 +3,6 @@ import script_10 as module_0
 
 
 def test_case_0():
-    str_0 = '~9)bH'
+    str_0 = '!_nqgRY.dVIZA)'
     bool_0 = module_0.is_palindrome(str_0)
     assert bool_0 is False
-    assert module_0.METADATA == {'author': 'jt', 'dataset': 'test'}
-    str_1 = None
-    str_2 = module_0.make_palindrome(str_1)
-    assert str_2 == ''
-    str_3 = 'Tk6cGqoQ`)}~(x[ACuc'
-    str_4 = module_0.make_palindrome(str_3)
-    assert str_4 == 'Tk6cGqoQ`)}~(x[ACucuCA[x(~})`QoqGc6kT'
-
-
-def test_case_1():
-    str_0 = 'dN#.'
-    bool_0 = module_0.is_palindrome(str_0)
-    assert bool_0 is False
-    assert module_0.METADATA == {'author': 'jt', 'dataset': 'test'}

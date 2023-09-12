@@ -10,6 +10,4 @@ def test():
     assert do_algebra(['+', '-', '*', '/'], [1, 2, 3, 4]) == 0.5, '/'
     assert do_algebra(['+', '-', '*', '/'], [1, 2, 3, 4, 5]) == 4, '/'
     assert do_algebra(['+', '-', '*', '^'], [1, 2, 3, 4, 5]) == eval('1**3+2**2+3**1+4**0'), '^'
-    print('All tests passed, do_algebra() seems to work')
-if __name__=='__main__':
-    test()
+    

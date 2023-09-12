@@ -11,6 +11,5 @@ def truncate_number(number: float) -> float:
 
 
 
-print(truncate_number(1.1))
 
 

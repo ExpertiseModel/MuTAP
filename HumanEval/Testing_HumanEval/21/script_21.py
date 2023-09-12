@@ -12,9 +12,4 @@ def rescale_to_unit(numbers: List[float]) -> List[float]:
     return [(x - min_number) / (max_number - min_number) for x in numbers]
 
 
-METADATA = {
-    'author': 'jt',
-    'dataset': 'test'
-}
-
 

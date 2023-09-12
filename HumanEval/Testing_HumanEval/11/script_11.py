@@ -21,5 +21,5 @@ METADATA = {
     'dataset': 'test'
 }
 
-print(string_xor('1011101', '1011101'))
+
 

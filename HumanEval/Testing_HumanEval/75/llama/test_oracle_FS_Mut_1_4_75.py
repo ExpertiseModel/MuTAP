@@ -1,0 +1,95 @@
+[INST] <<SYS>>
+#You are a python coding assistant. Always answer with python code.
+<</SYS>>
+
+#Generate test cases for the following function:```python
+ def is_multiply_prime(a):
+    
+    def is_prime(n):
+        for j in range(2,n):
+            if n%j == 0:
+                return False
+        return True
+
+
+
+
+    for i in range(2,101):
+        if not is_prime(i): continue
+        for j in range(2,101):
+            if not is_prime(j): continue
+            for k in range(2,101):
+                if not is_prime(k): continue
+                if i*j*k == a: return True
+    return False
+
+
+#</code>
+#<test>
+
+``` [/INST] ```python
+ def test():
+    
+    assert is_multiply_prime(2) == False
+    assert is_multiply_prime(3) == False
+    assert is_multiply_prime(5) == False
+    assert is_multiply_prime(7) == False
+    assert is_multiply_prime(11) == False
+    assert is_multiply_prime(13) == False
+    assert is_multiply_prime(17) == False
+    assert is_multiply_prime(19) == False
+
+    assert is_multiply_prime(6) == False
+    assert is_multiply_prime(8) == True
+    assert is_multiply_prime(9) == False
+    assert is_multiply_prime(10) == False
+    assert is_multiply_prime(14) == False
+    assert is_multiply_prime(15) == False
+ ```  [INST] #The test cases that you generated in test() function, cannot detect the change in the following code snippet.
+```python
+def is_multiply_prime(a):
+    
+    def is_prime(n):
+        for j in range(2,n):
+            if n%j == 0:
+                return False
+        return True
+
+
+
+
+    for i in range(2,101):
+        if not is_prime(i): 
+                break
+        for j in range(2,101):
+            if not is_prime(j): continue
+            for k in range(2,101):
+                if not is_prime(k): continue
+                if i*j*k == a: return True
+    return False
+
+```
+#Generate a new test case to detect this change.
+```python
+# test case
+def test():
+    assert [/INST] Sure! Here's a new test case that should detect the change in the `is_multiply_prime` function:
+```python
+def test():
+    assert is_multiply_prime(6) == False
+    assert is_multiply_prime(8) == False
+    assert is_multiply_prime(9) == False
+    assert is_multiply_prime(10) == False
+    assert is_multiply_prime(15) == False
+    assert is_multiply_prime(20) == False
+    assert is_multiply_prime(25) == False
+    assert is_multiply_prime(30) == False
+    assert is_multiply_prime(35) == False
+    assert is_multiply_prime(40) == False
+    assert is_multiply_prime(45) == False
+
+    # This line should fail
+    assert is_multiply_prime(6*7*8) == True
+
+```
+In this test case, we're using a series of small numbers to test the `is_multiply_prime` function. We're starting
