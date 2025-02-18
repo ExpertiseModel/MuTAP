@@ -1,5 +1,6 @@
 
 ## 1. Initial prompt on LLMC (Codex and Llama-2-chat) and syntax Fixer
+generate_test_oracle.py need replay the 'openai.api_key = "My_key"' by your key.
 At the end of this step, a unit test, including several test cases, will be generated for a `PUT`. The test cases are syntactically fixed.
 ```
 $ python generate_test_oracle.py "fewshot" "HumanEval" x(the number of put) "script_NDS_" "T_O_FS_synxfixed_" "fewshot_synx_fix.csv"
