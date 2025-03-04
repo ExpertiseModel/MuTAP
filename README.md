@@ -1,7 +1,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.8%20|%203.9%20|%203.10-blue)
 [![DOI](https://zenodo.org/badge/DOI/10.1234/zenodo.123456.svg)](https://doi.org/10.1016/j.infsof.2024.107468)
 ![LLMs: Llama-2 ](https://img.shields.io/badge/LLM-Llama--2-green?logo=meta)
-![LLM: Codex](https://img.shields.io/badge/LLM-GPT--4-blue?logo=openai)
+![LLM: Codex](https://img.shields.io/badge/LLM-Codex-blue?logo=openai)
 ![Stars](https://img.shields.io/github/stars/ExpertiseModel/MuTAP?style=social)
 # MuTAP
 
